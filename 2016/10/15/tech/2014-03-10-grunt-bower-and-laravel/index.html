@@ -1,0 +1,847 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Laravel,PHP,Grunt,Bower" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="每个开发者都应该有自己的工具箱">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Laravel+Grunt+Bower管理你的应用">
+<meta property="og:url" content="https://lianyu125.github.io/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/index.html">
+<meta property="og:site_name" content="小玉的技术博客">
+<meta property="og:description" content="每个开发者都应该有自己的工具箱">
+<meta property="og:updated_time" content="2017-01-31T13:31:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Laravel+Grunt+Bower管理你的应用">
+<meta name="twitter:description" content="每个开发者都应该有自己的工具箱">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 用Laravel+Grunt+Bower管理你的应用 | 小玉的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?41e87ec687c8b315b7900619906fe787";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小玉的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                用Laravel+Grunt+Bower管理你的应用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/" class="leancloud_visitors" data-flag-title="用Laravel+Grunt+Bower管理你的应用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="为什么这么选择？"><a href="#为什么这么选择？" class="headerlink" title="为什么这么选择？"></a>为什么这么选择？</h2><p>如今开源盛行，从后端的各个类库，到如今前端的jQuery插件，前端框架等，越来越多优秀的组件可以被我们选择应用在现有的项目中。随着开源组件的更新迭代，它们互相之间的依赖也越来越复杂。旧的框架对于新的变化总是显得难以适从，就算为了新的特性改变旧的框架，也会显的略显牵强。于是就会有新的框架和工具，在这个时候凸现出来。</p>
+<p>每个项目开始的方向是很重要的，良好的开始可以避免之后的各种问题。下面要说的三个工具，就是现有应用开发的一个良好开端。</p>
+<h3 id="Laravel"><a href="#Laravel" class="headerlink" title="Laravel"></a><a href="http://laravel.com/" target="_blank" rel="external">Laravel</a></h3><p>Laravel是一个非常新的PHP框架，借鉴了很多前辈的优秀特性，以PHP5为起点，引入了<a href="https://getcomposer.org/" target="_blank" rel="external">Composer</a>作为包管理工具，号称为WEB艺术家创造的PHP框架。</p>
+<h3 id="Grunt"><a href="#Grunt" class="headerlink" title="Grunt"></a><a href="http://gruntjs.com/" target="_blank" rel="external">Grunt</a></h3><p>基于JavaScript的自动化构建工具，可以将重复的任务，例如压缩（minification），编译，单元测试，linting等自动化。</p>
+<h3 id="Bower"><a href="#Bower" class="headerlink" title="Bower"></a><a href="http://bower.io/" target="_blank" rel="external">Bower</a></h3><p>Web前端开发的包管理工具，解决前端框架间的依赖关系，方便模块化和重用。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ol>
+<li>使用Laravel可以更好的利用最新版PHP的优势，排除了一些历史问题。</li>
+<li>利用Composer可以极大减少”轮子”的数量，优秀的包可以去<a href="https://packagist.org/" target="_blank" rel="external">Packagist</a>找到，这些包几乎都利用Github来托管，利用Github的issue和request可以辅助提高包的质量。</li>
+<li>Bower可以帮助统一管理开源前端库，如Bootstrap和jQuery等，同样这些包也在Github上托管。</li>
+<li>Grunt帮助粘合前后端的开源组件，将合并编译压缩等工作自动化。</li>
+</ol>
+<h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>有些需要提前安装的组件这里不在赘述，请自行Google。</p>
+<ul>
+<li>Composer</li>
+<li>Node &amp; npm</li>
+<li>Grunt</li>
+<li>Bower</li>
+</ul>
+<h3 id="Laravel-1"><a href="#Laravel-1" class="headerlink" title="Laravel"></a>Laravel</h3><p>有了Composer后安装一个Laravel项目非常容易</p>
+<pre><code>composer create-project laravel/laravel myproject
+</code></pre><p>安装完成后在<code>myproject</code>目录下就生成了laravel的框架结构，入口文件在<code>public</code>中。在<code>myproject</code>根目录下，有一个<code>composer.json</code>文件，这个文件看起来是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"name"</span>: <span class="string">"laravel/laravel"</span>,</div><div class="line">    <span class="string">"description"</span>: <span class="string">"The Laravel Framework."</span>,</div><div class="line">    <span class="string">"keywords"</span>: [<span class="string">"framework"</span>, <span class="string">"laravel"</span>],</div><div class="line">    <span class="string">"license"</span>: <span class="string">"MIT"</span>,</div><div class="line">    <span class="string">"require"</span>: &#123;</div><div class="line">        <span class="string">"laravel/framework"</span>: <span class="string">"4.1.*"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个文件可以控制项目的一些依赖关系，我们需要一些组件的时候直接在<code>require</code>下添加即可，<code>composer</code>会帮我们去查找这个组件所需的依赖包。</p>
+<p>接着为了安装前端框架，我们先来创建几个公共目录，在<code>public</code>下，创建类似的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">|-- assets</div><div class="line">|   |-- css</div><div class="line">|   |-- fonts</div><div class="line">|   `-- js</div><div class="line">|-- favicon.ico</div><div class="line">|-- index.php</div><div class="line">|-- packages</div><div class="line">`-- robots.txt</div></pre></td></tr></table></figure>
+<p>这里只有<code>assets</code>目录是我新创建的</p>
+<h3 id="Bower-1"><a href="#Bower-1" class="headerlink" title="Bower"></a>Bower</h3><p>准备好后端框架以后，可以安装前端框架了，例如<code>Bootstrap</code>。利用<code>Bower</code>安装的前端库是其整个工程，并不是我们需要的个别文件，所以可以讲它们先放在一个位置，之后利用<code>Grunt</code>来统一处理。</p>
+<p>首先配置一下安装路径，在<code>myproject</code>根目录下配置文件<code>.bowerrc</code>为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"directory"</span>: <span class="string">"public/assets/bower"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个文件告诉bower，将下载的包都安装到<code>public/assets/bower</code>下。</p>
+<p>接着在根目录创建一个<code>bower</code>的配置文件<code>bower.json</code>为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"myproject"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接着添加前端库</p>
+<pre><code>bower install bootstrap -S
+</code></pre><p>这个命令将会利用配置文件管理整个库依赖，这个时候再看一下配置文件，bower已经帮助我们自动安装好了<code>Bootstrap</code>依赖的包–<code>jQuery</code>，同时修改了配置文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"myproject"</span>,</div><div class="line">  <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"bootstrap"</span>: <span class="string">"~3.1.1"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在看一下目标目录，<code>public/assets</code>下，生成了一个bower目录，其中包含了<code>Bootstrap</code>和<code>jQuery</code>。</p>
+<h3 id="Grunt-1"><a href="#Grunt-1" class="headerlink" title="Grunt"></a>Grunt</h3><p>根据上面的步骤，我们很方便的建立了后端框架和前端框架，但是前端框架在使用的时候直接用<code>bower</code>下的文件并不是非常方便，而且还可能会涉及到一些库的合并压缩等步骤。这些问题都可以交给<code>Grunt</code>去做.</p>
+<p>首先在<code>myproject</code>根目录下利用<code>npm init</code>初始化一个配置文件。根据提示一步一步填写即可，最后生成的配置文件<code>package.json</code>应该如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"myproject"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"Gruntfile.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>有不一样的地方不用担心，尽管修改即可。</p>
+<p>接着我们要安装一些Grunt的插件，帮助我们更好的完成所需功能。</p>
+<pre><code>npm install grunt --save-dev
+npm install grunt-contrib-concat --save-dev
+npm install grunt-contrib-less --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-copy --save-dev
+npm install grunt-contrib-cssmin --save-dev
+</code></pre><p>这里的每个插件我会在下面的配置中介绍。上面命令中的<code>--save-dev</code>选项的作用是将安装的这些包放入配置文件依赖项中，方便以后安装。下面是安装后的配置文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"myproject"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"0.0.1"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"Gruntfile.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"grunt"</span>: <span class="string">"~0.4.3"</span>,</div><div class="line">    <span class="string">"grunt-contrib-concat"</span>: <span class="string">"~0.3.0"</span>,</div><div class="line">    <span class="string">"grunt-contrib-less"</span>: <span class="string">"~0.10.0"</span>,</div><div class="line">    <span class="string">"grunt-contrib-uglify"</span>: <span class="string">"~0.4.0"</span>,</div><div class="line">    <span class="string">"grunt-contrib-watch"</span>: <span class="string">"~0.5.3"</span>,</div><div class="line">    <span class="string">"grunt-contrib-cssmin"</span>: <span class="string">"~0.9.0"</span></div><div class="line">    <span class="string">"grunt-contrib-copy"</span>: <span class="string">"~0.5.0"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意在安装后有了一个<code>node_modules</code>目录，这个是node项目依赖包的位置，我们一般都在本地进行文件的合并和压缩，所以可以将这个包保留在本地。另外对于<code>bower</code>生成的目录，在<code>Grunt</code>处理过以后也是可以不上传到正式环境中的。所以修改<code>.gitignore</code>文件，将这两个文件夹排除出去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/bootstrap/compiled.php</div><div class="line">/vendor</div><div class="line">composer.phar</div><div class="line">composer.lock</div><div class="line">.env.local.php</div><div class="line">.env.php</div><div class="line">.DS_Store</div><div class="line">Thumbs.db</div><div class="line">/public/assets/bower</div><div class="line">/node_modules</div></pre></td></tr></table></figure>
+<p>接下来就要进行<code>Grunt</code>的配置项编写了，我会在配置中加入注释帮助理解。还记得我们刚刚建立的<code>package.json</code>配置文件中的入口文件吗？这个文件还不存在，所以我们需要手动建立，在<code>myproject</code>下创建<code>Gruntfile.js</code>的文件，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>) </span>&#123;</div><div class="line">  <span class="comment">//配置项</span></div><div class="line">  grunt.initConfig(&#123;</div><div class="line">    <span class="comment">//concat插件配置，用来合并多个文件</span></div><div class="line">    concat: &#123;</div><div class="line">      <span class="comment">//文件间的分隔符</span></div><div class="line">      options: &#123;</div><div class="line">        <span class="attr">separator</span>: <span class="string">';'</span>,</div><div class="line">      &#125;,</div><div class="line">      <span class="comment">//app是一个任务名，可以随意命名</span></div><div class="line">      app: &#123;</div><div class="line">        <span class="comment">//将进行的合并项</span></div><div class="line">        src: [</div><div class="line">          <span class="string">'./public/assets/bower/jquery/dist/jquery.js'</span>,</div><div class="line">          <span class="string">'./public/assets/bower/bootstrap/dist/js/bootstrap.js'</span>,</div><div class="line">        ],</div><div class="line">        <span class="comment">//合并后放置在</span></div><div class="line">        dest: <span class="string">'./public/assets/js/javascript.js'</span>,</div><div class="line">      &#125;,</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//css合并压缩</span></div><div class="line">    cssmin: &#123;</div><div class="line">      <span class="comment">//任务名</span></div><div class="line">      app: &#123;</div><div class="line">        <span class="attr">src</span>: [</div><div class="line">          <span class="string">'./public/assets/bower/bootstrap/dist/css/bootstrap.css'</span>,</div><div class="line">          <span class="string">'./public/assets/css/base.css'</span></div><div class="line">        ],</div><div class="line">        <span class="attr">dest</span>: <span class="string">'./public/assets/css/stylesheet.css'</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//js压缩</span></div><div class="line">    uglify: &#123;</div><div class="line">      <span class="attr">options</span>: &#123;</div><div class="line">        <span class="attr">mangle</span>: <span class="literal">false</span> <span class="comment">//是否混合变量，如果需求的话置为true</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">app</span>: &#123;</div><div class="line">        <span class="attr">files</span>: &#123;</div><div class="line">          <span class="string">'./public/assets/js/javascript.js'</span>: <span class="string">'./public/assets/js/javascript.js'</span>,</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//移动文件</span></div><div class="line">    copy: &#123;</div><div class="line">      <span class="attr">app</span>: &#123;</div><div class="line">        <span class="attr">files</span>: [</div><div class="line">          &#123;</div><div class="line">            <span class="attr">expand</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">flatten</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">cwd</span>: <span class="string">'./public/assets/bower/bootstrap/fonts/'</span>,</div><div class="line">            <span class="attr">src</span>: [<span class="string">'**'</span>], </div><div class="line">            <span class="attr">dest</span>: <span class="string">'./public/assets/fonts/'</span>, </div><div class="line">            <span class="attr">filter</span>: <span class="string">'isFile'</span></div><div class="line">          &#125;,</div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//监听文件变化，如果文件变化，将重新进行任务</span></div><div class="line">    watch: &#123;</div><div class="line">      <span class="attr">app</span>: &#123;</div><div class="line">        <span class="attr">files</span>: [</div><div class="line">          <span class="string">'./public/assets/bower/jquery/dist/jquery.js'</span>,</div><div class="line">          <span class="string">'./public/assets/bower/bootstrap/dist/js/bootstrap.js'</span>,</div><div class="line">          <span class="string">'./public/assets/bower/bootstrap/dist/css/bootstrap.css'</span>,</div><div class="line">        ],   </div><div class="line">        <span class="comment">//文件变化后执行哪些任务</span></div><div class="line">        tasks: [<span class="string">'concat:app'</span>,<span class="string">'uglify:app'</span>,<span class="string">'cssmin:app'</span>,<span class="string">'copy:app'</span>],</div><div class="line">        <span class="attr">options</span>: &#123;</div><div class="line">          <span class="attr">livereload</span>: <span class="literal">true</span></div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">//导入所需的插件</span></div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-concat'</span>);</div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-watch'</span>);</div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-less'</span>);</div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-uglify'</span>);</div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-copy'</span>);</div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-cssmin'</span>);</div><div class="line"></div><div class="line">  <span class="comment">//注册两个任务</span></div><div class="line">  grunt.registerTask(<span class="string">'watch'</span>, [<span class="string">'watch'</span>]);</div><div class="line">  grunt.registerTask(<span class="string">'default'</span>, [<span class="string">'concat:app'</span>,<span class="string">'uglify:app'</span>,<span class="string">'cssmin:app'</span>,<span class="string">'copy:app'</span>]);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>我们看到，最后注册了两个任务，这两个任务可以从终端中执行，例如：</p>
+<pre><code>grunt watch
+</code></pre><p>可以开启文件监听，当文件变化时执行watch中设定的任务。</p>
+<p>如果直接执行<code>grunt</code>，则会执行<code>default</code>中设定的任务。我们也可以具体指定执行某一单一任务，如</p>
+<pre><code>grunt copy:app
+</code></pre><p>上面则只将<code>bootstrap/fonts</code>中的文件拷贝到<code>public/assets/fonts</code>中。</p>
+<p>对于上述的这些插件，可以在<a href="http://gruntjs.com/plugins" target="_blank" rel="external">这里</a>找到，也有详细的用法。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>每个人都有自己的喜好，我的这种配置可能只抛个砖，希望有更好的方式分享。最后在总结一下这三剑客：</p>
+<ul>
+<li>Laravel利用了最新PHP特性，引入了Composer包管理，解决后端库之间的依赖</li>
+<li>Bower帮助安装和解决前端框架和库的依赖关系</li>
+<li>Grunt帮助粘合前后端的开源组件，并且完成合并和压缩等重复性工作。</li>
+</ul>
+<p>下面两篇参考文章各有特色，如果希望了解一下可以点击链接去看。</p>
+<p>我在<a href="https://github.com/suyan/Laravel-Bower-Grunt" target="_blank" rel="external">Github</a>上建立了这篇博客中所讲的目录结构，想要快速建立一个可使用的工程，只需要以下几部：</p>
+<pre><code>git clone https://github.com/suyan/Laravel-Bower-Grunt.git
+composer install
+bower update
+npm install
+grunt
+</code></pre><p>Enjoy it!</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.terrymatula.com/development/2013/how-i-use-bower-and-grunt-with-my-laravel-projects/" target="_blank" rel="external">How I use Bower and Grunt with my Laravel projects</a></li>
+<li><a href="http://blog.elenakolevska.com/using-grunt-with-laravel-and-bootstrap/" target="_blank" rel="external">Using Grunt + Bower with Laravel and Bootstrap</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://okjl482qy.bkt.clouddn.com/weixin.jpg" alt=" WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://okjl482qy.bkt.clouddn.com/zhifubao.jpg" alt=" Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/Laravel/" rel="tag">#Laravel</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/15/tech/2014-04-27-magic-methods-and-magic-constants-in-php/" rel="next" title="PHP中的魔术方法和魔术常量简介和使用">
+                <i class="fa fa-chevron-left"></i> PHP中的魔术方法和魔术常量简介和使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/15/tech/2014-02-15-apache-and-nginx/" rel="prev" title="从运行原理及使用场景看Apache和Nginx">
+                从运行原理及使用场景看Apache和Nginx <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/"
+           data-title="用Laravel+Grunt+Bower管理你的应用" data-url="https://lianyu125.github.io/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么这么选择？"><span class="nav-number">1.</span> <span class="nav-text">为什么这么选择？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel"><span class="nav-number">1.1.</span> <span class="nav-text">Laravel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grunt"><span class="nav-number">1.2.</span> <span class="nav-text">Grunt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bower"><span class="nav-number">1.3.</span> <span class="nav-text">Bower</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优势"><span class="nav-number">2.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装使用"><span class="nav-number">3.</span> <span class="nav-text">安装使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前提"><span class="nav-number">3.1.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Laravel-1"><span class="nav-number">3.2.</span> <span class="nav-text">Laravel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bower-1"><span class="nav-number">3.3.</span> <span class="nav-text">Bower</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grunt-1"><span class="nav-number">3.4.</span> <span class="nav-text">Grunt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lianyu125"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Pfb0jUXDKnWB0hnaeVOT6PpK", "OyV7SQidxc4c3oBzUDUFeass");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

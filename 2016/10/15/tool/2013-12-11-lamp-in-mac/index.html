@@ -1,0 +1,932 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Brew,Mac,MongoDB,MySQL,Apache,Nginx,PHP" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Mac下搭建lamp开发环境很容易，有xampp和mamp现成的集成环境。但是集成环境对于经常需要自定义一些配置的开发者来说会非常麻烦，而且Mac本身自带apache和php，在brew的帮助下非常容易手动搭建，可控性很高">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac下用brew搭建PHP(LNMP/LAMP)开发环境">
+<meta property="og:url" content="https://lianyu125.github.io/2016/10/15/tool/2013-12-11-lamp-in-mac/index.html">
+<meta property="og:site_name" content="小玉的技术博客">
+<meta property="og:description" content="Mac下搭建lamp开发环境很容易，有xampp和mamp现成的集成环境。但是集成环境对于经常需要自定义一些配置的开发者来说会非常麻烦，而且Mac本身自带apache和php，在brew的帮助下非常容易手动搭建，可控性很高">
+<meta property="og:updated_time" content="2017-01-31T10:21:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac下用brew搭建PHP(LNMP/LAMP)开发环境">
+<meta name="twitter:description" content="Mac下搭建lamp开发环境很容易，有xampp和mamp现成的集成环境。但是集成环境对于经常需要自定义一些配置的开发者来说会非常麻烦，而且Mac本身自带apache和php，在brew的帮助下非常容易手动搭建，可控性很高">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Mac下用brew搭建PHP(LNMP/LAMP)开发环境 | 小玉的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?41e87ec687c8b315b7900619906fe787";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小玉的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac下用brew搭建PHP(LNMP/LAMP)开发环境
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/tool/2013-12-11-lamp-in-mac/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tool/2013-12-11-lamp-in-mac/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/tool/2013-12-11-lamp-in-mac/" class="leancloud_visitors" data-flag-title="Mac下用brew搭建PHP(LNMP/LAMP)开发环境">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Brew"><a href="#Brew" class="headerlink" title="Brew"></a><a href="http://brew.sh/" target="_blank" rel="external">Brew</a></h2><p>brew对于mac，就像apt-get对于ubuntu，安装软件的好帮手，不能方便更多…</p>
+<p>brew的安装方式如下：</p>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)&quot;
+</code></pre><p>brew常用选项</p>
+<pre><code>brew install xxx
+brew uninstall xxx
+brew list 
+brew update xxx
+</code></pre><h2 id="Apache-Nginx-只需要装一个"><a href="#Apache-Nginx-只需要装一个" class="headerlink" title="Apache || Nginx (只需要装一个)"></a>Apache || Nginx (只需要装一个)</h2><h3 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h3><p>Apache的话使用mac自带的基本就够了，我的系统是10.9，可以使用以下命令控制Apache</p>
+<pre><code>sudo apachectl start
+sudo apachectl restart
+sudo apachectl stop
+</code></pre><p>唯一要改的是主目录，mac默认在home下有个<code>Sites</code>（站点）目录，访问路径是</p>
+<pre><code>http://localhost/~user_name
+</code></pre><p>这样不太容易访问，修改<code>/etc/apache2/httpd.conf</code>内容</p>
+<pre><code>DocumentRoot /Users/username/Sites
+&lt;Directory /Users/username/Sites&gt;
+    Options Indexes MultiViews
+    # apache 2.2
+    # AllowOverride All
+    # Order allow,deny
+    # Allow from 127.0.0.1
+
+    # apache 2.4
+    Require local
+&lt;/Directory&gt;
+</code></pre><p>这样<code>Sites</code>目录就是网站根目录了，通过<code>http://localhost</code>就可以访问了。</p>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apachectl start <span class="comment"># 启动apache</span></div><div class="line">sudo apachectl stop <span class="comment"># 关闭apache</span></div><div class="line">sudo apachectl restart <span class="comment"># 重启apache</span></div></pre></td></tr></table></figure>
+<h4 id="设置vhost"><a href="#设置vhost" class="headerlink" title="设置vhost"></a>设置vhost</h4><p>设置vhost可以很方便的进行站点调试，尤其是对于需要在根目录运行的站点。推荐 <a href="https://clickontyler.com/virtualhostx/" target="_blank" rel="external">VirtualHostX</a>.</p>
+<p>设置方法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/apache2/extra/httpd-vhosts.conf</div></pre></td></tr></table></figure>
+<p>然后输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;Directory <span class="string">"/pash/to/site"</span>&gt;</div><div class="line">    Allow From All</div><div class="line">    AllowOverride All</div><div class="line">    Options +Indexes</div><div class="line">&lt;/Directory&gt;</div><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">       ServerName <span class="string">"site.test"</span></div><div class="line">       DocumentRoot <span class="string">"/path/to/site"</span></div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
+<p>这么设置会有个问题，默认的<code>http://localhost</code>会被转到这儿来，所以专门再设置一下<code>localhost</code>的host就好了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">    ServerName localhost</div><div class="line">    DocumentRoot /path/to/root</div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure>
+<p>然后把host文件改一下，把刚刚设置的<code>ServerName</code>改到本地就好了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/hosts</div></pre></td></tr></table></figure>
+<p>写入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">127.0.0.1 site.test</div></pre></td></tr></table></figure>
+<h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><p>要使用Nginx也比较方便，首先安装</p>
+<pre><code>brew install nginx
+</code></pre><p>启动关闭Nginx的命令如下（如果想要监听80端口，必须以管理员身份运行）</p>
+<pre><code>#打开 nginx
+sudo nginx
+#重新加载配置|重启|停止|退出 nginx
+nginx -s reload|reopen|stop|quit
+#测试配置是否有语法错误
+nginx -t
+</code></pre><p>配置Nginx</p>
+<pre><code>cd /usr/local/etc/nginx/
+mkdir conf.d
+</code></pre><p>修改Nginx配置文件</p>
+<pre><code>vim nginx.conf
+</code></pre><p>主要修改位置是最后的include</p>
+<pre><code>worker_processes  1;  
+
+error_log       /usr/local/var/log/nginx/error.log warn;
+
+pid        /usr/local/var/run/nginx.pid;
+
+events {
+    worker_connections  256;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  &apos;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &apos;
+                      &apos;$status $body_bytes_sent &quot;$http_referer&quot; &apos;
+                      &apos;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&apos;;
+
+    access_log      /usr/local/var/log/nginx/access.log main;
+    port_in_redirect off;
+    sendfile        on; 
+    keepalive_timeout  65; 
+
+    include /usr/local/etc/nginx/conf.d/*.conf;
+}
+</code></pre><p>修改自定义文件</p>
+<pre><code>vim ./conf.d/default.conf
+</code></pre><p>增加一个监听端口</p>
+<pre><code>server {
+    listen       80;
+    server_name  localhost;
+
+    root /Users/username/Sites/; # 该项要修改为你准备存放相关网页的路径
+
+    location / { 
+        index index.php;
+        autoindex on; 
+    }   
+
+    #proxy the php scripts to php-fpm  
+    location ~ \.php$ {
+        include /usr/local/etc/nginx/fastcgi.conf;
+        fastcgi_intercept_errors on; 
+        fastcgi_pass   127.0.0.1:9000; 
+    }   
+
+}
+</code></pre><p>这个时候还不能访问php站点，因为还没有开启php-fpm。</p>
+<p>虽然mac 10.9自带了php-fpm，但是由于我们使用了最新的PHP，PHP中自带php-fpm，所以使用PHP中的php-fpm可以保证版本的一致。</p>
+<p>这里的命令在安装完下一步的php后再执行</p>
+<pre><code>sudo nginx
+sudo php-fpm -D
+</code></pre><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>PHP在mac下默认安装了，但是不好控制版本，利用brew可以再mac下安装最新版本，甚至是多个版本，我装了php5.5</p>
+<pre><code>brew update
+brew tap homebrew/dupes
+brew tap josegonzalez/homebrew-php
+# brew install php55 --with-fpm #Nginx
+brew install php55 #Apache
+</code></pre><p>然后修改php的cli路径和apache使用的php模块。在.bashrc或.zshrc里头加以下内容</p>
+<pre><code>#export PATH=&quot;$(brew --prefix josegonzalez/php/php55)/bin:$PATH&quot; 
+export PATH=&quot;/usr/local/bin:/usr/local/sbin:$PATH&quot;
+</code></pre><p>就用刚刚安装的php代替了系统默认cli的php版本。然后在<code>/etc/apache2/httpd.conf</code>下增加</p>
+<pre><code>LoadModule php5_module /usr/local/Cellar/php55/5.5.8/libexec/apache2/libphp5.so
+</code></pre><p>这样就对apache使用的php版本也进行了修改。</p>
+<p>后面会用到mongo和mysql，所以可以直接利用下面命令安装php模块，其他模块也类似</p>
+<pre><code>#brew install php55-mysql #这个已经不需要再安装了
+brew install php55-mongo
+</code></pre><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>mac不自带mysql，这里需要重新安装，方法依然很简单</p>
+<pre><code>brew install mysql
+unset TMPDIR
+mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp
+sudo chown -R your_user /usr/local/var/mysql/
+</code></pre><p>第一句是安装，后面的是确保正常使用。然后是启动命令</p>
+<pre><code>mysql.server start
+</code></pre><p>最好给mysql设个密码，方法如下</p>
+<pre><code>mysqladmin -u root password &apos;xxx&apos;
+</code></pre><p>如果想修改mysql的配置，在<code>/usr/local/etc</code>下建立一个<code>my.cnf</code>，例如增加log</p>
+<pre><code>[mysqld]
+general-log
+general_log_file = /usr/local/var/log/mysqld.log
+</code></pre><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>MongoDB可以说是最简单的一个，直接执行</p>
+<pre><code>brew install mongodb
+</code></pre><p>启动方法</p>
+<pre><code>mongod --fork
+</code></pre><h2 id="PHPMyAdmin"><a href="#PHPMyAdmin" class="headerlink" title="PHPMyAdmin"></a>PHPMyAdmin</h2><p>phpmyadmin几乎是管理mysql最容易的web应用了吧，每次我都顺道装上。</p>
+<ul>
+<li>去<a href="http://www.phpmyadmin.net/home_page/downloads.php" target="_blank" rel="external">官网</a>下载最新的版本</li>
+<li>解压到~/Sites/phpmyadmin下</li>
+<li>在phpmyadmin目录下创建一个可写的config目录</li>
+<li>打开<a href="http://localhost/phpmyadmin/setup，安装一个服务，最后保存（这里只需要输入帐号密码就够了）" target="_blank" rel="external">http://localhost/phpmyadmin/setup，安装一个服务，最后保存（这里只需要输入帐号密码就够了）</a></li>
+<li>将config下生成的config.inc.php移到phpmyadmin根目录下</li>
+<li>删除config</li>
+</ul>
+<p>这样就装好了，虽然可能有点小复杂，但是来一次就习惯了。</p>
+<p>这里很可能会遇到2002错误，就是找不到mysql.sock的问题，用下面方法解决</p>
+<pre><code>sudo mkdir /var/mysql
+sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
+</code></pre><h2 id="RockMongo"><a href="#RockMongo" class="headerlink" title="RockMongo"></a>RockMongo</h2><p>RockMongo是MongoDB很好用的一个web应用，安装也很容易</p>
+<ul>
+<li>去<a href="http://rockmongo.com/" target="_blank" rel="external">官网</a>下载最新版本</li>
+<li>解压到~/Sites/rockmongo下</li>
+<li>运行<a href="http://localhost/rockmongo即可" target="_blank" rel="external">http://localhost/rockmongo即可</a></li>
+</ul>
+<h2 id="把-site-放在-Dropbox-文件夹下"><a href="#把-site-放在-Dropbox-文件夹下" class="headerlink" title="把 site 放在 Dropbox 文件夹下"></a>把 site 放在 Dropbox 文件夹下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln -s ~/Dropbox/sitename ~/Sites/sitename</div><div class="line">chmod a+rw ~/Dropbox</div><div class="line">chmod a+rw ~/Dropbox/sitename</div></pre></td></tr></table></figure>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>这样就在mac下配置好一个php开发环境了，enjoy it!</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.nabito.net/hot-to-install-nginx-php-fpm-5-5-6-mongo-and-mysql-on-mac-with-homebrew/" target="_blank" rel="external">Hot to install nginx, PHP-fpm 5.5.6, mongo and MySql on mac with homebrew</a></li>
+<li><a href="http://my.oschina.net/chen0dgax/blog/190161" target="_blank" rel="external">Mac OSX 10.9搭建nginx+mysql+php-fpm环境</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://okjl482qy.bkt.clouddn.com/weixin.jpg" alt=" WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://okjl482qy.bkt.clouddn.com/zhifubao.jpg" alt=" Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac/" rel="tag">#Mac</a>
+          
+            <a href="/tags/MongoDB/" rel="tag">#MongoDB</a>
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/15/tool/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" rel="next" title="在Github上搭建Jekyll博客和创建主题">
+                <i class="fa fa-chevron-left"></i> 在Github上搭建Jekyll博客和创建主题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/15/tool/2013-08-28-change-bootstrap-to-3/" rel="prev" title="更新前端框架到Bootstrap3">
+                更新前端框架到Bootstrap3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/15/tool/2013-12-11-lamp-in-mac/"
+           data-title="Mac下用brew搭建PHP(LNMP/LAMP)开发环境" data-url="https://lianyu125.github.io/2016/10/15/tool/2013-12-11-lamp-in-mac/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Brew"><span class="nav-number">1.</span> <span class="nav-text">Brew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apache-Nginx-只需要装一个"><span class="nav-number">2.</span> <span class="nav-text">Apache || Nginx (只需要装一个)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache"><span class="nav-number">2.1.</span> <span class="nav-text">Apache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">2.1.1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置vhost"><span class="nav-number">2.1.2.</span> <span class="nav-text">设置vhost</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx"><span class="nav-number">2.2.</span> <span class="nav-text">Nginx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">3.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">4.</span> <span class="nav-text">MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB"><span class="nav-number">5.</span> <span class="nav-text">MongoDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHPMyAdmin"><span class="nav-number">6.</span> <span class="nav-text">PHPMyAdmin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RockMongo"><span class="nav-number">7.</span> <span class="nav-text">RockMongo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把-site-放在-Dropbox-文件夹下"><span class="nav-number">8.</span> <span class="nav-text">把 site 放在 Dropbox 文件夹下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成"><span class="nav-number">9.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">10.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lianyu125"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Pfb0jUXDKnWB0hnaeVOT6PpK", "OyV7SQidxc4c3oBzUDUFeass");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
