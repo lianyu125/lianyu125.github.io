@@ -1,0 +1,19 @@
+---
+title: iOS textfield光标位置
+category: iOS
+tags: 
+keywords: textfield
+description: 
+---
+
+```
+ UITextPosition* beginning = self.beginningOfDocument;   
+ UITextRange* selectedRange = self.selectedTextRange;  
+ UITextPosition* selectionStart = selectedRange.start;  
+ UITextPosition* selectionEnd = selectedRange.end;  
+ const NSInteger location = [self offsetFromPosition:beginning  toPosition:selectionStart]; //光标所在的位置 
+const NSInteger length = [self offsetFromPosition:selectionStart toPosition:selectionEnd]; //选中文字的长度 
+```
+
+
+
