@@ -391,8 +391,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/tech/2013-02-24-javascript-variable-domain/" itemprop="url">
-                  JavaScript变量作用域
+                <a class="post-title-link" href="/2016/10/15/tech/2012-09-19-php-session-security/" itemprop="url">
+                  PHP操作Session的原理及提升安全性时的一个问题
                 </a>
               
             
@@ -435,8 +435,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2013-02-24-javascript-variable-domain/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2013-02-24-javascript-variable-domain/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/tech/2012-09-19-php-session-security/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2012-09-19-php-session-security/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -446,7 +446,7 @@
 
           
           
-             <span id="/2016/10/15/tech/2013-02-24-javascript-variable-domain/" class="leancloud_visitors" data-flag-title="JavaScript变量作用域">
+             <span id="/2016/10/15/tech/2012-09-19-php-session-security/" class="leancloud_visitors" data-flag-title="PHP操作Session的原理及提升安全性时的一个问题">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -469,9 +469,9 @@
 
       
         
-          转载学习
+          PHP操作Session的原理及提升安全性时的一个问题
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2013-02-24-javascript-variable-domain/">
+            <a class="btn" href="/2016/10/15/tech/2012-09-19-php-session-security/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -522,8 +522,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" itemprop="url">
-                  在Github上搭建Jekyll博客和创建主题
+                <a class="post-title-link" href="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/" itemprop="url">
+                  用Xdebug和Sublime调试PHP代码
                 </a>
               
             
@@ -566,8 +566,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2014-03-20-php-debug-with-xdebug/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -577,7 +577,7 @@
 
           
           
-             <span id="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" class="leancloud_visitors" data-flag-title="在Github上搭建Jekyll博客和创建主题">
+             <span id="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/" class="leancloud_visitors" data-flag-title="用Xdebug和Sublime调试PHP代码">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -600,73 +600,12 @@
 
       
         
-          
-            <h2 id="创建一个库"><a href="#创建一个库" class="headerlink" title="创建一个库"></a>创建一个库</h2><p>在Github上新开一个库，名字叫做<code>username.github.io</code>，然后当别人在地址栏输入相应url的时候就可以访问进来了。</p>
-<p>在这个库中完全可以只上传一个<code>index.html</code>，来讲自己要写的东西写进去，但是这样会丧失很多灵活性，所以需要Jekyll的帮助来创建自己的博客。</p>
-<h2 id="设定目录结构"><a href="#设定目录结构" class="headerlink" title="设定目录结构"></a>设定目录结构</h2><p>把自己的库clone到本地来，建立如下目录结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">├── CNAME</div><div class="line">├── README.md</div><div class="line">├── _config.yml</div><div class="line">├── _includes</div><div class="line">│   ├── disqus.html</div><div class="line">│   ├── footer.html</div><div class="line">│   ├── googleanalytics.html</div><div class="line">│   ├── header.html</div><div class="line">│   └── navside.html</div><div class="line">├── _layouts</div><div class="line">│   ├── base.html</div><div class="line">│   ├── book.html</div><div class="line">│   ├── page.html</div><div class="line">│   └── post.html</div><div class="line">├── _posts</div><div class="line">│   ├── Book</div><div class="line">│   ├── Life</div><div class="line">│   ├── Resource</div><div class="line">│   ├── Technology</div><div class="line">│   └── Tool</div><div class="line">├── index.html</div><div class="line">├── pages</div><div class="line">│   ├── about.html</div><div class="line">│   ├── archive.html</div><div class="line">│   └── atom.xml</div><div class="line">├── public</div><div class="line">│   ├── css</div><div class="line">│   ├── fonts</div><div class="line">│   ├── img</div><div class="line">│   ├── js</div><div class="line">│   └── upload</div><div class="line">└── sitemap.txt</div></pre></td></tr></table></figure>
-<p>这个目录结构是我自己设定的，也可以有不同的目录结构，看<a href="http://jekyllrb.com/docs/structure/" target="_blank" rel="external">官网</a>。</p>
-<p>接下来我主要解释这里面每一个目录的功能。</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>_config.yml</code>里写有整个站点的主要配置项，我的如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">permalink: /:year/:month/:day/:title.html   #博文的固定链接</div><div class="line">paginate: 10                                #分页时每页博文数量</div><div class="line">author:                                     #自定义常亮</div><div class="line">  name: 闫肃</div><div class="line">  email: yansu0711@gmail.com</div><div class="line">  link: http://yansu.org</div><div class="line">title: 闫肃的博客                             #自定义常量</div><div class="line">locals:                                     #自定义常量</div><div class="line">  tags: 标签</div><div class="line">  about: 关于</div><div class="line">active: 技术                                 #自定义常量</div><div class="line">subscribe_rss: /pages/atom.xml              #订阅地址</div><div class="line">markdown: redcarpet                         #markdown解释器</div></pre></td></tr></table></figure>
-<p>这里的自定义常量可以在模板中使用，以后有修改的时候就不需要跑去改代码了。尤其是对一些私人的选项，可以在这里定义。现在我的博客中出了disqus和googleanalytics外都直接在这里设定就好了。</p>
-<h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p><code>CNAME</code>这个文件写明了这个站点的域名，如果不喜欢<code>username.github.io</code>的话，可以像我一样改掉</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yansu.org</div></pre></td></tr></table></figure>
-<p>改法只要在这个文件中写入域名就可以了。不过你需要去域名服务商那里设定域名解析规则。</p>
-<p>只要把<code>主机记录</code>为<code>@</code>,<code>www</code>的记录值写成<code>username.github.io</code>就好了。</p>
-<h3 id="博客存放"><a href="#博客存放" class="headerlink" title="博客存放"></a>博客存放</h3><p><code>_posts</code>下的所有目录中的所有博客，都会被Jekyll处理成为静态的html文件，然后放在<code>_site</code>下。我这里没有<code>_site</code>目录，是因为我在<code>.gitignore</code>文件中把这个目录屏蔽掉了，它不会上传到Github上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">_site/</div><div class="line">_drafts/</div><div class="line">.DS_Store</div></pre></td></tr></table></figure>
-<p>以上是我的<code>.gitignore</code>文件内容。</p>
-<p>在<code>_posts</code>下的符合<code>YYYY-MM-DD-xxxxxx.md</code>的文件，都会被Jekyll认定为博客内容。我在<code>_posts</code>下又新建了一些文件夹，主要是方便自己本地管理博客。</p>
-<p>在上述这些文件中，必须先定义一些配置项，例如这篇博客的md文件中，开头是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">layout: post                                   #这个博客的布局文件</div><div class="line">title: 在Github上搭建自己的Jekyll博客             #博客标题</div><div class="line">category: 工具                                  #博客分类</div><div class="line">tags: Jekyll                                   #博客标签</div><div class="line">keywords: Jekyll,Github                        #自定义常量</div><div class="line">description:                                   #自定义常量</div></pre></td></tr></table></figure>
-<p>除了自定义常量外的必须包含进去，自定义变量在这个布局中可以访问。</p>
-<h3 id="模版文件"><a href="#模版文件" class="headerlink" title="模版文件"></a>模版文件</h3><p>剩余的目录，基本都属于模板文件了，我解释一下各自的作用：</p>
-<ul>
-<li><code>_includes</code> 可以在模板中随时包含的文件</li>
-<li><code>_layouts</code> 布局文件，在博客头配置中可以选择</li>
-<li><code>pages</code> 站内固定的页面</li>
-<li><code>public</code> 公共资源，包括<code>js</code>,<code>css</code>,<code>img</code>等，还有我博客中调用的图片，我都放这里</li>
-<li><code>index.html</code> 站点的首页，整个站的入口文件</li>
-<li><code>sitemap.txt</code> 给搜索引擎看的，如何爬取这个站</li>
-</ul>
-<h2 id="创建自己的主题"><a href="#创建自己的主题" class="headerlink" title="创建自己的主题"></a>创建自己的主题</h2><p>上面讲了如何布局好站内文件结构，接下来主要就是如何创建一个自己的主题了。</p>
-<p>布局文件是整个主题最重要的文件，这些文件告诉Jekyll如何去形成一个html页面。</p>
-<p>首先我说一下我最基础的<code>page.html</code>文件，因为它决定了入口文件<code>index.html</code>的布局。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">layout: base</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 aside3-title"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"#identifier"</span>&gt;</span>&#123;\&#123; page.title &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 aside3-content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"page-content"</span>&gt;</span></div><div class="line">      &#123;\&#123; content &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">    &#123;\% include disqus.html %&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>从这里可以看到这个文件写起来一点都不复杂，但是为什么开头还有个<code>layout</code>呢？因为它也不是最基本的布局文件，最基本的是<code>base.html</code>，我们看一下它的内容。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  &#123;\% include header.html %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">      &#123;\% include navside.html %&#125;</div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"pjax"</span>&gt;</span></div><div class="line">            &#123;\&#123; content &#125;&#125;</div><div class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  &#123;\% include footer.html %&#125;</div><div class="line">  &#123;\% include googleanalytics.html %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个文件就更像一个HTML文件了，用PHP或者Python写过web应用的人看到<code>{\% %}</code>这样的标签应该不陌生，这不就是模板标签嘛。其实Jekyll也是借用了一下模板系统的，官网说明在<a href="http://jekyllrb.com/docs/templates/" target="_blank" rel="external">这里</a>，看到开头第一句讲的它用了<a href="http://docs.shopify.com/themes/liquid-basics" target="_blank" rel="external">Liquid</a>了吧。如果Jekyll的文档不能满足你的话，可以去Liquid那里查查。</p>
-<p>我解释一下<code>base.html</code>中几个标签的功能。</p>
-<ul>
-<li><code>{\% include header.html %}</code> 从<code>_includes</code>中把<code>header.html</code>包含进来放在这里</li>
-<li><code>{\% include navside.html %}</code> 同上</li>
-<li><code>{\{ content }}</code> 这句的作用是将继承这个Layout的文件中的代码，放在这里</li>
-</ul>
-<p>所以再看<code>page.html</code>文件就很容易了，它就是把配置项下面的内容，填补到<code>base.html</code>中的<code>{\{ content }}</code>处形成了一个文件。那么<code>page.html</code>中的<code>{\{ content }}</code>做什么用呢？因为别人也可以以<code>page.html</code>来作为自己的布局文件。</p>
-<p>入口文件<code>index.html</code>就是这么干的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">layout: page</div><div class="line">title: 首页</div><div class="line">...</div></pre></td></tr></table></figure>
-<p>这里看到选择了page作为布局文件，那么title干嘛用的呢？其实它是在被包含的<code>header.html</code>中被用到了。来看看<code>header.html</code>怎么写的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;\&#123; page.title &#125;&#125; | &#123;\&#123; site.title &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; site.author.name &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% if page.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.keywords &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% endif %&#125;</div><div class="line">&#123;\% if page.description  %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description "</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.description  &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% endif %&#125;</div><div class="line"></div><div class="line">...</div></pre></td></tr></table></figure>
-<p>这里又使用了一些新标签——<code>{\{ }\}</code>，这个标签就是用来书写变量的，通过在配置处配置变量，或者使用系统的自定义变量，可以轻松改变页面内的一些元素或者内容。</p>
-<p>系统变量查询可以去<a href="http://jekyllrb.com/docs/variables/" target="_blank" rel="external">这里</a></p>
-<p>其实整个主题书写就是这么简单，如果有不清楚的可以再看看官网的文档。动一动手就非常明白了。</p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>很多人感觉用Jekyll最不方便的就是插入图片了，其实我也是这么觉得的。所以只能自己去想些办法。</p>
-<h3 id="图片统一存放"><a href="#图片统一存放" class="headerlink" title="图片统一存放"></a>图片统一存放</h3><p>图片我都放在了<code>/public/upload</code>下，所以我在插入图片的时候只要用<code>![xxx](http://7u2ho6.com1.z0.glb.clouddn.com/xxx)</code>就可以了。</p>
-<h3 id="方便的图片导入"><a href="#方便的图片导入" class="headerlink" title="方便的图片导入"></a>方便的图片导入</h3><p>导入图片的方式是我将<code>upload</code>文件夹做了个软连接，放到mac的dock上就行了，有图片要用的时候直接往里面一拖。</p>
-<h3 id="方便的截图"><a href="#方便的截图" class="headerlink" title="方便的截图"></a>方便的截图</h3><p>很多时候图片都是现截取的，比如用QQ的截图工具，或者系统的截图工具，但是他们截取完都存放在了<code>user/Pictures</code>里面，来回移动太累了。我这里介绍一个Mac下的一个工具——Trickster，看图</p>
-<p><img src="http://7u2ho6.com1.z0.glb.clouddn.com/tech-trickster-move-picture.png" alt="移动图片"></p>
-<p>这个工具可以看到刚刚修改过的图片，而且还有一个收藏的文件夹，我每次截取完图以后，从左边往右边一拖，然后在markdown中就可以继续书写了。一点都不耗时。</p>
-<h2 id="本地预览及提交"><a href="#本地预览及提交" class="headerlink" title="本地预览及提交"></a>本地预览及提交</h2><p>本地预览自己的修改很容易，只要进入<code>username.github.io</code>目录，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll serve</div></pre></td></tr></table></figure>
-<p>然后访问<code>http://localhost:4000</code>就OK了，安装Jekyll的方式自行谷歌吧…</p>
-<p>自己预览过没有问题以后，就提交到服务端吧，Git三步走</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add xxx</div><div class="line">git commit -m &quot;xxx&quot;</div><div class="line">git push</div></pre></td></tr></table></figure>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>我觉得自己的这个主题设定的算是比较好修改和移植的了，如果大家有什么问题，可以尽管问。</p>
-<p>另外一些特别的功能，比如三栏、评论、谷歌分析，这些都不难，相信你稍微打开Github读一下这个主题的代码就很快明白了。</p>
-<p>代码地址戳<a href="https://github.com/suyan/suyan.github.io" target="_blank" rel="external">这里</a></p>
-
-          
+          xdebug是php调试的好帮手，sublime是php编写的好帮手。这里只说如何配置，默认读者会用sublime和xdebug
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -976,8 +915,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/" itemprop="url">
-                  让git push命令不再需要密码
+                <a class="post-title-link" href="/2016/10/15/git/2013-02-25-quick-open-in-windows/" itemprop="url">
+                  win7快速打开应用程序或文件
                 </a>
               
             
@@ -1020,8 +959,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-04-22-ignore-password-in-git-push/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/git/2013-02-25-quick-open-in-windows/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-02-25-quick-open-in-windows/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1031,7 +970,7 @@
 
           
           
-             <span id="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/" class="leancloud_visitors" data-flag-title="让git push命令不再需要密码">
+             <span id="/2016/10/15/git/2013-02-25-quick-open-in-windows/" class="leancloud_visitors" data-flag-title="win7快速打开应用程序或文件">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1054,140 +993,9 @@
 
       
         
-          使用git push命令远程提交库时，总是要输入帐号和密码，这样特别麻烦，找了一个方法解决掉
+          windows下打开文件或应用程序经常需要手点，作为键盘控肯定是不能忍受的。之前试过一些软件，设置各个程序的快捷键，但是快捷键可能会有冲突，而且记性不好实在不好用，所以选择使用Win自带的“运行”来加快打开速度
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/" itemprop="url">
-                  在ubuntu下搭建pptp vpn服务器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">-工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/" class="leancloud_visitors" data-flag-title="在ubuntu下搭建pptp vpn服务器">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          最近弄了digitalocean的vps，研究了一下搭建一个vpn自己用，因为有些系统代理goagent还是搞不定。但是事实证明digitalocean线路还是很不稳，基本上没啥帮助=0=
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/">
+            <a class="btn" href="/2016/10/15/git/2013-02-25-quick-open-in-windows/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1369,6 +1177,329 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/" itemprop="url">
+                  让git push命令不再需要密码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">-工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-04-22-ignore-password-in-git-push/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/" class="leancloud_visitors" data-flag-title="让git push命令不再需要密码">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          使用git push命令远程提交库时，总是要输入帐号和密码，这样特别麻烦，找了一个方法解决掉
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" itemprop="url">
+                  在Github上搭建Jekyll博客和创建主题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">-工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" class="leancloud_visitors" data-flag-title="在Github上搭建Jekyll博客和创建主题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="创建一个库"><a href="#创建一个库" class="headerlink" title="创建一个库"></a>创建一个库</h2><p>在Github上新开一个库，名字叫做<code>username.github.io</code>，然后当别人在地址栏输入相应url的时候就可以访问进来了。</p>
+<p>在这个库中完全可以只上传一个<code>index.html</code>，来讲自己要写的东西写进去，但是这样会丧失很多灵活性，所以需要Jekyll的帮助来创建自己的博客。</p>
+<h2 id="设定目录结构"><a href="#设定目录结构" class="headerlink" title="设定目录结构"></a>设定目录结构</h2><p>把自己的库clone到本地来，建立如下目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">├── CNAME</div><div class="line">├── README.md</div><div class="line">├── _config.yml</div><div class="line">├── _includes</div><div class="line">│   ├── disqus.html</div><div class="line">│   ├── footer.html</div><div class="line">│   ├── googleanalytics.html</div><div class="line">│   ├── header.html</div><div class="line">│   └── navside.html</div><div class="line">├── _layouts</div><div class="line">│   ├── base.html</div><div class="line">│   ├── book.html</div><div class="line">│   ├── page.html</div><div class="line">│   └── post.html</div><div class="line">├── _posts</div><div class="line">│   ├── Book</div><div class="line">│   ├── Life</div><div class="line">│   ├── Resource</div><div class="line">│   ├── Technology</div><div class="line">│   └── Tool</div><div class="line">├── index.html</div><div class="line">├── pages</div><div class="line">│   ├── about.html</div><div class="line">│   ├── archive.html</div><div class="line">│   └── atom.xml</div><div class="line">├── public</div><div class="line">│   ├── css</div><div class="line">│   ├── fonts</div><div class="line">│   ├── img</div><div class="line">│   ├── js</div><div class="line">│   └── upload</div><div class="line">└── sitemap.txt</div></pre></td></tr></table></figure>
+<p>这个目录结构是我自己设定的，也可以有不同的目录结构，看<a href="http://jekyllrb.com/docs/structure/" target="_blank" rel="external">官网</a>。</p>
+<p>接下来我主要解释这里面每一个目录的功能。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>_config.yml</code>里写有整个站点的主要配置项，我的如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">permalink: /:year/:month/:day/:title.html   #博文的固定链接</div><div class="line">paginate: 10                                #分页时每页博文数量</div><div class="line">author:                                     #自定义常亮</div><div class="line">  name: 闫肃</div><div class="line">  email: yansu0711@gmail.com</div><div class="line">  link: http://yansu.org</div><div class="line">title: 闫肃的博客                             #自定义常量</div><div class="line">locals:                                     #自定义常量</div><div class="line">  tags: 标签</div><div class="line">  about: 关于</div><div class="line">active: 技术                                 #自定义常量</div><div class="line">subscribe_rss: /pages/atom.xml              #订阅地址</div><div class="line">markdown: redcarpet                         #markdown解释器</div></pre></td></tr></table></figure>
+<p>这里的自定义常量可以在模板中使用，以后有修改的时候就不需要跑去改代码了。尤其是对一些私人的选项，可以在这里定义。现在我的博客中出了disqus和googleanalytics外都直接在这里设定就好了。</p>
+<h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p><code>CNAME</code>这个文件写明了这个站点的域名，如果不喜欢<code>username.github.io</code>的话，可以像我一样改掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yansu.org</div></pre></td></tr></table></figure>
+<p>改法只要在这个文件中写入域名就可以了。不过你需要去域名服务商那里设定域名解析规则。</p>
+<p>只要把<code>主机记录</code>为<code>@</code>,<code>www</code>的记录值写成<code>username.github.io</code>就好了。</p>
+<h3 id="博客存放"><a href="#博客存放" class="headerlink" title="博客存放"></a>博客存放</h3><p><code>_posts</code>下的所有目录中的所有博客，都会被Jekyll处理成为静态的html文件，然后放在<code>_site</code>下。我这里没有<code>_site</code>目录，是因为我在<code>.gitignore</code>文件中把这个目录屏蔽掉了，它不会上传到Github上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">_site/</div><div class="line">_drafts/</div><div class="line">.DS_Store</div></pre></td></tr></table></figure>
+<p>以上是我的<code>.gitignore</code>文件内容。</p>
+<p>在<code>_posts</code>下的符合<code>YYYY-MM-DD-xxxxxx.md</code>的文件，都会被Jekyll认定为博客内容。我在<code>_posts</code>下又新建了一些文件夹，主要是方便自己本地管理博客。</p>
+<p>在上述这些文件中，必须先定义一些配置项，例如这篇博客的md文件中，开头是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">layout: post                                   #这个博客的布局文件</div><div class="line">title: 在Github上搭建自己的Jekyll博客             #博客标题</div><div class="line">category: 工具                                  #博客分类</div><div class="line">tags: Jekyll                                   #博客标签</div><div class="line">keywords: Jekyll,Github                        #自定义常量</div><div class="line">description:                                   #自定义常量</div></pre></td></tr></table></figure>
+<p>除了自定义常量外的必须包含进去，自定义变量在这个布局中可以访问。</p>
+<h3 id="模版文件"><a href="#模版文件" class="headerlink" title="模版文件"></a>模版文件</h3><p>剩余的目录，基本都属于模板文件了，我解释一下各自的作用：</p>
+<ul>
+<li><code>_includes</code> 可以在模板中随时包含的文件</li>
+<li><code>_layouts</code> 布局文件，在博客头配置中可以选择</li>
+<li><code>pages</code> 站内固定的页面</li>
+<li><code>public</code> 公共资源，包括<code>js</code>,<code>css</code>,<code>img</code>等，还有我博客中调用的图片，我都放这里</li>
+<li><code>index.html</code> 站点的首页，整个站的入口文件</li>
+<li><code>sitemap.txt</code> 给搜索引擎看的，如何爬取这个站</li>
+</ul>
+<h2 id="创建自己的主题"><a href="#创建自己的主题" class="headerlink" title="创建自己的主题"></a>创建自己的主题</h2><p>上面讲了如何布局好站内文件结构，接下来主要就是如何创建一个自己的主题了。</p>
+<p>布局文件是整个主题最重要的文件，这些文件告诉Jekyll如何去形成一个html页面。</p>
+<p>首先我说一下我最基础的<code>page.html</code>文件，因为它决定了入口文件<code>index.html</code>的布局。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">layout: base</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 aside3-title"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"#identifier"</span>&gt;</span>&#123;\&#123; page.title &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 aside3-content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"page-content"</span>&gt;</span></div><div class="line">      &#123;\&#123; content &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">    &#123;\% include disqus.html %&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>从这里可以看到这个文件写起来一点都不复杂，但是为什么开头还有个<code>layout</code>呢？因为它也不是最基本的布局文件，最基本的是<code>base.html</code>，我们看一下它的内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  &#123;\% include header.html %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">      &#123;\% include navside.html %&#125;</div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"pjax"</span>&gt;</span></div><div class="line">            &#123;\&#123; content &#125;&#125;</div><div class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  &#123;\% include footer.html %&#125;</div><div class="line">  &#123;\% include googleanalytics.html %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个文件就更像一个HTML文件了，用PHP或者Python写过web应用的人看到<code>{\% %}</code>这样的标签应该不陌生，这不就是模板标签嘛。其实Jekyll也是借用了一下模板系统的，官网说明在<a href="http://jekyllrb.com/docs/templates/" target="_blank" rel="external">这里</a>，看到开头第一句讲的它用了<a href="http://docs.shopify.com/themes/liquid-basics" target="_blank" rel="external">Liquid</a>了吧。如果Jekyll的文档不能满足你的话，可以去Liquid那里查查。</p>
+<p>我解释一下<code>base.html</code>中几个标签的功能。</p>
+<ul>
+<li><code>{\% include header.html %}</code> 从<code>_includes</code>中把<code>header.html</code>包含进来放在这里</li>
+<li><code>{\% include navside.html %}</code> 同上</li>
+<li><code>{\{ content }}</code> 这句的作用是将继承这个Layout的文件中的代码，放在这里</li>
+</ul>
+<p>所以再看<code>page.html</code>文件就很容易了，它就是把配置项下面的内容，填补到<code>base.html</code>中的<code>{\{ content }}</code>处形成了一个文件。那么<code>page.html</code>中的<code>{\{ content }}</code>做什么用呢？因为别人也可以以<code>page.html</code>来作为自己的布局文件。</p>
+<p>入口文件<code>index.html</code>就是这么干的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">layout: page</div><div class="line">title: 首页</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>这里看到选择了page作为布局文件，那么title干嘛用的呢？其实它是在被包含的<code>header.html</code>中被用到了。来看看<code>header.html</code>怎么写的：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;\&#123; page.title &#125;&#125; | &#123;\&#123; site.title &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; site.author.name &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% if page.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.keywords &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% endif %&#125;</div><div class="line">&#123;\% if page.description  %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description "</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.description  &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% endif %&#125;</div><div class="line"></div><div class="line">...</div></pre></td></tr></table></figure>
+<p>这里又使用了一些新标签——<code>{\{ }\}</code>，这个标签就是用来书写变量的，通过在配置处配置变量，或者使用系统的自定义变量，可以轻松改变页面内的一些元素或者内容。</p>
+<p>系统变量查询可以去<a href="http://jekyllrb.com/docs/variables/" target="_blank" rel="external">这里</a></p>
+<p>其实整个主题书写就是这么简单，如果有不清楚的可以再看看官网的文档。动一动手就非常明白了。</p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>很多人感觉用Jekyll最不方便的就是插入图片了，其实我也是这么觉得的。所以只能自己去想些办法。</p>
+<h3 id="图片统一存放"><a href="#图片统一存放" class="headerlink" title="图片统一存放"></a>图片统一存放</h3><p>图片我都放在了<code>/public/upload</code>下，所以我在插入图片的时候只要用<code>![xxx](http://7u2ho6.com1.z0.glb.clouddn.com/xxx)</code>就可以了。</p>
+<h3 id="方便的图片导入"><a href="#方便的图片导入" class="headerlink" title="方便的图片导入"></a>方便的图片导入</h3><p>导入图片的方式是我将<code>upload</code>文件夹做了个软连接，放到mac的dock上就行了，有图片要用的时候直接往里面一拖。</p>
+<h3 id="方便的截图"><a href="#方便的截图" class="headerlink" title="方便的截图"></a>方便的截图</h3><p>很多时候图片都是现截取的，比如用QQ的截图工具，或者系统的截图工具，但是他们截取完都存放在了<code>user/Pictures</code>里面，来回移动太累了。我这里介绍一个Mac下的一个工具——Trickster，看图</p>
+<p><img src="http://7u2ho6.com1.z0.glb.clouddn.com/tech-trickster-move-picture.png" alt="移动图片"></p>
+<p>这个工具可以看到刚刚修改过的图片，而且还有一个收藏的文件夹，我每次截取完图以后，从左边往右边一拖，然后在markdown中就可以继续书写了。一点都不耗时。</p>
+<h2 id="本地预览及提交"><a href="#本地预览及提交" class="headerlink" title="本地预览及提交"></a>本地预览及提交</h2><p>本地预览自己的修改很容易，只要进入<code>username.github.io</code>目录，执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll serve</div></pre></td></tr></table></figure>
+<p>然后访问<code>http://localhost:4000</code>就OK了，安装Jekyll的方式自行谷歌吧…</p>
+<p>自己预览过没有问题以后，就提交到服务端吧，Git三步走</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add xxx</div><div class="line">git commit -m &quot;xxx&quot;</div><div class="line">git push</div></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>我觉得自己的这个主题设定的算是比较好修改和移植的了，如果大家有什么问题，可以尽管问。</p>
+<p>另外一些特别的功能，比如三栏、评论、谷歌分析，这些都不难，相信你稍微打开Github读一下这个主题的代码就很快明白了。</p>
+<p>代码地址戳<a href="https://github.com/suyan/suyan.github.io" target="_blank" rel="external">这里</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/15/resource/2013-04-23-general-bootstrap-resources/" itemprop="url">
                   Bootstrap常用资源
                 </a>
@@ -1450,137 +1581,6 @@
           列举自己搜集的Bootstrap资源，给像我这样前端不太行的WEB开发者
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/10/15/resource/2013-04-23-general-bootstrap-resources/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/" itemprop="url">
-                  用Xdebug和Sublime调试PHP代码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">-工具</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2014-03-20-php-debug-with-xdebug/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/" class="leancloud_visitors" data-flag-title="用Xdebug和Sublime调试PHP代码">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          xdebug是php调试的好帮手，sublime是php编写的好帮手。这里只说如何配置，默认读者会用sublime和xdebug
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/git/2014-03-20-php-debug-with-xdebug/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1728,6 +1728,22 @@
 </div>
 
         
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
 
         
       </div>
