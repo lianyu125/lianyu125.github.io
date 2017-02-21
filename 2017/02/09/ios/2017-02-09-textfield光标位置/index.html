@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://lianyucode.top/2017/02/09/ios/2017-02-09-textfield光标位置/index.html">
 <meta property="og:site_name" content="小玉的技术博客">
 <meta property="og:description" content="123456 UITextPosition* beginning = self.beginningOfDocument;    UITextRange* selectedRange = self.selectedTextRange;   UITextPosition* selectionStart = selectedRange.start;   UITextPosition* selection">
-<meta property="og:updated_time" content="2017-02-21T11:29:48.000Z">
+<meta property="og:updated_time" content="2017-02-21T11:30:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS textfield光标位置">
 <meta name="twitter:description" content="123456 UITextPosition* beginning = self.beginningOfDocument;    UITextRange* selectedRange = self.selectedTextRange;   UITextPosition* selectionStart = selectedRange.start;   UITextPosition* selection">
@@ -341,7 +341,7 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> UITextPosition* beginning = self.beginningOfDocument;   </div><div class="line"> UITextRange* selectedRange = self.selectedTextRange;  </div><div class="line"> UITextPosition* selectionStart = selectedRange.start;  </div><div class="line"> UITextPosition* selectionEnd = selectedRange.end;  </div><div class="line"> const NSInteger location = [self offsetFromPosition:beginning  toPosition:selectionStart]; //光标所在的位置 </div><div class="line">const NSInteger length = [self offsetFromPosition:selectionStart toPosition:selectionEnd]; //选中文字的长度</div></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="built_in">UITextPosition</span>* beginning = <span class="keyword">self</span>.beginningOfDocument;   </div><div class="line"> <span class="built_in">UITextRange</span>* selectedRange = <span class="keyword">self</span>.selectedTextRange;  </div><div class="line"> <span class="built_in">UITextPosition</span>* selectionStart = selectedRange.start;  </div><div class="line"> <span class="built_in">UITextPosition</span>* selectionEnd = selectedRange.end;  </div><div class="line"> <span class="keyword">const</span> <span class="built_in">NSInteger</span> location = [<span class="keyword">self</span> offsetFromPosition:beginning  toPosition:selectionStart]; <span class="comment">//光标所在的位置 </span></div><div class="line"><span class="keyword">const</span> <span class="built_in">NSInteger</span> length = [<span class="keyword">self</span> offsetFromPosition:selectionStart toPosition:selectionEnd]; <span class="comment">//选中文字的长度</span></div></pre></td></tr></table></figure>
 
       
     </div>
