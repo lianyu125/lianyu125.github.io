@@ -4,8 +4,26 @@
 
     
   <url>
+    <loc>https://lianyucode.top/2017/02/09/ios/2017-02-09-textfield%E5%85%89%E6%A0%87%E4%BD%8D%E7%BD%AE/</loc>
+    <lastmod>2017-02-21T00:06:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>iOS textfield光标位置</title>
+        <pubTime>2017-02-09T07:58:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="iOS" url="https://lianyucode.top/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lianyucode.top/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/</loc>
-    <lastmod>2017-02-20T15:28:16.000Z</lastmod>
+    <lastmod>2017-02-21T00:04:29.000Z</lastmod>
     <data>
         <display>
         <title>在ubuntu下搭建pptp vpn服务器</title>
@@ -223,24 +241,6 @@
            
              
               <breadCrumb title="hexo" url="https://lianyucode.top/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lianyucode.top/2017/02/09/ios/2017-02-09-textfield%E5%85%89%E6%A0%87%E4%BD%8D%E7%BD%AE/</loc>
-    <lastmod>2017-02-09T08:01:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS textfield光标位置</title>
-        <pubTime>2017-02-09T07:58:12.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="iOS" url="https://lianyucode.top/categories/iOS/"/>
           
         </display>
     </data>
@@ -1009,9 +1009,9 @@
         
         <tag>MongoDB</tag>
          
-        <tag>MySQL</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>MySQL</tag>
          
          
            
