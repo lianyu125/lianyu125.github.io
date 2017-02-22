@@ -260,6 +260,147 @@
             
               
                 
+                <a class="post-title-link" href="/2017/02/21/React-Native/2017-02-21/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-21T22:23:09+08:00" content="2017-02-21">
+              2017-02-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/21/React-Native/2017-02-21/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/React-Native/2017-02-21/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/21/React-Native/2017-02-21/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: React Native封装原生UI组件栏<br>date: 2017-02-21 18:40:12<br>tags: React-Naticve<br>categories: React-Native </p>
+<h2 id="descripton-有时候我们的应用需要进行访问原生平台系统的API接口-但是React-Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C-Swift或者C-代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如-图片处理-数据库以及一些高级功能扩展之类的。"><a href="#descripton-有时候我们的应用需要进行访问原生平台系统的API接口-但是React-Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C-Swift或者C-代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如-图片处理-数据库以及一些高级功能扩展之类的。" class="headerlink" title="descripton: 有时候我们的应用需要进行访问原生平台系统的API接口,但是React Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C,Swift或者C++代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如:图片处理,数据库以及一些高级功能扩展之类的。 "></a>descripton: 有时候我们的应用需要进行访问原生平台系统的API接口,但是React Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C,Swift或者C++代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如:图片处理,数据库以及一些高级功能扩展之类的。 </h2><pre><code>React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
+问题来源:项目中要在注册页面显示一张验证码图片,当用户点击验证码图片时,验证码改变。
+问题分析:由于RN显示图片主要有两种[请查看React-Native正确加载图片的姿势](http://www.cnblogs.com/AliliWl/p/5849524.html),而且加载的都是固定资源的图片,并不能实现点击图片换一次验证码的需求
+</code></pre><p>##一、对原生视图进一步封装<br>举个栗子,我们要在React-Native上调用ZLYCustomView显示,那我们就得对ZLYCustomView进行一次封装才能被RN调用。原生视图如下<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ZLYCustomView</span>:<span class="title">UIView</span></span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;VerifyPicCodeViewDelegate&gt;delegate;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) RCTDirectEventBlock onGetCookie;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> * imageView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> * source;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ZLYCustomView</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
+<h2 id="二、创建RCTViewManager的子类来管理原生视图"><a href="#二、创建RCTViewManager的子类来管理原生视图" class="headerlink" title="二、创建RCTViewManager的子类来管理原生视图"></a>二、创建RCTViewManager的子类来管理原生视图</h2><p>原生视图都需要被一个RCTViewManager的子类来创建和管理。<br>这些管理器在功能上有些类似“视图控制器”，但它们本质上都是单例 - React Native只会为每个管理器创建一个实例。<br>它们创建原生的视图并提供给RCTUIManager，RCTUIManager则会反过来委托它们在需要的时候去设置和更新视图的属性。RCTViewManager还会代理视图的所有委托，并给JavaScript发回对应的事件。</p>
+<p>提供原生视图步骤如下：</p>
+<p>首先创建一个子类 —— 命名规范为“视图名称+Manager”. 视图名称可以加上自己的前缀，这里最好避免使用RCT前缀，除非你想给官方pull request<br>添加RCT_EXPORT_MODULE()标记宏 —— 让模块接口暴露给JavaScript<br>实现-(UIView *)view方法 —— 创建并返回组件视图<br>封装属性及传递事件<br>下面先贴出完整的代码，然后会对属性和事件进行进一步的解说。</p>
+<h3 id="ZLYCustomViewManager-h"><a href="#ZLYCustomViewManager-h" class="headerlink" title="ZLYCustomViewManager.h"></a>ZLYCustomViewManager.h</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="meta">#import <span class="meta-string">"ZLYCustomViewManager.h</span></span></div><div class="line"> #import "RCTViewManager.h<span class="meta-string">"</span></div><div class="line"></div><div class="line">@interface ZLYCustomViewManager : RCTViewManager</div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="ZLYCustomViewManager-m"><a href="#ZLYCustomViewManager-m" class="headerlink" title="ZLYCustomViewManager.m"></a>ZLYCustomViewManager.m</h3><pre><code class="objc"> <span class="meta">#import <span class="meta-string">"ZLYCustomViewManager.h
+ #import "</span>RCTBridgeModule.h<span class="meta-string">"
+ #import "</span>RCTBridge.h<span class="meta-string">"
+ #import "</span>RCTEventDispatcher.h<span class="meta-string">"
+@interface ZLYCustomViewManager : RCTViewManager
+//  标记宏（必要）
+RCT_EXPORT_MODULE()
+//  事件的导出，onClickBanner对应view中扩展的属性
+RCT_EXPORT_VIEW_PROPERTY(onClickBanner, RCTDirectEventBlock)
+//  通过宏RCT_EXPORT_VIEW_PROPERTY完成属性的映射和导出
+RCT_EXPORT_VIEW_PROPERTY(autoScrollTimeInterval, CGFloat);
+RCT_EXPORT_VIEW_PROPERTY(imageURLStringsGroup, NSArray);
+RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
+
+- (UIView *)view
+{
+    //  实际组件的具体大小位置由js控制
+    ZLYCustomView *customView = [ZLYCustomView alloc]init];
+    return customView;
+}
+@end</span></span>
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/02/13/hexo/2017-02-13-hexo-bind-leancloud/" itemprop="url">
                   hexo绑定域名后leanCloud统计阅读次数失效
                 </a>
@@ -907,137 +1048,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="url">
-                  hexo博客中插入图片
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" class="leancloud_visitors" data-flag-title="hexo博客中插入图片">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          在文章中插入图片
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" itemprop="url">
                   hexo博客在导航条中添加分类和标签栏
                 </a>
@@ -1255,10 +1265,10 @@
           
             <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装git<br>2.安装node.js<br>3.申请github账号</p>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>1.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p><img src="/Users/one/Desktop/hexo-cli.png" alt=""></p>
+<p><img src="../img/hexo-cli.png" alt=""></p>
 <p>2.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure></p>
-<p><img src="/Users/one/Desktop/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
-<p>如下图所示,则表示安装成功<br><img src="/Users/one/Desktop/hexo_v.png" alt=""></p>
+<p><img src="../img/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
+<p>如下图所示,则表示安装成功<br><img src="../img/hexo_v.png" alt=""></p>
 <h2 id="本地运行hexo"><a href="#本地运行hexo" class="headerlink" title="本地运行hexo"></a>本地运行hexo</h2><p>1.初始化hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
 <p>如下图则表示初始化成功<br><img src="../img/hexo_init.png" alt=""><br>2.安装生成器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
 <p>3.本地运行hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -g</div></pre></td></tr></table></figure></p>
@@ -1271,6 +1281,137 @@
 <p>这样我们的博客就搭建起来了 <a href="https://lianyu125.github.io" target="_blank" rel="external"></a></p>
 
           
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="url">
+                  hexo博客中插入图片
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
+              2017-01-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" class="leancloud_visitors" data-flag-title="hexo博客中插入图片">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          在文章中插入图片
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1428,137 +1569,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/07/ios/2017-01-07/" itemprop="url">
-                  ios内存管理之自动引用计数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-07T16:25:47+08:00" content="2017-01-07">
-              2017-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/07/ios/2017-01-07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/07/ios/2017-01-07/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/07/ios/2017-01-07/" class="leancloud_visitors" data-flag-title="ios内存管理之自动引用计数">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>##自动引用计数<br>自动引用计数是指内存管理对引用采取自动计数的技术。以下内容摘自苹果官方文档<br><img src="media/summary.png" alt="summary"><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/07/ios/2017-01-07/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1604,7 +1614,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">66</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1621,7 +1631,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
