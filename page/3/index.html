@@ -260,8 +260,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/tech/2012-09-19-php-session-security/" itemprop="url">
-                  PHP操作Session的原理及提升安全性时的一个问题
+                <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-git-resources/" itemprop="url">
+                  Git 常用资源
                 </a>
               
             
@@ -288,8 +288,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
                   </a>
                 </span>
 
@@ -304,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2012-09-19-php-session-security/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2012-09-19-php-session-security/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/resource/2014-01-15-general-git-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-01-15-general-git-resources/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,7 +315,7 @@
 
           
           
-             <span id="/2016/10/15/tech/2012-09-19-php-session-security/" class="leancloud_visitors" data-flag-title="PHP操作Session的原理及提升安全性时的一个问题">
+             <span id="/2016/10/15/resource/2014-01-15-general-git-resources/" class="leancloud_visitors" data-flag-title="Git 常用资源">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,9 +338,166 @@
 
       
         
-          PHP操作Session的原理及提升安全性时的一个问题
+          
+            <h2 id="库管理"><a href="#库管理" class="headerlink" title="库管理"></a>库管理</h2><h3 id="克隆库"><a href="#克隆库" class="headerlink" title="克隆库"></a>克隆库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/php/php-src.git</div><div class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/php/php-src.git <span class="comment"># 只抓取最近的一次 commit</span></div></pre></td></tr></table></figure>
+<h2 id="历史管理"><a href="#历史管理" class="headerlink" title="历史管理"></a>历史管理</h2><h3 id="查看历史"><a href="#查看历史" class="headerlink" title="查看历史"></a>查看历史</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span> --pretty=oneline filename <span class="comment"># 一行显示</span></div><div class="line">git show xxxx <span class="comment"># 查看某次修改</span></div></pre></td></tr></table></figure>
+<h3 id="标签功能"><a href="#标签功能" class="headerlink" title="标签功能"></a>标签功能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">git tag <span class="comment"># 显示所有标签</span></div><div class="line">git tag <span class="_">-l</span> <span class="string">'v1.4.2.*'</span> <span class="comment"># 显示 1.4.2 开头标签</span></div><div class="line">git tag v1.3 <span class="comment"># 简单打标签   </span></div><div class="line">git tag <span class="_">-a</span> v1.2 9fceb02 <span class="comment"># 后期加注标签</span></div><div class="line">git tag <span class="_">-a</span> v1.4 -m <span class="string">'my version 1.4'</span> <span class="comment"># 增加标签并注释， -a 为 annotated 缩写</span></div><div class="line">git show v1.4 <span class="comment"># 看某一标签详情</span></div><div class="line">git push origin v1.5 <span class="comment"># 分享某个标签</span></div><div class="line">git push origin --tags <span class="comment"># 分享所有标签</span></div></pre></td></tr></table></figure>
+<h3 id="回滚操作"><a href="#回滚操作" class="headerlink" title="回滚操作"></a>回滚操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git reset 9fceb02 <span class="comment"># 保留修改</span></div><div class="line">git reset 9fceb02 --hard <span class="comment"># 删除之后的修改</span></div></pre></td></tr></table></figure>
+<h3 id="取消文件的修改"><a href="#取消文件的修改" class="headerlink" title="取消文件的修改"></a>取消文件的修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -- a.php <span class="comment">#  取消单个文件</span></div><div class="line">git checkout -- <span class="comment"># 取消所有文件的修改</span></div></pre></td></tr></table></figure>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git rm a.php  <span class="comment"># 直接删除文件</span></div><div class="line">git rm --cached a.php <span class="comment"># 删除文件暂存状态</span></div></pre></td></tr></table></figure>
+<h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git mv a.php ./<span class="built_in">test</span>/a.php</div></pre></td></tr></table></figure>
+<h3 id="查看文件修改"><a href="#查看文件修改" class="headerlink" title="查看文件修改"></a>查看文件修改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git diff          <span class="comment"># 查看未暂存的文件更新 </span></div><div class="line">git diff --cached <span class="comment"># 查看已暂存文件的更新</span></div></pre></td></tr></table></figure>
+<h3 id="暂存和恢复当前staging"><a href="#暂存和恢复当前staging" class="headerlink" title="暂存和恢复当前staging"></a>暂存和恢复当前staging</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git stash <span class="comment"># 暂存当前分支的修改</span></div><div class="line">git stash apply <span class="comment"># 恢复最近一次暂存</span></div><div class="line">git stash list <span class="comment"># 查看暂存内容</span></div><div class="line">git stash apply stash@&#123;2&#125; <span class="comment"># 指定恢复某次暂存内容</span></div><div class="line">git stash drop stash@&#123;0&#125; <span class="comment"># 删除某次暂存内容</span></div></pre></td></tr></table></figure>
+<h3 id="修改-commit-历史纪录"><a href="#修改-commit-历史纪录" class="headerlink" title="修改 commit 历史纪录"></a>修改 commit 历史纪录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase -i 0580eab8</div></pre></td></tr></table></figure>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch develop <span class="comment"># 只创建分支</span></div><div class="line">git checkout -b master develop <span class="comment"># 创建并切换到 develop 分支</span></div></pre></td></tr></table></figure>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git checkout master <span class="comment"># 切换到 master 分支</span></div><div class="line">git merge --no-ff develop <span class="comment"># 把 develop 合并到 master 分支，no-ff 选项的作用是保留原分支记录</span></div><div class="line">git rebase develop <span class="comment"># rebase 当前分支到 develop</span></div><div class="line">git branch <span class="_">-d</span> develop <span class="comment"># 删除 develop 分支</span></div></pre></td></tr></table></figure>
+<h3 id="克隆远程分支"><a href="#克隆远程分支" class="headerlink" title="克隆远程分支"></a>克隆远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch -r <span class="comment"># 显示所有分支，包含远程分支</span></div><div class="line">git checkout origin/android</div></pre></td></tr></table></figure>
+<h3 id="修复develop上的合并错误"><a href="#修复develop上的合并错误" class="headerlink" title="修复develop上的合并错误"></a>修复develop上的合并错误</h3><ol>
+<li>将merge前的commit创建一个分之，保留merge后代码</li>
+<li>将develop <code>reset --force</code>到merge前，然后<code>push --force</code></li>
+<li>在分支中rebase develop</li>
+<li>将分支push到服务器上重新merge</li>
+</ol>
+<h3 id="强制更新到远程分支最新版本"><a href="#强制更新到远程分支最新版本" class="headerlink" title="强制更新到远程分支最新版本"></a>强制更新到远程分支最新版本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git reset --hard origin/master</div><div class="line">git submodule update --remote <span class="_">-f</span></div></pre></td></tr></table></figure>
+<h2 id="Submodule使用"><a href="#Submodule使用" class="headerlink" title="Submodule使用"></a>Submodule使用</h2><h3 id="克隆带submodule的库"><a href="#克隆带submodule的库" class="headerlink" title="克隆带submodule的库"></a>克隆带submodule的库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> --recursive https://github.com/chaconinc/MainProject</div></pre></td></tr></table></figure>
+<h3 id="clone主库后再去clone-submodule"><a href="#clone主库后再去clone-submodule" class="headerlink" title="clone主库后再去clone submodule"></a>clone主库后再去clone submodule</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/chaconinc/MainProject</div><div class="line">git submodule init</div><div class="line">git submodule update</div></pre></td></tr></table></figure>
+<h2 id="Git设置"><a href="#Git设置" class="headerlink" title="Git设置"></a>Git设置</h2><p>Git的全局设置在<code>~/.gitconfig</code>中，单独设置在<code>project/.git/config</code>下。</p>
+<p>忽略设置全局在<code>~/.gitignore_global</code>中，单独设置在<code>project/.gitignore</code>下。</p>
+<h3 id="设置-commit-的用户和邮箱"><a href="#设置-commit-的用户和邮箱" class="headerlink" title="设置 commit 的用户和邮箱"></a>设置 commit 的用户和邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config user.name <span class="string">"xx"</span></div><div class="line">git config user.email <span class="string">"xx@xx.com"</span></div></pre></td></tr></table></figure>
+<p>或者直接修改config文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[user]</div><div class="line">    name = xxx</div><div class="line">    email = xxx@xxx.com</div></pre></td></tr></table></figure>
+<h3 id="查看设置项"><a href="#查看设置项" class="headerlink" title="查看设置项"></a>查看设置项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --list</div></pre></td></tr></table></figure>
+<h3 id="设置git终端颜色"><a href="#设置git终端颜色" class="headerlink" title="设置git终端颜色"></a>设置git终端颜色</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git config --global color.diff auto</div><div class="line">git config --global color.status auto</div><div class="line">git config --global color.branch auto</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-html-resources/" itemprop="url">
+                  HTML 常用资源
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/resource/2014-01-15-general-html-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-01-15-general-html-resources/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/resource/2014-01-15-general-html-resources/" class="leancloud_visitors" data-flag-title="HTML 常用资源">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          HTML 常用资源
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2012-09-19-php-session-security/">
+            <a class="btn" href="/2016/10/15/resource/2014-01-15-general-html-resources/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -391,8 +548,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/tech/2014-01-30-understanding-the-github-workflow/" itemprop="url">
-                  了解GitHub工作流【译】
+                <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-javascript-resources/" itemprop="url">
+                  JavaScript 常用资源
                 </a>
               
             
@@ -419,8 +576,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
                   </a>
                 </span>
 
@@ -435,8 +592,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2014-01-30-understanding-the-github-workflow/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2014-01-30-understanding-the-github-workflow/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/resource/2014-01-15-general-javascript-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-01-15-general-javascript-resources/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -446,7 +603,7 @@
 
           
           
-             <span id="/2016/10/15/tech/2014-01-30-understanding-the-github-workflow/" class="leancloud_visitors" data-flag-title="了解GitHub工作流【译】">
+             <span id="/2016/10/15/resource/2014-01-15-general-javascript-resources/" class="leancloud_visitors" data-flag-title="JavaScript 常用资源">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -469,533 +626,9 @@
 
       
         
-          GitHub流是一个轻量级，基于分支的工作流，它使得小组和项目的部署变得标准化。这个向导解释了GitHub流是如何&为什么工作的。
+          JavaScript 常用资源
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2014-01-30-understanding-the-github-workflow/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/15/tech/2014-05-04-set-environment-variables-of-server-for-php/" itemprop="url">
-                  为PHP设置服务器(Apache/Nginx)环境变量
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2014-05-04-set-environment-variables-of-server-for-php/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2014-05-04-set-environment-variables-of-server-for-php/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/15/tech/2014-05-04-set-environment-variables-of-server-for-php/" class="leancloud_visitors" data-flag-title="为PHP设置服务器(Apache/Nginx)环境变量">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          设置环境变量常见的地方为区分开发环境/生产环境，或者定义一些数据库的帐号密码
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2014-05-04-set-environment-variables-of-server-for-php/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/15/tech/2014-02-15-apache-and-nginx/" itemprop="url">
-                  从运行原理及使用场景看Apache和Nginx
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2014-02-15-apache-and-nginx/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2014-02-15-apache-and-nginx/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/15/tech/2014-02-15-apache-and-nginx/" class="leancloud_visitors" data-flag-title="从运行原理及使用场景看Apache和Nginx">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          用正确的工具，做正确的事情。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2014-02-15-apache-and-nginx/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/15/tech/2014-04-27-magic-methods-and-magic-constants-in-php/" itemprop="url">
-                  PHP中的魔术方法和魔术常量简介和使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2014-04-27-magic-methods-and-magic-constants-in-php/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2014-04-27-magic-methods-and-magic-constants-in-php/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/15/tech/2014-04-27-magic-methods-and-magic-constants-in-php/" class="leancloud_visitors" data-flag-title="PHP中的魔术方法和魔术常量简介和使用">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          有些东西如果不是经常使用，很容易忘记，比如魔术方法和魔术常量。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2014-04-27-magic-methods-and-magic-constants-in-php/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/" itemprop="url">
-                  用Laravel+Grunt+Bower管理你的应用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/" class="leancloud_visitors" data-flag-title="用Laravel+Grunt+Bower管理你的应用">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          每个开发者都应该有自己的工具箱
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/">
+            <a class="btn" href="/2016/10/15/resource/2014-01-15-general-javascript-resources/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1177,6 +810,137 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-php-resources/" itemprop="url">
+                  PHP 常用资源
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/resource/2014-01-15-general-php-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-01-15-general-php-resources/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/resource/2014-01-15-general-php-resources/" class="leancloud_visitors" data-flag-title="PHP 常用资源">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          PHP 常用资源
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/15/resource/2014-01-15-general-php-resources/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-python-resources/" itemprop="url">
                   Python 常用资源
                 </a>
@@ -1258,6 +1022,137 @@
           Python 常用资源
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/10/15/resource/2014-01-15-general-python-resources/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-shell-resources/" itemprop="url">
+                  Shell 常用资源
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/resource/2014-01-15-general-shell-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-01-15-general-shell-resources/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/resource/2014-01-15-general-shell-resources/" class="leancloud_visitors" data-flag-title="Shell 常用资源">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          shell 常用资源
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/15/resource/2014-01-15-general-shell-resources/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1439,8 +1334,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/resource/2014-01-15-general-javascript-resources/" itemprop="url">
-                  JavaScript 常用资源
+                <a class="post-title-link" href="/2016/10/15/resource/2014-08-03-general-mac-resources/" itemprop="url">
+                  Mac 常用资源
                 </a>
               
             
@@ -1483,8 +1378,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/resource/2014-01-15-general-javascript-resources/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-01-15-general-javascript-resources/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/resource/2014-08-03-general-mac-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-08-03-general-mac-resources/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1494,7 +1389,7 @@
 
           
           
-             <span id="/2016/10/15/resource/2014-01-15-general-javascript-resources/" class="leancloud_visitors" data-flag-title="JavaScript 常用资源">
+             <span id="/2016/10/15/resource/2014-08-03-general-mac-resources/" class="leancloud_visitors" data-flag-title="Mac 常用资源">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1517,9 +1412,140 @@
 
       
         
-          JavaScript 常用资源
+          mac常用资源
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/resource/2014-01-15-general-javascript-resources/">
+            <a class="btn" href="/2016/10/15/resource/2014-08-03-general-mac-resources/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/15/resource/2014-05-11-general-mysql-resources/" itemprop="url">
+                  MySQL常用资源
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
+              2016-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/15/resource/2014-05-11-general-mysql-resources/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/resource/2014-05-11-general-mysql-resources/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/15/resource/2014-05-11-general-mysql-resources/" class="leancloud_visitors" data-flag-title="MySQL常用资源">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          MySQL常用资源
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/15/resource/2014-05-11-general-mysql-resources/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1602,7 +1628,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1611,7 +1637,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://lianyucode.top/2017/02/21/React-Native/2017-02-21/</loc>
+    <lastmod>2017-02-23T02:37:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>React Native封装原生UI组件栏</title>
+        <pubTime>2017-02-21T10:40:12.000Z</pubTime>
+        
+        <tag>React-Naticve</tag>
+         
+         
+           
+             
+              <breadCrumb title="React-Native" url="https://lianyucode.top/categories/React-Native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lianyucode.top/2016/10/15/tech/2012-09-27-open-widown-in-javascript/</loc>
-    <lastmod>2017-02-23T02:35:45.000Z</lastmod>
+    <lastmod>2017-02-23T02:37:01.000Z</lastmod>
     <data>
         <display>
         <title>JS中防止浏览器屏蔽window.open</title>
@@ -18,21 +38,6 @@
              
               <breadCrumb title="JavaScript" url="https://lianyucode.top/categories/JavaScript/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lianyucode.top/2017/02/21/React-Native/2017-02-21/</loc>
-    <lastmod>2017-02-23T00:59:15.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-02-21T14:23:09.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -184,11 +189,11 @@
         <title>Mac下用brew搭建PHP(LNMP/LAMP)开发环境</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Mac</tag>
          
         <tag>MongoDB</tag>
+         
+        <tag>PHP</tag>
          
          
            
@@ -468,9 +473,9 @@
         <title>从运行原理及使用场景看Apache和Nginx</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>Nginx</tag>
-         
         <tag>Apache</tag>
+         
+        <tag>Nginx</tag>
          
          
            
@@ -630,11 +635,11 @@
         <title>Mac下用brew搭建PHP(LNMP/LAMP)开发环境</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Mac</tag>
          
         <tag>MongoDB</tag>
+         
+        <tag>PHP</tag>
          
          
            
@@ -720,9 +725,9 @@
         
         <tag>PHP</tag>
          
-        <tag>Nginx</tag>
-         
         <tag>Apache</tag>
+         
+        <tag>Nginx</tag>
          
          
            
@@ -1022,11 +1027,11 @@
         <title>安装MySQL和MongoDB的WEB管理界面</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>MySQL</tag>
+        <tag>MongoDB</tag>
          
         <tag>Linux</tag>
          
-        <tag>MongoDB</tag>
+        <tag>MySQL</tag>
          
          
            
