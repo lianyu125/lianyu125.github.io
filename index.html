@@ -322,7 +322,7 @@
           
             <hr>
 <p>title: React Native封装原生UI组件栏<br>date: 2017-02-21 18:40:12<br>tags: React-Naticve<br>categories: React-Native </p>
-<h2 id="descripton-有时候我们的应用需要进行访问原生平台系统的API接口-但是React-Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C-Swift或者C-代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如-图片处理-数据库以及一些高级功能扩展之类的。"><a href="#descripton-有时候我们的应用需要进行访问原生平台系统的API接口-但是React-Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C-Swift或者C-代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如-图片处理-数据库以及一些高级功能扩展之类的。" class="headerlink" title="descripton: 有时候我们的应用需要进行访问原生平台系统的API接口,但是React Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C,Swift或者C++代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如:图片处理,数据库以及一些高级功能扩展之类的。 "></a>descripton: 有时候我们的应用需要进行访问原生平台系统的API接口,但是React Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C,Swift或者C++代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如:图片处理,数据库以及一些高级功能扩展之类的。 </h2><pre><code>React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
+<h2 id="descripton-有时候我们的应用需要进行访问原生平台系统的API接口-但是React-Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C-Swift或者C-代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如-图片处理-数据库以及一些高级功能扩展之类的。"><a href="#descripton-有时候我们的应用需要进行访问原生平台系统的API接口-但是React-Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C-Swift或者C-代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如-图片处理-数据库以及一些高级功能扩展之类的。" class="headerlink" title="descripton: 有时候我们的应用需要进行访问原生平台系统的API接口,但是React Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C,Swift或者C++代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如:图片处理,数据库以及一些高级功能扩展之类的。 "></a>descripton: 有时候我们的应用需要进行访问原生平台系统的API接口,但是React Native可能还没有封装相应功能的组件还有可能我们需要去复用一些原生Objective-C,Swift或者C++代码而不是让JavaScript重新去实现一遍。或者我们可能需要些一些更加高级的功能代码，所线程相关的。例如:图片处理,数据库以及一些高级功能扩展之类的。 </h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>        React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
 问题来源:项目中要在注册页面显示一张验证码图片,当用户点击验证码图片时,验证码改变。
 问题分析:由于RN显示图片主要有两种[请查看React-Native正确加载图片的姿势](http://www.cnblogs.com/AliliWl/p/5849524.html),而且加载的都是固定资源的图片,并不能实现点击图片换一次验证码的需求
 </code></pre><p>##一、对原生视图进一步封装<br>举个栗子,我们要在React-Native上调用ZLYCustomView显示,那我们就得对ZLYCustomView进行一次封装才能被RN调用。原生视图如下<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ZLYCustomView</span>:<span class="title">UIView</span></span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;VerifyPicCodeViewDelegate&gt;delegate;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) RCTDirectEventBlock onGetCookie;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> * imageView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> * source;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ZLYCustomView</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
@@ -1048,6 +1048,268 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
             
               
                 
+                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="url">
+                  hexo博客中插入图片
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
+              2017-01-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" class="leancloud_visitors" data-flag-title="hexo博客中插入图片">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          在文章中插入图片
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29/" itemprop="url">
+                  hexo博客next主题下添加打赏功能
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
+              2017-01-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/26/hexo/2017-01-29/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/26/hexo/2017-01-29/" class="leancloud_visitors" data-flag-title="hexo博客next主题下添加打赏功能">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          所谓打赏就是你的博文能够打动读者，让其愿意为你的博文买单,当然这对于作者来说也是一定的鼓励，同样也是要求，你必须写出靠谱的文章，让人感到值得付出金钱的文章，读者才会心甘情愿的给你打赏。本篇文章就是来介绍一下hexo 框架下的文章如何来支持此功能。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/01/26/hexo/2017-01-29/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" itemprop="url">
                   hexo博客在导航条中添加分类和标签栏
                 </a>
@@ -1307,268 +1569,6 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="url">
-                  hexo博客中插入图片
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" class="leancloud_visitors" data-flag-title="hexo博客中插入图片">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          在文章中插入图片
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29/" itemprop="url">
-                  hexo博客next主题下添加打赏功能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/26/hexo/2017-01-29/" class="leancloud_visitors" data-flag-title="hexo博客next主题下添加打赏功能">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          所谓打赏就是你的博文能够打动读者，让其愿意为你的博文买单,当然这对于作者来说也是一定的鼓励，同样也是要求，你必须写出靠谱的文章，让人感到值得付出金钱的文章，读者才会心甘情愿的给你打赏。本篇文章就是来介绍一下hexo 框架下的文章如何来支持此功能。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1622,7 +1622,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
