@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
- 问题来源:项目中要在注册页面显示">
+<meta name="description" content="React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。     问题来源:项目中要在注册页">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native封装原生UI组件栏">
 <meta property="og:url" content="https://lianyucode.top/2017/02/21/React-Native/2017-02-21/index.html">
 <meta property="og:site_name" content="小玉的技术博客">
-<meta property="og:description" content="React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
- 问题来源:项目中要在注册页面显示">
-<meta property="og:updated_time" content="2017-02-23T02:37:21.000Z">
+<meta property="og:description" content="React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。     问题来源:项目中要在注册页">
+<meta property="og:updated_time" content="2017-02-23T02:38:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native封装原生UI组件栏">
-<meta name="twitter:description" content="React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
- 问题来源:项目中要在注册页面显示">
+<meta name="twitter:description" content="React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。     问题来源:项目中要在注册页">
 
 
 
@@ -344,10 +341,8 @@
       
 
       
-        <pre><code>React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
- 问题来源:项目中要在注册页面显示一张验证码图片,当用户点击验证码图片时,验证码改变。
- 问题分析:由于RN显示图片主要有两种[请查看React-Native正确加载图片的姿势](http://www.cnblogs.com/AliliWl/p/5849524.html),而且加载的都是固定资源的图片,并不能实现点击图片换一次验证码的需求
-</code></pre><p>##一、对原生视图进一步封装<br>举个栗子,我们要在React-Native上调用ZLYCustomView显示,那我们就得对ZLYCustomView进行一次封装才能被RN调用。原生视图如下<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ZLYCustomView</span>:<span class="title">UIView</span></span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;VerifyPicCodeViewDelegate&gt;delegate;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) RCTDirectEventBlock onGetCookie;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> * imageView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> * source;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ZLYCustomView</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
+        <p>React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。<br>     问题来源:项目中要在注册页面显示一张验证码图片,当用户点击验证码图片时,验证码改变。<br>     问题分析:由于RN显示图片主要有两种<a href="http://www.cnblogs.com/AliliWl/p/5849524.html" target="_blank" rel="external">请查看React-Native正确加载图片的姿势</a>,而且加载的都是固定资源的图片,并不能实现点击图片换一次验证码的需求</p>
+<h2 id="一、对原生视图进一步封装"><a href="#一、对原生视图进一步封装" class="headerlink" title="一、对原生视图进一步封装"></a>一、对原生视图进一步封装</h2><p>举个栗子,我们要在React-Native上调用ZLYCustomView显示,那我们就得对ZLYCustomView进行一次封装才能被RN调用。原生视图如下<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ZLYCustomView</span>:<span class="title">UIView</span></span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;VerifyPicCodeViewDelegate&gt;delegate;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) RCTDirectEventBlock onGetCookie;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> * imageView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> * source;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ZLYCustomView</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
 <h2 id="二、创建RCTViewManager的子类来管理原生视图"><a href="#二、创建RCTViewManager的子类来管理原生视图" class="headerlink" title="二、创建RCTViewManager的子类来管理原生视图"></a>二、创建RCTViewManager的子类来管理原生视图</h2><p>原生视图都需要被一个RCTViewManager的子类来创建和管理。<br>这些管理器在功能上有些类似“视图控制器”，但它们本质上都是单例 - React Native只会为每个管理器创建一个实例。<br>它们创建原生的视图并提供给RCTUIManager，RCTUIManager则会反过来委托它们在需要的时候去设置和更新视图的属性。RCTViewManager还会代理视图的所有委托，并给JavaScript发回对应的事件。</p>
 <p>提供原生视图步骤如下：</p>
 <p>首先创建一个子类 —— 命名规范为“视图名称+Manager”. 视图名称可以加上自己的前缀，这里最好避免使用RCT前缀，除非你想给官方pull request<br>添加RCT_EXPORT_MODULE()标记宏 —— 让模块接口暴露给JavaScript<br>实现-(UIView *)view方法 —— 创建并返回组件视图<br>封装属性及传递事件<br>下面先贴出完整的代码，然后会对属性和事件进行进一步的解说。</p>
@@ -433,6 +428,10 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/02/26/ios/2017-02-26-iOS-image处理/" rel="prev" title="iOS图片处理之位图图像原图修改">
+                iOS图片处理之位图图像原图修改 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -503,7 +502,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -511,7 +510,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -520,7 +519,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -549,7 +548,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二、创建RCTViewManager的子类来管理原生视图"><span class="nav-number">1.</span> <span class="nav-text">二、创建RCTViewManager的子类来管理原生视图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ZLYCustomViewManager-h"><span class="nav-number">1.1.</span> <span class="nav-text">ZLYCustomViewManager.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZLYCustomViewManager-m"><span class="nav-number">1.2.</span> <span class="nav-text">ZLYCustomViewManager.m</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对原生视图进一步封装"><span class="nav-number">1.</span> <span class="nav-text">一、对原生视图进一步封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、创建RCTViewManager的子类来管理原生视图"><span class="nav-number">2.</span> <span class="nav-text">二、创建RCTViewManager的子类来管理原生视图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ZLYCustomViewManager-h"><span class="nav-number">2.1.</span> <span class="nav-text">ZLYCustomViewManager.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZLYCustomViewManager-m"><span class="nav-number">2.2.</span> <span class="nav-text">ZLYCustomViewManager.m</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

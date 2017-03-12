@@ -260,8 +260,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/21/React-Native/2017-02-21/" itemprop="url">
-                  React Native封装原生UI组件栏
+                <a class="post-title-link" href="/2017/03/12/Java/2017-03-12-Java高级编程之连接MySQL/" itemprop="url">
+                  Java高级编程之连接MySQL
                 </a>
               
             
@@ -274,8 +274,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-21T18:40:12+08:00" content="2017-02-21">
-              2017-02-21
+            <time itemprop="dateCreated" datetime="2017-03-12T09:39:35+08:00" content="2017-03-12">
+              2017-03-12
             </time>
           </span>
 
@@ -288,8 +288,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React-Native</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -304,8 +304,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/21/React-Native/2017-02-21/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/React-Native/2017-02-21/" itemprop="commentsCount"></span>
+                <a href="/2017/03/12/Java/2017-03-12-Java高级编程之连接MySQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/12/Java/2017-03-12-Java高级编程之连接MySQL/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,7 +315,7 @@
 
           
           
-             <span id="/2017/02/21/React-Native/2017-02-21/" class="leancloud_visitors" data-flag-title="React Native封装原生UI组件栏">
+             <span id="/2017/03/12/Java/2017-03-12-Java高级编程之连接MySQL/" class="leancloud_visitors" data-flag-title="Java高级编程之连接MySQL">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,554 +338,9 @@
 
       
         
-          
-            <pre><code>React Native平台的开发其实本身也是可以让你写纯原生代码并且还可以让你访问原生平台的功能。这是一个比较高级的功能不过官方还是不推荐你在平时开发中使用这样的开发形式。但是如果你具备这样的开发能力，也是还是不错的。特别当在React Native暂时未提供部分原生功能或者模块，那么你可以使用这样的方法进行封装扩展。今天我们就来看一下原生组件的封装扩展方法。
- 问题来源:项目中要在注册页面显示一张验证码图片,当用户点击验证码图片时,验证码改变。
- 问题分析:由于RN显示图片主要有两种[请查看React-Native正确加载图片的姿势](http://www.cnblogs.com/AliliWl/p/5849524.html),而且加载的都是固定资源的图片,并不能实现点击图片换一次验证码的需求
-</code></pre><p>##一、对原生视图进一步封装<br>举个栗子,我们要在React-Native上调用ZLYCustomView显示,那我们就得对ZLYCustomView进行一次封装才能被RN调用。原生视图如下<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ZLYCustomView</span>:<span class="title">UIView</span></span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;VerifyPicCodeViewDelegate&gt;delegate;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) RCTDirectEventBlock onGetCookie;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImageView</span> * imageView;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSString</span> * source;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ZLYCustomView</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
-<h2 id="二、创建RCTViewManager的子类来管理原生视图"><a href="#二、创建RCTViewManager的子类来管理原生视图" class="headerlink" title="二、创建RCTViewManager的子类来管理原生视图"></a>二、创建RCTViewManager的子类来管理原生视图</h2><p>原生视图都需要被一个RCTViewManager的子类来创建和管理。<br>这些管理器在功能上有些类似“视图控制器”，但它们本质上都是单例 - React Native只会为每个管理器创建一个实例。<br>它们创建原生的视图并提供给RCTUIManager，RCTUIManager则会反过来委托它们在需要的时候去设置和更新视图的属性。RCTViewManager还会代理视图的所有委托，并给JavaScript发回对应的事件。</p>
-<p>提供原生视图步骤如下：</p>
-<p>首先创建一个子类 —— 命名规范为“视图名称+Manager”. 视图名称可以加上自己的前缀，这里最好避免使用RCT前缀，除非你想给官方pull request<br>添加RCT_EXPORT_MODULE()标记宏 —— 让模块接口暴露给JavaScript<br>实现-(UIView *)view方法 —— 创建并返回组件视图<br>封装属性及传递事件<br>下面先贴出完整的代码，然后会对属性和事件进行进一步的解说。</p>
-<h3 id="ZLYCustomViewManager-h"><a href="#ZLYCustomViewManager-h" class="headerlink" title="ZLYCustomViewManager.h"></a>ZLYCustomViewManager.h</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="meta">#import <span class="meta-string">"ZLYCustomViewManager.h</span></span></div><div class="line"> #import "RCTViewManager.h<span class="meta-string">"</span></div><div class="line"></div><div class="line">@interface ZLYCustomViewManager : RCTViewManager</div><div class="line">@end</div></pre></td></tr></table></figure>
-<h3 id="ZLYCustomViewManager-m"><a href="#ZLYCustomViewManager-m" class="headerlink" title="ZLYCustomViewManager.m"></a>ZLYCustomViewManager.m</h3><pre><code class="objc"> <span class="meta">#import <span class="meta-string">"ZLYCustomViewManager.h
- #import "</span>RCTBridgeModule.h<span class="meta-string">"
- #import "</span>RCTBridge.h<span class="meta-string">"
- #import "</span>RCTEventDispatcher.h<span class="meta-string">"
-@interface ZLYCustomViewManager : RCTViewManager
-//  标记宏（必要）
-RCT_EXPORT_MODULE()
-//  事件的导出，onClickBanner对应view中扩展的属性
-RCT_EXPORT_VIEW_PROPERTY(onClickBanner, RCTDirectEventBlock)
-//  通过宏RCT_EXPORT_VIEW_PROPERTY完成属性的映射和导出
-RCT_EXPORT_VIEW_PROPERTY(autoScrollTimeInterval, CGFloat);
-RCT_EXPORT_VIEW_PROPERTY(imageURLStringsGroup, NSArray);
-RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
-
-- (UIView *)view
-{
-    //  实际组件的具体大小位置由js控制
-    ZLYCustomView *customView = [ZLYCustomView alloc]init];
-    return customView;
-}
-@end</span></span>
-</code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/13/hexo/2017-02-13-hexo-bind-leancloud/" itemprop="url">
-                  hexo绑定域名后leanCloud统计阅读次数失效
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-13T08:10:12+08:00" content="2017-02-13">
-              2017-02-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/13/hexo/2017-02-13-hexo-bind-leancloud/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/13/hexo/2017-02-13-hexo-bind-leancloud/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/13/hexo/2017-02-13-hexo-bind-leancloud/" class="leancloud_visitors" data-flag-title="hexo绑定域名后leanCloud统计阅读次数失效">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/09/ios/2017-02-09-textfield光标位置/" itemprop="url">
-                  iOS textfield光标位置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-09T15:58:12+08:00" content="2017-02-09">
-              2017-02-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/09/ios/2017-02-09-textfield光标位置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/09/ios/2017-02-09-textfield光标位置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/09/ios/2017-02-09-textfield光标位置/" class="leancloud_visitors" data-flag-title="iOS textfield光标位置">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="built_in">UITextPosition</span>* beginning = <span class="keyword">self</span>.beginningOfDocument;   </div><div class="line"> <span class="built_in">UITextRange</span>* selectedRange = <span class="keyword">self</span>.selectedTextRange;  </div><div class="line"> <span class="built_in">UITextPosition</span>* selectionStart = selectedRange.start;  </div><div class="line"> <span class="built_in">UITextPosition</span>* selectionEnd = selectedRange.end;  </div><div class="line"> <span class="keyword">const</span> <span class="built_in">NSInteger</span> location = [<span class="keyword">self</span> offsetFromPosition:beginning  toPosition:selectionStart]; <span class="comment">//光标所在的位置 </span></div><div class="line"><span class="keyword">const</span> <span class="built_in">NSInteger</span> length = [<span class="keyword">self</span> offsetFromPosition:selectionStart toPosition:selectionEnd]; <span class="comment">//选中文字的长度</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/07/ios/2017-02-07-UIlabel-html/" itemprop="url">
-                  iOS UILabel显示html标签
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-07T14:50:21+08:00" content="2017-02-07">
-              2017-02-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/07/ios/2017-02-07-UIlabel-html/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/07/ios/2017-02-07-UIlabel-html/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/07/ios/2017-02-07-UIlabel-html/" class="leancloud_visitors" data-flag-title="iOS UILabel显示html标签">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>iOS7以后系统提供了显示html标签的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIKIT_EXTERN NSString *const NSHTMLTextDocumentType NS_AVAILABLE_IOS(7_0);</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">NSString *str = @&quot;&lt;font color=\&quot;#6c6c6c\&quot;&gt;满20减5 满40减15，还剩&lt;font color=\&quot;#ff9147\&quot;&gt;113天&quot;;</div><div class="line">UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 300, 50)];</div><div class="line">NSAttributedString *attrStr = [[NSAttributedString alloc] initWithData:[str dataUsingEncoding:NSUnicodeStringEncoding] options:@&#123;NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType&#125; documentAttributes:nil error:nil];</div><div class="line">label.attributedText = attrStr;</div><div class="line">//如果想要改变文字的字体,请在设置attributedText之后设置</div><div class="line">label.font = [UIFont systemFontOfSize:20];</div><div class="line">[self.view addSubview:label];</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/06/ios/2017-02-06-static-const-extern/" itemprop="url">
-                  static、const、extern简介
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-06T21:54:08+08:00" content="2017-02-06">
-              2017-02-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/02/06/ios/2017-02-06-static-const-extern/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/06/ios/2017-02-06-static-const-extern/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/06/ios/2017-02-06-static-const-extern/" class="leancloud_visitors" data-flag-title="static、const、extern简介">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>1.const作用:仅仅是用来修饰右边的变量(只能修饰变量:基本变量、指针变量、对象变量)<br>2.const修饰的变量表示只读<br>
+          本章节我们为大家介绍 Java 如何使用 使用 JDBC 连接 MySQL 数据库。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/06/ios/2017-02-06-static-const-extern/#more" rel="contents">
+            <a class="btn" href="/2017/03/12/Java/2017-03-12-Java高级编程之连接MySQL/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -936,8 +391,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
             
               
                 
-                <a class="post-title-link" href="/2017/02/06/ios/2017-02-06-textfield-placeholder/" itemprop="url">
-                  iOS设置textfield.placeholder字体及颜色
+                <a class="post-title-link" href="/2017/03/12/Java/2017-03-12-Java实例/" itemprop="url">
+                  未命名
                 </a>
               
             
@@ -950,38 +405,19 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-06T18:32:14+08:00" content="2017-02-06">
-              2017-02-06
+            <time itemprop="dateCreated" datetime="2017-03-12T09:38:08+08:00" content="2017-03-12">
+              2017-03-12
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/02/06/ios/2017-02-06-textfield-placeholder/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/06/ios/2017-02-06-textfield-placeholder/" itemprop="commentsCount"></span>
+                <a href="/2017/03/12/Java/2017-03-12-Java实例/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/12/Java/2017-03-12-Java实例/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -991,7 +427,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
           
           
-             <span id="/2017/02/06/ios/2017-02-06-textfield-placeholder/" class="leancloud_visitors" data-flag-title="iOS设置textfield.placeholder字体及颜色">
+             <span id="/2017/03/12/Java/2017-03-12-Java实例/" class="leancloud_visitors" data-flag-title="">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1015,7 +451,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">textField.placeholder = @&quot;请输入手机号码&quot;;</div><div class="line">[textField setValue:[UIColor blue] forKeyPath:@&quot;_placeholderLabel.textColor&quot;];</div><div class="line">[textField setValue:[UIFont systemFontOfSize:14] forKeyPath:@&quot;_placeholderLabel.font&quot;];</div></pre></td></tr></table></figure>
+            <p># </p>
 
           
         
@@ -1065,8 +501,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
             
               
                 
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29/" itemprop="url">
-                  hexo博客next主题下添加打赏功能
+                <a class="post-title-link" href="/2017/03/12/Java/2017-03-12-Java高级编程之发送邮件/" itemprop="url">
+                  Java高级编程之发送邮件
                 </a>
               
             
@@ -1079,8 +515,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
+            <time itemprop="dateCreated" datetime="2017-03-12T09:01:41+08:00" content="2017-03-12">
+              2017-03-12
             </time>
           </span>
 
@@ -1093,8 +529,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1109,8 +545,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29/" itemprop="commentsCount"></span>
+                <a href="/2017/03/12/Java/2017-03-12-Java高级编程之发送邮件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/12/Java/2017-03-12-Java高级编程之发送邮件/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1120,7 +556,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
           
           
-             <span id="/2017/01/26/hexo/2017-01-29/" class="leancloud_visitors" data-flag-title="hexo博客next主题下添加打赏功能">
+             <span id="/2017/03/12/Java/2017-03-12-Java高级编程之发送邮件/" class="leancloud_visitors" data-flag-title="Java高级编程之发送邮件">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1143,9 +579,9 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
       
         
-          所谓打赏就是你的博文能够打动读者，让其愿意为你的博文买单,当然这对于作者来说也是一定的鼓励，同样也是要求，你必须写出靠谱的文章，让人感到值得付出金钱的文章，读者才会心甘情愿的给你打赏。本篇文章就是来介绍一下hexo 框架下的文章如何来支持此功能。
+          使用Java应用程序发送 E-mail 十分简单，但是首先你应该在你的机器上安装 JavaMail API 和Java Activation Framework (JAF) 。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29/">
+            <a class="btn" href="/2017/03/12/Java/2017-03-12-Java高级编程之发送邮件/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1196,8 +632,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
             
               
                 
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" itemprop="url">
-                  hexo博客在导航条中添加分类和标签栏
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/" itemprop="url">
+                  Java高级编程之数据结构
                 </a>
               
             
@@ -1210,8 +646,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
+            <time itemprop="dateCreated" datetime="2017-03-11T23:30:46+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -1224,8 +660,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1240,8 +676,8 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-30-add-categories-tags/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-30-add-categories-tags/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1251,7 +687,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
           
           
-             <span id="/2017/01/26/hexo/2017-01-30-add-categories-tags/" class="leancloud_visitors" data-flag-title="hexo博客在导航条中添加分类和标签栏">
+             <span id="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/" class="leancloud_visitors" data-flag-title="Java高级编程之数据结构">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1274,289 +710,795 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
       
         
-          
-            <h2 id="在导航栏上添加分类-标签等类目"><a href="#在导航栏上添加分类-标签等类目" class="headerlink" title="在导航栏上添加分类,标签等类目"></a>在导航栏上添加分类,标签等类目</h2><p>添加导航栏方式：直接打开hexo安装根目录下的themes文件夹中，我用的是next主题（根据你主题而定），然后打开next文件夹，更改_config.yml文件，用文本方式打开，找到如下位置，默认情况下有些事注释掉的，你可以试着打开，我选择全部不注释，导航栏就是上图所示。<br><img src="../img/add-categories_01.png" alt=""></p>
-<h2 id="添加导航栏相应页面"><a href="#添加导航栏相应页面" class="headerlink" title="添加导航栏相应页面"></a>添加导航栏相应页面</h2><p>导航栏我们刚刚添加成功了，这个时候如果部署 提交，你点击的话，可能是给你报错了，404 提示你找不到页面，这是因为我们只是创建了这个链接，而页面并没有创建，默认情况下home archives 页面都是不用自己创建的，所以分类、标签、关于、404都是要我们自己创建的。<br>在hexo安装根目录下执行如下命令,</p>
-<h3 id="创建分类页面"><a href="#创建分类页面" class="headerlink" title="创建分类页面"></a>创建分类页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;categories&quot;</div></pre></td></tr></table></figure>
-<p>执行完，在hexo根目录下的source文件夹中会多出一个categories文件夹，里面默认有一个index.md的文件，这就是我们创建的导航栏的分类页面 。</p>
-<h3 id="创建标签页面"><a href="#创建标签页面" class="headerlink" title="创建标签页面"></a>创建标签页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
-<p>执行完，在hexo根目录下的source文件夹中会多出一个tags文件夹，里面默认有一个index.md的文件，这就是我们创建的导航栏的标签页面 。</p>
-<h3 id="创建关于页面"><a href="#创建关于页面" class="headerlink" title="创建关于页面"></a>创建关于页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;about&quot;</div></pre></td></tr></table></figure>
-<p>执行完，在hexo根目录下的source文件夹中会多出一个about文件夹，里面默认有一个index.md的文件，这就是我们创建的导航栏的标签页面 。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" itemprop="url">
-                  使用hexo+gitpages创建自己的博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" class="leancloud_visitors" data-flag-title="使用hexo+gitpages创建自己的博客">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装git<br>2.安装node.js<br>3.申请github账号</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>1.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p><img src="../img/hexo-cli.png" alt=""></p>
-<p>2.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure></p>
-<p><img src="../img/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
-<p>如下图所示,则表示安装成功<br><img src="../img/hexo_v.png" alt=""></p>
-<h2 id="本地运行hexo"><a href="#本地运行hexo" class="headerlink" title="本地运行hexo"></a>本地运行hexo</h2><p>1.初始化hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>如下图则表示初始化成功<br><img src="../img/hexo_init.png" alt=""><br>2.安装生成器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<p>3.本地运行hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -g</div></pre></td></tr></table></figure></p>
-<p><img src="../img/hexo_run.png" alt=""><br> 如图则表示运行成功<br> <img src="../img/hexo_demo.png" alt=""></p>
-<h2 id="一键部署到github"><a href="#一键部署到github" class="headerlink" title="一键部署到github"></a>一键部署到github</h2><p>1.打开博客目录中的_config.yml文件<br>修改文件中的deploy下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  #elfwalk改为你的github用户名</div><div class="line">  repository: https://github.com/lianyu125/lianyu125.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>2.安装hexo git 插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>3.生成静态页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
-<p>4.发布到github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p>这样我们的博客就搭建起来了 <a href="https://lianyu125.github.io" target="_blank" rel="external"></a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="url">
-                  hexo博客中插入图片
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" class="leancloud_visitors" data-flag-title="hexo博客中插入图片">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          在文章中插入图片
+          Java工具包提供了强大的数据结构。在Java中的数据结构主要包括以下几种接口和类：枚举（Enumeration）、位集合（BitSet）、向量（Vector）、栈（Stack）、字典（Dictionary）、哈希表（Hashtable）、属性（Properties）以上这些类是传统遗留的，在Java2中引入了一种新的框架-集合框架(Collection)，我们后面再讨论。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java 包(package)/" itemprop="url">
+                  Java 包(package)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T22:59:01+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-Java 包(package)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java 包(package)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-Java 包(package)/" class="leancloud_visitors" data-flag-title="Java 包(package)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java 包(package)/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java接口/" itemprop="url">
+                  Java接口
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T22:38:18+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-Java接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java接口/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-Java接口/" class="leancloud_visitors" data-flag-title="Java接口">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java接口/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java 封装/" itemprop="url">
+                  Java封装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T21:32:19+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-1-Java 封装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java 封装/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-1-Java 封装/" class="leancloud_visitors" data-flag-title="Java封装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          在面向对象程式设计方法中，封装（英语：Encapsulation）是指，一种将抽象性函式接口的实作细节部份包装、隐藏起来的方法。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制。封装最主要的功能在于我们能修改自己的实现代码，而不用修改那些调用我们代码的程序片段。适当的封装可以让程式码更容易理解与维护，也加强了程式码的安全性。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java 封装/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java 抽象类/" itemprop="url">
+                  Java抽象类
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T21:08:31+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-1-Java 抽象类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java 抽象类/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-1-Java 抽象类/" class="leancloud_visitors" data-flag-title="Java抽象类">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。抽象类除了不能实例化对象之外，类的其它功能依然存在，成员变量、成员方法和构造方法的访问方式和普通类一样。由于抽象类不能实例化对象，所以抽象类必须被继承，才能被使用。也是因为这个原因，通常在设计阶段决定要不要设计抽象类父类包含了子类集合的常见的方法，但是由于父类本身是抽象的，所以不能使用这些方法。在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java 抽象类/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java-多态/" itemprop="url">
+                  Java多态
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T20:40:36+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-1-Java-多态/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java-多态/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-1-Java-多态/" class="leancloud_visitors" data-flag-title="Java多态">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java-多态/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java继承/" itemprop="url">
+                  Java继承
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T20:11:29+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-1-Java继承/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java继承/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-1-Java继承/" class="leancloud_visitors" data-flag-title="Java继承">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          继承是java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java继承/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1590,7 +1532,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1631,7 +1573,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1639,7 +1581,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1648,7 +1590,7 @@ RCT_EXPORT_VIEW_PROPERTY(autoScroll, BOOL);
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
