@@ -1,0 +1,844 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS,cocoapods" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="iOS模块化编程最重要的工具莫过于cocoapods,下面介绍一下让你的库文件支持cocoapods">
+<meta property="og:type" content="article">
+<meta property="og:title" content="让你的库文件支持cocoapods">
+<meta property="og:url" content="https://lianyucode.top/2017/03/13/ios/2017-03-13-让你的库文件支持cocoapods/index.html">
+<meta property="og:site_name" content="小玉的技术博客">
+<meta property="og:description" content="iOS模块化编程最重要的工具莫过于cocoapods,下面介绍一下让你的库文件支持cocoapods">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_01.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_01.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_02.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_03.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_04.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_05.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_06.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_07.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_08.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_09.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png">
+<meta property="og:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png">
+<meta property="og:updated_time" content="2017-05-10T00:29:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="让你的库文件支持cocoapods">
+<meta name="twitter:description" content="iOS模块化编程最重要的工具莫过于cocoapods,下面介绍一下让你的库文件支持cocoapods">
+<meta name="twitter:image" content="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_01.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 让你的库文件支持cocoapods | 小玉的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98679319-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?132a3cac7f4bc6a41cbc5e7ad0a04272";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小玉的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                让你的库文件支持cocoapods
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T22:36:24+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/13/ios/2017-03-13-让你的库文件支持cocoapods/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/ios/2017-03-13-让你的库文件支持cocoapods/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/13/ios/2017-03-13-让你的库文件支持cocoapods/" class="leancloud_visitors" data-flag-title="让你的库文件支持cocoapods">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="整体步骤"><a href="#整体步骤" class="headerlink" title="整体步骤"></a>整体步骤</h2><p>1.在本地创建静态库工程<br>2.创建podspec文件,并验证是否通过<br>3.上传到github,并创建release版本<br>4.注册cocoapods账号<br>5.上传代码到cocoapods<br>6.检查上传是否成功</p>
+<h2 id="首先我们打开github-com，然后创建自己的项目工程："><a href="#首先我们打开github-com，然后创建自己的项目工程：" class="headerlink" title="首先我们打开github.com，然后创建自己的项目工程："></a>首先我们打开github.com，然后创建自己的项目工程：</h2><p><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_01.png" alt=""><br>【注】因为我的github中已经创建了上面那个仓库，所以才会有上面那个提示<br>这里注意那个MIT License，在后面添加Cocoapods支持的时候会用到（稍后介绍）。然后点击创建即可。<br>然后用SouceTree将代码down到本地,你会发现文件夹中包含一个LICENSE文件，这里的LICENSE就是刚才说的MIT License添加的文件。然后我们在ZLYNetWorking文件夹中创建一个静态库工程<img src="http://okjl482qy.bkt.clouddn.com/cocoapods_01.png" alt=""></p>
+<p>接下来就开始编写自己的代码了，然后提交到Github就可以了。</p>
+<h2 id="创建podspec文件"><a href="#创建podspec文件" class="headerlink" title="创建podspec文件"></a>创建podspec文件</h2><p>我们使用终端到仓库的根目录下ZLYNetWorking.<br>然后执行下面的命令：<br><code>pod spec create ZLYNetWorking</code><br>这里的ZLYNetWorking就是pod添加市的名字（例如MBProgressHUD）。执行完后的结果：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_02.png" alt=""><br>此时在工程文件夹下也会多一个ZLYNetWorking.podspec文件。这里我用xcode打开并做了如下编辑：</p>
+<p>#</p>
+<h1 id="Be-sure-to-run-pod-spec-lint-ZLYNetWorking-podspec’-to-ensure-this-is-a"><a href="#Be-sure-to-run-pod-spec-lint-ZLYNetWorking-podspec’-to-ensure-this-is-a" class="headerlink" title="Be sure to run `pod spec lint ZLYNetWorking.podspec’ to ensure this is a"></a>Be sure to run `pod spec lint ZLYNetWorking.podspec’ to ensure this is a</h1><h1 id="valid-spec-and-to-remove-all-comments-including-this-before-submitting-the-spec"><a href="#valid-spec-and-to-remove-all-comments-including-this-before-submitting-the-spec" class="headerlink" title="valid spec and to remove all comments including this before submitting the spec."></a>valid spec and to remove all comments including this before submitting the spec.</h1><p>#</p>
+<h1 id="To-learn-more-about-Podspec-attributes-see-http-docs-cocoapods-org-specification-html"><a href="#To-learn-more-about-Podspec-attributes-see-http-docs-cocoapods-org-specification-html" class="headerlink" title="To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html"></a>To learn more about Podspec attributes see <a href="http://docs.cocoapods.org/specification.html" target="_blank" rel="external">http://docs.cocoapods.org/specification.html</a></h1><h1 id="To-see-working-Podspecs-in-the-CocoaPods-repo-see-https-github-com-CocoaPods-Specs"><a href="#To-see-working-Podspecs-in-the-CocoaPods-repo-see-https-github-com-CocoaPods-Specs" class="headerlink" title="To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/"></a>To see working Podspecs in the CocoaPods repo see <a href="https://github.com/CocoaPods/Specs/" target="_blank" rel="external">https://github.com/CocoaPods/Specs/</a></h1><p>#</p>
+<p>Pod::Spec.new do |s|</p>
+<h1 id="―――-Spec-Metadata-――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"><a href="#―――-Spec-Metadata-――――――――――――――――――――――――――――――――――――――――――――――――――――――――――" class="headerlink" title="―――  Spec Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"></a>―――  Spec Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――</h1><p>  #</p>
+<h1 id="These-will-help-people-to-find-your-library-and-whilst-it"><a href="#These-will-help-people-to-find-your-library-and-whilst-it" class="headerlink" title="These will help people to find your library, and whilst it"></a>These will help people to find your library, and whilst it</h1><h1 id="can-feel-like-a-chore-to-fill-in-it’s-definitely-to-your-advantage-The"><a href="#can-feel-like-a-chore-to-fill-in-it’s-definitely-to-your-advantage-The" class="headerlink" title="can feel like a chore to fill in it’s definitely to your advantage. The"></a>can feel like a chore to fill in it’s definitely to your advantage. The</h1><h1 id="summary-should-be-tweet-length-and-the-description-more-in-depth"><a href="#summary-should-be-tweet-length-and-the-description-more-in-depth" class="headerlink" title="summary should be tweet-length, and the description more in depth."></a>summary should be tweet-length, and the description more in depth.</h1><p>  #</p>
+<p>  s.name         = “ZLYNetWorking”<br>  s.version      = “0.0.1”<br>  s.summary      = “A network Framework based on AFNetworking”</p>
+<h1 id="This-description-is-used-to-generate-tags-and-improve-search-results"><a href="#This-description-is-used-to-generate-tags-and-improve-search-results" class="headerlink" title="This description is used to generate tags and improve search results."></a>This description is used to generate tags and improve search results.</h1><h1 id="Think-What-does-it-do-Why-did-you-write-it-What-is-the-focus"><a href="#Think-What-does-it-do-Why-did-you-write-it-What-is-the-focus" class="headerlink" title="* Think: What does it do? Why did you write it? What is the focus?"></a>* Think: What does it do? Why did you write it? What is the focus?</h1><h1 id="Try-to-keep-it-short-snappy-and-to-the-point"><a href="#Try-to-keep-it-short-snappy-and-to-the-point" class="headerlink" title="* Try to keep it short, snappy and to the point."></a>* Try to keep it short, snappy and to the point.</h1><h1 id="Write-the-description-between-the-DESC-delimiters-below"><a href="#Write-the-description-between-the-DESC-delimiters-below" class="headerlink" title="* Write the description between the DESC delimiters below."></a>* Write the description between the DESC delimiters below.</h1><h1 id="Finally-don’t-worry-about-the-indent-CocoaPods-strips-it"><a href="#Finally-don’t-worry-about-the-indent-CocoaPods-strips-it" class="headerlink" title="* Finally, don’t worry about the indent, CocoaPods strips it!"></a>* Finally, don’t worry about the indent, CocoaPods strips it!</h1><p>  s.description  = &lt;&lt;-DESC<br>                    网络请求模块<br>                    网络请求模块<br>                    网络请求模块<br>                    网络请求模块<br>                    网络请求模块<br>                    网络请求模块<br>                   DESC</p>
+<p>  s.homepage     = “<a href="https://github.com/lianyu125/ZLYNetWorking" target="_blank" rel="external">https://github.com/lianyu125/ZLYNetWorking</a>“</p>
+<h1 id="s-screenshots-“www-example-com-screenshots-1-gif”-“www-example-com-screenshots-2-gif”"><a href="#s-screenshots-“www-example-com-screenshots-1-gif”-“www-example-com-screenshots-2-gif”" class="headerlink" title="s.screenshots  = “www.example.com/screenshots_1.gif”, “www.example.com/screenshots_2.gif”"></a>s.screenshots  = “www.example.com/screenshots_1.gif”, “www.example.com/screenshots_2.gif”</h1><h1 id="―――-Spec-License-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"><a href="#―――-Spec-License-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――" class="headerlink" title="―――  Spec License  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"></a>―――  Spec License  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――</h1><p>  #</p>
+<h1 id="Licensing-your-code-is-important-See-http-choosealicense-com-for-more-info"><a href="#Licensing-your-code-is-important-See-http-choosealicense-com-for-more-info" class="headerlink" title="Licensing your code is important. See http://choosealicense.com for more info."></a>Licensing your code is important. See <a href="http://choosealicense.com" target="_blank" rel="external">http://choosealicense.com</a> for more info.</h1><h1 id="CocoaPods-will-detect-a-license-file-if-there-is-a-named-LICENSE"><a href="#CocoaPods-will-detect-a-license-file-if-there-is-a-named-LICENSE" class="headerlink" title="CocoaPods will detect a license file if there is a named LICENSE*"></a>CocoaPods will detect a license file if there is a named LICENSE*</h1><h1 id="Popular-ones-are-‘MIT’-‘BSD’-and-‘Apache-License-Version-2-0’"><a href="#Popular-ones-are-‘MIT’-‘BSD’-and-‘Apache-License-Version-2-0’" class="headerlink" title="Popular ones are ‘MIT’, ‘BSD’ and ‘Apache License, Version 2.0’."></a>Popular ones are ‘MIT’, ‘BSD’ and ‘Apache License, Version 2.0’.</h1><p>  #</p>
+<h1 id="s-license-“MIT”"><a href="#s-license-“MIT”" class="headerlink" title="s.license      = “MIT”"></a>s.license      = “MIT”</h1><pre><code>s.license      = { :type =&gt; &quot;MIT&quot;, :file =&gt; &quot;LICENSE&quot; }
+</code></pre><h1 id="―――-Author-Metadata-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――"><a href="#―――-Author-Metadata-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――" class="headerlink" title="――― Author Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――"></a>――― Author Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――</h1><p>  #</p>
+<h1 id="Specify-the-authors-of-the-library-with-email-addresses-Email-addresses"><a href="#Specify-the-authors-of-the-library-with-email-addresses-Email-addresses" class="headerlink" title="Specify the authors of the library, with email addresses. Email addresses"></a>Specify the authors of the library, with email addresses. Email addresses</h1><h1 id="of-the-authors-are-extracted-from-the-SCM-log-E-g-git-log-CocoaPods-also"><a href="#of-the-authors-are-extracted-from-the-SCM-log-E-g-git-log-CocoaPods-also" class="headerlink" title="of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also"></a>of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also</h1><h1 id="accepts-just-a-name-if-you’d-rather-not-provide-an-email-address"><a href="#accepts-just-a-name-if-you’d-rather-not-provide-an-email-address" class="headerlink" title="accepts just a name if you’d rather not provide an email address."></a>accepts just a name if you’d rather not provide an email address.</h1><p>  #</p>
+<h1 id="Specify-a-social-media-url-where-others-can-refer-to-for-example-a-twitter"><a href="#Specify-a-social-media-url-where-others-can-refer-to-for-example-a-twitter" class="headerlink" title="Specify a social_media_url where others can refer to, for example a twitter"></a>Specify a social_media_url where others can refer to, for example a twitter</h1><h1 id="profile-URL"><a href="#profile-URL" class="headerlink" title="profile URL."></a>profile URL.</h1><p>  #</p>
+<p>  s.author             = { “lianyu.zou” =&gt; “lianyu125@gmail.com” }<br>  s.platform     = :ios, “7.0”</p>
+<p>  s.source       = { :git =&gt; “<a href="https://github.com/lianyu125/ZLYNetWorking.git" target="_blank" rel="external">https://github.com/lianyu125/ZLYNetWorking.git</a>“, :branch =&gt; “master” }<br>  s.source_files  = “ZLYNetWorking”, “ZLYNetWorking/<em>*/</em>.{h,m}”<br>  s.exclude_files = “ZLYNetWorking/Exclude”<br>end</p>
+<p>name:类库的名称这里字段介绍如下：<br>version:库的版本<br>summary就是介绍语,就是：<br>homtepage:Github上项目地址<br>license:许可证<br>author:作者<br>source:项目的https链接地址<br>source_files:要共享的代码，这里是ZLYNetWorking下面的所有代码。<br>接下来执行下面的命令进行验证：</p>
+<p><code>pod lib lint ZLYNetWorking.podspec</code><br>结果多种多样，如果有错，则按照提示进行改错即可。在这里，我执行的结果如下图：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_03.png" alt=""><br>发现了多个警告，只要不是错误就行，警告可以直接忽略（红色也提示如何忽略）：<br>pod lib lint ZLYNetWorking.podspec —allow-warnings<br>结果如下：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_04.png" alt=""><br>当看到ZLYNetWorking passed validation之后，就说明验证通过了。</p>
+<h2 id="在Github上创建release版本"><a href="#在Github上创建release版本" class="headerlink" title="在Github上创建release版本"></a>在Github上创建release版本</h2><p>打开项目的目录，然后创建release版本的类库：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_05.png" alt=""><br>点击 箭头指向开始创建release版本，（点击 Create a new release）：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_06.png" alt=""><br>点击Publish release即可。创建完成后如图所示：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_07.png" alt=""><br>这样第三步就完成了<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_08.png" alt=""></p>
+<h2 id="注册CocoaPods账号"><a href="#注册CocoaPods账号" class="headerlink" title="注册CocoaPods账号"></a>注册CocoaPods账号</h2><p>执行命令行：</p>
+<p><code>pod trunk register 邮箱地址 ‘用户名’ —description=&#39;描述信息&#39;</code></p>
+<p>黄色提示已经发送了一个验证码到邮箱，你可以打开你的邮箱验证即可。<br>这样就成功注册了Cocoapods账号。</p>
+<p>可以用</p>
+<p><code>pod trunk me</code><br>检查是否创建成功。成功的结果如下：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_09.png" alt=""></p>
+<h2 id="上传代码到CocoaPods"><a href="#上传代码到CocoaPods" class="headerlink" title="上传代码到CocoaPods"></a>上传代码到CocoaPods</h2><p>首先检测文件格式的有效性：</p>
+<p>pod spec lint<br>结果如下：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png" alt=""><br>没有错误，但是有警告。可以使用 —allow-warnings忽略：<br>出现passed validation就说明通过验证了。然后执行：</p>
+<p><code>pod trunk push ZGRSAEncryptor.podspec —allow-warnings</code><br>执行结果如下：（速度应该有的慢）<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png" alt=""><br>说明了已经上传成功。</p>
+<h2 id="检查上传是否成功"><a href="#检查上传是否成功" class="headerlink" title="检查上传是否成功"></a>检查上传是否成功</h2><p>使用<br><code>pod search ZLYNetWorking</code></p>
+<p>若果提示如下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[!] Unable to find a pod with name, author, summary, or descriptionmatching <span class="string">'······'</span></div></pre></td></tr></table></figure></p>
+<p>则请看我的另一篇博客</p>
+<p>ok，已经成功了。这样就可以让其他人进行搜索使用了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://okjl482qy.bkt.clouddn.com/weixin.jpg" alt=" WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://okjl482qy.bkt.clouddn.com/zhifubao.jpg" alt=" Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/cocoapods/" rel="tag">#cocoapods</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/13/tool/2017-03-13-.tar.gz格式的文件安装/" rel="next" title=".tar.gz格式的文件安装">
+                <i class="fa fa-chevron-left"></i> .tar.gz格式的文件安装
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/15/ios/2017-03-15-pod search/" rel="prev" title="Cocoapods 之pod search无法搜索到类库的解决办法">
+                Cocoapods 之pod search无法搜索到类库的解决办法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/13/ios/2017-03-13-让你的库文件支持cocoapods/"
+           data-title="让你的库文件支持cocoapods" data-url="https://lianyucode.top/2017/03/13/ios/2017-03-13-让你的库文件支持cocoapods/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">116</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体步骤"><span class="nav-number">1.</span> <span class="nav-text">整体步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首先我们打开github-com，然后创建自己的项目工程："><span class="nav-number">2.</span> <span class="nav-text">首先我们打开github.com，然后创建自己的项目工程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建podspec文件"><span class="nav-number">3.</span> <span class="nav-text">创建podspec文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Be-sure-to-run-pod-spec-lint-ZLYNetWorking-podspec’-to-ensure-this-is-a"><span class="nav-number"></span> <span class="nav-text">Be sure to run `pod spec lint ZLYNetWorking.podspec’ to ensure this is a</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#valid-spec-and-to-remove-all-comments-including-this-before-submitting-the-spec"><span class="nav-number"></span> <span class="nav-text">valid spec and to remove all comments including this before submitting the spec.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#To-learn-more-about-Podspec-attributes-see-http-docs-cocoapods-org-specification-html"><span class="nav-number"></span> <span class="nav-text">To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#To-see-working-Podspecs-in-the-CocoaPods-repo-see-https-github-com-CocoaPods-Specs"><span class="nav-number"></span> <span class="nav-text">To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#―――-Spec-Metadata-――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"><span class="nav-number"></span> <span class="nav-text">―――  Spec Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#These-will-help-people-to-find-your-library-and-whilst-it"><span class="nav-number"></span> <span class="nav-text">These will help people to find your library, and whilst it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#can-feel-like-a-chore-to-fill-in-it’s-definitely-to-your-advantage-The"><span class="nav-number"></span> <span class="nav-text">can feel like a chore to fill in it’s definitely to your advantage. The</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#summary-should-be-tweet-length-and-the-description-more-in-depth"><span class="nav-number"></span> <span class="nav-text">summary should be tweet-length, and the description more in depth.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#This-description-is-used-to-generate-tags-and-improve-search-results"><span class="nav-number"></span> <span class="nav-text">This description is used to generate tags and improve search results.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Think-What-does-it-do-Why-did-you-write-it-What-is-the-focus"><span class="nav-number"></span> <span class="nav-text">* Think: What does it do? Why did you write it? What is the focus?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Try-to-keep-it-short-snappy-and-to-the-point"><span class="nav-number"></span> <span class="nav-text">* Try to keep it short, snappy and to the point.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Write-the-description-between-the-DESC-delimiters-below"><span class="nav-number"></span> <span class="nav-text">* Write the description between the DESC delimiters below.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Finally-don’t-worry-about-the-indent-CocoaPods-strips-it"><span class="nav-number"></span> <span class="nav-text">* Finally, don’t worry about the indent, CocoaPods strips it!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#s-screenshots-“www-example-com-screenshots-1-gif”-“www-example-com-screenshots-2-gif”"><span class="nav-number"></span> <span class="nav-text">s.screenshots  = “www.example.com/screenshots_1.gif”, “www.example.com/screenshots_2.gif”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#―――-Spec-License-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"><span class="nav-number"></span> <span class="nav-text">―――  Spec License  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Licensing-your-code-is-important-See-http-choosealicense-com-for-more-info"><span class="nav-number"></span> <span class="nav-text">Licensing your code is important. See http://choosealicense.com for more info.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CocoaPods-will-detect-a-license-file-if-there-is-a-named-LICENSE"><span class="nav-number"></span> <span class="nav-text">CocoaPods will detect a license file if there is a named LICENSE*</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Popular-ones-are-‘MIT’-‘BSD’-and-‘Apache-License-Version-2-0’"><span class="nav-number"></span> <span class="nav-text">Popular ones are ‘MIT’, ‘BSD’ and ‘Apache License, Version 2.0’.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#s-license-“MIT”"><span class="nav-number"></span> <span class="nav-text">s.license      = “MIT”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#―――-Author-Metadata-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――"><span class="nav-number"></span> <span class="nav-text">――― Author Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Specify-the-authors-of-the-library-with-email-addresses-Email-addresses"><span class="nav-number"></span> <span class="nav-text">Specify the authors of the library, with email addresses. Email addresses</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#of-the-authors-are-extracted-from-the-SCM-log-E-g-git-log-CocoaPods-also"><span class="nav-number"></span> <span class="nav-text">of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#accepts-just-a-name-if-you’d-rather-not-provide-an-email-address"><span class="nav-number"></span> <span class="nav-text">accepts just a name if you’d rather not provide an email address.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Specify-a-social-media-url-where-others-can-refer-to-for-example-a-twitter"><span class="nav-number"></span> <span class="nav-text">Specify a social_media_url where others can refer to, for example a twitter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#profile-URL"><span class="nav-number"></span> <span class="nav-text">profile URL.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Github上创建release版本"><span class="nav-number">1.</span> <span class="nav-text">在Github上创建release版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册CocoaPods账号"><span class="nav-number">2.</span> <span class="nav-text">注册CocoaPods账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传代码到CocoaPods"><span class="nav-number">3.</span> <span class="nav-text">上传代码到CocoaPods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查上传是否成功"><span class="nav-number">4.</span> <span class="nav-text">检查上传是否成功</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lianyu125"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz", "OyV7SQidxc4c3oBzUDUFeass");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

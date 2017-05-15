@@ -115,6 +115,15 @@
   
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-98679319-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
   <script type="text/javascript">
     var _hmt = _hmt || [];
@@ -260,8 +269,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" itemprop="url">
-                  使用hexo+gitpages创建自己的博客
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/" itemprop="url">
+                  Java高级编程之数据结构
                 </a>
               
             
@@ -274,8 +283,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
+            <time itemprop="dateCreated" datetime="2017-03-11T23:30:46+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -288,8 +297,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -304,8 +313,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,7 +324,7 @@
 
           
           
-             <span id="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" class="leancloud_visitors" data-flag-title="使用hexo+gitpages创建自己的博客">
+             <span id="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/" class="leancloud_visitors" data-flag-title="Java高级编程之数据结构">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,153 +347,9 @@
 
       
         
-          
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装git<br>2.安装node.js<br>3.申请github账号</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>1.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p><img src="../img/hexo-cli.png" alt=""></p>
-<p>2.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure></p>
-<p><img src="../img/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
-<p>如下图所示,则表示安装成功<br><img src="../img/hexo_v.png" alt=""></p>
-<h2 id="本地运行hexo"><a href="#本地运行hexo" class="headerlink" title="本地运行hexo"></a>本地运行hexo</h2><p>1.初始化hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>如下图则表示初始化成功<br><img src="../img/hexo_init.png" alt=""><br>2.安装生成器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<p>3.本地运行hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -g</div></pre></td></tr></table></figure></p>
-<p><img src="../img/hexo_run.png" alt=""><br> 如图则表示运行成功<br> <img src="../img/hexo_demo.png" alt=""></p>
-<h2 id="一键部署到github"><a href="#一键部署到github" class="headerlink" title="一键部署到github"></a>一键部署到github</h2><p>1.打开博客目录中的_config.yml文件<br>修改文件中的deploy下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  #elfwalk改为你的github用户名</div><div class="line">  repository: https://github.com/lianyu125/lianyu125.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>2.安装hexo git 插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>3.生成静态页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
-<p>4.发布到github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p>这样我们的博客就搭建起来了 <a href="https://lianyu125.github.io" target="_blank" rel="external"></a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29/" itemprop="url">
-                  hexo博客next主题下添加打赏功能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/26/hexo/2017-01-29/" class="leancloud_visitors" data-flag-title="hexo博客next主题下添加打赏功能">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          所谓打赏就是你的博文能够打动读者，让其愿意为你的博文买单,当然这对于作者来说也是一定的鼓励，同样也是要求，你必须写出靠谱的文章，让人感到值得付出金钱的文章，读者才会心甘情愿的给你打赏。本篇文章就是来介绍一下hexo 框架下的文章如何来支持此功能。
+          Java工具包提供了强大的数据结构。在Java中的数据结构主要包括以下几种接口和类：枚举（Enumeration）、位集合（BitSet）、向量（Vector）、栈（Stack）、字典（Dictionary）、哈希表（Hashtable）、属性（Properties）以上这些类是传统遗留的，在Java2中引入了一种新的框架-集合框架(Collection)，我们后面再讨论。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java 高级编程之数据结构/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -535,8 +400,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="url">
-                  hexo博客中插入图片
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java 包(package)/" itemprop="url">
+                  Java 包(package)
                 </a>
               
             
@@ -549,8 +414,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
+            <time itemprop="dateCreated" datetime="2017-03-11T22:59:01+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -563,8 +428,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -579,8 +444,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-29-hexo-insertpicture/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-Java 包(package)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java 包(package)/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -590,7 +455,7 @@
 
           
           
-             <span id="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/" class="leancloud_visitors" data-flag-title="hexo博客中插入图片">
+             <span id="/2017/03/11/Java/2017-03-11-Java 包(package)/" class="leancloud_visitors" data-flag-title="Java 包(package)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -613,9 +478,9 @@
 
       
         
-          在文章中插入图片
+          为了更好地组织类，Java 提供了包机制，用于区别类名的命名空间。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/26/hexo/2017-01-29-hexo-insertpicture/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java 包(package)/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -666,8 +531,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" itemprop="url">
-                  hexo博客在导航条中添加分类和标签栏
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java接口/" itemprop="url">
+                  Java接口
                 </a>
               
             
@@ -680,8 +545,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-26T18:40:12+08:00" content="2017-01-26">
-              2017-01-26
+            <time itemprop="dateCreated" datetime="2017-03-11T22:38:18+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -694,8 +559,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -710,8 +575,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/01/26/hexo/2017-01-30-add-categories-tags/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/26/hexo/2017-01-30-add-categories-tags/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-Java接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java接口/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -721,7 +586,7 @@
 
           
           
-             <span id="/2017/01/26/hexo/2017-01-30-add-categories-tags/" class="leancloud_visitors" data-flag-title="hexo博客在导航条中添加分类和标签栏">
+             <span id="/2017/03/11/Java/2017-03-11-Java接口/" class="leancloud_visitors" data-flag-title="Java接口">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -744,145 +609,9 @@
 
       
         
-          
-            <h2 id="在导航栏上添加分类-标签等类目"><a href="#在导航栏上添加分类-标签等类目" class="headerlink" title="在导航栏上添加分类,标签等类目"></a>在导航栏上添加分类,标签等类目</h2><p>添加导航栏方式：直接打开hexo安装根目录下的themes文件夹中，我用的是next主题（根据你主题而定），然后打开next文件夹，更改_config.yml文件，用文本方式打开，找到如下位置，默认情况下有些事注释掉的，你可以试着打开，我选择全部不注释，导航栏就是上图所示。<br><img src="../img/add-categories_01.png" alt=""></p>
-<h2 id="添加导航栏相应页面"><a href="#添加导航栏相应页面" class="headerlink" title="添加导航栏相应页面"></a>添加导航栏相应页面</h2><p>导航栏我们刚刚添加成功了，这个时候如果部署 提交，你点击的话，可能是给你报错了，404 提示你找不到页面，这是因为我们只是创建了这个链接，而页面并没有创建，默认情况下home archives 页面都是不用自己创建的，所以分类、标签、关于、404都是要我们自己创建的。<br>在hexo安装根目录下执行如下命令,</p>
-<h3 id="创建分类页面"><a href="#创建分类页面" class="headerlink" title="创建分类页面"></a>创建分类页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;categories&quot;</div></pre></td></tr></table></figure>
-<p>执行完，在hexo根目录下的source文件夹中会多出一个categories文件夹，里面默认有一个index.md的文件，这就是我们创建的导航栏的分类页面 。</p>
-<h3 id="创建标签页面"><a href="#创建标签页面" class="headerlink" title="创建标签页面"></a>创建标签页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;tags&quot;</div></pre></td></tr></table></figure>
-<p>执行完，在hexo根目录下的source文件夹中会多出一个tags文件夹，里面默认有一个index.md的文件，这就是我们创建的导航栏的标签页面 。</p>
-<h3 id="创建关于页面"><a href="#创建关于页面" class="headerlink" title="创建关于页面"></a>创建关于页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new page &quot;about&quot;</div></pre></td></tr></table></figure>
-<p>执行完，在hexo根目录下的source文件夹中会多出一个about文件夹，里面默认有一个index.md的文件，这就是我们创建的导航栏的标签页面 。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/07/ios/2017-01-07/" itemprop="url">
-                  ios内存管理之自动引用计数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-07T16:25:47+08:00" content="2017-01-07">
-              2017-01-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/01/07/ios/2017-01-07/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/07/ios/2017-01-07/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/01/07/ios/2017-01-07/" class="leancloud_visitors" data-flag-title="ios内存管理之自动引用计数">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>##自动引用计数<br>自动引用计数是指内存管理对引用采取自动计数的技术。以下内容摘自苹果官方文档<br><img src="media/summary.png" alt="summary"><br>
+          接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常以interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。接口并不是类，编写接口的方式和类很相似，但是它们属于不同的概念。类描述对象的属性和方法。接口则包含类要实现的方法。除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/07/ios/2017-01-07/#more" rel="contents">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java接口/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -933,8 +662,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/16/ios/2016-12-16-iOS开发之KVO/" itemprop="url">
-                  iOS开发之KVO深入理解
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java 封装/" itemprop="url">
+                  Java封装
                 </a>
               
             
@@ -947,8 +676,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-16T22:08:36+08:00" content="2016-12-16">
-              2016-12-16
+            <time itemprop="dateCreated" datetime="2017-03-11T21:32:19+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -961,8 +690,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -977,8 +706,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/16/ios/2016-12-16-iOS开发之KVO/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/16/ios/2016-12-16-iOS开发之KVO/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-1-Java 封装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java 封装/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -988,7 +717,7 @@
 
           
           
-             <span id="/2016/12/16/ios/2016-12-16-iOS开发之KVO/" class="leancloud_visitors" data-flag-title="iOS开发之KVO深入理解">
+             <span id="/2017/03/11/Java/2017-03-11-1-Java 封装/" class="leancloud_visitors" data-flag-title="Java封装">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1011,9 +740,9 @@
 
       
         
-          KVO原理及使用
+          在面向对象程式设计方法中，封装（英语：Encapsulation）是指，一种将抽象性函式接口的实作细节部份包装、隐藏起来的方法。封装可以被认为是一个保护屏障，防止该类的代码和数据被外部类定义的代码随机访问。要访问该类的代码和数据，必须通过严格的接口控制。封装最主要的功能在于我们能修改自己的实现代码，而不用修改那些调用我们代码的程序片段。适当的封装可以让程式码更容易理解与维护，也加强了程式码的安全性。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/16/ios/2016-12-16-iOS开发之KVO/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java 封装/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1064,8 +793,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/" itemprop="url">
-                  让git push命令不再需要密码
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java 抽象类/" itemprop="url">
+                  Java抽象类
                 </a>
               
             
@@ -1078,8 +807,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
+            <time itemprop="dateCreated" datetime="2017-03-11T21:08:31+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -1092,8 +821,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1108,8 +837,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-04-22-ignore-password-in-git-push/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-1-Java 抽象类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java 抽象类/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1119,7 +848,7 @@
 
           
           
-             <span id="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/" class="leancloud_visitors" data-flag-title="让git push命令不再需要密码">
+             <span id="/2017/03/11/Java/2017-03-11-1-Java 抽象类/" class="leancloud_visitors" data-flag-title="Java抽象类">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1142,9 +871,9 @@
 
       
         
-          使用git push命令远程提交库时，总是要输入帐号和密码，这样特别麻烦，找了一个方法解决掉
+          在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。抽象类除了不能实例化对象之外，类的其它功能依然存在，成员变量、成员方法和构造方法的访问方式和普通类一样。由于抽象类不能实例化对象，所以抽象类必须被继承，才能被使用。也是因为这个原因，通常在设计阶段决定要不要设计抽象类父类包含了子类集合的常见的方法，但是由于父类本身是抽象的，所以不能使用这些方法。在Java中抽象类表示的是一种继承关系，一个类只能继承一个抽象类，而一个类却可以实现多个接口。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/git/2013-04-22-ignore-password-in-git-push/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java 抽象类/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1195,8 +924,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/" itemprop="url">
-                  在ubuntu下搭建pptp vpn服务器
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java-多态/" itemprop="url">
+                  Java多态
                 </a>
               
             
@@ -1209,8 +938,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
+            <time itemprop="dateCreated" datetime="2017-03-11T20:40:36+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -1223,8 +952,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1239,8 +968,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-1-Java-多态/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java-多态/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1250,7 +979,7 @@
 
           
           
-             <span id="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/" class="leancloud_visitors" data-flag-title="在ubuntu下搭建pptp vpn服务器">
+             <span id="/2017/03/11/Java/2017-03-11-1-Java-多态/" class="leancloud_visitors" data-flag-title="Java多态">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1273,9 +1002,9 @@
 
       
         
-          最近弄了digitalocean的vps，研究了一下搭建一个vpn自己用，因为有些系统代理goagent还是搞不定。但是事实证明digitalocean线路还是很不稳，基本上没啥帮助=0=
+          多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/git/2013-12-11-deploy-pptp-vpn-in-ubuntu/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java-多态/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1326,8 +1055,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/git/2013-12-11-lamp-in-mac/" itemprop="url">
-                  Mac下用brew搭建PHP(LNMP/LAMP)开发环境
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java继承/" itemprop="url">
+                  Java继承
                 </a>
               
             
@@ -1340,8 +1069,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
+            <time itemprop="dateCreated" datetime="2017-03-11T20:11:29+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -1354,8 +1083,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1370,8 +1099,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2013-12-11-lamp-in-mac/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2013-12-11-lamp-in-mac/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-1-Java继承/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java继承/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1381,7 +1110,7 @@
 
           
           
-             <span id="/2016/10/15/git/2013-12-11-lamp-in-mac/" class="leancloud_visitors" data-flag-title="Mac下用brew搭建PHP(LNMP/LAMP)开发环境">
+             <span id="/2017/03/11/Java/2017-03-11-1-Java继承/" class="leancloud_visitors" data-flag-title="Java继承">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1404,9 +1133,9 @@
 
       
         
-          Mac下搭建lamp开发环境很容易，有xampp和mamp现成的集成环境。但是集成环境对于经常需要自定义一些配置的开发者来说会非常麻烦，而且Mac本身自带apache和php，在brew的帮助下非常容易手动搭建，可控性很高
+          继承是java面向对象编程技术的一块基石，因为它允许创建分等级层次的类。继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/15/git/2013-12-11-lamp-in-mac/">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java继承/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1457,8 +1186,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" itemprop="url">
-                  在Github上搭建Jekyll博客和创建主题
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-1-Java-对象和类/" itemprop="url">
+                  Java对象和类
                 </a>
               
             
@@ -1471,8 +1200,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T11:14:06+08:00" content="2016-10-15">
-              2016-10-15
+            <time itemprop="dateCreated" datetime="2017-03-11T19:53:03+08:00" content="2017-03-11">
+              2017-03-11
             </time>
           </span>
 
@@ -1485,8 +1214,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -1501,8 +1230,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" itemprop="commentsCount"></span>
+                <a href="/2017/03/11/Java/2017-03-11-1-Java-对象和类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-1-Java-对象和类/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1512,7 +1241,7 @@
 
           
           
-             <span id="/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/" class="leancloud_visitors" data-flag-title="在Github上搭建Jekyll博客和创建主题">
+             <span id="/2017/03/11/Java/2017-03-11-1-Java-对象和类/" class="leancloud_visitors" data-flag-title="Java对象和类">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1535,73 +1264,274 @@
 
       
         
-          
-            <h2 id="创建一个库"><a href="#创建一个库" class="headerlink" title="创建一个库"></a>创建一个库</h2><p>在Github上新开一个库，名字叫做<code>username.github.io</code>，然后当别人在地址栏输入相应url的时候就可以访问进来了。</p>
-<p>在这个库中完全可以只上传一个<code>index.html</code>，来讲自己要写的东西写进去，但是这样会丧失很多灵活性，所以需要Jekyll的帮助来创建自己的博客。</p>
-<h2 id="设定目录结构"><a href="#设定目录结构" class="headerlink" title="设定目录结构"></a>设定目录结构</h2><p>把自己的库clone到本地来，建立如下目录结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">├── CNAME</div><div class="line">├── README.md</div><div class="line">├── _config.yml</div><div class="line">├── _includes</div><div class="line">│   ├── disqus.html</div><div class="line">│   ├── footer.html</div><div class="line">│   ├── googleanalytics.html</div><div class="line">│   ├── header.html</div><div class="line">│   └── navside.html</div><div class="line">├── _layouts</div><div class="line">│   ├── base.html</div><div class="line">│   ├── book.html</div><div class="line">│   ├── page.html</div><div class="line">│   └── post.html</div><div class="line">├── _posts</div><div class="line">│   ├── Book</div><div class="line">│   ├── Life</div><div class="line">│   ├── Resource</div><div class="line">│   ├── Technology</div><div class="line">│   └── Tool</div><div class="line">├── index.html</div><div class="line">├── pages</div><div class="line">│   ├── about.html</div><div class="line">│   ├── archive.html</div><div class="line">│   └── atom.xml</div><div class="line">├── public</div><div class="line">│   ├── css</div><div class="line">│   ├── fonts</div><div class="line">│   ├── img</div><div class="line">│   ├── js</div><div class="line">│   └── upload</div><div class="line">└── sitemap.txt</div></pre></td></tr></table></figure>
-<p>这个目录结构是我自己设定的，也可以有不同的目录结构，看<a href="http://jekyllrb.com/docs/structure/" target="_blank" rel="external">官网</a>。</p>
-<p>接下来我主要解释这里面每一个目录的功能。</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>_config.yml</code>里写有整个站点的主要配置项，我的如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">permalink: /:year/:month/:day/:title.html   #博文的固定链接</div><div class="line">paginate: 10                                #分页时每页博文数量</div><div class="line">author:                                     #自定义常亮</div><div class="line">  name: 闫肃</div><div class="line">  email: yansu0711@gmail.com</div><div class="line">  link: http://yansu.org</div><div class="line">title: 闫肃的博客                             #自定义常量</div><div class="line">locals:                                     #自定义常量</div><div class="line">  tags: 标签</div><div class="line">  about: 关于</div><div class="line">active: 技术                                 #自定义常量</div><div class="line">subscribe_rss: /pages/atom.xml              #订阅地址</div><div class="line">markdown: redcarpet                         #markdown解释器</div></pre></td></tr></table></figure>
-<p>这里的自定义常量可以在模板中使用，以后有修改的时候就不需要跑去改代码了。尤其是对一些私人的选项，可以在这里定义。现在我的博客中出了disqus和googleanalytics外都直接在这里设定就好了。</p>
-<h3 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h3><p><code>CNAME</code>这个文件写明了这个站点的域名，如果不喜欢<code>username.github.io</code>的话，可以像我一样改掉</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yansu.org</div></pre></td></tr></table></figure>
-<p>改法只要在这个文件中写入域名就可以了。不过你需要去域名服务商那里设定域名解析规则。</p>
-<p>只要把<code>主机记录</code>为<code>@</code>,<code>www</code>的记录值写成<code>username.github.io</code>就好了。</p>
-<h3 id="博客存放"><a href="#博客存放" class="headerlink" title="博客存放"></a>博客存放</h3><p><code>_posts</code>下的所有目录中的所有博客，都会被Jekyll处理成为静态的html文件，然后放在<code>_site</code>下。我这里没有<code>_site</code>目录，是因为我在<code>.gitignore</code>文件中把这个目录屏蔽掉了，它不会上传到Github上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">_site/</div><div class="line">_drafts/</div><div class="line">.DS_Store</div></pre></td></tr></table></figure>
-<p>以上是我的<code>.gitignore</code>文件内容。</p>
-<p>在<code>_posts</code>下的符合<code>YYYY-MM-DD-xxxxxx.md</code>的文件，都会被Jekyll认定为博客内容。我在<code>_posts</code>下又新建了一些文件夹，主要是方便自己本地管理博客。</p>
-<p>在上述这些文件中，必须先定义一些配置项，例如这篇博客的md文件中，开头是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">layout: post                                   #这个博客的布局文件</div><div class="line">title: 在Github上搭建自己的Jekyll博客             #博客标题</div><div class="line">category: 工具                                  #博客分类</div><div class="line">tags: Jekyll                                   #博客标签</div><div class="line">keywords: Jekyll,Github                        #自定义常量</div><div class="line">description:                                   #自定义常量</div></pre></td></tr></table></figure>
-<p>除了自定义常量外的必须包含进去，自定义变量在这个布局中可以访问。</p>
-<h3 id="模版文件"><a href="#模版文件" class="headerlink" title="模版文件"></a>模版文件</h3><p>剩余的目录，基本都属于模板文件了，我解释一下各自的作用：</p>
-<ul>
-<li><code>_includes</code> 可以在模板中随时包含的文件</li>
-<li><code>_layouts</code> 布局文件，在博客头配置中可以选择</li>
-<li><code>pages</code> 站内固定的页面</li>
-<li><code>public</code> 公共资源，包括<code>js</code>,<code>css</code>,<code>img</code>等，还有我博客中调用的图片，我都放这里</li>
-<li><code>index.html</code> 站点的首页，整个站的入口文件</li>
-<li><code>sitemap.txt</code> 给搜索引擎看的，如何爬取这个站</li>
-</ul>
-<h2 id="创建自己的主题"><a href="#创建自己的主题" class="headerlink" title="创建自己的主题"></a>创建自己的主题</h2><p>上面讲了如何布局好站内文件结构，接下来主要就是如何创建一个自己的主题了。</p>
-<p>布局文件是整个主题最重要的文件，这些文件告诉Jekyll如何去形成一个html页面。</p>
-<p>首先我说一下我最基础的<code>page.html</code>文件，因为它决定了入口文件<code>index.html</code>的布局。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">layout: base</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 aside3-title"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"#identifier"</span>&gt;</span>&#123;\&#123; page.title &#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-12 aside3-content"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"page-content"</span>&gt;</span></div><div class="line">      &#123;\&#123; content &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">    &#123;\% include disqus.html %&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>从这里可以看到这个文件写起来一点都不复杂，但是为什么开头还有个<code>layout</code>呢？因为它也不是最基本的布局文件，最基本的是<code>base.html</code>，我们看一下它的内容。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  &#123;\% include header.html %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">      &#123;\% include navside.html %&#125;</div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8 col-lg-8 col-sm-12 col-xs-12 aside3"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"pjax"</span>&gt;</span></div><div class="line">            &#123;\&#123; content &#125;&#125;</div><div class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  &#123;\% include footer.html %&#125;</div><div class="line">  &#123;\% include googleanalytics.html %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这个文件就更像一个HTML文件了，用PHP或者Python写过web应用的人看到<code>{\% %}</code>这样的标签应该不陌生，这不就是模板标签嘛。其实Jekyll也是借用了一下模板系统的，官网说明在<a href="http://jekyllrb.com/docs/templates/" target="_blank" rel="external">这里</a>，看到开头第一句讲的它用了<a href="http://docs.shopify.com/themes/liquid-basics" target="_blank" rel="external">Liquid</a>了吧。如果Jekyll的文档不能满足你的话，可以去Liquid那里查查。</p>
-<p>我解释一下<code>base.html</code>中几个标签的功能。</p>
-<ul>
-<li><code>{\% include header.html %}</code> 从<code>_includes</code>中把<code>header.html</code>包含进来放在这里</li>
-<li><code>{\% include navside.html %}</code> 同上</li>
-<li><code>{\{ content }}</code> 这句的作用是将继承这个Layout的文件中的代码，放在这里</li>
-</ul>
-<p>所以再看<code>page.html</code>文件就很容易了，它就是把配置项下面的内容，填补到<code>base.html</code>中的<code>{\{ content }}</code>处形成了一个文件。那么<code>page.html</code>中的<code>{\{ content }}</code>做什么用呢？因为别人也可以以<code>page.html</code>来作为自己的布局文件。</p>
-<p>入口文件<code>index.html</code>就是这么干的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">layout: page</div><div class="line">title: 首页</div><div class="line">...</div></pre></td></tr></table></figure>
-<p>这里看到选择了page作为布局文件，那么title干嘛用的呢？其实它是在被包含的<code>header.html</code>中被用到了。来看看<code>header.html</code>怎么写的：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;\&#123; page.title &#125;&#125; | &#123;\&#123; site.title &#125;&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"author"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; site.author.name &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% if page.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.keywords &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% endif %&#125;</div><div class="line">&#123;\% if page.description  %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description "</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.description  &#125;&#125;"</span>&gt;</span></div><div class="line">&#123;\% endif %&#125;</div><div class="line"></div><div class="line">...</div></pre></td></tr></table></figure>
-<p>这里又使用了一些新标签——<code>{\{ }\}</code>，这个标签就是用来书写变量的，通过在配置处配置变量，或者使用系统的自定义变量，可以轻松改变页面内的一些元素或者内容。</p>
-<p>系统变量查询可以去<a href="http://jekyllrb.com/docs/variables/" target="_blank" rel="external">这里</a></p>
-<p>其实整个主题书写就是这么简单，如果有不清楚的可以再看看官网的文档。动一动手就非常明白了。</p>
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>很多人感觉用Jekyll最不方便的就是插入图片了，其实我也是这么觉得的。所以只能自己去想些办法。</p>
-<h3 id="图片统一存放"><a href="#图片统一存放" class="headerlink" title="图片统一存放"></a>图片统一存放</h3><p>图片我都放在了<code>/public/upload</code>下，所以我在插入图片的时候只要用<code>![xxx](http://7u2ho6.com1.z0.glb.clouddn.com/xxx)</code>就可以了。</p>
-<h3 id="方便的图片导入"><a href="#方便的图片导入" class="headerlink" title="方便的图片导入"></a>方便的图片导入</h3><p>导入图片的方式是我将<code>upload</code>文件夹做了个软连接，放到mac的dock上就行了，有图片要用的时候直接往里面一拖。</p>
-<h3 id="方便的截图"><a href="#方便的截图" class="headerlink" title="方便的截图"></a>方便的截图</h3><p>很多时候图片都是现截取的，比如用QQ的截图工具，或者系统的截图工具，但是他们截取完都存放在了<code>user/Pictures</code>里面，来回移动太累了。我这里介绍一个Mac下的一个工具——Trickster，看图</p>
-<p><img src="http://7u2ho6.com1.z0.glb.clouddn.com/tech-trickster-move-picture.png" alt="移动图片"></p>
-<p>这个工具可以看到刚刚修改过的图片，而且还有一个收藏的文件夹，我每次截取完图以后，从左边往右边一拖，然后在markdown中就可以继续书写了。一点都不耗时。</p>
-<h2 id="本地预览及提交"><a href="#本地预览及提交" class="headerlink" title="本地预览及提交"></a>本地预览及提交</h2><p>本地预览自己的修改很容易，只要进入<code>username.github.io</code>目录，执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll serve</div></pre></td></tr></table></figure>
-<p>然后访问<code>http://localhost:4000</code>就OK了，安装Jekyll的方式自行谷歌吧…</p>
-<p>自己预览过没有问题以后，就提交到服务端吧，Git三步走</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add xxx</div><div class="line">git commit -m &quot;xxx&quot;</div><div class="line">git push</div></pre></td></tr></table></figure>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>我觉得自己的这个主题设定的算是比较好修改和移植的了，如果大家有什么问题，可以尽管问。</p>
-<p>另外一些特别的功能，比如三栏、评论、谷歌分析，这些都不难，相信你稍微打开Github读一下这个主题的代码就很快明白了。</p>
-<p>代码地址戳<a href="https://github.com/suyan/suyan.github.io" target="_blank" rel="external">这里</a></p>
+          Java作为一种面向对象语言。支持以下基本概念：多态、继承、封装、抽象、类、对象、实例、方法、重载
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-1-Java-对象和类/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-Java-基础语法/" itemprop="url">
+                  Java基础语法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T13:57:33+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-Java-基础语法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-Java-基础语法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-Java-基础语法/" class="leancloud_visitors" data-flag-title="Java基础语法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          Java的基础语法
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-Java-基础语法/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/11/Java/2017-03-11-java简介/" itemprop="url">
+                  Java简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-11T13:41:31+08:00" content="2017-03-11">
+              2017-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/11/Java/2017-03-11-java简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/11/Java/2017-03-11-java简介/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/11/Java/2017-03-11-java简介/" class="leancloud_visitors" data-flag-title="Java简介">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          学习编程语言,首先要对该语言的前世今生有个了解
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/11/Java/2017-03-11-java简介/">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1632,7 +1562,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1673,7 +1603,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">89</span>
+              <span class="site-state-item-count">116</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1681,7 +1611,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1690,7 +1620,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
