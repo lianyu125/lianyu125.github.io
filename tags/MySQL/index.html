@@ -90,7 +90,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="小玉的技术博客">
-<meta property="og:url" content="https://lianyucode.top/tags/mysql/index.html">
+<meta property="og:url" content="https://lianyucode.top/tags/MySQL/index.html">
 <meta property="og:site_name" content="小玉的技术博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小玉的技术博客">
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> 标签: mysql | 小玉的技术博客 </title>
+  <title> 标签: MySQL | 小玉的技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +252,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        mysql
+        MySQL
         <small>标签</small>
       </h2>
     </div>
@@ -265,9 +265,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2017/05/11/mysql/2017-05-11-mysql workbench使用教程/" itemprop="url">
+            <a class="post-title-link" href="/2016/10/15/resource/2014-05-11-general-mysql-resources/" itemprop="url">
               
-                <span itemprop="name">mysqlworkbench使用教程</span>
+                <span itemprop="name">MySQL常用资源</span>
               
             </a>
         
@@ -275,9 +275,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-11T08:10:56+08:00"
-              content="2017-05-11" >
-          05-11
+              datetime="2016-10-15T11:14:06+08:00"
+              content="2016-10-15" >
+          10-15
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/10/15/tool/2013-05-23-install-mysql-and-mongo-web-admin/" itemprop="url">
+              
+                <span itemprop="name">安装MySQL和MongoDB的WEB管理界面</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-10-15T11:14:06+08:00"
+              content="2016-10-15" >
+          10-15
         </time>
       </div>
 
@@ -592,37 +620,6 @@
             newcounter.save(null, {
               success: function(newcounter) {
                 var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-</body>
-</html>
-ment.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
               },
               error: function(newcounter, error) {
