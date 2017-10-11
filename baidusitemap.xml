@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.lianyucode.top/2017/06/28/ios/2017-06-28-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2017-10-11T15:01:57.761Z</lastmod>
+    <data>
+        <display>
+        <title>xcodebuild指令详解</title>
+        <pubTime>2017-06-28T14:47:52.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.lianyucode.top/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.lianyucode.top/2017/07/23/android/2017-07-23/</loc>
     <lastmod>2017-10-11T14:56:04.437Z</lastmod>
     <data>
@@ -138,21 +158,6 @@
              
               <breadCrumb title="iOS" url="https://www.lianyucode.top/categories/iOS/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.lianyucode.top/2017/06/28/ios/2017-06-28-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2017-10-11T14:28:16.007Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-06-28T14:47:52.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -1828,9 +1833,9 @@
         <title>从运行原理及使用场景看Apache和Nginx</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>Apache</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>Apache</tag>
          
          
            
@@ -2080,9 +2085,9 @@
         
         <tag>PHP</tag>
          
-        <tag>Apache</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>Apache</tag>
          
          
            
