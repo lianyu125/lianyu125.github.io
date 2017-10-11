@@ -1,45 +1,195 @@
-extends base
+<!DOCTYPE html><html lang="zh-Hans"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Java基础语法 | 小玉的技术博客</title><link rel="stylesheet" type="text/css" href="//fonts.css.network/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Java基础语法</h1><a id="logo" href="/.">小玉的技术博客</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Start</i></a><a href="/archives/"><i class="fa fa-archive"> Archiv</i></a><a href="/about/"><i class="fa fa-user"> Über</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">Java基础语法</h1><div class="post-meta"><a href="/2017/03/11/Java/2017-03-11-Java-基础语法/#comments" class="comment-count"><i data-disqus-identifier="2017/03/11/Java/2017-03-11-Java-基础语法/" class="disqus-comment-count"></i>Gästebuch</a><p><span class="date">Mar 11, 2017</span><span><a href="/categories/Java/" class="category">Java</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>Schlägt</i></i></span></p></div><div class="post-content"><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>类：类是一个模板，它描述一类对象的行为和状态。<br>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。<br>方法：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。<br>实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>编写Java程序时，应注意以下几点：<br>大小写敏感：Java是大小写敏感的，这就意味着标识符Hello与hello是不同的。<br>类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstClass 。<br>方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。<br>源文件名：源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记Java是大小写敏感的），文件名的后缀为.java。（如果文件名和类名不相同则会导致编译错误）。<br>主方法入口：所有的Java 程序由public static void main(String []args)方法开始执行。</p>
+<h2 id="Java标识符"><a href="#Java标识符" class="headerlink" title="Java标识符"></a>Java标识符</h2><p>Java所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。<br>关于Java标识符，有以下几点需要注意：<br>所有的标识符都应该以字母（A-Z或者a-z）,美元符（$）、或者下划线（<em>）开始<br>首字符之后可以是字母（A-Z或者a-z）,美元符（$）、下划线（</em>）或数字的任何字符组合<br>关键字不能用作标识符<br>标识符是大小写敏感的<br>合法标识符举例：age、$salary、_value、__1_value<br>非法标识符举例：123abc、-salary</p>
+<h2 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h2><p>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：<br>访问控制修饰符 : default, public , protected, private<br>非访问控制修饰符 : final, abstract, strictfp<br>在后面的章节中我们会深入讨论Java修饰符。</p>
+<h2 id="Java变量"><a href="#Java变量" class="headerlink" title="Java变量"></a>Java变量</h2><p>Java中主要有如下几种类型的变量<br>局部变量<br>类变量（静态变量）<br>成员变量（非静态变量）</p>
+<h2 id="Java枚举"><a href="#Java枚举" class="headerlink" title="Java枚举"></a>Java枚举</h2><p>Java 5.0引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的bug。<br>例如，我们为果汁店设计一个程序，它将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除了这三种尺寸外的果汁。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FreshJuice</span> </span>&#123;</div><div class="line">   <span class="keyword">enum</span> FreshJuiceSize&#123; SMALL, MEDIUM , LARGE &#125;</div><div class="line">   FreshJuiceSize size;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FreshJuiceTest</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</div><div class="line">      FreshJuice juice = <span class="keyword">new</span> FreshJuice();</div><div class="line">      juice.size = FreshJuice. FreshJuiceSize.MEDIUM  ;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Java关键字"><a href="#Java关键字" class="headerlink" title="Java关键字"></a>Java关键字</h2><p>下面列出了Java保留字。这些保留字不能用于常量、变量、和任何标识符的名称。<br>关键字    描述</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abstract</td>
+</tr>
+</tbody>
+</table>
+<div>抽象方法，抽象类的修饰符</div>
 
-block title
-  title= page.title + ' | ' + config.title
+<p> |<br>| assert |  </p>
+<div>断言条件是否满足</div>
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta
-      if theme.comment
-        include _partial/comment_count
-        +comment-count(page.path)
-      p
-        span.date= page.date.format(theme.date_formats.post)
-        if page.categories.length > 0
-          span
-            for category in page.categories.toArray()
-              a.category(href=url_for(category.path))= category.name 
-        if theme.busuanzi == true
-          span
-            i#busuanzi_container_page_pv
-              i#busuanzi_value_page_pv
-              i= '' + __('hits')
-    .post-content
-      != page.content
-    include _partial/tag
-    .post-share
-      include _partial/share
-    include _partial/post_nav
-    #comments
-      include _partial/comments
+<p> |<br>| boolean |  </p>
+<div>断言条件是否满足</div>
 
-block tocmodel
-  if theme.toc.enable == true 
-    .widget(id='toc')
-      .widget-title
-        i(class='fa fa-fei')= __('contents')
-      != toc(page.content, {list_number: theme.toc.number})
+<p> |<br>| break<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>跳出循环或者label代码段</div>
 
-block pageOnly
-  if theme.toc.enable == true 
-    script(type='text/javascript', src=url_for(theme.js) + '/toctotop.js' + '?v=' + theme.version, async)
-  else 
-    script(type='text/javascript', src=url_for(theme.js) + '/totop.js' + '?v=' + theme.version, async)
-  include _partial/comments_js
+<p> |<br>| byte |  </p>
+<div>8-bit 有符号数据类型</div>
+
+<p> |<br>| case |  </p>
+<div>switch语句的一个条件</div>
+
+<p> |<br>| catch |  </p>
+<div>和try搭配扑捉异常信息</div>
+
+<p> |<br>| char |  </p>
+<div>16-bit Unicode字符数据类型</div>
+
+<p> |<br>| class |  </p>
+<div>定义类</div>
+
+<p> |<br>| const<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>未使用</div>
+
+<p> |<br>| continue<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>不执行循环体剩余部分</div>
+
+<p> |<br>| default<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>switch语句中的默认分支</div>
+
+<p> |<br>| do |  </p>
+<div>循环语句，循环体至少会执行一次</div>
+
+<p> |<br>| double<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>64-bit双精度浮点数</div>
+
+<p> |<br>| else |  </p>
+<div>if条件不成立时执行的分支</div>
+
+<p> |<br>| enum |  </p>
+<div>枚举类型</div>
+
+<p> |<br>| extends |  </p>
+<div>表示一个类是另一个类的子类</div>
+
+<p> |<br>| final<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示一个值在初始化之后就不能再改变了</div>
+
+<div>表示方法不能被重写，或者一个类不能有子类</div>
+
+<p> |<br>| finally<span class="Apple-tab-span" style="white-space:pre"></span> | 为了完成执行的代码而设计的，主要是为了程序的健壮性和完整性，无论有没有异常发生都执行代码。 |<br>| float | 32-bit单精度浮点数 |<br>| for |  </p>
+<div>for循环语句</div>
+
+<p> |<br>| goto<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>未使用</div>
+
+<p> |<br>| if<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>条件语句</div>
+
+<p> |<br>| implements<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示一个类实现了接口</div>
+
+<p> |<br>| import<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>导入类</div>
+
+<p> |<br>| instanceof<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>测试一个对象是否是某个类的实例</div>
+
+<p> |<br>| int<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>32位整型数</div>
+
+<p> |<br>| interface<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>接口，一种抽象的类型，仅有方法和常量的定义</div>
+
+<p> |<br>| long |  </p>
+<div>64位整型数</div>
+
+<p> |<br>| native<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示方法用非java代码实现</div>
+
+<p> |<br>| new<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>分配新的类实例</div>
+
+<p> |<br>| package<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>一系列相关类组成一个包</div>
+
+<p> |<br>| private<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示私有字段，或者方法等，只能从类内部访问</div>
+
+<p> |<br>| protected<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示字段只能通过类或者其子类访问</div>
+
+<div>子类或者在同一个包内的其他类</div>
+
+<p> |<br>| public |  </p>
+<div>表示共有属性或者方法</div>
+
+<p> |<br>| return |  </p>
+<div>方法返回值</div>
+
+<p> |<br>| short |  </p>
+<div>16位数字</div>
+
+<p> |<br>| static |  </p>
+<div>表示在类级别定义，所有实例共享的</div>
+
+<p> |<br>| strictfp |  </p>
+<div>浮点数比较使用严格的规则</div>
+
+<p> |<br>| super |  </p>
+<div>表示基类</div>
+
+<p> |<br>| switch |  </p>
+<div>选择语句</div>
+
+<p> |<br>| synchronized |  </p>
+<div>表示同一时间只能由一个线程访问的代码块</div>
+
+<p> |<br>| this |  </p>
+<div>表示调用当前实例</div>
+
+<div>或者调用另一个构造函数</div>
+
+<p> |<br>| throw |  </p>
+<div>抛出异常</div>
+
+<p> |<br>| throws |  </p>
+<div>定义方法可能抛出的异常</div>
+
+<p> |<br>| transient<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>修饰不要序列化的字段</div>
+
+<p> |<br>| try<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示代码块要做异常处理或者和finally配合表示是否抛出异常都执行finally中的代码</div>
+
+<p> |<br>| void<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>标记方法不返回任何值</div>
+
+<p> |<br>| volatile |  </p>
+<div>标记字段可能会被多个线程同时访问，而不做同步</div>
+
+<p> |<br>| while<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>while循环</div>
+
+<p> |</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>在Java中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。<br>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>在Java中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。<br>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。</p>
+</div><div class="tags"><a href="/tags/Java/">Java</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2017/03/11/Java/2017-03-11-1-Java-对象和类/" class="pre">Java对象和类</a><a href="/2017/03/11/Java/2017-03-11-java简介/" class="next">Java简介</a></div><div id="comments"><div id="disqus_thread"></div></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">Inhalte</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本语法"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java标识符"><span class="toc-text">Java标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java修饰符"><span class="toc-text">Java修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java变量"><span class="toc-text">Java变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java枚举"><span class="toc-text">Java枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java关键字"><span class="toc-text">Java关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> Letzte</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/Java/2017-08-06-面向对象/">Java入门教程之面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/python/2017-07-10- python 的import机制/">python的import机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/tool/2017-07-04-iTerm2终端配色 /">iTerm2终端配色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/machinelearning/2017-07-05-numpy/">学习numpy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/04/python/2017-07-05-python中range()函数的用法/">python中range()函数的用法及数组的操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/ios/2017-06-28-xcodebuild指令详解/">ios/2017-06-28-xcodebuild指令详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/28/ios/2017-06-28-手把手教你封装一个二维码扫描工具/">手把手教你封装一个二维码扫描工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/18/android/2017-06-18/">android/2017-06-18</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/android/2017-06-17-Android初级开发之创建简单页面/">android/2017-06-17-Android初级开发之创建简单页面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/17/ios/2017-07-27-NSInvocation的基本使用/">NSInvocation的基本使用</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> Kategorien</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React-Native</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/openCV/">openCV</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数字图像处理/">数字图像处理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a><span class="category-list-count">12</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> Tags</i></div><div class="tagcloud"><a href="/tags/Bootstrap/" style="font-size: 15px;">Bootstrap</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/React-Naticve/" style="font-size: 15px;">React-Naticve</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/数字图像处理/" style="font-size: 15px;">数字图像处理</a> <a href="/tags/openCV/" style="font-size: 15px;">openCV</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Jekyll/" style="font-size: 15px;">Jekyll</a> <a href="/tags/Mac-Vagrant/" style="font-size: 15px;">-Mac -Vagrant</a> <a href="/tags/KVO/" style="font-size: 15px;">KVO</a> <a href="/tags/静态库、动态库、Framework/" style="font-size: 15px;">静态库、动态库、Framework</a> <a href="/tags/cocoapods/" style="font-size: 15px;">cocoapods</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Shell/" style="font-size: 15px;">Shell</a> <a href="/tags/SEO/" style="font-size: 15px;">SEO</a> <a href="/tags/SVN/" style="font-size: 15px;">SVN</a> <a href="/tags/Vim/" style="font-size: 15px;">Vim</a> <a href="/tags/MySQL/" style="font-size: 15px;">MySQL</a> <a href="/tags/Virtualization/" style="font-size: 15px;">Virtualization</a> <a href="/tags/Nginx/" style="font-size: 15px;">Nginx</a> <a href="/tags/Apache/" style="font-size: 15px;">Apache</a> <a href="/tags/Laravel/" style="font-size: 15px;">Laravel</a> <a href="/tags/Windows/" style="font-size: 15px;">Windows</a> <a href="/tags/Sublime/" style="font-size: 15px;">Sublime</a> <a href="/tags/Tool/" style="font-size: 15px;">Tool</a> <a href="/tags/Blog/" style="font-size: 15px;">Blog</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/Vagrant/" style="font-size: 15px;">Vagrant</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> Archiv</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> Blogroll</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">RSS</a> |  <a href="/about/">Über</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">小玉的技术博客.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-98679319-2','auto');ga('send','pageview');
+</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?132a3cac7f4bc6a41cbc5e7ad0a04272";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+</script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script><script>var disqus_shortname = 'lianyu125';
+var disqus_identifier = '2017/03/11/Java/2017-03-11-Java-基础语法/';
+var disqus_title = 'Java基础语法';
+var disqus_url = 'https://www.lianyucode.top/2017/03/11/Java/2017-03-11-Java-基础语法/';
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//lianyu125.disqus.com/count.js" async></script><script type="text/javascript" src="//lianyu125.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></body></html>
