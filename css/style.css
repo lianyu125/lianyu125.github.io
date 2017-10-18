@@ -879,7 +879,7 @@ body {
   padding: 5px 5px;
 }
 .page-navigator .current {
-  background: #030303;
+  background: #fff;
 }
 .page-navigator .current:hover {
   border-bottom-color: #adc2d7;
