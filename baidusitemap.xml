@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.devzou.com/2017/10/13/ios/2017-10-13-iOS%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%9F%A5/</loc>
+    <lastmod>2017-10-18T13:42:10.120Z</lastmod>
+    <data>
+        <display>
+        <title>iOS常用的系统通知</title>
+        <pubTime>2017-10-13T13:31:30.361Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2017-10-17T00:51:29.377Z</lastmod>
     <data>
@@ -71,26 +91,6 @@
         <title>static、const、extern简介</title>
         <pubTime>2017-02-06T13:54:08.000Z</pubTime>
         
-         
-           
-             
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.devzou.com/2017/10/13/ios/2017-10-13-iOS%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%9F%A5/</loc>
-    <lastmod>2017-10-13T13:35:58.933Z</lastmod>
-    <data>
-        <display>
-        <title>iOS常用的系统通知</title>
-        <pubTime>2017-10-13T13:31:30.361Z</pubTime>
-        
-        <tag>iOS</tag>
-         
          
            
              
@@ -1948,9 +1948,9 @@
         <title>从运行原理及使用场景看Apache和Nginx</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>Nginx</tag>
-         
         <tag>Apache</tag>
+         
+        <tag>Nginx</tag>
          
          
            
@@ -2200,9 +2200,9 @@
         
         <tag>PHP</tag>
          
-        <tag>Nginx</tag>
-         
         <tag>Apache</tag>
+         
+        <tag>Nginx</tag>
          
          
            
