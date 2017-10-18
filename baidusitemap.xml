@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2017-10-17T00:51:29.377Z</lastmod>
+    <data>
+        <display>
+        <title>React Native布局</title>
+        <pubTime>2017-10-16T00:37:26.409Z</pubTime>
+        
+        <tag>React-Naticve</tag>
+         
+         
+           
+             
+              <breadCrumb title="React-Native" url="https://www.devzou.com/categories/React-Native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.devzou.com/2017/10/13/ios/2017-10-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2017-10-15T13:39:50.060Z</lastmod>
     <data>
@@ -2382,9 +2402,9 @@
         <title>安装MySQL和MongoDB的WEB管理界面</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>MongoDB</tag>
+         
+        <tag>Linux</tag>
          
         <tag>MySQL</tag>
          
