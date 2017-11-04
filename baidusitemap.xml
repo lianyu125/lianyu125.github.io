@@ -4,6 +4,273 @@
 
     
   <url>
+    <loc>https://www.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2011-11-02-define%E4%B8%8Etypedef%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2017-11-04T13:46:46.293Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2017-11-02T00:04:46.150Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/10/30/ios/2017-10-30-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF/</loc>
+    <lastmod>2017-11-04T13:41:17.244Z</lastmod>
+    <data>
+        <display>
+        <title>Objective-C运行时编程指南之消息</title>
+        <pubTime>2017-10-30T13:55:26.982Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/11/04/ios/2013-11-04-OC%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2017-11-04T13:40:47.258Z</lastmod>
+    <data>
+        <display>
+        <title>OC常用方法总结</title>
+        <pubTime>2017-11-04T12:48:27.851Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2011-11-03-%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2017-11-04T03:31:44.023Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2017-11-02T00:27:02.454Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/11/01/ios/2017-11-01-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%B1%9E%E6%80%A7%E5%A3%B0%E6%98%8E/</loc>
+    <lastmod>2017-11-01T15:33:08.857Z</lastmod>
+    <data>
+        <display>
+        <title>Objective-C运行时编程指南之属性声明</title>
+        <pubTime>2017-11-01T01:28:32.254Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/10/31/ios/2017-10-31-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E7%B1%BB%E5%9E%8B%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2017-11-01T01:28:27.953Z</lastmod>
+    <data>
+        <display>
+        <title>Objective-C运行时编程指南之类型编码</title>
+        <pubTime>2017-10-31T14:22:28.873Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/10/31/ios/2017-10-31-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
+    <lastmod>2017-10-31T14:21:53.010Z</lastmod>
+    <data>
+        <display>
+        <title>Objective-C运行时编程指南之消息转发</title>
+        <pubTime>2017-10-31T01:14:52.277Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/10/30/ios/2017-10-29-iphone%20X%E9%80%82%E9%85%8D/</loc>
+    <lastmod>2017-10-31T13:38:27.224Z</lastmod>
+    <data>
+        <display>
+        <title>iPhone X 适配</title>
+        <pubTime>2017-10-29T23:45:38.282Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/10/31/ios/2017-10-31-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2017-10-31T01:14:45.858Z</lastmod>
+    <data>
+        <display>
+        <title>Objective-C运行时编程指南之动态方法解析</title>
+        <pubTime>2017-10-30T23:50:47.622Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/10/30/ios/2017-10-30-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/</loc>
+    <lastmod>2017-10-30T13:55:25.868Z</lastmod>
+    <data>
+        <display>
+        <title>Objective-C运行时编程指南之和运行时系统交互</title>
+        <pubTime>2017-10-30T13:34:20.322Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/03/15/ios/2017-03-15-pod%20search/</loc>
+    <lastmod>2017-10-20T00:21:17.580Z</lastmod>
+    <data>
+        <display>
+        <title>Cocoapods 之pod search无法搜索到类库的解决办法</title>
+        <pubTime>2017-03-15T01:00:07.000Z</pubTime>
+        
+        <tag>cocoapods</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/03/13/ios/2017-03-13-%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BA%93%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81cocoapods/</loc>
+    <lastmod>2017-10-20T00:14:27.883Z</lastmod>
+    <data>
+        <display>
+        <title>让你的库文件支持cocoapods</title>
+        <pubTime>2017-03-13T14:36:24.000Z</pubTime>
+        
+        <tag>cocoapods</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/03/09/ios/2017-03-09-ios-static_library/</loc>
+    <lastmod>2017-10-18T14:15:30.220Z</lastmod>
+    <data>
+        <display>
+        <title>iOS静态库、动态库，Framework和.a以及.dylib/.tbd区别</title>
+        <pubTime>2017-03-09T07:22:51.000Z</pubTime>
+        
+        <tag>静态库、动态库、Framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.devzou.com/2017/06/16/ios/2017-07-17-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2017-10-18T14:11:43.036Z</lastmod>
+    <data>
+        <display>
+        <title>iOS读取文件方法</title>
+        <pubTime>2017-06-16T00:10:09.000Z</pubTime>
+        
+        <tag>iOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.devzou.com/2017/10/13/ios/2017-10-13-iOS%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%9F%A5/</loc>
     <lastmod>2017-10-18T13:45:46.201Z</lastmod>
     <data>
@@ -462,26 +729,6 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/16/ios/2017-07-17-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2017-07-21T00:35:45.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS读取文件方法</title>
-        <pubTime>2017-06-16T00:10:09.000Z</pubTime>
-        
-        <tag>iOS</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</loc>
     <lastmod>2017-07-10T14:08:01.000Z</lastmod>
     <data>
@@ -555,26 +802,6 @@
            
              
               <breadCrumb title="Tool" url="https://www.devzou.com/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.devzou.com/2017/03/13/ios/2017-03-13-%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BA%93%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81cocoapods/</loc>
-    <lastmod>2017-06-15T08:55:51.000Z</lastmod>
-    <data>
-        <display>
-        <title>让你的库文件支持cocoapods</title>
-        <pubTime>2017-03-13T14:36:24.000Z</pubTime>
-        
-        <tag>cocoapods</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -695,26 +922,6 @@
            
              
               <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.devzou.com/2017/03/15/ios/2017-03-15-pod%20search/</loc>
-    <lastmod>2017-05-15T10:08:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>Cocoapods 之pod search无法搜索到类库的解决办法</title>
-        <pubTime>2017-03-15T01:00:07.000Z</pubTime>
-        
-        <tag>cocoapods</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1443,26 +1650,6 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/09/ios/2017-03-09-ios-static_library/</loc>
-    <lastmod>2017-03-09T08:16:42.000Z</lastmod>
-    <data>
-        <display>
-        <title>iOS静态库、动态库，Framework和.a以及.dylib/.tbd区别</title>
-        <pubTime>2017-03-09T07:22:51.000Z</pubTime>
-        
-        <tag>静态库、动态库、Framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.devzou.com/2017/02/27/ios/2017-02-27-ios-UIButton-%E5%8F%8C%E5%B1%82%E8%A7%86%E5%9B%BE/</loc>
     <lastmod>2017-03-09T07:52:14.000Z</lastmod>
     <data>
@@ -1948,9 +2135,9 @@
         <title>从运行原理及使用场景看Apache和Nginx</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>Apache</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>Apache</tag>
          
          
            
@@ -2200,9 +2387,9 @@
         
         <tag>PHP</tag>
          
-        <tag>Apache</tag>
-         
         <tag>Nginx</tag>
+         
+        <tag>Apache</tag>
          
          
            
