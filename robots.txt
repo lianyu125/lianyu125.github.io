@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://lianyucode.top/sitemap.xml
-Sitemap: http://lianyucode.top/baidusitemap.xml
+Sitemap: https://devzou.com/sitemap.xml
+Sitemap: https://devzou.com/baidusitemap.xml
