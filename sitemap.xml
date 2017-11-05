@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.devzou.com/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/</loc>
+    
+    <lastmod>2017-11-05T08:04:15.588Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.devzou.com/about/index.html</loc>
     
     <lastmod>2017-11-05T07:35:52.178Z</lastmod>
@@ -674,23 +681,9 @@
   </url>
   
   <url>
-    <loc>https://www.devzou.com/2016/10/15/git/2013-04-22-ignore-password-in-git-push/</loc>
-    
-    <lastmod>2017-02-20T15:26:45.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.devzou.com/2016/10/15/git/2013-12-11-lamp-in-mac/</loc>
     
     <lastmod>2017-02-20T15:25:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.devzou.com/2016/10/15/git/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/</loc>
-    
-    <lastmod>2017-02-20T15:24:43.000Z</lastmod>
     
   </url>
   
@@ -779,13 +772,6 @@
   </url>
   
   <url>
-    <loc>https://www.devzou.com/2016/10/15/tech/2014-03-10-grunt-bower-and-laravel/</loc>
-    
-    <lastmod>2017-01-31T13:31:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.devzou.com/2016/10/15/tech/2014-02-15-apache-and-nginx/</loc>
     
     <lastmod>2017-01-31T13:31:24.000Z</lastmod>
@@ -863,13 +849,6 @@
   </url>
   
   <url>
-    <loc>https://www.devzou.com/2016/10/15/tool/2015-01-10-use-dropzone-and-qiniu-to-store-blog-images/</loc>
-    
-    <lastmod>2017-01-31T10:20:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.devzou.com/2016/10/15/tech/2014-05-04-set-environment-variables-of-server-for-php/</loc>
     
     <lastmod>2017-01-31T08:01:10.000Z</lastmod>
@@ -922,13 +901,6 @@
     <loc>https://www.devzou.com/2016/10/15/tool/2014-03-20-php-debug-with-xdebug/</loc>
     
     <lastmod>2017-01-28T07:49:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.devzou.com/2016/10/15/tool/2014-02-12-how-to-deploy-a-blog-on-github-by-jekyll/</loc>
-    
-    <lastmod>2017-01-28T07:49:19.000Z</lastmod>
     
   </url>
   
