@@ -5,18 +5,18 @@
     
   <url>
     <loc>https://www.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2017-11-03-%E6%8C%87%E9%92%88/</loc>
-    <lastmod>2017-11-05T02:12:24.954Z</lastmod>
+    <lastmod>2017-11-05T07:21:08.141Z</lastmod>
     <data>
         <display>
-        <title>OC常用方法总结</title>
+        <title>指针</title>
         <pubTime>2017-11-02T00:27:02.454Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>C语言</tag>
          
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="C语言" url="https://www.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -2594,9 +2594,9 @@
         <title>安装MySQL和MongoDB的WEB管理界面</title>
         <pubTime>2016-10-15T03:14:06.000Z</pubTime>
         
-        <tag>MongoDB</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>MongoDB</tag>
          
         <tag>MySQL</tag>
          
