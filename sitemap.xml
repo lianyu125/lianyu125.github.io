@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.devzou.com/2017/12/31/ios/2017-12-31-cocoapods%E7%A7%81%E6%9C%89%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/</loc>
+    
+    <lastmod>2018-03-04T01:23:11.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-01-04T08:44:05.245Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devzou.com/2016/10/15/resource/2014-01-15-general-git-resources/</loc>
+    
+    <lastmod>2017-12-31T01:49:31.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devzou.com/2017/11/20/Java/2017-11-20-spring%20MVC%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2017-11-25T10:56:23.297Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devzou.com/2017/11/13/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%98%B4%E5%BD%B1/</loc>
+    
+    <lastmod>2017-11-14T01:02:26.461Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devzou.com/2017/11/13/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%BC%8F/</loc>
+    
+    <lastmod>2017-11-13T01:09:53.950Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devzou.com/2017/11/13/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%8F%98%E6%8D%A2/</loc>
+    
+    <lastmod>2017-11-13T01:08:10.339Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.devzou.com/2017/11/12/ios/2017-11-12-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%A2%9C%E8%89%B2%E4%B8%8E%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/</loc>
     
     <lastmod>2017-11-12T07:58:30.519Z</lastmod>
@@ -149,13 +198,6 @@
   </url>
   
   <url>
-    <loc>https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2017-10-17T00:51:29.377Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.devzou.com/2017/10/13/ios/2017-10-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2017-10-15T13:39:50.060Z</lastmod>
@@ -208,13 +250,6 @@
     <loc>https://www.devzou.com/2016/10/15/resource/2014-01-15-general-svn-resources/</loc>
     
     <lastmod>2017-10-11T15:29:50.772Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.devzou.com/2016/10/15/resource/2014-01-15-general-git-resources/</loc>
-    
-    <lastmod>2017-10-11T15:29:18.649Z</lastmod>
     
   </url>
   
@@ -681,7 +716,7 @@
   </url>
   
   <url>
-    <loc>https://www.devzou.com/2016/10/15/tech/2014-01-30-understanding-the-github-workflow/</loc>
+    <loc>https://www.devzou.com/2016/10/15/git/2014-01-30-understanding-the-github-workflow/</loc>
     
     <lastmod>2017-02-22T13:44:11.000Z</lastmod>
     
@@ -978,13 +1013,6 @@
     <loc>https://www.devzou.com/2016/10/15/tool/2013-03-25-tools-of-sever-deployment/</loc>
     
     <lastmod>2017-01-28T07:45:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.devzou.com/2016/10/15/tool/2013-04-22-highlight-of-jekyll/</loc>
-    
-    <lastmod>2017-01-28T07:37:06.000Z</lastmod>
     
   </url>
   
