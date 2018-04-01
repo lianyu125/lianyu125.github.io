@@ -3,14 +3,13 @@ title: jQuery 常用资源
 category: 资源
 tags: jQuery
 keywords: jQuery
-description: jQuery 常用资源
 ---
 
 ## 官方资源
 
 - [官方首页](http://jquery.com/)
 - [官方插件](http://plugins.jquery.com/)
-
+<!--more-->
 ## 下拉框扩展
 
 - [Select 2](http://ivaynberg.github.io/select2/)

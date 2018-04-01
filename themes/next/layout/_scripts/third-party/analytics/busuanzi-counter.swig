@@ -9,9 +9,10 @@
   {% endif %}
 
   {% if theme.busuanzi_count.site_pv %}
-    <span class="site-pv">{{ theme.busuanzi_count.site_pv_header }}<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>{{ theme.busuanzi_count.site_pv_footer }}</span>
+    <span class="site-pv">{{ theme.busuanzi_count.site_pv_header }}
+    本站访问量<span class="busuanzi-value" id="busuanzi_value_site_pv">次</span>{{ theme.busuanzi_count.site_pv_footer }}</span>
   {% endif %}
-  
+
 </div>
 
 {% endif %}

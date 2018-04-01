@@ -1,7 +1,9 @@
 ---
 title: 在Mac下安装使用Vagrant
-category: 工具
-tags: [Mac, Vagrant]
+category: git
+tags: 
+   -Mac 
+   -Vagrant
 keywords: Mac,Vagrant
 description:  Vagrant是一款用来构建虚拟开发环境的工具，它其实算是一个跨平台的虚拟机管理工具
 ---

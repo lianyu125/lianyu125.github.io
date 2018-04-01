@@ -7,12 +7,12 @@ title: 小玉的技术博客
 subtitle:
 description:
 author:
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://lianyu125.github.io
+url: https://www.devzou.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,12 +63,40 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: BlueLake
+
+
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   #elfwalk改为你的github用户名
-  repository: https://github.com/lianyu125/lianyu125.github.io.git
+  repository:
+      github: https://github.com/lianyu125/lianyu125.github.io.git
+      coding: https://git.coding.net/lianyu125/lianyu125.coding.me.git
   branch: master
+# 本地搜索
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: true
+    raw: false
+    content: true
+    slug: false
+    updated: false
+    comments: true
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true

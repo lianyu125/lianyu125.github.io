@@ -236,8 +236,8 @@ module.exports = function(grunt) {
             expand: true,
             flatten: true,
             cwd: './public/assets/bower/bootstrap/fonts/',
-            src: ['**'], 
-            dest: './public/assets/fonts/', 
+            src: ['**'],
+            dest: './public/assets/fonts/',
             filter: 'isFile'
           },
         ]
@@ -297,18 +297,7 @@ module.exports = function(grunt) {
 
 下面两篇参考文章各有特色，如果希望了解一下可以点击链接去看。
 
-我在[Github](https://github.com/suyan/Laravel-Bower-Grunt)上建立了这篇博客中所讲的目录结构，想要快速建立一个可使用的工程，只需要以下几部：
-
-    git clone https://github.com/suyan/Laravel-Bower-Grunt.git
-    composer install
-    bower update
-    npm install
-    grunt
-
-Enjoy it!
-
 
 ## 参考
 1. [How I use Bower and Grunt with my Laravel projects](http://www.terrymatula.com/development/2013/how-i-use-bower-and-grunt-with-my-laravel-projects/)
 2. [Using Grunt + Bower with Laravel and Bootstrap](http://blog.elenakolevska.com/using-grunt-with-laravel-and-bootstrap/)
-

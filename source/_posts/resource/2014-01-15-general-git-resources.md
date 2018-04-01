@@ -4,16 +4,13 @@ category: 资源
 tags: Git
 keywords: Git
 ---
-
-## 库管理
-
 ### 克隆库
 
 ```bash
 git clone https://github.com/php/php-src.git
 git clone --depth=1 https://github.com/php/php-src.git # 只抓取最近的一次 commit
 ```
-
+<!--more-->
 ## 历史管理
 
 ### 查看历史
@@ -175,4 +172,12 @@ git config --global color.diff auto
 git config --global color.status auto
 git config --global color.branch auto
 ```
+### git 修改.gitignore后生效
+```bash
+git rm -r --cached .  #清除缓存  
+git add . #重新trace file  
+git commit -m "update .gitignore" #提交和注释  
+git push origin master #可选，如果需要同步到remote上的话 
+```
+
 

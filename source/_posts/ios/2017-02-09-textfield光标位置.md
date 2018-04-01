@@ -6,7 +6,7 @@ keywords: textfield
 description: 
 ---
 
-```
+```objc
  UITextPosition* beginning = self.beginningOfDocument;   
  UITextRange* selectedRange = self.selectedTextRange;  
  UITextPosition* selectionStart = selectedRange.start;  

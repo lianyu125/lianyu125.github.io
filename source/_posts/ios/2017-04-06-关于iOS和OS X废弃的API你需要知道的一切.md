@@ -1,0 +1,92 @@
+
+---
+title: 关于iOS和OS X废弃的API你需要知道的一切
+category: iOS
+tags: iOS
+keywords: iOS
+description:
+---
+
+原文:[Everything You Need to Know about iOS and OS X Deprecated APIs](http://iosdevelopertips.com/best-practices/eveything-you-need-to-know-about-ios-and-os-x-deprecated-apis.html) 
+如你所知，已废弃(Deprecated)的API指的是那些已经过时的并且在将来某个时间最终会被移除掉的方法或类。通常，苹果在引入一个更优秀的API后就会把原来的API给废弃掉。因为，新引入的API通常意味着可以更好的发挥新硬件或操作系统的性能，或者可以使用一些在构建原有API时根本还没有的语言特性(e.g. blocks)。
+每当苹果添加新方法的时候，他们都会在方法声明的后面用一个很特殊的宏来标明哪些iOS版本支持它们。例如，在UIViewController中，苹果引入了一个使用block来处理回调的方法用来展示一个模态controller，它的声明是这样的：
+```objc
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion NS_AVAILABLE_IOS(5_0);
+```
+注意到NS_AVAILABLE_IOS(5_0)了吗？这就告诉我们这个方法可以在iOS5.0及以后的版本中使用。如果我们在比指定版本更老的版本中调用这个方法，就会引起崩溃。
+那被这个方法替换了的那个旧方法又怎么样了呢？同样，它的声明后面也带了一个类似的语法，表示它已经被废弃了：
+```objc
+- (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated NS_DEPRECATED_IOS(2_0, 6_0);
+```
+NS_DEPRECATED_IOS(2_0, 6_0)这个宏中有两个版本号。前面一个表明了这个方法被引入时的iOS版本，后面一个表明它被废弃时的iOS版本。被废弃并不是指这个方法就不存在了，只是意味着我们应当开始考虑将相关代码迁移到新的API上去了。
+还有类似形式的一些宏用在iOS和OS X共用的类上。比如NSArray中的这个方法：
+```objc
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx NS_AVAILABLE(10_8, 6_0);
+```
+这里的NS_AVAILABLE宏告诉我们这方法分别随Mac OS 10.8和iOS 6.0被引入。和NS_DEPRECATED_IOS类似，也有个宏叫NS_DEPRECATED，但它的参数要稍微复杂些：
+```objc
+- (void)removeObjectsFromIndices:(NSUInteger *)indices numIndices:(NSUInteger)cnt NS_DEPRECATED(10_0, 10_6, 2_0, 4_0);
+```
+这里表示这个方法随Mac OS 10.0和iOS 2.0被引入，在Mac OS 10.6和iOS 4.0后被废弃。
+Easy Come, Easy Go
+上周我们讨论了在iOS7和Mac OS 10.9 SDK中被新引入的Base64 API。有趣的是，有一组有相同功能的Base64方法，在被引入的同时也被废弃掉了。为什么苹果在引入一个API的同时又把它废弃掉了？那不是毫无意义的吗？好吧，其实也不是——它在下面这种情况下就非常有意义：
+实际上，这些现在已经废弃的Base64方法从iOS4和Mac 0S 10.6开始就一直存在，只是它们是私有的。直到现在苹果才把它们公开，大概是苹果一直对它们的实现不满意，一直都想把它们改写。
+果然，在iOS7中，苹果选定了一个他们感到满意的Base64 API，并且将它添加到了NSData的一个公有类别中。但现在，他们知道老方法已经被取代，不会被改写了，因此他们把它公开出来。当开发者的app仍然需要支持iOS6及以前的版本时，就有了一个系统内置的Base64 api可以用。
+这就是为什么，如果你查看这些新API的方法声明，可以看到NS_DEPRECATED宏部分中的起始版本是4_0，虽然实际上直到iOS7之前，它从来都没有被作为公有API被引入过：
+```objc
+- (NSString *)base64Encoding NS_DEPRECATED(10_6, 10_9, 4_0, 7_0);
+```
+这告诉你，基于iOS7 SDK开发的app如果调用了这个方法，它同样可以运行在iOS4+或Mac OS 10.6+的系统上而不会崩溃。很有用的吧？
+如何使用已废弃的API
+那么，如果我们有一个app需要同时支持iOS6和iOS7，想用内置的Base64方法，我们该怎么做呢？事实上，这相当简单，你只需要调用这些废弃的API就可以了。
+那样编译器不是会产生警告吗？不会——只有你的deployment target版本号设置成大于或等于方法被弃用的版本号的时候才会收到编译器警告。只要你仍然在支持那些还没有废弃这个方法的iOS版本，都不会收到警告。
+那么，如果苹果决定在iOS8中移除已弃用的Base64方法，你的应用程序会发生情况？简单来说，它肯定会崩溃，但是不要让这把你吓跑了：苹果不可能只在几个iOS版本后就将已废弃的API给移除(绝大多数已废弃的API在任何的iOS版本中都还没有被移除)，除非你决定不再更新你的app，否则在你放弃支持iOS6之前有很多机会都可以更新到新的API。
+但是如果假定我们在最坏的情况下(例如：我们不更新我们的app了，而苹果突然宣布了一个零容忍的不再向下兼容的政策)，怎样让我们的代码保持永不过时并且仍然能够支持旧的系统版本呢？
+这其实很简单，我们只需要做一些运行时的方法检测。使用NSObject的respondsToSelector:方法，我们可以检测，如果新的API存在，我们就调用它。否则，我们退回到已废弃的API。很简单:
+```objc
+NSData *someData = ...
+NSString *base64String = nil;
+
+// Check if new API is available
+if ([someData respondsToSelector:@selector(base64EncodedDataWithOptions:)])
+{
+  // It exists, so let's call it
+  base64String = [someData base64EncodedDataWithOptions:0];
+}
+else
+{
+  // Use the old API
+  base64String = [someData base64Encoding];
+}
+```
+
+此代码在iOS4及以上版本中有效，并且如果苹果在未来的iOS版本中移除base64Encoding方法后，同样可以正常工作。
+为其他开发者编码的时候
+如果你是在写一个app，这一切都很好，但是如果你是在编写一个给其他人使用的代码库呢？如果project的target是iOS4或iOS6的时候，上面的代码会工作的很好。但是如果deployment target是iOS 7+的时候，你就会收到编译器警告，说你使用了已废弃的base64Encoding方法。
+该代码实际上永远都可以正常工作，因为那个方法在运行时永远都不会被调用(因为respondsToSelector:那个检查在iOS7上总是会返回YES)。但是可惜的是，编译器还不是足够的聪明能发现这点。而且，比如像我，你不会想用那些会产生编译器警告的第三方库，你肯定也不想自己的库中产生任何警告。
+那么，我们如何改写我们的代码，以便它可以用于任何deployment target，而不会产生警告？幸好，有一个编译器宏指令可以基于不同的deployment target做不同的代码分支。取决于app是为哪个最小的iOS版本编译的，我们可以用__IPHONE_OS_VERSION_MIN_REQUIRED这个宏来生成不同的代码。
+下面的代码可以工作在任何的iOS版本上（不管是过去的还是将来的），而且不会产生任何警告：
+```objc
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+
+// Check if new API is not available
+if (![someData respondsToSelector:@selector(base64EncodedDataWithOptions:)])
+{
+	// Use the old API
+	base64String = [someData base64Encoding];
+}
+else
+
+#endif
+
+{
+	// Use the new API
+	base64String = [someData base64EncodedDataWithOptions:0];
+}
+
+```
+看清楚我们在这里做了什么吗？我们变换了respondsToSelector:的用法：我们用它来测试是否新的API不可用，然后将整段代码放到一个条件代码块中，这样它就只会在deployment target比iOS7低的情况下才会被编译。如果app是为iOS6编译的，它就会先检查新的API是否存在，如果不存在就调用旧的API。如果app是为iOS7编译的，那一整块逻辑代码都会被跳过，直接调用新的API。
+补充阅读
+苹果有一个[关于废弃API用法的实例和相关的编译器警告](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/cross_development/Using/using.html#//apple_ref/doc/uid/20002000-SW5)的简单文档，如果感兴趣可以看看。
+
+

@@ -3,7 +3,6 @@ title: JavaScript 常用资源
 category: 资源
 tags: JavaScript
 keywords: JavaScript
-description: JavaScript 常用资源
 ---
 
 ## 常用代码
@@ -13,8 +12,7 @@ description: JavaScript 常用资源
     返回一个从指定位置开始的指定长度的子字符串
     substring(start, end)
     返回位于 String 对象中指定位置的子字符串。
-
-
+<!--more-->
 ### 页面跳转
     window.navigate("top.jsp");
     window.history.back(-1);

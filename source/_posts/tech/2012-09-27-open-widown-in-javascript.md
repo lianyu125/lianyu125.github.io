@@ -1,10 +1,10 @@
+
 ---
 title: JS中防止浏览器屏蔽window.open
-category: 技术
+category: JavaScript
 tags: JavaScript
 description: JS中防止浏览器屏蔽window.open
 ---
-
 有的时候我们需要一些弹出窗来作为临时信息显示，在js代码中直接使用
 
     window.open(url,“_blank”,option);

@@ -3,11 +3,11 @@ title: static、const、extern简介
 category: iOS
 tags: 
 keywords: textfield
-description: 
 ---
 ## const
 1.const作用:仅仅是用来修饰右边的变量(只能修饰变量:基本变量、指针变量、对象变量)
 2.const修饰的变量表示只读
+<!--more-->
 ## const与宏的区别
 1.编译时刻不同,宏:预编译const:编译时刻
   2.宏不会做编译检查错误,const会做编译检查错误

@@ -3,7 +3,6 @@ title: SVN 常用资源
 category: 资源
 tags: SVN
 keywords: SVN
-description: SVN常用资源
 ---
 
 ## 常用指令
@@ -13,7 +12,7 @@ description: SVN常用资源
     svn checkout path（path是服务器上的目录）
     svn checkout svn://192.168.1.1/pro/domain
     svn co
-
+<!--more-->
 ### 往版本库中添加新的文件
 
     svn add file

@@ -3,7 +3,7 @@ title: 使用hexo+gitpages创建自己的博客
 date: 2017-01-26 18:40:12
 tags: hexo
 categories: hexo
-descriptions: 工作一段时间后,我一直想拥有一个属于自己的博客网站,之前尝试过使用WordPress、jekyll+gitpages等方式创建自己的博客网站,然而这两个用着都不太顺手。有一天无意间发现微信阅读团队的博客主题比较绚丽,让我有一种眼前一亮的感觉。然后我就开始查看他们是使用什么方式构建的博客网站,最后发现他们使用hexo+gitpages方式来构建团队的博客。我在网上翻阅了相关资料后发现，用hexo+gitpages方式构建博客网站好处多多,不仅仅是速度快，还有就是可以使用leanCloud来存储阅读次数。
+descriptions: 工作一段时间后,我一直想拥有一个属于自己的博客网站,之前尝试过使用WordPress、jekyll+gitpages等方式创建自己的博客网站,然而这两个用着都不太顺手,wordPress需要购买空间或者是自己搭建服务器,而jekyll官方资料又比较少,而且也没有找到自己喜欢的主题。有一天无意间发现微信阅读团队的博客主题比较绚丽,让我有一种眼前一亮的感觉。然后我就开始查看他们是使用什么方式构建的博客网站,最后发现他们使用hexo+gitpages方式来构建团队的博客。我在网上翻阅了相关资料后发现，用hexo+gitpages方式构建博客网站好处多多,不仅仅是速度快，还有就是可以使用leanCloud来存储阅读次数。
 ---
 ## 准备工作
 1.安装git
@@ -14,20 +14,20 @@ descriptions: 工作一段时间后,我一直想拥有一个属于自己的博�
 ```
 npm install -g hexo-cli
 ```
-![](/Users/one/Desktop/hexo-cli.png)
+![](../img/hexo-cli.png)
 
 2.安装hexo
 ```
 npm install hexo --save
 ```
-![](/Users/one/Desktop/hexo_save.png)
+![](../img/hexo_save.png)
 【注】warning可以忽略
 3.查看hexo安装是否成功
 ```
  hexo -v 
 ```
 如下图所示,则表示安装成功
-![](/Users/one/Desktop/hexo_v.png)
+![](../img/hexo_v.png)
 ## 本地运行hexo
 1.初始化hexo
 ```

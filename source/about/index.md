@@ -1,9 +1,12 @@
 ---
-date: 2017-01-30 09:51:04
-comments: false
+title: about
+date: 2017-02-20 07:50:11
 ---
 
-## 关于作者
-本人邮箱地址lianyu125@gmail.com,QQ号:1315751082。
+## 关于我
+目前就职于某互联网公司,专注于移动端开发,喜欢学习新知识,做笔记,写博客。
+## 联系我
+email:lianyu125@gmail.com
+github:lianyu125
 
 
