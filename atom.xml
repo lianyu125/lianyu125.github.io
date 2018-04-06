@@ -5,16 +5,16 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.devzou.com/"/>
+  <link href="https://blog.devzou.com/"/>
   <updated>2018-04-01T09:34:38.898Z</updated>
-  <id>https://www.devzou.com/</id>
+  <id>https://blog.devzou.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>webpack4入门教程</title>
-    <link href="https://www.devzou.com/2018/04/01/web%E5%89%8D%E7%AB%AF/2018-04-01-webpack4%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
-    <id>https://www.devzou.com/2018/04/01/web前端/2018-04-01-webpack4入门教程/</id>
+    <link href="https://blog.devzou.com/2018/04/01/web%E5%89%8D%E7%AB%AF/2018-04-01-webpack4%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <id>https://blog.devzou.com/2018/04/01/web前端/2018-04-01-webpack4入门教程/</id>
     <published>2018-04-01T09:34:38.897Z</published>
     <updated>2018-04-01T09:34:38.898Z</updated>
     
@@ -26,17 +26,17 @@
     
     </summary>
     
-      <category term="web前端" scheme="https://www.devzou.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+      <category term="web前端" scheme="https://blog.devzou.com/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="webpack" scheme="https://www.devzou.com/tags/webpack/"/>
+      <category term="webpack" scheme="https://blog.devzou.com/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>Bootstrap常用资源</title>
-    <link href="https://www.devzou.com/2018/03/23/web%E5%89%8D%E7%AB%AF/2013-04-23-general-bootstrap-resources/"/>
-    <id>https://www.devzou.com/2018/03/23/web前端/2013-04-23-general-bootstrap-resources/</id>
+    <link href="https://blog.devzou.com/2018/03/23/web%E5%89%8D%E7%AB%AF/2013-04-23-general-bootstrap-resources/"/>
+    <id>https://blog.devzou.com/2018/03/23/web前端/2013-04-23-general-bootstrap-resources/</id>
     <published>2018-03-23T00:10:09.000Z</published>
     <updated>2018-04-04T16:20:10.627Z</updated>
     
@@ -48,17 +48,17 @@
     
     </summary>
     
-      <category term="资源" scheme="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
     
     
-      <category term="Bootstrap" scheme="https://www.devzou.com/tags/Bootstrap/"/>
+      <category term="Bootstrap" scheme="https://blog.devzou.com/tags/Bootstrap/"/>
     
   </entry>
   
   <entry>
     <title>JS中防止浏览器屏蔽window.open</title>
-    <link href="https://www.devzou.com/2018/02/25/web%E5%89%8D%E7%AB%AF/2018-02-25-open-widown-in-javascript/"/>
-    <id>https://www.devzou.com/2018/02/25/web前端/2018-02-25-open-widown-in-javascript/</id>
+    <link href="https://blog.devzou.com/2018/02/25/web%E5%89%8D%E7%AB%AF/2018-02-25-open-widown-in-javascript/"/>
+    <id>https://blog.devzou.com/2018/02/25/web前端/2018-02-25-open-widown-in-javascript/</id>
     <published>2018-02-25T00:10:09.000Z</published>
     <updated>2018-04-04T16:23:00.161Z</updated>
     
@@ -70,17 +70,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://www.devzou.com/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.devzou.com/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://www.devzou.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.devzou.com/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>HTML 常用资源</title>
-    <link href="https://www.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/"/>
-    <id>https://www.devzou.com/2018/02/23/web前端/2018-02-23-general-html-resources/</id>
+    <link href="https://blog.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/"/>
+    <id>https://blog.devzou.com/2018/02/23/web前端/2018-02-23-general-html-resources/</id>
     <published>2018-02-23T00:10:09.000Z</published>
     <updated>2018-04-04T16:18:54.100Z</updated>
     
@@ -92,17 +92,17 @@
     
     </summary>
     
-      <category term="资源" scheme="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+      <category term="资源" scheme="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
     
     
-      <category term="HTML" scheme="https://www.devzou.com/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.devzou.com/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>Failed to create a Maven project:&#39;/Users/one/Desktop/lesson/pom.xml&#39; already exists in VFS 解决方案</title>
-    <link href="https://www.devzou.com/2017/11/24/Java/2017-11-24-IDEA%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://www.devzou.com/2017/11/24/Java/2017-11-24-IDEA创建工程时遇到的问题/</id>
+    <link href="https://blog.devzou.com/2017/11/24/Java/2017-11-24-IDEA%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.devzou.com/2017/11/24/Java/2017-11-24-IDEA创建工程时遇到的问题/</id>
     <published>2017-11-24T00:10:09.000Z</published>
     <updated>2018-04-04T16:03:45.954Z</updated>
     
@@ -117,17 +117,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://www.devzou.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://www.devzou.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>spring MVC 入门</title>
-    <link href="https://www.devzou.com/2017/11/20/Java/2017-11-20-spring%20MVC%E5%85%A5%E9%97%A8/"/>
-    <id>https://www.devzou.com/2017/11/20/Java/2017-11-20-spring MVC入门/</id>
+    <link href="https://blog.devzou.com/2017/11/20/Java/2017-11-20-spring%20MVC%E5%85%A5%E9%97%A8/"/>
+    <id>https://blog.devzou.com/2017/11/20/Java/2017-11-20-spring MVC入门/</id>
     <published>2017-11-20T00:10:09.000Z</published>
     <updated>2018-04-04T16:03:58.521Z</updated>
     
@@ -139,17 +139,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://www.devzou.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://www.devzou.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>指针</title>
-    <link href="https://www.devzou.com/2017/11/03/c%E8%AF%AD%E8%A8%80/2017-11-03-%E6%8C%87%E9%92%88/"/>
-    <id>https://www.devzou.com/2017/11/03/c语言/2017-11-03-指针/</id>
+    <link href="https://blog.devzou.com/2017/11/03/c%E8%AF%AD%E8%A8%80/2017-11-03-%E6%8C%87%E9%92%88/"/>
+    <id>https://blog.devzou.com/2017/11/03/c语言/2017-11-03-指针/</id>
     <published>2017-11-03T00:10:09.000Z</published>
     <updated>2018-04-04T16:56:17.334Z</updated>
     
@@ -161,17 +161,17 @@
     
     </summary>
     
-      <category term="C语言" scheme="https://www.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C语言" scheme="https://blog.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="C语言" scheme="https://www.devzou.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C语言" scheme="https://blog.devzou.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>define与typedef用法总结</title>
-    <link href="https://www.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2017-11-02-define%E4%B8%8Etypedef%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
-    <id>https://www.devzou.com/2017/11/02/c语言/2017-11-02-define与typedef 用法总结/</id>
+    <link href="https://blog.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2017-11-02-define%E4%B8%8Etypedef%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>https://blog.devzou.com/2017/11/02/c语言/2017-11-02-define与typedef 用法总结/</id>
     <published>2017-11-02T00:10:09.000Z</published>
     <updated>2018-04-04T16:56:06.446Z</updated>
     
@@ -183,17 +183,17 @@
     
     </summary>
     
-      <category term="C语言" scheme="https://www.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C语言" scheme="https://blog.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="C语言" scheme="https://www.devzou.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+      <category term="C语言" scheme="https://blog.devzou.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>iPhone X 适配</title>
-    <link href="https://www.devzou.com/2017/10/20/ios/2017-10-20-iphone%20X%E9%80%82%E9%85%8D/"/>
-    <id>https://www.devzou.com/2017/10/20/ios/2017-10-20-iphone X适配/</id>
+    <link href="https://blog.devzou.com/2017/10/20/ios/2017-10-20-iphone%20X%E9%80%82%E9%85%8D/"/>
+    <id>https://blog.devzou.com/2017/10/20/ios/2017-10-20-iphone X适配/</id>
     <published>2017-10-20T00:10:09.000Z</published>
     <updated>2018-04-04T15:15:10.463Z</updated>
     
@@ -205,17 +205,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="https://www.devzou.com/categories/iOS/"/>
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="https://www.devzou.com/tags/iOS/"/>
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>React Native布局</title>
-    <link href="https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native布局详解/</id>
+    <link href="https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native布局详解/</id>
     <published>2017-10-16T00:10:09.000Z</published>
     <updated>2018-04-04T15:56:18.480Z</updated>
     
@@ -227,17 +227,17 @@
     
     </summary>
     
-      <category term="React-Native" scheme="https://www.devzou.com/categories/React-Native/"/>
+      <category term="React-Native" scheme="https://blog.devzou.com/categories/React-Native/"/>
     
     
-      <category term="React-Naticve" scheme="https://www.devzou.com/tags/React-Naticve/"/>
+      <category term="React-Naticve" scheme="https://blog.devzou.com/tags/React-Naticve/"/>
     
   </entry>
   
   <entry>
     <title>贝塞尔曲线的基本知识</title>
-    <link href="https://www.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
-    <id>https://www.devzou.com/2017/09/13/ios/2017-09-13-贝塞尔曲线的基本知识/</id>
+    <link href="https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
+    <id>https://blog.devzou.com/2017/09/13/ios/2017-09-13-贝塞尔曲线的基本知识/</id>
     <published>2017-09-13T00:10:09.000Z</published>
     <updated>2018-04-04T15:12:56.625Z</updated>
     
@@ -249,17 +249,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="https://www.devzou.com/categories/iOS/"/>
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="https://www.devzou.com/tags/iOS/"/>
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
     <title>从运行原理及使用场景看Apache和Nginx</title>
-    <link href="https://www.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/"/>
-    <id>https://www.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</id>
+    <link href="https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/"/>
+    <id>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</id>
     <published>2017-08-23T00:10:09.000Z</published>
     <updated>2018-04-04T16:26:11.506Z</updated>
     
@@ -271,19 +271,19 @@
     
     </summary>
     
-      <category term="技术" scheme="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Nginx" scheme="https://www.devzou.com/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://blog.devzou.com/tags/Nginx/"/>
     
-      <category term="Apache" scheme="https://www.devzou.com/tags/Apache/"/>
+      <category term="Apache" scheme="https://blog.devzou.com/tags/Apache/"/>
     
   </entry>
   
   <entry>
     <title>Java入门教程之面向对象</title>
-    <link href="https://www.devzou.com/2017/08/06/Java/2017-08-06-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://www.devzou.com/2017/08/06/Java/2017-08-06-面向对象/</id>
+    <link href="https://blog.devzou.com/2017/08/06/Java/2017-08-06-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://blog.devzou.com/2017/08/06/Java/2017-08-06-面向对象/</id>
     <published>2017-08-06T00:10:09.000Z</published>
     <updated>2018-04-04T16:04:49.806Z</updated>
     
@@ -296,17 +296,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://www.devzou.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://www.devzou.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>安卓初级开发之使用Fragment建立动态UI</title>
-    <link href="https://www.devzou.com/2017/07/23/android/2017-07-23/"/>
-    <id>https://www.devzou.com/2017/07/23/android/2017-07-23/</id>
+    <link href="https://blog.devzou.com/2017/07/23/android/2017-07-23/"/>
+    <id>https://blog.devzou.com/2017/07/23/android/2017-07-23/</id>
     <published>2017-07-23T00:10:09.000Z</published>
     <updated>2018-04-04T16:12:05.102Z</updated>
     
@@ -318,17 +318,17 @@
     
     </summary>
     
-      <category term="Android" scheme="https://www.devzou.com/categories/Android/"/>
+      <category term="Android" scheme="https://blog.devzou.com/categories/Android/"/>
     
     
-      <category term="Android" scheme="https://www.devzou.com/tags/Android/"/>
+      <category term="Android" scheme="https://blog.devzou.com/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>IDEA部署你的web项目</title>
-    <link href="https://www.devzou.com/2017/07/21/Java/2017-07-21-IDEA%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84web%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://www.devzou.com/2017/07/21/Java/2017-07-21-IDEA部署你的web项目/</id>
+    <link href="https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84web%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA部署你的web项目/</id>
     <published>2017-07-21T00:10:09.000Z</published>
     <updated>2018-04-04T16:05:03.359Z</updated>
     
@@ -343,17 +343,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://www.devzou.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://www.devzou.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript变量作用域</title>
-    <link href="https://www.devzou.com/2017/07/13/web%E5%89%8D%E7%AB%AF/2017-07-13-javascript-variable-domain/"/>
-    <id>https://www.devzou.com/2017/07/13/web前端/2017-07-13-javascript-variable-domain/</id>
+    <link href="https://blog.devzou.com/2017/07/13/web%E5%89%8D%E7%AB%AF/2017-07-13-javascript-variable-domain/"/>
+    <id>https://blog.devzou.com/2017/07/13/web前端/2017-07-13-javascript-variable-domain/</id>
     <published>2017-07-13T00:10:09.000Z</published>
     <updated>2018-04-04T16:26:45.373Z</updated>
     
@@ -365,17 +365,17 @@
     
     </summary>
     
-      <category term="技术" scheme="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="JavaScript" scheme="https://www.devzou.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.devzou.com/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>iTerm2终端配色</title>
-    <link href="https://www.devzou.com/2017/07/04/tool/2017-07-04-iTerm2%E7%BB%88%E7%AB%AF%E9%85%8D%E8%89%B2%20/"/>
-    <id>https://www.devzou.com/2017/07/04/tool/2017-07-04-iTerm2终端配色 /</id>
+    <link href="https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2%E7%BB%88%E7%AB%AF%E9%85%8D%E8%89%B2%20/"/>
+    <id>https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2终端配色 /</id>
     <published>2017-07-04T00:10:09.000Z</published>
     <updated>2018-04-01T09:34:38.897Z</updated>
     
@@ -390,17 +390,17 @@
     
     </summary>
     
-      <category term="Tool" scheme="https://www.devzou.com/categories/Tool/"/>
+      <category term="Tool" scheme="https://blog.devzou.com/categories/Tool/"/>
     
     
-      <category term="Tool" scheme="https://www.devzou.com/tags/Tool/"/>
+      <category term="Tool" scheme="https://blog.devzou.com/tags/Tool/"/>
     
   </entry>
   
   <entry>
     <title>python的import机制</title>
-    <link href="https://www.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/"/>
-    <id>https://www.devzou.com/2017/07/04/python/2017-07-10- python 的import机制/</id>
+    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/"/>
+    <id>https://blog.devzou.com/2017/07/04/python/2017-07-10- python 的import机制/</id>
     <published>2017-07-04T00:10:09.000Z</published>
     <updated>2018-04-01T09:34:38.888Z</updated>
     
@@ -412,17 +412,17 @@
     
     </summary>
     
-      <category term="python" scheme="https://www.devzou.com/categories/python/"/>
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
     
     
-      <category term="python" scheme="https://www.devzou.com/tags/python/"/>
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>学习numpy</title>
-    <link href="https://www.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/"/>
-    <id>https://www.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</id>
+    <link href="https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/"/>
+    <id>https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</id>
     <published>2017-07-04T00:10:09.000Z</published>
     <updated>2018-04-01T09:34:38.878Z</updated>
     
@@ -437,17 +437,17 @@
     
     </summary>
     
-      <category term="python" scheme="https://www.devzou.com/categories/python/"/>
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
     
     
-      <category term="python" scheme="https://www.devzou.com/tags/python/"/>
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python中range()函数的用法及数组的操作</title>
-    <link href="https://www.devzou.com/2017/07/04/python/2017-07-05-python%E4%B8%ADrange()%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/"/>
-    <id>https://www.devzou.com/2017/07/04/python/2017-07-05-python中range()函数的用法/</id>
+    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-05-python%E4%B8%ADrange()%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/"/>
+    <id>https://blog.devzou.com/2017/07/04/python/2017-07-05-python中range()函数的用法/</id>
     <published>2017-07-04T00:10:09.000Z</published>
     <updated>2018-04-01T09:34:38.888Z</updated>
     
@@ -462,10 +462,10 @@
     
     </summary>
     
-      <category term="python" scheme="https://www.devzou.com/categories/python/"/>
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
     
     
-      <category term="python" scheme="https://www.devzou.com/tags/python/"/>
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
     
   </entry>
   

@@ -4,7 +4,47 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/09/27/tech/2014-09-27-php-variable-variables/</loc>
+    <loc>https://blog.devzou.com/2017/01/26/hexo/%E4%BD%BF%E7%94%A8hexo%E4%B8%8Egitpages%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-04-06T01:32:16.318Z</lastmod>
+    <data>
+        <display>
+        <title>使用hexo+gitpages创建自己的博客</title>
+        <pubTime>2017-01-26T10:40:12.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="https://blog.devzou.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2017/01/26/hexo/2017-01-30-add-categories-tags/</loc>
+    <lastmod>2018-04-06T01:31:40.879Z</lastmod>
+    <data>
+        <display>
+        <title>hexo博客在导航条中添加分类和标签栏</title>
+        <pubTime>2017-01-26T10:40:12.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="hexo" url="https://blog.devzou.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2014/09/27/tech/2014-09-27-php-variable-variables/</loc>
     <lastmod>2018-04-04T16:57:20.395Z</lastmod>
     <data>
         <display>
@@ -16,7 +56,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -24,7 +64,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/11/03/c%E8%AF%AD%E8%A8%80/2017-11-03-%E6%8C%87%E9%92%88/</loc>
+    <loc>https://blog.devzou.com/2017/11/03/c%E8%AF%AD%E8%A8%80/2017-11-03-%E6%8C%87%E9%92%88/</loc>
     <lastmod>2018-04-04T16:56:17.334Z</lastmod>
     <data>
         <display>
@@ -36,7 +76,7 @@
          
            
              
-              <breadCrumb title="C语言" url="https://www.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+              <breadCrumb title="C语言" url="https://blog.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -44,7 +84,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2017-11-02-define%E4%B8%8Etypedef%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://blog.devzou.com/2017/11/02/c%E8%AF%AD%E8%A8%80/2017-11-02-define%E4%B8%8Etypedef%20%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2018-04-04T16:56:06.446Z</lastmod>
     <data>
         <display>
@@ -56,7 +96,7 @@
          
            
              
-              <breadCrumb title="C语言" url="https://www.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+              <breadCrumb title="C语言" url="https://blog.devzou.com/categories/C%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -64,7 +104,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/13/tool/2017-03-13-.tar.gz%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
+    <loc>https://blog.devzou.com/2017/03/13/tool/2017-03-13-.tar.gz%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2018-04-04T16:53:22.260Z</lastmod>
     <data>
         <display>
@@ -76,7 +116,7 @@
          
            
              
-              <breadCrumb title="工具" url="https://www.devzou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="工具" url="https://blog.devzou.com/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -84,7 +124,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/05/16/tool/2017-05-16-%E5%85%AC%E5%8F%B8%E5%B8%B8%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BD%AF%E4%BB%B6/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/tool/2017-05-16-%E5%85%AC%E5%8F%B8%E5%B8%B8%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2018-04-04T16:53:06.629Z</lastmod>
     <data>
         <display>
@@ -96,7 +136,7 @@
          
            
              
-              <breadCrumb title="工具" url="https://www.devzou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="工具" url="https://blog.devzou.com/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -104,7 +144,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/05/16/tool/2017-05-16-%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/tool/2017-05-16-%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/</loc>
     <lastmod>2018-04-04T16:52:47.144Z</lastmod>
     <data>
         <display>
@@ -116,7 +156,7 @@
          
            
              
-              <breadCrumb title="工具" url="https://www.devzou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="工具" url="https://blog.devzou.com/categories/%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -124,7 +164,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
+    <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
     <lastmod>2018-04-04T16:52:17.843Z</lastmod>
     <data>
         <display>
@@ -136,7 +176,7 @@
          
            
              
-              <breadCrumb title="Linux" url="https://www.devzou.com/categories/Linux/"/>
+              <breadCrumb title="Linux" url="https://blog.devzou.com/categories/Linux/"/>
           
         </display>
     </data>
@@ -144,7 +184,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
+    <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
     <lastmod>2018-04-04T16:51:40.586Z</lastmod>
     <data>
         <display>
@@ -160,7 +200,7 @@
          
            
              
-              <breadCrumb title="git" url="https://www.devzou.com/categories/git/"/>
+              <breadCrumb title="git" url="https://blog.devzou.com/categories/git/"/>
           
         </display>
     </data>
@@ -168,7 +208,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/03/20/git/2014-03-20-php-debug-with-xdebug/</loc>
+    <loc>https://blog.devzou.com/2014/03/20/git/2014-03-20-php-debug-with-xdebug/</loc>
     <lastmod>2018-04-04T16:50:39.398Z</lastmod>
     <data>
         <display>
@@ -180,7 +220,7 @@
          
            
              
-              <breadCrumb title="PHP" url="https://www.devzou.com/categories/PHP/"/>
+              <breadCrumb title="PHP" url="https://blog.devzou.com/categories/PHP/"/>
           
         </display>
     </data>
@@ -188,7 +228,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/01/15/git/create-remote-resp/</loc>
+    <loc>https://blog.devzou.com/2014/01/15/git/create-remote-resp/</loc>
     <lastmod>2018-04-04T16:50:01.095Z</lastmod>
     <data>
         <display>
@@ -200,7 +240,7 @@
          
            
              
-              <breadCrumb title="git" url="https://www.devzou.com/categories/git/"/>
+              <breadCrumb title="git" url="https://blog.devzou.com/categories/git/"/>
           
         </display>
     </data>
@@ -208,7 +248,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/01/15/git/2014-01-15-general-git-resources/</loc>
+    <loc>https://blog.devzou.com/2014/01/15/git/2014-01-15-general-git-resources/</loc>
     <lastmod>2018-04-04T16:49:33.200Z</lastmod>
     <data>
         <display>
@@ -220,7 +260,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -228,7 +268,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
+    <loc>https://blog.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
     <lastmod>2018-04-04T16:49:00.857Z</lastmod>
     <data>
         <display>
@@ -240,7 +280,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -248,7 +288,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/04/27/tech/2014-04-27-magic-methods-and-magic-constants-in-php/</loc>
+    <loc>https://blog.devzou.com/2014/04/27/tech/2014-04-27-magic-methods-and-magic-constants-in-php/</loc>
     <lastmod>2018-04-04T16:48:39.194Z</lastmod>
     <data>
         <display>
@@ -260,7 +300,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -268,7 +308,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/05/04/tech/2014-05-04-set-environment-variables-of-server-for-php/</loc>
+    <loc>https://blog.devzou.com/2014/05/04/tech/2014-05-04-set-environment-variables-of-server-for-php/</loc>
     <lastmod>2018-04-04T16:48:24.530Z</lastmod>
     <data>
         <display>
@@ -284,7 +324,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -292,7 +332,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
+    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
     <lastmod>2018-04-04T16:47:59.989Z</lastmod>
     <data>
         <display>
@@ -304,7 +344,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -312,7 +352,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
+    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
     <lastmod>2018-04-04T16:29:12.968Z</lastmod>
     <data>
         <display>
@@ -324,7 +364,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -332,7 +372,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/07/13/web%E5%89%8D%E7%AB%AF/2017-07-13-javascript-variable-domain/</loc>
+    <loc>https://blog.devzou.com/2017/07/13/web%E5%89%8D%E7%AB%AF/2017-07-13-javascript-variable-domain/</loc>
     <lastmod>2018-04-04T16:26:45.373Z</lastmod>
     <data>
         <display>
@@ -344,7 +384,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -352,7 +392,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
+    <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
     <lastmod>2018-04-04T16:26:11.506Z</lastmod>
     <data>
         <display>
@@ -366,7 +406,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -374,7 +414,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2018/02/25/web%E5%89%8D%E7%AB%AF/2018-02-25-open-widown-in-javascript/</loc>
+    <loc>https://blog.devzou.com/2018/02/25/web%E5%89%8D%E7%AB%AF/2018-02-25-open-widown-in-javascript/</loc>
     <lastmod>2018-04-04T16:23:00.161Z</lastmod>
     <data>
         <display>
@@ -386,7 +426,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="https://www.devzou.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="https://blog.devzou.com/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -394,7 +434,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2013/03/21/tech/2013-03-21-vnc-vs-rdp/</loc>
+    <loc>https://blog.devzou.com/2013/03/21/tech/2013-03-21-vnc-vs-rdp/</loc>
     <lastmod>2018-04-04T16:21:53.137Z</lastmod>
     <data>
         <display>
@@ -406,7 +446,7 @@
          
            
              
-              <breadCrumb title="技术" url="https://www.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
+              <breadCrumb title="技术" url="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
           
         </display>
     </data>
@@ -414,7 +454,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2018/03/23/web%E5%89%8D%E7%AB%AF/2013-04-23-general-bootstrap-resources/</loc>
+    <loc>https://blog.devzou.com/2018/03/23/web%E5%89%8D%E7%AB%AF/2013-04-23-general-bootstrap-resources/</loc>
     <lastmod>2018-04-04T16:20:10.627Z</lastmod>
     <data>
         <display>
@@ -426,7 +466,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -434,7 +474,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
+    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
     <lastmod>2018-04-04T16:19:52.815Z</lastmod>
     <data>
         <display>
@@ -446,7 +486,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -454,7 +494,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/</loc>
+    <loc>https://blog.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/</loc>
     <lastmod>2018-04-04T16:18:54.100Z</lastmod>
     <data>
         <display>
@@ -466,7 +506,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -474,7 +514,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
+    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
     <lastmod>2018-04-04T16:18:16.400Z</lastmod>
     <data>
         <display>
@@ -486,7 +526,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -494,7 +534,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/04/23/resource/2017-04-23-general-php-resources/</loc>
+    <loc>https://blog.devzou.com/2017/04/23/resource/2017-04-23-general-php-resources/</loc>
     <lastmod>2018-04-04T16:17:47.251Z</lastmod>
     <data>
         <display>
@@ -506,7 +546,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -514,7 +554,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
+    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
     <lastmod>2018-04-04T16:15:40.547Z</lastmod>
     <data>
         <display>
@@ -526,7 +566,7 @@
          
            
              
-              <breadCrumb title="JavaScript" url="https://www.devzou.com/categories/JavaScript/"/>
+              <breadCrumb title="JavaScript" url="https://blog.devzou.com/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -534,7 +574,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/05/23/resource/2016-05-23-general-mysql-resources/</loc>
+    <loc>https://blog.devzou.com/2016/05/23/resource/2016-05-23-general-mysql-resources/</loc>
     <lastmod>2018-04-04T16:13:58.477Z</lastmod>
     <data>
         <display>
@@ -546,7 +586,7 @@
          
            
              
-              <breadCrumb title="MySQL" url="https://www.devzou.com/categories/MySQL/"/>
+              <breadCrumb title="MySQL" url="https://blog.devzou.com/categories/MySQL/"/>
           
         </display>
     </data>
@@ -554,7 +594,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/16/android/2017-06-16-%E5%88%9B%E5%BB%BAAndroid%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://blog.devzou.com/2017/06/16/android/2017-06-16-%E5%88%9B%E5%BB%BAAndroid%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2018-04-04T16:12:58.548Z</lastmod>
     <data>
         <display>
@@ -566,7 +606,7 @@
          
            
              
-              <breadCrumb title="Android" url="https://www.devzou.com/categories/Android/"/>
+              <breadCrumb title="Android" url="https://blog.devzou.com/categories/Android/"/>
           
         </display>
     </data>
@@ -574,7 +614,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/17/android/2017-06-17-Android%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E9%A1%B5%E9%9D%A2/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-Android%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E9%A1%B5%E9%9D%A2/</loc>
     <lastmod>2018-04-04T16:12:46.213Z</lastmod>
     <data>
         <display>
@@ -586,7 +626,7 @@
          
            
              
-              <breadCrumb title="Android" url="https://www.devzou.com/categories/Android/"/>
+              <breadCrumb title="Android" url="https://blog.devzou.com/categories/Android/"/>
           
         </display>
     </data>
@@ -594,7 +634,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/17/android/2017-06-17-%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%BE%E5%A4%87/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%BE%E5%A4%87/</loc>
     <lastmod>2018-04-04T16:12:33.517Z</lastmod>
     <data>
         <display>
@@ -606,7 +646,7 @@
          
            
              
-              <breadCrumb title="Android" url="https://www.devzou.com/categories/Android/"/>
+              <breadCrumb title="Android" url="https://blog.devzou.com/categories/Android/"/>
           
         </display>
     </data>
@@ -614,7 +654,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/18/android/2017-06-18/</loc>
+    <loc>https://blog.devzou.com/2017/06/18/android/2017-06-18/</loc>
     <lastmod>2018-04-04T16:12:20.540Z</lastmod>
     <data>
         <display>
@@ -626,7 +666,7 @@
          
            
              
-              <breadCrumb title="Android" url="https://www.devzou.com/categories/Android/"/>
+              <breadCrumb title="Android" url="https://blog.devzou.com/categories/Android/"/>
           
         </display>
     </data>
@@ -634,7 +674,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/07/23/android/2017-07-23/</loc>
+    <loc>https://blog.devzou.com/2017/07/23/android/2017-07-23/</loc>
     <lastmod>2018-04-04T16:12:05.102Z</lastmod>
     <data>
         <display>
@@ -646,7 +686,7 @@
          
            
              
-              <breadCrumb title="Android" url="https://www.devzou.com/categories/Android/"/>
+              <breadCrumb title="Android" url="https://blog.devzou.com/categories/Android/"/>
           
         </display>
     </data>
@@ -654,7 +694,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/02/28/AI/2017-02-28-%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2017/02/28/AI/2017-02-28-%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2018-04-04T16:11:46.615Z</lastmod>
     <data>
         <display>
@@ -666,7 +706,7 @@
          
            
              
-              <breadCrumb title="算法" url="https://www.devzou.com/categories/%E7%AE%97%E6%B3%95/"/>
+              <breadCrumb title="算法" url="https://blog.devzou.com/categories/%E7%AE%97%E6%B3%95/"/>
           
         </display>
     </data>
@@ -674,7 +714,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
     <lastmod>2018-04-04T16:10:48.817Z</lastmod>
     <data>
         <display>
@@ -686,7 +726,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -694,7 +734,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-1-Java%20%E5%B0%81%E8%A3%85/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java%20%E5%B0%81%E8%A3%85/</loc>
     <lastmod>2018-04-04T16:10:25.001Z</lastmod>
     <data>
         <display>
@@ -706,7 +746,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -714,7 +754,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-1-Java%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/</loc>
     <lastmod>2018-04-04T16:10:15.654Z</lastmod>
     <data>
         <display>
@@ -726,7 +766,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -734,7 +774,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
     <lastmod>2018-04-04T16:09:59.427Z</lastmod>
     <data>
         <display>
@@ -746,7 +786,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -754,7 +794,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-1-Java%E7%BB%A7%E6%89%BF/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java%E7%BB%A7%E6%89%BF/</loc>
     <lastmod>2018-04-04T16:09:48.167Z</lastmod>
     <data>
         <display>
@@ -766,7 +806,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -774,7 +814,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-Java%20%E5%8C%85(package)/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-Java%20%E5%8C%85(package)/</loc>
     <lastmod>2018-04-04T16:09:29.971Z</lastmod>
     <data>
         <display>
@@ -786,7 +826,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -794,7 +834,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/12/Java/2017-03-12-Java%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/Java/2017-03-12-Java%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2018-04-04T16:09:15.361Z</lastmod>
     <data>
         <display>
@@ -806,7 +846,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -814,7 +854,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/10/Java/2017-03-10-Java-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2017/03/10/Java/2017-03-10-Java-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2018-04-04T16:08:47.248Z</lastmod>
     <data>
         <display>
@@ -826,7 +866,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -834,7 +874,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/10/Java/2017-03-10-Java%E6%8E%A5%E5%8F%A3/</loc>
+    <loc>https://blog.devzou.com/2017/03/10/Java/2017-03-10-Java%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2018-04-04T16:08:26.861Z</lastmod>
     <data>
         <display>
@@ -846,7 +886,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -854,7 +894,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-java-lesson1/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-java-lesson1/</loc>
     <lastmod>2018-04-04T16:06:25.591Z</lastmod>
     <data>
         <display>
@@ -866,7 +906,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -874,7 +914,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/11/Java/2017-03-11-java%E7%AE%80%E4%BB%8B/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-java%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-04-04T16:06:00.221Z</lastmod>
     <data>
         <display>
@@ -886,7 +926,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -894,7 +934,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/12/Java/2017-03-12-Java%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/Java/2017-03-12-Java%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/</loc>
     <lastmod>2018-04-04T16:05:49.292Z</lastmod>
     <data>
         <display>
@@ -906,7 +946,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -914,7 +954,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/12/Java/2017-03-12-Java%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%BF%9E%E6%8E%A5MySQL/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/Java/2017-03-12-Java%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%BF%9E%E6%8E%A5MySQL/</loc>
     <lastmod>2018-04-04T16:05:36.708Z</lastmod>
     <data>
         <display>
@@ -926,7 +966,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -934,7 +974,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/04/12/Java/2017-04-12-Base64%E7%BC%96%E7%A0%81/</loc>
+    <loc>https://blog.devzou.com/2017/04/12/Java/2017-04-12-Base64%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2018-04-04T16:05:16.494Z</lastmod>
     <data>
         <display>
@@ -946,7 +986,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -954,7 +994,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/07/21/Java/2017-07-21-IDEA%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84web%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84web%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2018-04-04T16:05:03.359Z</lastmod>
     <data>
         <display>
@@ -966,7 +1006,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -974,7 +1014,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/08/06/Java/2017-08-06-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <loc>https://blog.devzou.com/2017/08/06/Java/2017-08-06-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2018-04-04T16:04:49.806Z</lastmod>
     <data>
         <display>
@@ -986,7 +1026,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -994,7 +1034,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/11/20/Java/2017-11-20-spring%20MVC%E5%85%A5%E9%97%A8/</loc>
+    <loc>https://blog.devzou.com/2017/11/20/Java/2017-11-20-spring%20MVC%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2018-04-04T16:03:58.521Z</lastmod>
     <data>
         <display>
@@ -1006,7 +1046,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -1014,7 +1054,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/11/24/Java/2017-11-24-IDEA%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://blog.devzou.com/2017/11/24/Java/2017-11-24-IDEA%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2018-04-04T16:03:45.954Z</lastmod>
     <data>
         <display>
@@ -1026,7 +1066,7 @@
          
            
              
-              <breadCrumb title="Java" url="https://www.devzou.com/categories/Java/"/>
+              <breadCrumb title="Java" url="https://blog.devzou.com/categories/Java/"/>
           
         </display>
     </data>
@@ -1034,7 +1074,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/02/04/python/2015-02-04-general-python-resources/</loc>
+    <loc>https://blog.devzou.com/2015/02/04/python/2015-02-04-general-python-resources/</loc>
     <lastmod>2018-04-04T16:03:01.649Z</lastmod>
     <data>
         <display>
@@ -1046,7 +1086,7 @@
          
            
              
-              <breadCrumb title="资源" url="https://www.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+              <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -1054,7 +1094,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2018-04-04T16:02:27.508Z</lastmod>
     <data>
         <display>
@@ -1066,7 +1106,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1074,7 +1114,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2018-04-04T16:02:09.930Z</lastmod>
     <data>
         <display>
@@ -1086,7 +1126,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1094,7 +1134,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
     <lastmod>2018-04-04T16:01:51.292Z</lastmod>
     <data>
         <display>
@@ -1106,7 +1146,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1114,7 +1154,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2018-04-04T16:01:30.603Z</lastmod>
     <data>
         <display>
@@ -1126,7 +1166,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1134,7 +1174,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AE%80%E4%BB%8B/</loc>
+    <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-04-04T16:01:13.451Z</lastmod>
     <data>
         <display>
@@ -1146,7 +1186,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1154,7 +1194,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/15/python/2017-03-15-Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6I:O/</loc>
+    <loc>https://blog.devzou.com/2017/03/15/python/2017-03-15-Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6I:O/</loc>
     <lastmod>2018-04-04T16:00:54.337Z</lastmod>
     <data>
         <display>
@@ -1166,7 +1206,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1174,7 +1214,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/16/python/2017-03-16-Python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91%E6%AE%B5%E5%AD%90/</loc>
+    <loc>https://blog.devzou.com/2017/03/16/python/2017-03-16-Python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91%E6%AE%B5%E5%AD%90/</loc>
     <lastmod>2018-04-04T16:00:24.757Z</lastmod>
     <data>
         <display>
@@ -1186,7 +1226,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1194,7 +1234,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/17/python/2017-03-17-python%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17-python%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-04T16:00:04.482Z</lastmod>
     <data>
         <display>
@@ -1206,7 +1246,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1214,7 +1254,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-04T15:59:53.419Z</lastmod>
     <data>
         <display>
@@ -1226,7 +1266,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1234,7 +1274,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-04T15:59:41.731Z</lastmod>
     <data>
         <display>
@@ -1246,7 +1286,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1254,7 +1294,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     <lastmod>2018-04-04T15:59:27.604Z</lastmod>
     <data>
         <display>
@@ -1266,7 +1306,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1274,7 +1314,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/19/python/2017-03-19-scrapy%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.devzou.com/2017/03/19/python/2017-03-19-scrapy%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2018-04-04T15:58:29.822Z</lastmod>
     <data>
         <display>
@@ -1286,7 +1326,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -1294,7 +1334,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
+    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
     <lastmod>2018-04-04T15:56:46.088Z</lastmod>
     <data>
         <display>
@@ -1306,7 +1346,7 @@
          
            
              
-              <breadCrumb title="React-Native" url="https://www.devzou.com/categories/React-Native/"/>
+              <breadCrumb title="React-Native" url="https://blog.devzou.com/categories/React-Native/"/>
           
         </display>
     </data>
@@ -1314,7 +1354,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-04-04T15:56:18.480Z</lastmod>
     <data>
         <display>
@@ -1326,7 +1366,7 @@
          
            
              
-              <breadCrumb title="React-Native" url="https://www.devzou.com/categories/React-Native/"/>
+              <breadCrumb title="React-Native" url="https://blog.devzou.com/categories/React-Native/"/>
           
         </display>
     </data>
@@ -1334,7 +1374,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/16/%E7%AE%97%E6%B3%95/2017-06-16-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2017/06/16/%E7%AE%97%E6%B3%95/2017-06-16-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2018-04-04T15:55:58.724Z</lastmod>
     <data>
         <display>
@@ -1346,7 +1386,7 @@
          
            
              
-              <breadCrumb title="算法" url="https://www.devzou.com/categories/%E7%AE%97%E6%B3%95/"/>
+              <breadCrumb title="算法" url="https://blog.devzou.com/categories/%E7%AE%97%E6%B3%95/"/>
           
         </display>
     </data>
@@ -1354,7 +1394,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/02/17/digitalImage/2017-02-17-%E5%9B%BE%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
+    <loc>https://blog.devzou.com/2017/02/17/digitalImage/2017-02-17-%E5%9B%BE%E5%83%8F%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2018-04-04T15:55:42.677Z</lastmod>
     <data>
         <display>
@@ -1366,7 +1406,7 @@
          
            
              
-              <breadCrumb title="数字图像处理" url="https://www.devzou.com/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+              <breadCrumb title="数字图像处理" url="https://blog.devzou.com/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
           
         </display>
     </data>
@@ -1374,7 +1414,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/02/20/digitalImage/2017-02-20-openCV-Mat/</loc>
+    <loc>https://blog.devzou.com/2017/02/20/digitalImage/2017-02-20-openCV-Mat/</loc>
     <lastmod>2018-04-04T15:54:38.932Z</lastmod>
     <data>
         <display>
@@ -1386,7 +1426,7 @@
          
            
              
-              <breadCrumb title="openCV" url="https://www.devzou.com/categories/openCV/"/>
+              <breadCrumb title="openCV" url="https://blog.devzou.com/categories/openCV/"/>
           
         </display>
     </data>
@@ -1394,7 +1434,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV-%E5%83%8F%E7%B4%A0%E5%80%BC%E7%9A%84%E8%AF%BB%E5%86%99/</loc>
+    <loc>https://blog.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV-%E5%83%8F%E7%B4%A0%E5%80%BC%E7%9A%84%E8%AF%BB%E5%86%99/</loc>
     <lastmod>2018-04-04T15:54:14.264Z</lastmod>
     <data>
         <display>
@@ -1406,7 +1446,7 @@
          
            
              
-              <breadCrumb title="openCV" url="https://www.devzou.com/categories/openCV/"/>
+              <breadCrumb title="openCV" url="https://blog.devzou.com/categories/openCV/"/>
           
         </display>
     </data>
@@ -1414,7 +1454,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV%E4%B9%8B%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0%E7%9A%84%E8%A1%A8%E8%BE%BE/</loc>
+    <loc>https://blog.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV%E4%B9%8B%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0%E7%9A%84%E8%A1%A8%E8%BE%BE/</loc>
     <lastmod>2018-04-04T15:53:58.996Z</lastmod>
     <data>
         <display>
@@ -1426,7 +1466,7 @@
          
            
              
-              <breadCrumb title="openCV" url="https://www.devzou.com/categories/openCV/"/>
+              <breadCrumb title="openCV" url="https://blog.devzou.com/categories/openCV/"/>
           
         </display>
     </data>
@@ -1434,7 +1474,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/05/17/digitalImage/2017-05-17-openCV%E7%AE%80%E8%BF%B0/</loc>
+    <loc>https://blog.devzou.com/2017/05/17/digitalImage/2017-05-17-openCV%E7%AE%80%E8%BF%B0/</loc>
     <lastmod>2018-04-04T15:53:43.003Z</lastmod>
     <data>
         <display>
@@ -1446,7 +1486,7 @@
          
            
              
-              <breadCrumb title="openCV" url="https://www.devzou.com/categories/openCV/"/>
+              <breadCrumb title="openCV" url="https://blog.devzou.com/categories/openCV/"/>
           
         </display>
     </data>
@@ -1454,7 +1494,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/07/21/ios/2016-07-21-ios-UIButton-%E5%8F%8C%E5%B1%82%E8%A7%86%E5%9B%BE/</loc>
+    <loc>https://blog.devzou.com/2016/07/21/ios/2016-07-21-ios-UIButton-%E5%8F%8C%E5%B1%82%E8%A7%86%E5%9B%BE/</loc>
     <lastmod>2018-04-04T15:52:03.037Z</lastmod>
     <data>
         <display>
@@ -1464,7 +1504,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1472,7 +1512,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/08/21/ios/2015-08-21-iOS%E5%BC%80%E5%8F%91%E4%B9%8BKVO/</loc>
+    <loc>https://blog.devzou.com/2015/08/21/ios/2015-08-21-iOS%E5%BC%80%E5%8F%91%E4%B9%8BKVO/</loc>
     <lastmod>2018-04-04T15:49:36.482Z</lastmod>
     <data>
         <display>
@@ -1484,7 +1524,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1492,7 +1532,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/03/11/ios/2015-03-11-textfield%E5%85%89%E6%A0%87%E4%BD%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2015/03/11/ios/2015-03-11-textfield%E5%85%89%E6%A0%87%E4%BD%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-04T15:47:05.977Z</lastmod>
     <data>
         <display>
@@ -1502,7 +1542,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1510,7 +1550,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
+    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
     <lastmod>2018-04-04T15:46:26.635Z</lastmod>
     <data>
         <display>
@@ -1520,7 +1560,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1528,7 +1568,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
+    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
     <lastmod>2018-04-04T15:45:56.290Z</lastmod>
     <data>
         <display>
@@ -1538,7 +1578,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1546,7 +1586,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/05/21/ios/2015-05-21-OC%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://blog.devzou.com/2015/05/21/ios/2015-05-21-OC%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2018-04-04T15:45:27.566Z</lastmod>
     <data>
         <display>
@@ -1558,7 +1598,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1566,7 +1606,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/02/21/ios/2015-02-21-static-const-extern/</loc>
+    <loc>https://blog.devzou.com/2015/02/21/ios/2015-02-21-static-const-extern/</loc>
     <lastmod>2018-04-04T15:45:01.684Z</lastmod>
     <data>
         <display>
@@ -1576,7 +1616,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1584,7 +1624,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/11/21/ios/2015-11-21-iOS-image%E5%A4%84%E7%90%86/</loc>
+    <loc>https://blog.devzou.com/2015/11/21/ios/2015-11-21-iOS-image%E5%A4%84%E7%90%86/</loc>
     <lastmod>2018-04-04T15:40:56.932Z</lastmod>
     <data>
         <display>
@@ -1594,7 +1634,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1602,7 +1642,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-04T15:40:20.052Z</lastmod>
     <data>
         <display>
@@ -1614,7 +1654,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1622,7 +1662,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/15/ios/2017-03-15%20-iOSView%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>https://blog.devzou.com/2017/03/15/ios/2017-03-15%20-iOSView%E5%B1%82%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2018-04-04T15:37:31.408Z</lastmod>
     <data>
         <display>
@@ -1634,7 +1674,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1642,7 +1682,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-04-04T15:33:34.539Z</lastmod>
     <data>
         <display>
@@ -1654,7 +1694,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1662,7 +1702,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/02/ios/2016-11-02-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A6%82%E8%BF%B0/</loc>
+    <loc>https://blog.devzou.com/2016/11/02/ios/2016-11-02-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A6%82%E8%BF%B0/</loc>
     <lastmod>2018-04-04T15:26:00.263Z</lastmod>
     <data>
         <display>
@@ -1674,7 +1714,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1682,7 +1722,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/01/10/ios/2017-01-10-cocoapods%E7%A7%81%E6%9C%89%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/</loc>
+    <loc>https://blog.devzou.com/2017/01/10/ios/2017-01-10-cocoapods%E7%A7%81%E6%9C%89%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA/</loc>
     <lastmod>2018-04-04T15:24:42.257Z</lastmod>
     <data>
         <display>
@@ -1694,7 +1734,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1702,7 +1742,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/12/25/ios/2016-12-25-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%98%B4%E5%BD%B1/</loc>
+    <loc>https://blog.devzou.com/2016/12/25/ios/2016-12-25-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%98%B4%E5%BD%B1/</loc>
     <lastmod>2018-04-04T15:24:16.129Z</lastmod>
     <data>
         <display>
@@ -1714,7 +1754,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1722,7 +1762,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/12/14/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2016/12/14/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2018-04-04T15:23:50.825Z</lastmod>
     <data>
         <display>
@@ -1734,7 +1774,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1742,7 +1782,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/12/14/ios/2016-12-14-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%8F%98%E6%8D%A2/</loc>
+    <loc>https://blog.devzou.com/2016/12/14/ios/2016-12-14-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%8F%98%E6%8D%A2/</loc>
     <lastmod>2018-04-04T15:23:30.475Z</lastmod>
     <data>
         <display>
@@ -1754,7 +1794,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1762,7 +1802,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/12/07/ios/2016-12-07-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%A2%9C%E8%89%B2%E4%B8%8E%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/</loc>
+    <loc>https://blog.devzou.com/2016/12/07/ios/2016-12-07-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%A2%9C%E8%89%B2%E4%B8%8E%E9%A2%9C%E8%89%B2%E7%A9%BA%E9%97%B4/</loc>
     <lastmod>2018-04-04T15:22:48.160Z</lastmod>
     <data>
         <display>
@@ -1774,7 +1814,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1782,7 +1822,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/27/ios/2016-11-27-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF%E5%BE%84/</loc>
+    <loc>https://blog.devzou.com/2016/11/27/ios/2016-11-27-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E8%B7%AF%E5%BE%84/</loc>
     <lastmod>2018-04-04T15:22:12.405Z</lastmod>
     <data>
         <display>
@@ -1794,7 +1834,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1802,7 +1842,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/23/ios/2016-11-23-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%9B%BE%E5%BD%A2%E4%B8%8A%E4%B8%8B%E6%96%87/</loc>
+    <loc>https://blog.devzou.com/2016/11/23/ios/2016-11-23-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%9B%BE%E5%BD%A2%E4%B8%8A%E4%B8%8B%E6%96%87/</loc>
     <lastmod>2018-04-04T15:21:40.452Z</lastmod>
     <data>
         <display>
@@ -1814,7 +1854,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1822,7 +1862,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/20/ios/2016-11-20-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%B1%9E%E6%80%A7%E5%A3%B0%E6%98%8E/</loc>
+    <loc>https://blog.devzou.com/2016/11/20/ios/2016-11-20-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%B1%9E%E6%80%A7%E5%A3%B0%E6%98%8E/</loc>
     <lastmod>2018-04-04T15:21:08.976Z</lastmod>
     <data>
         <display>
@@ -1834,7 +1874,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1842,7 +1882,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/15/ios/2016-11-15-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E7%B1%BB%E5%9E%8B%E7%BC%96%E7%A0%81/</loc>
+    <loc>https://blog.devzou.com/2016/11/15/ios/2016-11-15-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E7%B1%BB%E5%9E%8B%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2018-04-04T15:20:38.750Z</lastmod>
     <data>
         <display>
@@ -1854,7 +1894,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1862,7 +1902,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
+    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
     <lastmod>2018-04-04T15:20:08.963Z</lastmod>
     <data>
         <display>
@@ -1874,7 +1914,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1882,7 +1922,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2018-04-04T15:19:38.552Z</lastmod>
     <data>
         <display>
@@ -1894,7 +1934,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1902,7 +1942,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/10/25/ios/2016-10-25-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF/</loc>
+    <loc>https://blog.devzou.com/2016/10/25/ios/2016-10-25-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF/</loc>
     <lastmod>2018-04-04T15:19:10.949Z</lastmod>
     <data>
         <display>
@@ -1914,7 +1954,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1922,7 +1962,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/10/20/ios/2016-10-20-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/</loc>
+    <loc>https://blog.devzou.com/2016/10/20/ios/2016-10-20-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%92%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%B3%BB%E7%BB%9F%E4%BA%A4%E4%BA%92/</loc>
     <lastmod>2018-04-04T15:18:35.094Z</lastmod>
     <data>
         <display>
@@ -1934,7 +1974,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1942,7 +1982,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/10/20/ios/2017-10-20-iphone%20X%E9%80%82%E9%85%8D/</loc>
+    <loc>https://blog.devzou.com/2017/10/20/ios/2017-10-20-iphone%20X%E9%80%82%E9%85%8D/</loc>
     <lastmod>2018-04-04T15:15:10.463Z</lastmod>
     <data>
         <display>
@@ -1954,7 +1994,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1962,7 +2002,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/09/12/ios/2015-09-12-iOS%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%9F%A5/</loc>
+    <loc>https://blog.devzou.com/2015/09/12/ios/2015-09-12-iOS%E5%B8%B8%E7%94%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%80%9A%E7%9F%A5/</loc>
     <lastmod>2018-04-04T15:13:35.224Z</lastmod>
     <data>
         <display>
@@ -1974,7 +2014,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -1982,7 +2022,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2018-04-04T15:12:56.625Z</lastmod>
     <data>
         <display>
@@ -1994,7 +2034,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2002,7 +2042,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/06/17/ios/2017-06-17-NSInvocation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/ios/2017-06-17-NSInvocation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-04T15:12:07.692Z</lastmod>
     <data>
         <display>
@@ -2014,7 +2054,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2022,7 +2062,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-04-04T15:11:34.396Z</lastmod>
     <data>
         <display>
@@ -2034,7 +2074,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2042,7 +2082,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/07/17/ios/2016-07-17-openCV%E5%9C%A8iOS%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B9%8B%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2016/07/17/ios/2016-07-17-openCV%E5%9C%A8iOS%E5%B7%A5%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B9%8B%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-04T15:09:58.223Z</lastmod>
     <data>
         <display>
@@ -2054,7 +2094,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2062,7 +2102,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/06/07/ios/2015-06-07-CADisplayLink/</loc>
+    <loc>https://blog.devzou.com/2015/06/07/ios/2015-06-07-CADisplayLink/</loc>
     <lastmod>2018-04-04T15:09:12.438Z</lastmod>
     <data>
         <display>
@@ -2074,7 +2114,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2082,7 +2122,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/04/07/ios/2017-04-07-iOS%E8%B0%83%E7%94%A8%E9%80%9A%E8%AE%AF%E5%BD%95%E5%85%BC%E5%AE%B97%E3%80%818%E3%80%819%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://blog.devzou.com/2017/04/07/ios/2017-04-07-iOS%E8%B0%83%E7%94%A8%E9%80%9A%E8%AE%AF%E5%BD%95%E5%85%BC%E5%AE%B97%E3%80%818%E3%80%819%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2018-04-04T15:08:15.810Z</lastmod>
     <data>
         <display>
@@ -2094,7 +2134,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2102,7 +2142,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
+    <loc>https://blog.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
     <lastmod>2018-04-04T15:07:37.502Z</lastmod>
     <data>
         <display>
@@ -2114,7 +2154,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2122,7 +2162,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/03/26/ios/2017-03-26-iOS%E5%BC%80%E5%8F%91%E4%B9%8Bweak/</loc>
+    <loc>https://blog.devzou.com/2015/03/26/ios/2017-03-26-iOS%E5%BC%80%E5%8F%91%E4%B9%8Bweak/</loc>
     <lastmod>2018-04-04T15:06:37.355Z</lastmod>
     <data>
         <display>
@@ -2134,7 +2174,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2142,7 +2182,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/15/ios/2017-03-15-pod%20search/</loc>
+    <loc>https://blog.devzou.com/2017/03/15/ios/2017-03-15-pod%20search/</loc>
     <lastmod>2018-04-04T15:05:58.884Z</lastmod>
     <data>
         <display>
@@ -2154,7 +2194,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2162,7 +2202,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/03/13/ios/2017-03-13-%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BA%93%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81cocoapods/</loc>
+    <loc>https://blog.devzou.com/2017/03/13/ios/2017-03-13-%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%BA%93%E6%96%87%E4%BB%B6%E6%94%AF%E6%8C%81cocoapods/</loc>
     <lastmod>2018-04-04T15:05:37.324Z</lastmod>
     <data>
         <display>
@@ -2174,7 +2214,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2182,7 +2222,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
+    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
     <lastmod>2018-04-04T15:05:02.857Z</lastmod>
     <data>
         <display>
@@ -2194,7 +2234,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2202,7 +2242,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
+    <loc>https://blog.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
     <lastmod>2018-04-04T15:03:39.208Z</lastmod>
     <data>
         <display>
@@ -2212,7 +2252,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2220,7 +2260,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2015/04/16/ios/2018-03-01-%E4%BD%BF%E7%94%A8charles%E6%8A%93%E5%8C%85/</loc>
+    <loc>https://blog.devzou.com/2015/04/16/ios/2018-03-01-%E4%BD%BF%E7%94%A8charles%E6%8A%93%E5%8C%85/</loc>
     <lastmod>2018-04-04T14:54:46.476Z</lastmod>
     <data>
         <display>
@@ -2232,7 +2272,7 @@
          
            
              
-              <breadCrumb title="iOS" url="https://www.devzou.com/categories/iOS/"/>
+              <breadCrumb title="iOS" url="https://blog.devzou.com/categories/iOS/"/>
           
         </display>
     </data>
@@ -2245,7 +2285,7 @@
     
     
   <url>
-    <loc>https://www.devzou.com/2018/04/01/web%E5%89%8D%E7%AB%AF/2018-04-01-webpack4%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://blog.devzou.com/2018/04/01/web%E5%89%8D%E7%AB%AF/2018-04-01-webpack4%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2018-04-01T09:34:38.898Z</lastmod>
     <data>
         <display>
@@ -2257,7 +2297,7 @@
          
            
              
-              <breadCrumb title="web前端" url="https://www.devzou.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="web前端" url="https://blog.devzou.com/categories/web%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -2265,7 +2305,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/07/04/tool/2017-07-04-iTerm2%E7%BB%88%E7%AB%AF%E9%85%8D%E8%89%B2%20/</loc>
+    <loc>https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2%E7%BB%88%E7%AB%AF%E9%85%8D%E8%89%B2%20/</loc>
     <lastmod>2018-04-01T09:34:38.897Z</lastmod>
     <data>
         <display>
@@ -2277,7 +2317,7 @@
          
            
              
-              <breadCrumb title="Tool" url="https://www.devzou.com/categories/Tool/"/>
+              <breadCrumb title="Tool" url="https://blog.devzou.com/categories/Tool/"/>
           
         </display>
     </data>
@@ -2285,27 +2325,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2018-04-01T09:34:38.888Z</lastmod>
-    <data>
-        <display>
-        <title>python的import机制</title>
-        <pubTime>2017-07-04T00:10:09.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.devzou.com/2017/07/04/python/2017-07-05-python%E4%B8%ADrange()%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2017/07/04/python/2017-07-05-python%E4%B8%ADrange()%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
     <lastmod>2018-04-01T09:34:38.888Z</lastmod>
     <data>
         <display>
@@ -2317,7 +2337,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -2325,7 +2345,27 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</loc>
+    <loc>https://blog.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/</loc>
+    <lastmod>2018-04-01T09:34:38.888Z</lastmod>
+    <data>
+        <display>
+        <title>python的import机制</title>
+        <pubTime>2017-07-04T00:10:09.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</loc>
     <lastmod>2018-04-01T09:34:38.878Z</lastmod>
     <data>
         <display>
@@ -2337,7 +2377,7 @@
          
            
              
-              <breadCrumb title="python" url="https://www.devzou.com/categories/python/"/>
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
           
         </display>
     </data>
@@ -2345,27 +2385,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/01/26/hexo/%E4%BD%BF%E7%94%A8hexo%E4%B8%8Egitpages%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-04-01T09:34:38.847Z</lastmod>
-    <data>
-        <display>
-        <title>使用hexo+gitpages创建自己的博客</title>
-        <pubTime>2017-01-26T10:40:12.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="https://www.devzou.com/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.devzou.com/2017/06/13/hexo/2017-06-13-%E4%B8%BAHexo%E7%9A%84Next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E7%95%85%E8%A8%80%E8%AF%84%E8%AE%BA%E7%9A%84%E6%94%AF%E6%8C%81/</loc>
+    <loc>https://blog.devzou.com/2017/06/13/hexo/2017-06-13-%E4%B8%BAHexo%E7%9A%84Next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E7%95%85%E8%A8%80%E8%AF%84%E8%AE%BA%E7%9A%84%E6%94%AF%E6%8C%81/</loc>
     <lastmod>2018-04-01T09:34:38.846Z</lastmod>
     <data>
         <display>
@@ -2377,7 +2397,7 @@
          
            
              
-              <breadCrumb title="hexo" url="https://www.devzou.com/categories/hexo/"/>
+              <breadCrumb title="hexo" url="https://blog.devzou.com/categories/hexo/"/>
           
         </display>
     </data>
@@ -2385,7 +2405,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/01/26/hexo/2017-01-29/</loc>
+    <loc>https://blog.devzou.com/2017/01/26/hexo/2017-01-29/</loc>
     <lastmod>2017-02-22T14:23:58.000Z</lastmod>
     <data>
         <display>
@@ -2397,7 +2417,7 @@
          
            
              
-              <breadCrumb title="hexo" url="https://www.devzou.com/categories/hexo/"/>
+              <breadCrumb title="hexo" url="https://blog.devzou.com/categories/hexo/"/>
           
         </display>
     </data>
@@ -2405,27 +2425,7 @@
 
     
   <url>
-    <loc>https://www.devzou.com/2017/01/26/hexo/2017-01-30-add-categories-tags/</loc>
-    <lastmod>2017-01-31T07:21:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo博客在导航条中添加分类和标签栏</title>
-        <pubTime>2017-01-26T10:40:12.000Z</pubTime>
-        
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="hexo" url="https://www.devzou.com/categories/hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.devzou.com/2017/01/26/hexo/2017-01-29-hexo-insertpicture/</loc>
+    <loc>https://blog.devzou.com/2017/01/26/hexo/2017-01-29-hexo-insertpicture/</loc>
     <lastmod>2017-01-30T12:26:01.000Z</lastmod>
     <data>
         <display>
@@ -2437,7 +2437,7 @@
          
            
              
-              <breadCrumb title="hexo" url="https://www.devzou.com/categories/hexo/"/>
+              <breadCrumb title="hexo" url="https://blog.devzou.com/categories/hexo/"/>
           
         </display>
     </data>
