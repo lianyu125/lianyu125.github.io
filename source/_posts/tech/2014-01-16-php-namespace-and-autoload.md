@@ -1,5 +1,6 @@
 ---
 title: PHP命名空间及自动加载
+date: 2014-01-16 8:10:09
 category: 技术
 tags: PHP
 keywords: PHP,命名空间,自动加载

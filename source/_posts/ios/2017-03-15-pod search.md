@@ -1,6 +1,7 @@
 ---
 title: Cocoapods 之pod search无法搜索到类库的解决办法
 category: iOS
+date: 2017-03-15 7:09:29
 tags: cocoapods
 keywords: iOS
 description: 当自己向cocoapods提交了自己的代码库时，用pod search找不到

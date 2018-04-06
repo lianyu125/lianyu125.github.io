@@ -14,27 +14,27 @@ descriptions: 工作一段时间后,我一直想拥有一个属于自己的博�
 ```
 npm install -g hexo-cli
 ```
-![](../img/hexo-cli.png)
+![](http://okjl482qy.bkt.clouddn.com/hexo-cli.png)
 
 2.安装hexo
 ```
 npm install hexo --save
 ```
-![](../img/hexo_save.png)
+![](http://okjl482qy.bkt.clouddn.com/hexo_save.png)
 【注】warning可以忽略
 3.查看hexo安装是否成功
 ```
  hexo -v 
 ```
 如下图所示,则表示安装成功
-![](../img/hexo_v.png)
+![](http://okjl482qy.bkt.clouddn.com/hexo_v.png)
 ## 本地运行hexo
 1.初始化hexo
 ```
 hexo init
 ```
 如下图则表示初始化成功
-![](../img/hexo_init.png)
+![](http://okjl482qy.bkt.clouddn.com/hexo_init.png)
 2.安装生成器
 ```
 npm install 
@@ -43,9 +43,9 @@ npm install
 ```
 hexo s -g 
 ```
-![](../img/hexo_run.png)
+![](http://okjl482qy.bkt.clouddn.com/hexo_run.png)
  如图则表示运行成功
- ![](../img/hexo_demo.png)
+ ![](http://okjl482qy.bkt.clouddn.com/hexo_demo.png)
 ## 一键部署到github
 1.打开博客目录中的_config.yml文件
 修改文件中的deploy下内容

@@ -1,5 +1,6 @@
 ---
 title: define与typedef用法总结
+date: 2017-11-02 8:10:09
 category: C语言
 tags: C语言
 keywords: C语言

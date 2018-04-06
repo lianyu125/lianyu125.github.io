@@ -1,5 +1,6 @@
 ---
 title: PHP中的魔术方法和魔术常量简介和使用
+date: 2014-04-27 8:10:09
 category: 技术
 tags: PHP
 keywords: PHP,魔术方法

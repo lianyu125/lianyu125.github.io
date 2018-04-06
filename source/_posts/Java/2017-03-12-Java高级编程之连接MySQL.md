@@ -1,5 +1,6 @@
 ---
 title: Java高级编程之连接MySQL
+date: 2017-03-12 8:10:09
 category: Java
 tags: Java
 keywords: Java

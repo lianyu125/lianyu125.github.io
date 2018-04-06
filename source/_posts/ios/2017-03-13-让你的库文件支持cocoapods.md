@@ -1,6 +1,7 @@
 ---
 title: 让你的库文件支持cocoapods
 category: iOS
+date: 2017-03-13 7:09:29
 tags: cocoapods
 keywords: [iOS,cocoapods]
 description: iOS模块化编程最重要的工具莫过于cocoapods,下面介绍一下让你的库文件支持cocoapods

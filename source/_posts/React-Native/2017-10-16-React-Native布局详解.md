@@ -1,5 +1,6 @@
 ---
 title: React Native布局
+date: 2017-10-16 8:10:09
 tags: React-Naticve
 categories: React-Native 
 ---
