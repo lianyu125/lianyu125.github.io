@@ -6,10 +6,32 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.devzou.com/"/>
-  <updated>2018-04-01T09:34:38.898Z</updated>
+  <updated>2018-04-14T01:46:45.985Z</updated>
   <id>https://blog.devzou.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webStorm开发微信小程序环境配置</title>
+    <link href="https://blog.devzou.com/2018/04/13/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/2018-04-14-webStorm%E5%BC%80%E5%8F%91%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://blog.devzou.com/2018/04/13/微信小程序/2018-04-14-webStorm开发微信小程序环境配置/</id>
+    <published>2018-04-13T13:08:35.000Z</published>
+    <updated>2018-04-14T01:46:45.985Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="让webStorm支持微信小程序开发"><a href="#让webStorm支持微信小程序开发" class="headerlink" title="让webStorm支持微信小程序开发"></a>让webStorm支持微信小程序开发</h2><h3 id="1-在WebStorm-gt-preference-gt-Editor-gt-FileType-gt-Cascading-Style-Sheet-添加-wxss"><a href="#1-在WebStorm-gt-preference-gt-Editor-gt-FileType-gt-Cascading-Style-Sheet-添加-wxss" class="headerlink" title="1.在WebStorm-&gt; preference-&gt;Editor-&gt; FileType-&gt;Cascading Style Sheet 添加*.wxss"></a>1.在WebStorm-&gt; preference-&gt;Editor-&gt; FileType-&gt;Cascading Style Sheet 添加*.wxss</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_01.png" alt=""><br><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_02.png" alt=""></p><h3 id="2-在FileType下HTML-添加-wxml"><a href="#2-在FileType下HTML-添加-wxml" class="headerlink" title="2.在FileType下HTML 添加*.wxml"></a>2.在FileType下HTML 添加*.wxml</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_03.png" alt=""></p><h2 id="webStorm支持代码代码提醒"><a href="#webStorm支持代码代码提醒" class="headerlink" title="webStorm支持代码代码提醒"></a>webStorm支持代码代码提醒</h2><h3 id="1-下载wecharCode-jar"><a href="#1-下载wecharCode-jar" class="headerlink" title="1.下载wecharCode.jar"></a>1.下载<a href="https://link.jianshu.com/?t=https://github.com/miaozhang9/wecharCodejar" target="_blank" rel="external">wecharCode.jar</a></h3><h3 id="2-并放入-Users-你的用户名-Library-Preferences-WebStorm2016-2文件夹下"><a href="#2-并放入-Users-你的用户名-Library-Preferences-WebStorm2016-2文件夹下" class="headerlink" title="2.并放入/Users/你的用户名/Library/Preferences/WebStorm2016.2文件夹下"></a>2.并放入/Users/你的用户名/Library/Preferences/WebStorm2016.2文件夹下</h3><h3 id="3-然后在webStorm-的-File-gt-import-settings-中导入即可"><a href="#3-然后在webStorm-的-File-gt-import-settings-中导入即可" class="headerlink" title="3.然后在webStorm 的 File -&gt; import settings 中导入即可"></a>3.然后在webStorm 的 File -&gt; import settings 中导入即可</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_04.png" alt=""><br>效果如下图所示<br><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_05.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      webStorm是一款强大的开发工具，我们稍加配置一下即可支持对微信小程序的开发，并且支持代码提醒功能。
+    
+    </summary>
+    
+      <category term="微信小程序" scheme="https://blog.devzou.com/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="微信小程序" scheme="https://blog.devzou.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>webpack4入门教程</title>
@@ -235,6 +257,31 @@
   </entry>
   
   <entry>
+    <title>软件设计模式之策略模式</title>
+    <link href="https://blog.devzou.com/2017/10/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018-05-11-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.devzou.com/2017/10/16/设计模式/2018-05-11-软件设计模式之策略模式/</id>
+    <published>2017-10-16T00:10:09.000Z</published>
+    <updated>2018-06-04T01:05:01.577Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>策略模式定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换。策略模式让算法独立于使用它的客户而独立变化。<br>（原文：The Strategy Pattern defines a family of algorithms,encapsulates each one,and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.）<br>Context(应用场景):<br>1、需要使用ConcreteStrategy提供的算法。<br>2、内部维护一个Strategy的实例。<br>3、负责动态设置运行时Strategy具体的实现算法。<br>4、负责跟Strategy之间的交互和数据传递。<br>Strategy(抽象策略类)：<br>1、 定义了一个公共接口，各种不同的算法以不同的方式实现这个接口，Context使用这个接口调用不同的算法，一般使用接口或抽象类实现。<br>ConcreteStrategy(具体策略类)：<br>2、 实现了Strategy定义的接口，提供具体的算法实现。</p><h2 id="Objective-C-代码实现"><a href="#Objective-C-代码实现" class="headerlink" title="Objective-C 代码实现"></a>Objective-C 代码实现</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">Strategy</span> &lt;<span class="title">NSObject</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)print;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ConcreteStrategyA</span> : <span class="title">NSObject</span>&lt;<span class="title">Strategy</span>&gt;</span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ConcreteStrategyB</span> : <span class="title">NSObject</span>&lt;<span class="title">Strategy</span>&gt;</span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Context</span> : <span class="title">NSObject</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">id</span>&lt;Strategy&gt; _strategy;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;Strategy&gt; strategy;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)doIt;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ConcreteStrategyA</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)print</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Test01"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ConcreteStrategyB</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)print</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Test02"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Context</span></span></div><div class="line"></div><div class="line"><span class="keyword">@synthesize</span> strategy = _strategy;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)doIt</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span>.strategy print];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;策略模式定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换。策略模式让算法独立于使用它的客户而独立变化。&lt;br&gt;（原文：T
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="https://blog.devzou.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://blog.devzou.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>贝塞尔曲线的基本知识</title>
     <link href="https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
     <id>https://blog.devzou.com/2017/09/13/ios/2017-09-13-贝塞尔曲线的基本知识/</id>
@@ -304,28 +351,6 @@
   </entry>
   
   <entry>
-    <title>安卓初级开发之使用Fragment建立动态UI</title>
-    <link href="https://blog.devzou.com/2017/07/23/android/2017-07-23/"/>
-    <id>https://blog.devzou.com/2017/07/23/android/2017-07-23/</id>
-    <published>2017-07-23T00:10:09.000Z</published>
-    <updated>2018-04-06T13:55:52.095Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="创建-Fragment"><a href="#创建-Fragment" class="headerlink" title="创建 Fragment"></a>创建 Fragment</h2><p>  可以把 Fragment 想象成 Activity 的模块，它拥有自己的生命周期、接收输入事件，可以在 Acvitity 运行过程中添加或者移除（有点像“子 Activity”，可以在不同的 Activity 里重复使用）。这一课教我们将学习继承  <a href="https://developer.android.com/tools/support-library/index.html" target="_blank" rel="external">Support Library</a>中的 <a href="https://developer.android.com/reference/android/support/v4/app/Fragment.html" target="_blank" rel="external">Fragment</a>，使 APP 在 Android 1.6 这样的低版本上仍能保持兼容。</p><p>   在开始之前，必须在项目中先引用 Support Library。如果你从未使用过 Support Library，可根据文档 <a href="https://developer.android.com/tools/support-library/setup.html" target="_blank" rel="external">设置 Support Library</a> 在项目中使用 v4 库。当然，也可以使用包含 <a href="https://developer.android.com/training/appbar/index.html" target="_blank" rel="external">APP Bar</a> 的 v7 appcompat 库。该库兼容 Android 2.1 (API level 7)，同时也包含了 Fragment API。    </p><h3 id="创建-Fragment-类"><a href="#创建-Fragment-类" class="headerlink" title="创建 Fragment 类"></a>创建 Fragment 类</h3><p>   首先从 Fragment 继承并创建 Fragment，然后在关键的生命周期方法中插入代码（就和在处理 Activity 时一样）。</p><p>其中一个区别是：创建 Fragment 时，必须重写 onCreateView() 回调方法来定义布局。事实上，这是唯一一个为使 Fragment 运行起来需要重写的回调方法。比如，下面是一个自定义布局的示例 Fragment：</p>]]></content>
-    
-    <summary type="html">
-    
-      为了在 Android 上为用户提供动态的、多窗口的交互体验，需要将 UI 组件和Activity 操作封装成模块进行使用，这样我们就可以在 Activity 中对这些模块进行切入切出操作。可以用Fragment 创建这些模块，Fragment 就像一个嵌套的 Activity，拥有自己的布局（Layout）并管理自己的生命期。Fragment 定义了自己的布局后，它可以在 Activity 中与其他 Fragment 生成不同的组合，从而为不同的屏幕尺寸生成不同的布局（小屏幕一次也许只能显示一个 Fragment，大屏幕则可以显示更多）。本章将展示如何用 Fragment 创建动态界面，并在不同屏幕尺寸的设备上优化 APP 的用户体验。本章内容支持 Android 1.6 以上的设备。
-    
-    </summary>
-    
-      <category term="Android" scheme="https://blog.devzou.com/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="https://blog.devzou.com/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
     <title>IDEA部署你的web项目</title>
     <link href="https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84web%E9%A1%B9%E7%9B%AE/"/>
     <id>https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA部署你的web项目/</id>
@@ -373,53 +398,6 @@
   </entry>
   
   <entry>
-    <title>python的import机制</title>
-    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/"/>
-    <id>https://blog.devzou.com/2017/07/04/python/2017-07-10- python 的import机制/</id>
-    <published>2017-07-04T00:10:09.000Z</published>
-    <updated>2018-04-01T09:34:38.888Z</updated>
-    
-    <content type="html"><![CDATA[<p>python中，每个py文件被称之为模块，每个具有<strong>init</strong>.py文件的目录被称为包。只要模块或者包所在的目录在sys.path中，就可以使用import 模块或import 包来使用。 </p><p>如果想使用非当前模块中的代码，需要使用Import，这个大家都知道。<br>如果你要使用的模块（py文件）和当前模块在同一目录，只要import相应的文件名就好，比如在a.py中使用b.py：<br>import b<br>但是如果要import一个不同目录的文件(例如b.py)该怎么做呢？<br>首先需要使用sys.path.append方法将b.py所在目录加入到搜素目录中。然后进行import即可，例如<br>import sys<br>sys.path.append(‘c:\xxxx\b.py’) # 这个例子针对 windows 用户来说的<br>大多数情况，上面的代码工作的很好。但是如果你没有发现上面代码有什么问题的话，可要注意了，上面的代码有时会找不到模块或者包（ImportError: No module named xxxxxx），这是因为：<br>sys模块是使用c语言编写的，因此字符串支持 ‘\n’, ‘\r’, ‘\t’等来表示特殊字符。所以上面代码最好写成：<br>sys.path.append(‘c:\xxx\b.py’)<br>或者sys.path.append(‘c:/xxxx/b.py’)<br>这样可以避免因为错误的组成转义字符，而造成无效的搜索目录（sys.path）设置。 </p>]]></content>
-    
-    <summary type="html">
-    
-      python的import机制
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iTerm2终端配色</title>
-    <link href="https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2%E7%BB%88%E7%AB%AF%E9%85%8D%E8%89%B2%20/"/>
-    <id>https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2终端配色 /</id>
-    <published>2017-07-04T00:10:09.000Z</published>
-    <updated>2018-04-01T09:34:38.897Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文"><a href="#修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文" class="headerlink" title="修改 .bash_profile 配置文件, 具体作用看每行注释 (保留英文原文)"></a>修改 .bash_profile 配置文件, 具体作用看每行注释 (保留英文原文)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi ~/.bash_profile</div></pre></td></tr></table></figure><p>添加如下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># enables colorin the terminal bash shell export</span></div><div class="line"><span class="built_in">export</span> CLICOLOR=1</div><div class="line"><span class="comment"># sets up thecolor scheme for list export</span></div><div class="line"><span class="built_in">export</span> LSCOLORS=gxfxcxdxbxegedabagacad</div><div class="line"><span class="comment"># sets up theprompt color (currently a green similar to linux terminal)</span></div><div class="line"><span class="built_in">export</span> PS1=<span class="string">'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '</span></div><div class="line"><span class="comment"># enables colorfor iTerm</span></div><div class="line"><span class="built_in">export</span> TERM=xterm-color</div></pre></td></tr></table></figure></p><p>保存退出, 使其生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure></p><h2 id="设置iTerm2使其生效"><a href="#设置iTerm2使其生效" class="headerlink" title="设置iTerm2使其生效"></a>设置iTerm2使其生效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. preference-&gt;profiles-&gt;Default-&gt;Terminal-&gt;xterm-new  设置终端类型</div><div class="line">2. preference-&gt;profiles-&gt;Default-&gt;Colors  选择一个自己喜欢的配色</div></pre></td></tr></table></figure><h2 id="下载配色文件-里面包含多种配色方案"><a href="#下载配色文件-里面包含多种配色方案" class="headerlink" title="下载配色文件, 里面包含多种配色方案"></a>下载配色文件, 里面包含多种配色方案</h2><p>Github地址: <a href="https://github.com/mbadolato/iTerm2-Color-Schemes" target="_blank" rel="external">https://github.com/mbadolato/iTerm2-Color-Schemes</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文&quot;&gt;&lt;a href=&quot;#修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文&quot; class=&quot;headerlink&quot; title=&quot;修改 .bash_profile 配
-      
-    
-    </summary>
-    
-      <category term="Tool" scheme="https://blog.devzou.com/categories/Tool/"/>
-    
-    
-      <category term="Tool" scheme="https://blog.devzou.com/tags/Tool/"/>
-    
-  </entry>
-  
-  <entry>
     <title>学习numpy</title>
     <link href="https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/"/>
     <id>https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</id>
@@ -459,6 +437,28 @@
       
         &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
       
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的import机制</title>
+    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/"/>
+    <id>https://blog.devzou.com/2017/07/04/python/2017-07-10- python 的import机制/</id>
+    <published>2017-07-04T00:10:09.000Z</published>
+    <updated>2018-04-01T09:34:38.888Z</updated>
+    
+    <content type="html"><![CDATA[<p>python中，每个py文件被称之为模块，每个具有<strong>init</strong>.py文件的目录被称为包。只要模块或者包所在的目录在sys.path中，就可以使用import 模块或import 包来使用。 </p><p>如果想使用非当前模块中的代码，需要使用Import，这个大家都知道。<br>如果你要使用的模块（py文件）和当前模块在同一目录，只要import相应的文件名就好，比如在a.py中使用b.py：<br>import b<br>但是如果要import一个不同目录的文件(例如b.py)该怎么做呢？<br>首先需要使用sys.path.append方法将b.py所在目录加入到搜素目录中。然后进行import即可，例如<br>import sys<br>sys.path.append(‘c:\xxxx\b.py’) # 这个例子针对 windows 用户来说的<br>大多数情况，上面的代码工作的很好。但是如果你没有发现上面代码有什么问题的话，可要注意了，上面的代码有时会找不到模块或者包（ImportError: No module named xxxxxx），这是因为：<br>sys模块是使用c语言编写的，因此字符串支持 ‘\n’, ‘\r’, ‘\t’等来表示特殊字符。所以上面代码最好写成：<br>sys.path.append(‘c:\xxx\b.py’)<br>或者sys.path.append(‘c:/xxxx/b.py’)<br>这样可以避免因为错误的组成转义字符，而造成无效的搜索目录（sys.path）设置。 </p>]]></content>
+    
+    <summary type="html">
+    
+      python的import机制
     
     </summary>
     
