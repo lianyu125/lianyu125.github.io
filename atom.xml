@@ -235,28 +235,6 @@
   </entry>
   
   <entry>
-    <title>React Native布局</title>
-    <link href="https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native布局详解/</id>
-    <published>2017-10-16T00:10:09.000Z</published>
-    <updated>2018-04-06T13:55:52.092Z</updated>
-    
-    <content type="html"><![CDATA[<p>在React Native中布局采用的是FleBox(弹性框)进行布局。本文章将向大家介绍React Native中的布局方式FlexBox。请参考<a href="http://facebook.github.io/react-native/docs/flexbox.html" target="_blank" rel="external">FlexBox弹性布局官方文档</a><br><a id="more"></a><br>FlexBox提供了在不同尺寸设备上都能保持一致的布局方式。FlexBox是CSS3弹性框布局规范，目前还处于最终征求意见稿 (Last Call Working Draft)阶段，并不是所有的浏览器都支持Flexbox。但大家在做React Native开发时大可不必担心FlexBox的兼容性问题，因为既然React Native选择用FlexBox布局，那么React Native对FlexBox的支持自然会做的很好。</p><h2 id="Flexbox的工作方式与在网络上的CSS中的异同点"><a href="#Flexbox的工作方式与在网络上的CSS中的异同点" class="headerlink" title="Flexbox的工作方式与在网络上的CSS中的异同点"></a>Flexbox的工作方式与在网络上的CSS中的异同点</h2><ol><li>flexDirection: React Native中默认为flexDirection:’column’，在Web CSS中默认为flex-direction:’row’</li><li>alignItems: React Native中默认为alignItems:’stretch’，在Web CSS中默认align-items:’flex-start’</li><li>flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Native中flex只接受一个参数</li><li>不支持属性：align-content，flex-basis，order，flex-basis，flex-flow，flex-grow，flex-shrink<h2 id="父视图属性-容器属性-："><a href="#父视图属性-容器属性-：" class="headerlink" title="父视图属性(容器属性)："></a>父视图属性(容器属性)：</h2></li></ol><ul><li>flexDirection enum(‘row’, ‘column’,’row-reverse’,’column-reverse’)</li><li>flexWrap enum(‘wrap’, ‘nowrap’)</li><li>justifyContent enum(‘flex-start’, ‘flex-end’, ‘center’, ‘space-between’, ‘space-around’)</li><li>alignItems enum(‘flex-start’, ‘flex-end’, ‘center’, ‘stretch’)<h3 id="flexDirection"><a href="#flexDirection" class="headerlink" title="flexDirection"></a>flexDirection</h3>flexDirection属性定义了父视图中的子元素沿横轴或侧轴方片的排列方式。<br><code>flexDirection enum(&#39;row&#39;, &#39;column&#39;,&#39;row-reverse&#39;,&#39;column-reverse&#39;)</code><blockquote><p>row: 从左向右依次排列<br>row-reverse: 从右向左依次排列<br>column(default): 默认的排列方式，从上向下排列<br>column-reverse: 从下向上排列</p></blockquote></li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123; &#123;<span class="attr">flexDirection</span>:<span class="string">'row'</span>,<span class="attr">backgroundColor</span>:<span class="string">"red"</span>,<span class="attr">marginTop</span>:<span class="number">20</span>,<span class="attr">flexWrap</span>:<span class="string">'wrap'</span>&#125;&#125;&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">        &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">1</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">       &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">2</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">       &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">3</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">       &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">4</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line"> &lt;<span class="regexp">/View&gt;</span></div></pre></td></tr></table></figure><h3 id="flexWrap"><a href="#flexWrap" class="headerlink" title="flexWrap"></a>flexWrap</h3><p>flexWrap属性定义了子元素在父视图内是否允许多行排列，默认为nowrap。<br><code>flexWrap enum(&#39;wrap&#39;, &#39;nowrap&#39;)</code></p><blockquote><p>nowrap flex的元素只排列在一行上，可能导致溢出。<br>wrap flex的元素在一行排列不下时，就进行多行排列。</p></blockquote><h3 id="justifyContent"><a href="#justifyContent" class="headerlink" title="justifyContent"></a>justifyContent</h3><p>justifyContent属性定义了浏览器如何分配顺着父容器主轴的弹性（flex）元素之间及其周围的空间，默认为flex-start。</p><blockquote><p>flex-start(default) 从行首开始排列。每行第一个弹性元素与行首对齐，同时所有后续的弹性元素与前 一个对齐。<br>flex-end 从行尾开始排列。每行最后一个弹性元素与行尾对齐，其他元素将与后一个对齐。<br>center 伸缩元素向每行中点排列。每行第一个元素到行首的距离将与每行最后一个元素到行尾的距离相同。<br>space-between 在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素与行首对齐，每行最后一个元素与行尾对齐。<br>space-around 在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素到行首的距离和每行最后一个元素到行尾的距离将会是相邻元素之间距离的一半。</p></blockquote><h3 id="alignItems"><a href="#alignItems" class="headerlink" title="alignItems"></a>alignItems</h3><p>alignItems属性以与justify-content相同的方式在侧轴方向上将当前行上的弹性元素对齐，默认为stretch。<br><code>alignItems enum(&#39;flex-start&#39;, &#39;flex-end&#39;, &#39;center&#39;, &#39;stretch&#39;)</code></p><blockquote><p>flex-start 元素向侧轴起点对齐。<br>flex-end 元素向侧轴终点对齐。<br>center 元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。<br>stretch 弹性元素被在侧轴方向被拉伸到与容器相同的高度或宽度。</p></blockquote><h2 id="子视图属性"><a href="#子视图属性" class="headerlink" title="子视图属性"></a>子视图属性</h2><h3 id="alignSelf"><a href="#alignSelf" class="headerlink" title="alignSelf"></a>alignSelf</h3><p>alignSelf属性以属性定义了flex容器内被选中项目的对齐方式。注意：alignSelf 属性可重写灵活容器的 alignItems 属性。<br><code>alignSelf enum(&#39;auto&#39;, &#39;flex-start&#39;, &#39;flex-end&#39;, &#39;center&#39;, &#39;stretch&#39;)</code></p><blockquote><p>auto(default) 元素继承了它的父容器的 align-items 属性。如果没有父容器则为 “stretch”。<br>stretch 元素被拉伸以适应容器。<br>center 元素位于容器的中心。<br>flex-start 元素位于容器的开头。<br>flex-end 元素位于容器的结尾。</p><h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>flex 属性定义了一个可伸缩元素的能力，默认为0。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在React Native中布局采用的是FleBox(弹性框)进行布局。本文章将向大家介绍React Native中的布局方式FlexBox。请参考&lt;a href=&quot;http://facebook.github.io/react-native/docs/flexbox.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FlexBox弹性布局官方文档&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="React-Native" scheme="https://blog.devzou.com/categories/React-Native/"/>
-    
-    
-      <category term="React-Naticve" scheme="https://blog.devzou.com/tags/React-Naticve/"/>
-    
-  </entry>
-  
-  <entry>
     <title>软件设计模式之策略模式</title>
     <link href="https://blog.devzou.com/2017/10/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018-05-11-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
     <id>https://blog.devzou.com/2017/10/16/设计模式/2018-05-11-软件设计模式之策略模式/</id>
@@ -278,6 +256,28 @@
     
     
       <category term="设计模式" scheme="https://blog.devzou.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Native布局</title>
+    <link href="https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native布局详解/</id>
+    <published>2017-10-16T00:10:09.000Z</published>
+    <updated>2018-04-06T13:55:52.092Z</updated>
+    
+    <content type="html"><![CDATA[<p>在React Native中布局采用的是FleBox(弹性框)进行布局。本文章将向大家介绍React Native中的布局方式FlexBox。请参考<a href="http://facebook.github.io/react-native/docs/flexbox.html" target="_blank" rel="external">FlexBox弹性布局官方文档</a><br><a id="more"></a><br>FlexBox提供了在不同尺寸设备上都能保持一致的布局方式。FlexBox是CSS3弹性框布局规范，目前还处于最终征求意见稿 (Last Call Working Draft)阶段，并不是所有的浏览器都支持Flexbox。但大家在做React Native开发时大可不必担心FlexBox的兼容性问题，因为既然React Native选择用FlexBox布局，那么React Native对FlexBox的支持自然会做的很好。</p><h2 id="Flexbox的工作方式与在网络上的CSS中的异同点"><a href="#Flexbox的工作方式与在网络上的CSS中的异同点" class="headerlink" title="Flexbox的工作方式与在网络上的CSS中的异同点"></a>Flexbox的工作方式与在网络上的CSS中的异同点</h2><ol><li>flexDirection: React Native中默认为flexDirection:’column’，在Web CSS中默认为flex-direction:’row’</li><li>alignItems: React Native中默认为alignItems:’stretch’，在Web CSS中默认align-items:’flex-start’</li><li>flex: 相比Web CSS的flex接受多参数，如:flex: 2 2 10%;，但在 React Native中flex只接受一个参数</li><li>不支持属性：align-content，flex-basis，order，flex-basis，flex-flow，flex-grow，flex-shrink<h2 id="父视图属性-容器属性-："><a href="#父视图属性-容器属性-：" class="headerlink" title="父视图属性(容器属性)："></a>父视图属性(容器属性)：</h2></li></ol><ul><li>flexDirection enum(‘row’, ‘column’,’row-reverse’,’column-reverse’)</li><li>flexWrap enum(‘wrap’, ‘nowrap’)</li><li>justifyContent enum(‘flex-start’, ‘flex-end’, ‘center’, ‘space-between’, ‘space-around’)</li><li>alignItems enum(‘flex-start’, ‘flex-end’, ‘center’, ‘stretch’)<h3 id="flexDirection"><a href="#flexDirection" class="headerlink" title="flexDirection"></a>flexDirection</h3>flexDirection属性定义了父视图中的子元素沿横轴或侧轴方片的排列方式。<br><code>flexDirection enum(&#39;row&#39;, &#39;column&#39;,&#39;row-reverse&#39;,&#39;column-reverse&#39;)</code><blockquote><p>row: 从左向右依次排列<br>row-reverse: 从右向左依次排列<br>column(default): 默认的排列方式，从上向下排列<br>column-reverse: 从下向上排列</p></blockquote></li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;View style=&#123; &#123;<span class="attr">flexDirection</span>:<span class="string">'row'</span>,<span class="attr">backgroundColor</span>:<span class="string">"red"</span>,<span class="attr">marginTop</span>:<span class="number">20</span>,<span class="attr">flexWrap</span>:<span class="string">'wrap'</span>&#125;&#125;&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">        &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">1</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">       &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">2</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">       &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">3</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line">     &lt;View style=&#123; &#123;<span class="attr">width</span>:<span class="number">100</span>,<span class="attr">height</span>:<span class="number">20</span>,<span class="attr">backgroundColor</span>:<span class="string">"darkcyan"</span>,<span class="attr">margin</span>:<span class="number">5</span>&#125;&#125;&gt;</div><div class="line">       &lt;Text style=&#123; &#123;<span class="attr">fontSize</span>:<span class="number">16</span>,<span class="attr">textAlign</span>:<span class="string">'center'</span>&#125;&#125;&gt;<span class="number">4</span>&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">     &lt;/</span>View&gt;</div><div class="line"> &lt;<span class="regexp">/View&gt;</span></div></pre></td></tr></table></figure><h3 id="flexWrap"><a href="#flexWrap" class="headerlink" title="flexWrap"></a>flexWrap</h3><p>flexWrap属性定义了子元素在父视图内是否允许多行排列，默认为nowrap。<br><code>flexWrap enum(&#39;wrap&#39;, &#39;nowrap&#39;)</code></p><blockquote><p>nowrap flex的元素只排列在一行上，可能导致溢出。<br>wrap flex的元素在一行排列不下时，就进行多行排列。</p></blockquote><h3 id="justifyContent"><a href="#justifyContent" class="headerlink" title="justifyContent"></a>justifyContent</h3><p>justifyContent属性定义了浏览器如何分配顺着父容器主轴的弹性（flex）元素之间及其周围的空间，默认为flex-start。</p><blockquote><p>flex-start(default) 从行首开始排列。每行第一个弹性元素与行首对齐，同时所有后续的弹性元素与前 一个对齐。<br>flex-end 从行尾开始排列。每行最后一个弹性元素与行尾对齐，其他元素将与后一个对齐。<br>center 伸缩元素向每行中点排列。每行第一个元素到行首的距离将与每行最后一个元素到行尾的距离相同。<br>space-between 在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素与行首对齐，每行最后一个元素与行尾对齐。<br>space-around 在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素到行首的距离和每行最后一个元素到行尾的距离将会是相邻元素之间距离的一半。</p></blockquote><h3 id="alignItems"><a href="#alignItems" class="headerlink" title="alignItems"></a>alignItems</h3><p>alignItems属性以与justify-content相同的方式在侧轴方向上将当前行上的弹性元素对齐，默认为stretch。<br><code>alignItems enum(&#39;flex-start&#39;, &#39;flex-end&#39;, &#39;center&#39;, &#39;stretch&#39;)</code></p><blockquote><p>flex-start 元素向侧轴起点对齐。<br>flex-end 元素向侧轴终点对齐。<br>center 元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。<br>stretch 弹性元素被在侧轴方向被拉伸到与容器相同的高度或宽度。</p></blockquote><h2 id="子视图属性"><a href="#子视图属性" class="headerlink" title="子视图属性"></a>子视图属性</h2><h3 id="alignSelf"><a href="#alignSelf" class="headerlink" title="alignSelf"></a>alignSelf</h3><p>alignSelf属性以属性定义了flex容器内被选中项目的对齐方式。注意：alignSelf 属性可重写灵活容器的 alignItems 属性。<br><code>alignSelf enum(&#39;auto&#39;, &#39;flex-start&#39;, &#39;flex-end&#39;, &#39;center&#39;, &#39;stretch&#39;)</code></p><blockquote><p>auto(default) 元素继承了它的父容器的 align-items 属性。如果没有父容器则为 “stretch”。<br>stretch 元素被拉伸以适应容器。<br>center 元素位于容器的中心。<br>flex-start 元素位于容器的开头。<br>flex-end 元素位于容器的结尾。</p><h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>flex 属性定义了一个可伸缩元素的能力，默认为0。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在React Native中布局采用的是FleBox(弹性框)进行布局。本文章将向大家介绍React Native中的布局方式FlexBox。请参考&lt;a href=&quot;http://facebook.github.io/react-native/docs/flexbox.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FlexBox弹性布局官方文档&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="React-Native" scheme="https://blog.devzou.com/categories/React-Native/"/>
+    
+    
+      <category term="React-Naticve" scheme="https://blog.devzou.com/tags/React-Naticve/"/>
     
   </entry>
   
@@ -398,6 +398,28 @@
   </entry>
   
   <entry>
+    <title>python的import机制</title>
+    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/"/>
+    <id>https://blog.devzou.com/2017/07/04/python/2017-07-10- python 的import机制/</id>
+    <published>2017-07-04T00:10:09.000Z</published>
+    <updated>2018-04-01T09:34:38.888Z</updated>
+    
+    <content type="html"><![CDATA[<p>python中，每个py文件被称之为模块，每个具有<strong>init</strong>.py文件的目录被称为包。只要模块或者包所在的目录在sys.path中，就可以使用import 模块或import 包来使用。 </p><p>如果想使用非当前模块中的代码，需要使用Import，这个大家都知道。<br>如果你要使用的模块（py文件）和当前模块在同一目录，只要import相应的文件名就好，比如在a.py中使用b.py：<br>import b<br>但是如果要import一个不同目录的文件(例如b.py)该怎么做呢？<br>首先需要使用sys.path.append方法将b.py所在目录加入到搜素目录中。然后进行import即可，例如<br>import sys<br>sys.path.append(‘c:\xxxx\b.py’) # 这个例子针对 windows 用户来说的<br>大多数情况，上面的代码工作的很好。但是如果你没有发现上面代码有什么问题的话，可要注意了，上面的代码有时会找不到模块或者包（ImportError: No module named xxxxxx），这是因为：<br>sys模块是使用c语言编写的，因此字符串支持 ‘\n’, ‘\r’, ‘\t’等来表示特殊字符。所以上面代码最好写成：<br>sys.path.append(‘c:\xxx\b.py’)<br>或者sys.path.append(‘c:/xxxx/b.py’)<br>这样可以避免因为错误的组成转义字符，而造成无效的搜索目录（sys.path）设置。 </p>]]></content>
+    
+    <summary type="html">
+    
+      python的import机制
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>学习numpy</title>
     <link href="https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/"/>
     <id>https://blog.devzou.com/2017/07/04/machinelearning/2017-07-05-numpy/</id>
@@ -423,49 +445,27 @@
   </entry>
   
   <entry>
-    <title>python中range()函数的用法及数组的操作</title>
-    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-05-python%E4%B8%ADrange()%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/"/>
-    <id>https://blog.devzou.com/2017/07/04/python/2017-07-05-python中range()函数的用法/</id>
+    <title>iTerm2终端配色</title>
+    <link href="https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2%E7%BB%88%E7%AB%AF%E9%85%8D%E8%89%B2%20/"/>
+    <id>https://blog.devzou.com/2017/07/04/tool/2017-07-04-iTerm2终端配色 /</id>
     <published>2017-07-04T00:10:09.000Z</published>
-    <updated>2018-04-01T09:34:38.888Z</updated>
+    <updated>2018-04-01T09:34:38.897Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">range(<span class="number">1</span>,<span class="number">6</span>) <span class="comment">#代表从1到6(不包含6)</span></div></pre></td></tr></table></figure><p>[1, 2, 3, 4, 5]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">range(<span class="number">1</span>,<span class="number">6</span>,<span class="number">2</span>) <span class="comment">#代表从1到6，间隔2(不包含6)</span></div></pre></td></tr></table></figure></p><p>[1, 3, 5]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">range(<span class="number">6</span>) <span class="comment">#代表从0到6(不包含6)</span></div></pre></td></tr></table></figure></p><h2 id="数组的操作"><a href="#数组的操作" class="headerlink" title="数组的操作"></a>数组的操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">array = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>]</div><div class="line">array[<span class="number">0</span>:] <span class="comment">#列出0以后的</span></div></pre></td></tr></table></figure><p>[1, 3, 5, 7, 9, 2, 4, 6, 8, 0]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array[<span class="number">1</span>:] <span class="comment">#列出1以后的</span></div></pre></td></tr></table></figure></p><p>[3, 5, 7, 9, 2, 4, 6, 8, 0]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array[:<span class="number">-1</span>] <span class="comment">#列出-1之前的</span></div></pre></td></tr></table></figure></p><p>[1, 3, 5, 7, 9, 2, 4, 6, 8]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array[<span class="number">3</span>:<span class="number">-3</span>] <span class="comment">#列出3到-3之间的</span></div></pre></td></tr></table></figure></p><p>[7, 9, 2, 4]<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array[::<span class="number">2</span>] <span class="comment">#[1, 5, 9, 4, 8]</span></div></pre></td></tr></table></figure></p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array[::<span class="number">3</span>]<span class="comment">#[1, 7, 4, 0]</span></div></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array[::<span class="number">-1</span>]<span class="comment">#数组逆序,[0, 8, 6, 4, 2, 9, 7, 5, 3, 1]</span></div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文"><a href="#修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文" class="headerlink" title="修改 .bash_profile 配置文件, 具体作用看每行注释 (保留英文原文)"></a>修改 .bash_profile 配置文件, 具体作用看每行注释 (保留英文原文)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi ~/.bash_profile</div></pre></td></tr></table></figure><p>添加如下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># enables colorin the terminal bash shell export</span></div><div class="line"><span class="built_in">export</span> CLICOLOR=1</div><div class="line"><span class="comment"># sets up thecolor scheme for list export</span></div><div class="line"><span class="built_in">export</span> LSCOLORS=gxfxcxdxbxegedabagacad</div><div class="line"><span class="comment"># sets up theprompt color (currently a green similar to linux terminal)</span></div><div class="line"><span class="built_in">export</span> PS1=<span class="string">'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '</span></div><div class="line"><span class="comment"># enables colorfor iTerm</span></div><div class="line"><span class="built_in">export</span> TERM=xterm-color</div></pre></td></tr></table></figure></p><p>保存退出, 使其生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure></p><h2 id="设置iTerm2使其生效"><a href="#设置iTerm2使其生效" class="headerlink" title="设置iTerm2使其生效"></a>设置iTerm2使其生效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. preference-&gt;profiles-&gt;Default-&gt;Terminal-&gt;xterm-new  设置终端类型</div><div class="line">2. preference-&gt;profiles-&gt;Default-&gt;Colors  选择一个自己喜欢的配色</div></pre></td></tr></table></figure><h2 id="下载配色文件-里面包含多种配色方案"><a href="#下载配色文件-里面包含多种配色方案" class="headerlink" title="下载配色文件, 里面包含多种配色方案"></a>下载配色文件, 里面包含多种配色方案</h2><p>Github地址: <a href="https://github.com/mbadolato/iTerm2-Color-Schemes" target="_blank" rel="external">https://github.com/mbadolato/iTerm2-Color-Schemes</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
+        &lt;h2 id=&quot;修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文&quot;&gt;&lt;a href=&quot;#修改-bash-profile-配置文件-具体作用看每行注释-保留英文原文&quot; class=&quot;headerlink&quot; title=&quot;修改 .bash_profile 配
       
     
     </summary>
     
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
+      <category term="Tool" scheme="https://blog.devzou.com/categories/Tool/"/>
     
     
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python的import机制</title>
-    <link href="https://blog.devzou.com/2017/07/04/python/2017-07-10-%20python%20%E7%9A%84import%E6%9C%BA%E5%88%B6/"/>
-    <id>https://blog.devzou.com/2017/07/04/python/2017-07-10- python 的import机制/</id>
-    <published>2017-07-04T00:10:09.000Z</published>
-    <updated>2018-04-01T09:34:38.888Z</updated>
-    
-    <content type="html"><![CDATA[<p>python中，每个py文件被称之为模块，每个具有<strong>init</strong>.py文件的目录被称为包。只要模块或者包所在的目录在sys.path中，就可以使用import 模块或import 包来使用。 </p><p>如果想使用非当前模块中的代码，需要使用Import，这个大家都知道。<br>如果你要使用的模块（py文件）和当前模块在同一目录，只要import相应的文件名就好，比如在a.py中使用b.py：<br>import b<br>但是如果要import一个不同目录的文件(例如b.py)该怎么做呢？<br>首先需要使用sys.path.append方法将b.py所在目录加入到搜素目录中。然后进行import即可，例如<br>import sys<br>sys.path.append(‘c:\xxxx\b.py’) # 这个例子针对 windows 用户来说的<br>大多数情况，上面的代码工作的很好。但是如果你没有发现上面代码有什么问题的话，可要注意了，上面的代码有时会找不到模块或者包（ImportError: No module named xxxxxx），这是因为：<br>sys模块是使用c语言编写的，因此字符串支持 ‘\n’, ‘\r’, ‘\t’等来表示特殊字符。所以上面代码最好写成：<br>sys.path.append(‘c:\xxx\b.py’)<br>或者sys.path.append(‘c:/xxxx/b.py’)<br>这样可以避免因为错误的组成转义字符，而造成无效的搜索目录（sys.path）设置。 </p>]]></content>
-    
-    <summary type="html">
-    
-      python的import机制
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
+      <category term="Tool" scheme="https://blog.devzou.com/tags/Tool/"/>
     
   </entry>
   
