@@ -133,7 +133,7 @@
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -205,6 +205,26 @@
 
     </div>
     
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="../../source/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../../source/img/weixin.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
     <div class="post-footer">
         <div>
             
@@ -219,9 +239,9 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/07/04/python/2017-07-05-python中range()函数的用法/" class="pre-post btn btn-default" title='python中range()函数的用法及数组的操作'>
+        <a href="/2017/07/13/web前端/2017-07-13-javascript-variable-domain/" class="pre-post btn btn-default" title='JavaScript变量作用域'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">python中range()函数的用法及数组的操作</span>
+            <span class="hidden-xs">JavaScript变量作用域</span>
         </a>
     
     
@@ -235,7 +255,26 @@
 
     <div id="comments">
         
-   <p>评论系统未开启，无法评论！</p>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.css">
+<script src="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var pathArr = location.pathname.split("/");
+    var pathId = pathArr[pathArr.length-1];
+    var gitalk = new Gitalk({
+        // Gitalk配置
+        clientID: "null",
+        clientSecret: "null",
+        repo: "null",
+        owner: "null",
+        admin: "[null]",
+        id: "null" || pathId || location.pathname,
+        distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+</script>
+
 
     </div>
 

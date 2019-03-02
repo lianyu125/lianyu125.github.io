@@ -134,7 +134,7 @@
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -209,6 +209,26 @@
 
     </div>
     
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="../../source/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../../source/img/weixin.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
     <div class="post-footer">
         <div>
             
@@ -223,9 +243,9 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/05/16/React-Native/2018-06-09-react-native运行你的第一个工程/" class="pre-post btn btn-default" title='React Native运行你的第一个工程'>
+        <a href="/2017/05/17/digitalImage/2017-05-17-openCV简述/" class="pre-post btn btn-default" title='openCV简述'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">React Native运行你的第一个工程</span>
+            <span class="hidden-xs">openCV简述</span>
         </a>
     
     
@@ -239,7 +259,26 @@
 
     <div id="comments">
         
-   <p>评论系统未开启，无法评论！</p>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.css">
+<script src="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var pathArr = location.pathname.split("/");
+    var pathId = pathArr[pathArr.length-1];
+    var gitalk = new Gitalk({
+        // Gitalk配置
+        clientID: "null",
+        clientSecret: "null",
+        repo: "null",
+        owner: "null",
+        admin: "[null]",
+        id: "null" || pathId || location.pathname,
+        distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+</script>
+
 
     </div>
 
