@@ -6,25 +6,126 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.devzou.com/"/>
-  <updated>2018-08-06T13:19:07.176Z</updated>
+  <updated>2018-08-22T13:38:06.165Z</updated>
   <id>https://blog.devzou.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS面试题</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2018-08-22T13:38:06.165Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS设计模式之策略模式</title>
     <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
     <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
     <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2018-08-06T13:19:07.176Z</updated>
+    <updated>2018-08-06T16:52:34.957Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。</li></ol><h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2><p>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。</p><h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2><p>策略模式包含如下角色：</p><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
 &lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发之KVC底层原理</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2018-08-22T13:37:33.079Z</updated>
+    
+    <content type="html"><![CDATA[<p>KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性<br>常见的API有</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKey:(<span class="built_in">NSString</span> *)key</div><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKeyPath:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKeyPath:(<span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKey:(<span class="built_in">NSString</span> *)key</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发之Category</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2018-08-23T00:27:16.128Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Category实现原理"><a href="#Category实现原理" class="headerlink" title="Category实现原理"></a>Category实现原理</h2><h3 id="category的结构"><a href="#category的结构" class="headerlink" title="category的结构"></a>category的结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">struct category_t &#123;</div><div class="line">    const char *name;</div><div class="line">    classref_t cls;</div><div class="line">    struct method_list_t *instanceMethods;</div><div class="line">    struct method_list_t *classMethods;</div><div class="line">    struct protocol_list_t *protocols;</div><div class="line">    struct property_list_t *instanceProperties;</div><div class="line">    // Fields below this point are not always present on disk.</div><div class="line">    struct property_list_t *_classProperties;</div><div class="line"></div><div class="line">    method_list_t *methodsForMeta(bool isMeta) &#123;</div><div class="line">        if (isMeta) return classMethods;</div><div class="line">        else return instanceMethods;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    property_list_t *propertiesForMeta(bool isMeta, struct header_info *hi);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Category实现原理&quot;&gt;&lt;a href=&quot;#Category实现原理&quot; class=&quot;headerlink&quot; title=&quot;Category实现原理&quot;&gt;&lt;/a&gt;Category实现原理&lt;/h2&gt;&lt;h3 id=&quot;category的结构&quot;&gt;&lt;a href=&quot;#ca
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>clang常用命令</title>
+    <link href="https://blog.devzou.com/2018/08/04/ios/2018-08-12/"/>
+    <id>https://blog.devzou.com/2018/08/04/ios/2018-08-12/</id>
+    <published>2018-08-03T23:10:09.000Z</published>
+    <updated>2018-08-13T01:04:06.768Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="将OC代码转化为C-C-代码"><a href="#将OC代码转化为C-C-代码" class="headerlink" title="将OC代码转化为C/C++代码"></a>将OC代码转化为C/C++代码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clang -rewrite-objc xxxx.m -o xxxx.cpp</div></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc OC源文件 -o 输出的cpp文件</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;将OC代码转化为C-C-代码&quot;&gt;&lt;a href=&quot;#将OC代码转化为C-C-代码&quot; class=&quot;headerlink&quot; title=&quot;将OC代码转化为C/C++代码&quot;&gt;&lt;/a&gt;将OC代码转化为C/C++代码&lt;/h2&gt;&lt;figure class=&quot;highligh
+      
     
     </summary>
     
@@ -49,6 +150,31 @@
       
       
         &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;p&gt;无论是在现实世界中还是在软件系统中，都存在一些复杂的对象，它们拥有多个组成部分，如汽车，它包括车轮、方向盘、发送机等各种部件
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS底层原理之OC对象本质</title>
+    <link href="https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%B9%8BOC%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%B4%A8/"/>
+    <id>https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS底层原理之OC对象本质/</id>
+    <published>2018-07-30T23:10:09.000Z</published>
+    <updated>2018-08-13T00:01:03.243Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Objective-C的本质"><a href="#Objective-C的本质" class="headerlink" title="Objective-C的本质"></a>Objective-C的本质</h2><p>我们平时编写的Object-C代码，底层都是C/C++代码，所以Objective-C的面向对象都是基于C/C++的数据结构实现的<br>【注】Objective-C的对象、类主要是基于C/C++的结构体实现的</p><h3 id="NSObject的底层实现"><a href="#NSObject的底层实现" class="headerlink" title="NSObject的底层实现"></a>NSObject的底层实现</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span>  <span class="title">NSObjec</span> </span>&#123;</div><div class="line">  Class isa;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>C语言实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">struct NSObject_IMPL &#123;</div><div class="line">Class isa;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><h2 id="OC对象的本质"><a href="#OC对象的本质" class="headerlink" title="OC对象的本质"></a>OC对象的本质</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Objective-C的本质&quot;&gt;&lt;a href=&quot;#Objective-C的本质&quot; class=&quot;headerlink&quot; title=&quot;Objective-C的本质&quot;&gt;&lt;/a&gt;Objective-C的本质&lt;/h2&gt;&lt;p&gt;我们平时编写的Object-C代码，底层都是
       
     
     </summary>
@@ -90,9 +216,9 @@
     <link href="https://blog.devzou.com/2018/04/13/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/2018-04-14-webStorm%E5%BC%80%E5%8F%91%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://blog.devzou.com/2018/04/13/微信小程序/2018-04-14-webStorm开发微信小程序环境配置/</id>
     <published>2018-04-13T13:08:35.000Z</published>
-    <updated>2018-04-14T01:46:45.986Z</updated>
+    <updated>2018-08-07T01:36:36.344Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="让webStorm支持微信小程序开发"><a href="#让webStorm支持微信小程序开发" class="headerlink" title="让webStorm支持微信小程序开发"></a>让webStorm支持微信小程序开发</h2><h3 id="1-在WebStorm-gt-preference-gt-Editor-gt-FileType-gt-Cascading-Style-Sheet-添加-wxss"><a href="#1-在WebStorm-gt-preference-gt-Editor-gt-FileType-gt-Cascading-Style-Sheet-添加-wxss" class="headerlink" title="1.在WebStorm-&gt; preference-&gt;Editor-&gt; FileType-&gt;Cascading Style Sheet 添加*.wxss"></a>1.在WebStorm-&gt; preference-&gt;Editor-&gt; FileType-&gt;Cascading Style Sheet 添加*.wxss</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_01.png" alt=""><br><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_02.png" alt=""></p><h3 id="2-在FileType下HTML-添加-wxml"><a href="#2-在FileType下HTML-添加-wxml" class="headerlink" title="2.在FileType下HTML 添加*.wxml"></a>2.在FileType下HTML 添加*.wxml</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_03.png" alt=""></p><h2 id="webStorm支持代码代码提醒"><a href="#webStorm支持代码代码提醒" class="headerlink" title="webStorm支持代码代码提醒"></a>webStorm支持代码代码提醒</h2><h3 id="1-下载wecharCode-jar"><a href="#1-下载wecharCode-jar" class="headerlink" title="1.下载wecharCode.jar"></a>1.下载<a href="https://link.jianshu.com/?t=https://github.com/miaozhang9/wecharCodejar" target="_blank" rel="external">wecharCode.jar</a></h3><h3 id="2-并放入-Users-你的用户名-Library-Preferences-WebStorm2016-2文件夹下"><a href="#2-并放入-Users-你的用户名-Library-Preferences-WebStorm2016-2文件夹下" class="headerlink" title="2.并放入/Users/你的用户名/Library/Preferences/WebStorm2016.2文件夹下"></a>2.并放入/Users/你的用户名/Library/Preferences/WebStorm2016.2文件夹下</h3><h3 id="3-然后在webStorm-的-File-gt-import-settings-中导入即可"><a href="#3-然后在webStorm-的-File-gt-import-settings-中导入即可" class="headerlink" title="3.然后在webStorm 的 File -&gt; import settings 中导入即可"></a>3.然后在webStorm 的 File -&gt; import settings 中导入即可</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_04.png" alt=""><br>效果如下图所示<br><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_05.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="让webStorm支持微信小程序开发"><a href="#让webStorm支持微信小程序开发" class="headerlink" title="让webStorm支持微信小程序开发"></a>让webStorm支持微信小程序开发</h2><a id="more"></a><h3 id="1-在WebStorm-gt-preference-gt-Editor-gt-FileType-gt-Cascading-Style-Sheet-添加-wxss"><a href="#1-在WebStorm-gt-preference-gt-Editor-gt-FileType-gt-Cascading-Style-Sheet-添加-wxss" class="headerlink" title="1.在WebStorm-&gt; preference-&gt;Editor-&gt; FileType-&gt;Cascading Style Sheet 添加*.wxss"></a>1.在WebStorm-&gt; preference-&gt;Editor-&gt; FileType-&gt;Cascading Style Sheet 添加*.wxss</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_01.png" alt=""><br><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_02.png" alt=""></p><h3 id="2-在FileType下HTML-添加-wxml"><a href="#2-在FileType下HTML-添加-wxml" class="headerlink" title="2.在FileType下HTML 添加*.wxml"></a>2.在FileType下HTML 添加*.wxml</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_03.png" alt=""></p><h2 id="webStorm支持代码代码提醒"><a href="#webStorm支持代码代码提醒" class="headerlink" title="webStorm支持代码代码提醒"></a>webStorm支持代码代码提醒</h2><h3 id="1-下载wecharCode-jar"><a href="#1-下载wecharCode-jar" class="headerlink" title="1.下载wecharCode.jar"></a>1.下载<a href="https://link.jianshu.com/?t=https://github.com/miaozhang9/wecharCodejar" target="_blank" rel="external">wecharCode.jar</a></h3><h3 id="2-并放入-Users-你的用户名-Library-Preferences-WebStorm2016-2文件夹下"><a href="#2-并放入-Users-你的用户名-Library-Preferences-WebStorm2016-2文件夹下" class="headerlink" title="2.并放入/Users/你的用户名/Library/Preferences/WebStorm2016.2文件夹下"></a>2.并放入/Users/你的用户名/Library/Preferences/WebStorm2016.2文件夹下</h3><h3 id="3-然后在webStorm-的-File-gt-import-settings-中导入即可"><a href="#3-然后在webStorm-的-File-gt-import-settings-中导入即可" class="headerlink" title="3.然后在webStorm 的 File -&gt; import settings 中导入即可"></a>3.然后在webStorm 的 File -&gt; import settings 中导入即可</h3><p><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_04.png" alt=""><br>效果如下图所示<br><img src="http://okjl482qy.bkt.clouddn.com/xiaochengxu_1_05.png" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -309,31 +435,6 @@
   </entry>
   
   <entry>
-    <title>软件设计模式之策略模式</title>
-    <link href="https://blog.devzou.com/2017/10/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2018-05-11-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2017/10/16/设计模式/2018-05-11-软件设计模式之策略模式/</id>
-    <published>2017-10-16T00:10:09.000Z</published>
-    <updated>2018-06-04T01:05:01.578Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>策略模式定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换。策略模式让算法独立于使用它的客户而独立变化。<br>（原文：The Strategy Pattern defines a family of algorithms,encapsulates each one,and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.）<br>Context(应用场景):<br>1、需要使用ConcreteStrategy提供的算法。<br>2、内部维护一个Strategy的实例。<br>3、负责动态设置运行时Strategy具体的实现算法。<br>4、负责跟Strategy之间的交互和数据传递。<br>Strategy(抽象策略类)：<br>1、 定义了一个公共接口，各种不同的算法以不同的方式实现这个接口，Context使用这个接口调用不同的算法，一般使用接口或抽象类实现。<br>ConcreteStrategy(具体策略类)：<br>2、 实现了Strategy定义的接口，提供具体的算法实现。</p><h2 id="Objective-C-代码实现"><a href="#Objective-C-代码实现" class="headerlink" title="Objective-C 代码实现"></a>Objective-C 代码实现</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">Strategy</span> &lt;<span class="title">NSObject</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)print;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ConcreteStrategyA</span> : <span class="title">NSObject</span>&lt;<span class="title">Strategy</span>&gt;</span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ConcreteStrategyB</span> : <span class="title">NSObject</span>&lt;<span class="title">Strategy</span>&gt;</span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Context</span> : <span class="title">NSObject</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">id</span>&lt;Strategy&gt; _strategy;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span>&lt;Strategy&gt; strategy;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)doIt;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ConcreteStrategyA</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)print</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Test01"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ConcreteStrategyB</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)print</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"Test02"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Context</span></span></div><div class="line"></div><div class="line"><span class="keyword">@synthesize</span> strategy = _strategy;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)doIt</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span>.strategy print];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;策略模式定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换。策略模式让算法独立于使用它的客户而独立变化。&lt;br&gt;（原文：T
-      
-    
-    </summary>
-    
-      <category term="设计模式" scheme="https://blog.devzou.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="https://blog.devzou.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>React Native布局</title>
     <link href="https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/"/>
     <id>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native布局详解/</id>
@@ -374,100 +475,6 @@
     
     
       <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从运行原理及使用场景看Apache和Nginx</title>
-    <link href="https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/"/>
-    <id>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</id>
-    <published>2017-08-23T00:10:09.000Z</published>
-    <updated>2018-04-06T13:55:52.147Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>本文只作为了解Apache和Nginx知识的一个梳理，想详细了解的请阅读文末参考链接中的博文。</strong></p><h2 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h2><p>Web服务器也称为WWW(WORLD WIDE WEB)服务器，主要功能是提供网上信息浏览服务。 </p><ul><li>应用层使用HTTP协议。 </li><li>HTML文档格式。 </li><li>浏览器统一资源定位器(URL)。 </li></ul><p>Web服务器常常以B/S（Browser/Server）方式提供服务。浏览器和服务器的交互方式如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">                GET /index.php HTTP/1.1</div><div class="line"></div><div class="line">+---------------+                   +----------------+</div><div class="line">|               +-------------------&gt;                |</div><div class="line">|   Browser     |                   |   Server       |</div><div class="line">|               &lt;-------------------+                |</div><div class="line">+---------------+                   +----------------+</div><div class="line"></div><div class="line">                  HTTP/1.1 200 OK</div></pre></td></tr></table></figure><ol><li>浏览器向服务器发出HTTP请求(Request)。</li><li>服务器收到浏览器的请求数据，经过分析处理，向浏览器输出响应数据（Response）。</li><li>浏览器收到服务器的响应数据，经过分析处理，将最终结果显示在浏览器中。</li></ol><p>Apache和Nginx都属于Web服务器，两者都实现了HTTP 1.1协议。</p><h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Apache HTTP Server是Apache软件基金会的一个开放源代码的网页服务器，可以在大多数计算机操作系统中运行，由于其跨平台和安全性。被广泛使用，是最流行的Web服务器端软件之一。它快速、可靠并且可通过简单的API扩充，将Perl／Python等解释器编译到服务器中。    – <a href="http://zh.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank" rel="external">维基百科</a></p><h3 id="Apache组件"><a href="#Apache组件" class="headerlink" title="Apache组件"></a>Apache组件</h3><p>Apache是基于模块化设计的，它的核心代码并不多，大多数的功能都被分散到各个模块中，各个模块在系统启动的时候按需载入。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">         +----------+</div><div class="line">      +- | Module   | -----------------+</div><div class="line">      |  +----------+                  |</div><div class="line">      |                          +------------+</div><div class="line">+-----------+   Apache HTTPD     | php module |</div><div class="line">| Module    |                    +------------+</div><div class="line">+-----------+              +----------+|</div><div class="line">      +----------+-------- |  MPM     |+</div><div class="line">                 |         +----+---+-+</div><div class="line">               +-v-----------+  |   |</div><div class="line">               |    ARP      &lt;--+   |</div><div class="line">               +------+------+      |</div><div class="line">                      |             |</div><div class="line">      +---------------v-------------v--+</div><div class="line">      |      Operating  System         |</div><div class="line">      +--------------------------------+</div></pre></td></tr></table></figure><p>MPM（Multi -Processing Modules，多重处理模块）是Apache的核心组件之一，Apache通过MPM来使用操作系统的资源，对进程和线程池进行管理。Apache为了能够获得最好的运行性能，针对不同的平台 (Unix/Linux、Window)做了优化，为不同的平台提供了不同的MPM，用户可以根据实际情况进行选择，其中最常使用的MPM有 prefork和worker两种。至于您的服务器正以哪种方式运行，取决于安装Apache过程中指定的MPM编译参数,在X系统上默认的编译参数为 prefork。</p><p>由于大多数的Unix都不支持真正的线程，所以采用了预派生子进程(prefork)方式，象Windows或者Solaris这些支持 线程的平台，基于多进程多线程混合的worker模式是一种不错的选择。Apache中还有一个重要的组件就是APR（Apache portable Runtime Library），即Apache可移植运行库，它是一个对操作系统调用的抽象库，用来实现Apache内部组件对操作系统的使用，提高系统的可移植性。 Apache对于php的解析，就是通过众多Module中的php Module来完成的。</p><h3 id="Apache生命周期"><a href="#Apache生命周期" class="headerlink" title="Apache生命周期"></a>Apache生命周期</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">+--------------------------------------------------------------+</div><div class="line">|                 +---------------------+       启动阶段        |</div><div class="line">|                 |    系统启动, 配置     |                      |</div><div class="line">|                 +----------+----------+                      |</div><div class="line">|                            |                                 |</div><div class="line">|                 +----------v----------+                      |</div><div class="line">|                 |      模块的初始化     |                      |</div><div class="line">|                 +-+--------+--------+-+                      |</div><div class="line">|                   |        |        |                        |</div><div class="line">|   +-------------+ | +------v-------+| +--------------+       |</div><div class="line">|   | 子进程初始化  |&lt;+ | 子进程初始化   |+&gt;|  子进程初始化  |       |</div><div class="line">|   +------+------+   +-------+------+  +-------+------+       |</div><div class="line">+--------------------------------------------------------------+</div><div class="line">|          |                  |                 |     运行阶段  |</div><div class="line">|     +----v----+        +----v----+       +----v----+         |</div><div class="line">|     | 请求循环 |        |  请求循环 |       | 请求循环 |         |</div><div class="line">|     +----+----+        +----+----+       +----+----+         |</div><div class="line">|          |                  |                 |              |</div><div class="line">|   +------v------+    +------v------+   +------v------+       |</div><div class="line">|   |  子进程结束   |    |  子进程结束  |   |   子进程结束  |       |</div><div class="line">|   +-------------+    +-------------+   +-------------+       |</div><div class="line">+--------------------------------------------------------------+</div></pre></td></tr></table></figure><p>这个生命周期是在perfork工作下的示意，从图中可以看出，Apache对于每一个请求都要启动一个单独的进程来处理。</p><h3 id="Apache的工作模式"><a href="#Apache的工作模式" class="headerlink" title="Apache的工作模式"></a>Apache的工作模式</h3><h4 id="prefork的工作原理"><a href="#prefork的工作原理" class="headerlink" title="prefork的工作原理"></a><strong>prefork的工作原理</strong></h4><p>一个单独的控制进程(父进程)负责产生子进程，这些子进程用于监听请求并作出应答。Apache总是试图保持一些备用的 (spare)或是空闲的子进程用于迎接即将到来的请求。这样客户端就无需在得到服务前等候子进程的产生。在Unix系统中，父进程通常以root身份运行以便邦定80端口，而 Apache产生的子进程通常以一个低特权的用户运行。User和Group指令用于配置子进程的低特权用户。运行子进程的用户必须要对他所服务的内容有读取的权限，但是对服务内容之外的其他资源必须拥有尽可能少的权限。</p><h4 id="worker的工作原理"><a href="#worker的工作原理" class="headerlink" title="worker的工作原理"></a><strong>worker的工作原理</strong></h4><p>每个进程能够拥有的线程数量是固定的。服务器会根据负载情况增加或减少进程数量。一个单独的控制进程(父进程)负责子进程的建立。每个子进程能够建立ThreadsPerChild数量的服务线程和一个监听线程，该监听线程监听接入请求并将其传递给服务线程处理和应答。Apache总是试图维持一个备用(spare)或是空闲的服务线程池。这样，客户端无须等待新线程或新进程的建立即可得到处理。在Unix中，为了能够绑定80端口，父进程一般都是以root身份启动，随后，Apache以较低权限的用户建立子进程和线程。User和Group指令用于配置Apache子进程的权限。虽然子进程必须对其提供的内容拥有读权限，但应该尽可能给予他较少的特权。另外，除非使用了suexec ，否则，这些指令配置的权限将被CGI脚本所继承。</p><h3 id="Apache的运行"><a href="#Apache的运行" class="headerlink" title="Apache的运行"></a>Apache的运行</h3><h4 id="启动阶段"><a href="#启动阶段" class="headerlink" title="启动阶段"></a>启动阶段</h4><p>在启动阶段，Apache主要进行配置文件解析(例如http.conf以及Include指令设定的配置文件等)、模块加载(例如mod_php.so,mod_perl.so等)和系统资源初始化（例如日志文件、共享内存段等）工作。在这个阶段，Apache为了获得系统资源最大的使用权限，将以特权用户root（X系统）或超级管理员administrator(Windows系统)完成启动。</p><p>这个过程可以通过下图来深入了解：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">      +--------+      </div><div class="line">      |  开始   |      </div><div class="line">      +----+---+         </div><div class="line">           |</div><div class="line">+----------v------------+   解析主配置文件http.conf中配置信息， </div><div class="line">|     解析配置文件        |   像LoadModule, AddType</div><div class="line">+----------+------------+   等指令被加载至内存</div><div class="line">           |</div><div class="line">+----------v------------+   依据AddModule, LoadModule等指令</div><div class="line">|   加载静态/动态模块      |   加载Apache模块，像mod_php5.so被</div><div class="line">+----------+------------+   加载至内存，映射到Apache地址空间。</div><div class="line">           |</div><div class="line">+----------v------------+   日志文件、共享内存段，数据库链接</div><div class="line">|     系统资源初始化      |    等初始化</div><div class="line">+----------+------------+</div><div class="line">           |</div><div class="line">       +---v----+</div><div class="line">       |  结束   |</div><div class="line">       +--------+</div></pre></td></tr></table></figure><h4 id="运行阶段"><a href="#运行阶段" class="headerlink" title="运行阶段"></a>运行阶段</h4><p>在运行阶段，Apache主要工作是处理用户的服务请求。在这个阶段，Apache放弃特权用户级别，使用普通权限，这主要是基于安全性的考虑，防止由于代码的缺陷引起的安全漏洞。</p><p>由于Apache的Hook机制，Apache 允许模块(包括内部模块和外部模块，例如<code>mod_php5.so</code>,<code>mod_perl.so</code>等)将自定义的函数注入到请求处理循环中。<code>mod_php5.so</code>/<code>php5apache2.dll</code>就是将所包含的自定义函数，通过Hook机制注入到Apache中，在Apache处理流程的各个阶段负责处理php请求。</p><p>Apache将请求处理循环分为11个阶段，依次是：Post-Read-Request，URI Translation，Header Parsing，Access Control，Authentication，Authorization，MIME Type Checking，FixUp，Response，Logging，CleanUp。</p><p>Apache处理http请求的生命周期:</p><p><img src="http://7u2ho6.com1.z0.glb.clouddn.com/tech-apache-http-handle.jpg" alt="Apache处理http请求的生命周期"></p><ol><li>Post-Read-Request阶段:在正常请求处理流程中，这是模块可以插入钩子的第一个阶段。对于那些想很早进入处理请求的模块来说，这个阶段可以被利用。</li><li>URI Translation阶段 :  Apache在本阶段的主要工作：将请求的URL映射到本地文件系统。模块可以在这阶段插入钩子，执行自己的映射逻辑。mod_alias就是利用这个阶段工作的。</li><li>Header Parsing阶段 :  Apache在本阶段的主要工作：检查请求的头部。由于模块可以在请求处理流程的任何一个点上执行检查请求头部的任务，因此这个钩子很少被使用。mod_setenvif就是利用这个阶段工作的。</li><li>Access Control阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许访问请求的资源。Apache的标准逻辑实现了允许和拒绝指令。mod_authz_host就是利用这个阶段工作的。</li><li>Authentication阶段 :  Apache在本阶段的主要工作：按照配置文件设定的策略对用户进行认证，并设定用户名区域。模块可以在这阶段插入钩子，实现一个认证方法。</li><li>Authorization阶段 :  Apache在本阶段的主要工作：根据配置文件检查是否允许认证过的用户执行请求的操作。模块可以在这阶段插入钩子，实现一个用户权限管理的方法。</li><li>MIME Type Checking阶段 :  Apache在本阶段的主要工作：根据请求资源的MIME类型的相关规则，判定将要使用的内容处理函数。标准模块mod_negotiation和mod_mime实现了这个钩子。</li><li>FixUp阶段 :  这是一个通用的阶段，允许模块在内容生成器之前，运行任何必要的处理流程。和Post_Read_Request类似，这是一个能够捕获任何信息的钩子，也是最常使用的钩子。</li><li>Response阶段 : Apache在本阶段的主要工作：生成返回客户端的内容，负责给客户端发送一个恰当的回复。这个阶段是整个处理流程的核心部分。</li><li>Logging阶段 :  Apache在本阶段的主要工作：在回复已经发送给客户端之后记录事务。模块可能修改或者替换Apache的标准日志记录。</li><li>CleanUp阶段 : Apache在本阶段的主要工作：清理本次请求事务处理完成之后遗留的环境，比如文件、目录的处理或者Socket的关闭等等，这是Apache一次请求处理的最后一个阶段。</li></ol><h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>Nginx（发音同engine x）是一款由俄罗斯程序员Igor Sysoev所开发轻量级的网页服务器、反向代理服务器以及电子邮件（IMAP/POP3）代理服务器。起初是供俄国大型的门户网站及搜索引擎Rambler（俄语：Рамблер）使用。  – <a href="http://zh.wikipedia.org/wiki/Nginx" target="_blank" rel="external">维基百科</a></p><h3 id="Nginx的模块与工作原理"><a href="#Nginx的模块与工作原理" class="headerlink" title="Nginx的模块与工作原理"></a>Nginx的模块与工作原理</h3><p>Nginx由内核和模块组成，其中，内核的设计非常微小和简洁，完成的工作也非常简单，仅仅通过查找配置文件将客户端请求映射到一个location block（location是Nginx配置中的一个指令，用于URL匹配），而在这个location中所配置的每个指令将会启动不同的模块去完成相应的工作。</p><p>Nginx的模块从结构上分为核心模块、基础模块和第三方模块：</p><ul><li>核心模块：HTTP模块、EVENT模块和MAIL模块</li><li>基础模块：HTTP Access模块、HTTP FastCGI模块、HTTP Proxy模块和HTTP Rewrite模块，</li><li>第三方模块：HTTP Upstream Request Hash模块、Notice模块和HTTP Access Key模块。</li></ul><p>Nginx的模块从功能上分为如下三类:</p><ul><li>Handlers（处理器模块）。此类模块直接处理请求，并进行输出内容和修改headers信息等操作。Handlers处理器模块一般只能有一个。</li><li>Filters （过滤器模块）。此类模块主要对其他处理器模块输出的内容进行修改操作，最后由Nginx输出。</li><li>Proxies （代理类模块）。此类模块是Nginx的HTTP Upstream之类的模块，这些模块主要与后端一些服务比如FastCGI等进行交互，实现服务代理和负载均衡等功能。</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">                     +                    ^</div><div class="line">        Http Request |                    |  Http Response</div><div class="line">                     |                    |</div><div class="line">    +---------+------v-----+         +----+----+</div><div class="line">    |  Conf   | Nginx Core |         | FilterN |</div><div class="line">    +---------+------+-----+         +----^----+</div><div class="line">                     |                    |</div><div class="line">                     |               +----+----+</div><div class="line">                     |               | Filter2 |</div><div class="line">choose a handler     |               +----^----+</div><div class="line">based conf           |                    |</div><div class="line">                     |               +----+----+</div><div class="line">                     |               | Filter1 |</div><div class="line">                     |               +----^----+</div><div class="line">                     |                    | Generate content</div><div class="line">               +-----v--------------------+----+</div><div class="line">               |           Handler             |</div><div class="line">               +-------------------------------+</div></pre></td></tr></table></figure><p>Nginx本身做的工作实际很少，当它接到一个HTTP请求时，它仅仅是通过查找配置文件将此次请求映射到一个location block，而此location中所配置的各个指令则会启动不同的模块去完成工作，因此模块可以看做Nginx真正的劳动工作者。通常一个location中的指令会涉及一个handler模块和多个filter模块（当然，多个location可以复用同一个模块）。handler模块负责处理请求，完成响应内容的生成，而filter模块对响应内容进行处理。</p><h3 id="Nginx架构及工作流程"><a href="#Nginx架构及工作流程" class="headerlink" title="Nginx架构及工作流程"></a>Nginx架构及工作流程</h3><p><img src="http://7u2ho6.com1.z0.glb.clouddn.com/tech-nginx-architecture.png" alt="Nginx架构"></p><p>上图是Nginx的架构，这个架构类似于Apache的Worker工作状态，Nginx的每一个Worker进程都管理着大量的线程，真正处理请求的是Worker之下的线程。</p><p>所有实际上的业务处理逻辑都在worker进程。worker进程中有一个函数，执行无限循环，不断处理收到的来自客户端的请求，并进行处理，直到整个nginx服务被停止。Worker中这个函数执行内容如下：</p><ol><li>操作系统提供的机制（例如epoll, kqueue等）产生相关的事件。</li><li>接收和处理这些事件，如是接受到数据，则产生更高层的request对象。</li><li>处理request的header和body。</li><li>产生响应，并发送回客户端。</li><li>完成request的处理。</li><li>重新初始化定时器及其他事件。</li></ol><h3 id="Nginx和FastCGI"><a href="#Nginx和FastCGI" class="headerlink" title="Nginx和FastCGI"></a>Nginx和FastCGI</h3><h4 id="FastCGI"><a href="#FastCGI" class="headerlink" title="FastCGI"></a>FastCGI</h4><p>FastCGI是一个可伸缩地、高速地在HTTP server和动态脚本语言间通信的接口。多数流行的HTTP server都支持FastCGI，包括Apache、Nginx和lighttpd等。同时，FastCGI也被许多脚本语言支持，其中就有PHP。</p><p>FastCGI是从CGI发展改进而来的。传统CGI接口方式的主要缺点是性能很差，因为每次HTTP服务器遇到动态程序时都需要重新启动脚本解析器来执行解析，然后将结果返回给HTTP服务器。这在处理高并发访问时几乎是不可用的。另外传统的CGI接口方式安全性也很差，现在已经很少使用了。</p><p>FastCGI接口方式采用C/S结构，可以将HTTP服务器和脚本解析服务器分开，同时在脚本解析服务器上启动一个或者多个脚本解析守护进程。当HTTP服务器每次遇到动态程序时，可以将其直接交付给FastCGI进程来执行，然后将得到的结果返回给浏览器。这种方式可以让HTTP服务器专一地处理静态请求或者将动态脚本服务器的结果返回给客户端，这在很大程度上提高了整个应用系统的性能。</p><h4 id="Nging和FastCGI合作"><a href="#Nging和FastCGI合作" class="headerlink" title="Nging和FastCGI合作"></a>Nging和FastCGI合作</h4><p>Nginx不支持对外部程序的直接调用或者解析，所有的外部程序（包括PHP）必须通过FastCGI接口来调用。FastCGI接口在Linux下是socket（这个socket可以是文件socket，也可以是ip socket）。</p><p>接下来以Nginx下PHP的运行过程来说明。PHP-FPM是管理FastCGI的一个管理器，它作为PHP的插件存在。</p><ol><li>FastCGI进程管理器php-fpm自身初始化，启动主进程php-fpm和启动start_servers个CGI 子进程。主进程php-fpm主要是管理fastcgi子进程，监听9000端口。fastcgi子进程等待来自Web Server的连接。</li><li>当客户端请求到达Web Server Nginx是时，Nginx通过location指令，将所有以php为后缀的文件都交给127.0.0.1:9000来处理，即Nginx通过location指令，将所有以php为后缀的文件都交给127.0.0.1:9000来处理。</li><li>FastCGI进程管理器PHP-FPM选择并连接到一个子进程CGI解释器。Web server将CGI环境变量和标准输入发送到FastCGI子进程。</li><li>FastCGI子进程完成处理后将标准输出和错误信息从同一连接返回Web Server。当FastCGI子进程关闭连接时，请求便告处理完成。</li><li>FastCGI子进程接着等待并处理来自FastCGI进程管理器（运行在 WebServer中）的下一个连接。</li></ol><h2 id="Apache和Nginx比较"><a href="#Apache和Nginx比较" class="headerlink" title="Apache和Nginx比较"></a>Apache和Nginx比较</h2><h3 id="功能对比"><a href="#功能对比" class="headerlink" title="功能对比"></a>功能对比</h3><p>Nginx和Apache一样，都是HTTP服务器软件，在功能实现上都采用模块化结构设计，都支持通用的语言接口，如PHP、Perl、Python等，同时还支持正向和反向代理、虚拟主机、URL重写、压缩传输、SSL加密传输等。</p><ol><li>在功能实现上，Apache的所有模块都支持动、静态编译，而Nginx模块都是静态编译的，</li><li>对FastCGI的支持，Apache对Fcgi的支持不好，而Nginx对Fcgi的支持非常好；</li><li>在处理连接方式上，Nginx支持epoll，而Apache却不支持；</li><li>在空间使用上，Nginx安装包仅仅只有几百K，和Nginx比起来Apache绝对是庞然大物。</li></ol><h3 id="Nginx相对apache的优点"><a href="#Nginx相对apache的优点" class="headerlink" title="Nginx相对apache的优点"></a>Nginx相对apache的优点</h3><ul><li>轻量级，同样起web 服务，比apache 占用更少的内存及资源</li><li>静态处理，Nginx 静态处理性能比 Apache 高 3倍以上</li><li>抗并发，nginx 处理请求是异步非阻塞的，而apache则是阻塞型的，在高并发下nginx 能保持低资源低消耗高性能。在Apache+PHP（prefork）模式下，如果PHP处理慢或者前端压力很大的情况下，很容易出现Apache进程数飙升，从而拒绝服务的现象。 </li><li>高度模块化的设计，编写模块相对简单</li><li>社区活跃，各种高性能模块出品迅速啊</li></ul><h3 id="apache相对nginx的优点"><a href="#apache相对nginx的优点" class="headerlink" title="apache相对nginx的优点"></a>apache相对nginx的优点</h3><ul><li>rewrite，比nginx 的rewrite 强大</li><li>模块超多，基本想到的都可以找到</li><li>少bug，nginx的bug相对较多</li><li>超稳定</li><li>Apache对PHP支持比较简单，Nginx需要配合其他后端用 </li></ul><h3 id="选择Nginx的优势所在"><a href="#选择Nginx的优势所在" class="headerlink" title="选择Nginx的优势所在"></a>选择Nginx的优势所在</h3><ol><li>作为Web服务器: Nginx处理静态文件、索引文件，自动索引的效率非常高。</li><li>作为代理服务器，Nginx可以实现无缓存的反向代理加速，提高网站运行速度。</li><li>作为负载均衡服务器，Nginx既可以在内部直接支持Rails和PHP，也可以支持HTTP代理服务器对外进行服务，同时还支持简单的容错和利用算法进行负载均衡。</li><li>在性能方面，Nginx是专门为性能优化而开发的，在实现上非常注重效率。它采用内核Poll模型(epoll and kqueue )，可以支持更多的并发连接，最大可以支持对50 000个并发连接数的响应，而且只占用很低的内存资源。</li><li>在稳定性方面，Nginx采取了分阶段资源分配技术，使得CPU与内存的占用率非常低。Nginx官方表示，Nginx保持10 000个没有活动的连接，而这些连接只占用2.5MB内存，因此，类似DOS这样的攻击对Nginx来说基本上是没有任何作用的。</li><li>在高可用性方面，Nginx支持热部署，启动速度特别迅速，因此可以在不间断服务的情况下，对软件版本或者配置进行升级，即使运行数月也无需重新启动，几乎可以做到7×24小时不间断地运行。</li></ol><h2 id="同时使用Nginx和Apache"><a href="#同时使用Nginx和Apache" class="headerlink" title="同时使用Nginx和Apache"></a>同时使用Nginx和Apache</h2><p>由于Nginx和Apache各自的优势，现在很多人选择了让两者在服务器中共存。在服务器端让Nginx在前，Apache在后。由Nginx做负载均衡和反向代理，并且处理静态文件，讲动态请求（如PHP应用）交给Apache去处理。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="http://blog.csdn.net/hguisu/article/details/7395181" target="_blank" rel="external">Apache运行机制剖析</a></li><li><a href="http://qing.blog.sina.com.cn/tj/69004f5933000xlt.html" target="_blank" rel="external">Apache处理http请求的生命周期</a></li><li><a href="http://tengine.taobao.org/book/chapter_02.html" target="_blank" rel="external">Nginx平台初探</a></li><li><a href="http://liuxun.org/blog/nginx-jia-gou-zong-lan/" target="_blank" rel="external">Nginx架构综述</a></li><li><a href="http://blog.csdn.net/hguisu/article/details/7403622" target="_blank" rel="external">Apache, nginx, lighttpd性能比较</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      用正确的工具，做正确的事情。
-    
-    </summary>
-    
-      <category term="技术" scheme="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Nginx" scheme="https://blog.devzou.com/tags/Nginx/"/>
-    
-      <category term="Apache" scheme="https://blog.devzou.com/tags/Apache/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java入门教程之面向对象</title>
-    <link href="https://blog.devzou.com/2017/08/06/Java/2017-08-06-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://blog.devzou.com/2017/08/06/Java/2017-08-06-面向对象/</id>
-    <published>2017-08-06T00:10:09.000Z</published>
-    <updated>2018-04-06T13:55:52.090Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象"></a>什么是对象</h2><p>万物皆对象,客观存在的事物皆为对象</p><h2 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h2><h2 id="什么是对象的属性"><a href="#什么是对象的属性" class="headerlink" title="什么是对象的属性"></a>什么是对象的属性</h2><p>对象具有的各种特征<br>每个对象的每个属性都拥有特定值<br><a id="more"></a></p><h2 id="什么事对象的方法"><a href="#什么事对象的方法" class="headerlink" title="什么事对象的方法"></a>什么事对象的方法</h2><p>对象执行的操作</p><h2 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h2><p>类是抽象的概念,仅仅是模板</p><h2 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h2><p>在类中定义,用来描述对象将要有什么</p><h2 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h2><p>在类的方法中定义,在方法中临时保存数据</p><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>使用new+构造方法 创建一个新的对象<br>构造方法是定义在Java类中的一个用来初始化对象的方法<br>构造方法与类同名且没有返回值</p><h2 id="构造方法的重载"><a href="#构造方法的重载" class="headerlink" title="构造方法的重载"></a>构造方法的重载</h2><p>方法名相同,但参数不同的多个方法,调用时会自动根据不同的参数选择相应的方法</p><p>## </p><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>类是模子,确定对象将会拥有的特征(属性)和行为(方法)<br><strong>类的特点:</strong><br>         类是对象的类型<br>         具有相同属性和方法的一组对象的集合</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;什么是对象&quot;&gt;&lt;a href=&quot;#什么是对象&quot; class=&quot;headerlink&quot; title=&quot;什么是对象&quot;&gt;&lt;/a&gt;什么是对象&lt;/h2&gt;&lt;p&gt;万物皆对象,客观存在的事物皆为对象&lt;/p&gt;
-&lt;h2 id=&quot;什么是面向对象&quot;&gt;&lt;a href=&quot;#什么是面向对象&quot; class=&quot;headerlink&quot; title=&quot;什么是面向对象&quot;&gt;&lt;/a&gt;什么是面向对象&lt;/h2&gt;&lt;h2 id=&quot;什么是对象的属性&quot;&gt;&lt;a href=&quot;#什么是对象的属性&quot; class=&quot;headerlink&quot; title=&quot;什么是对象的属性&quot;&gt;&lt;/a&gt;什么是对象的属性&lt;/h2&gt;&lt;p&gt;对象具有的各种特征&lt;br&gt;每个对象的每个属性都拥有特定值&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA部署你的web项目</title>
-    <link href="https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA%E9%83%A8%E7%BD%B2%E4%BD%A0%E7%9A%84web%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://blog.devzou.com/2017/07/21/Java/2017-07-21-IDEA部署你的web项目/</id>
-    <published>2017-07-21T00:10:09.000Z</published>
-    <updated>2018-04-06T13:55:52.089Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p> 下载tomcat<br> <a href="http://tomcat.apache.org/" target="_blank" rel="external">http://tomcat.apache.org/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;p&gt; 下载tomcat&lt;br&gt; &lt;a href=&quot;http://tomcat.apache.org/&quot; target=&quot;_bla
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript变量作用域</title>
-    <link href="https://blog.devzou.com/2017/07/13/web%E5%89%8D%E7%AB%AF/2017-07-13-javascript-variable-domain/"/>
-    <id>https://blog.devzou.com/2017/07/13/web前端/2017-07-13-javascript-variable-domain/</id>
-    <published>2017-07-13T00:10:09.000Z</published>
-    <updated>2018-04-06T13:55:52.151Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>转载自:<a href="http://www.cnblogs.com/rainman/archive/2009/04/28/1445687.html" target="_blank" rel="external">http://www.cnblogs.com/rainman/archive/2009/04/28/1445687.html</a>,略改</p></blockquote><ul><li>JavaScript的变量作用域是基于其特有的作用域链</li><li>JavaScript没有块级作用域</li><li>函数中声明的变量在整个函数中都有定义</li></ul><h2 id="1-JavaScript的作用域链"><a href="#1-JavaScript的作用域链" class="headerlink" title="1.JavaScript的作用域链"></a>1.JavaScript的作用域链</h2><pre><code>var rain = 1;function rainman(){  var man = 2;  funciton inner(){    var innerVar = 4;    alert(rain);  }  inner();}rainman();</code></pre><p>在alert(rain);这句代码，JavaScript首先在inner函数中检查，否则则在rainman中查找，这段代码在rainmain()中没有定义，则最终查找的是全局变量中的rain。</p><p>作用域链：JavaScript需要查找一个变量时，首先查找作用域链第一个对象，如果第一个对象没有定义，则顺序向后查找。</p><h2 id="2-函数体内部，局部变量的优先级比同名的全局变量高"><a href="#2-函数体内部，局部变量的优先级比同名的全局变量高" class="headerlink" title="2.函数体内部，局部变量的优先级比同名的全局变量高"></a>2.函数体内部，局部变量的优先级比同名的全局变量高</h2><pre><code>var rain = 1;function check(){  var rain = 100;  alert(rain);}check();    //100 alert(rain);  //1</code></pre><h2 id="3-JavaScript没有快级作用域"><a href="#3-JavaScript没有快级作用域" class="headerlink" title="3.JavaScript没有快级作用域"></a>3.JavaScript没有快级作用域</h2><pre><code>function rainmain(){  //rainman 函数体内存在三个局部变量 i j k   var i = 0;  if(1){    var j = 0;    for(var k=0;k&lt;3;k++)      alert(k);  //0,1,2    alert(k);  // 3  }  alert(j);  //0}</code></pre><p>i,j,k的作用域是相同的，他们在rainmain中是全局的</p><h2 id="4-函数中声明的变量在整个函数中都有定义"><a href="#4-函数中声明的变量在整个函数中都有定义" class="headerlink" title="4.函数中声明的变量在整个函数中都有定义"></a>4.函数中声明的变量在整个函数中都有定义</h2><pre><code>function rain(){  var x = 1;  function man(){    x = 100;  }  man();    //调用man  alert(x);  //这里会弹出100}rain();   //调用rain</code></pre><p>上面代码说明，变量x在整个rain体内都可以使用，并可以重新幅值。但是会有以下情况产生:</p><pre><code>var x = 1;function rain(){  alert(x);   //undefined  var x = &apos;3&apos;;  alert(x);   //3}</code></pre><p>是由于rain定义了x，它会隐藏同名全局变量x。由于alert时还未定义，所以undefined</p><h2 id="5-未使用var关键字定义的变量都是全局变量"><a href="#5-未使用var关键字定义的变量都是全局变量" class="headerlink" title="5.未使用var关键字定义的变量都是全局变量"></a>5.未使用var关键字定义的变量都是全局变量</h2><pre><code>function rain(){  x = 100;}rain();alert(x);  //100</code></pre><h2 id="6-全局变量都是window对象的属性"><a href="#6-全局变量都是window对象的属性" class="headerlink" title="6.全局变量都是window对象的属性"></a>6.全局变量都是window对象的属性</h2><pre><code>var x = 100;alert(window.x); //100</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      转载学习
-    
-    </summary>
-    
-      <category term="技术" scheme="https://blog.devzou.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="JavaScript" scheme="https://blog.devzou.com/tags/JavaScript/"/>
     
   </entry>
   
