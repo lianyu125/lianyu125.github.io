@@ -176,7 +176,7 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/08/05/ios/2018-08-22-KVC/">iOS开发之KVC底层原理</a>
+                    <a href="/2018/08/05/ios/2018-08-23-Category/">iOS开发之Category</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -186,8 +186,7 @@
             </div>
             <p class="brief">
                 
-                    KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性常见的API有
-1234- (void)setValue:(id)value forKey:(NSString *)key- (void)s...
+                    Category实现原理category的结构1234567891011121314151617struct category_t &amp;#123;    const char *name;    classref_t cls;    s...
                 
             </p>
         </div>
@@ -220,27 +219,6 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/08/05/ios/2018-08-23-Category/">iOS开发之Category</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2018年08月05日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    Category实现原理category的结构1234567891011121314151617struct category_t &amp;#123;    const char *name;    classref_t cls;    s...
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
                     <a href="/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/">iOS设计模式之策略模式</a>
                 </h1>
                 <div class="post-meta">  &bull;
@@ -254,6 +232,28 @@
                     模式动机
 完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。
 在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。…
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/08/05/ios/2018-08-22-KVC/">iOS开发之KVC底层原理</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年08月05日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性常见的API有
+1234- (void)setValue:(id)value forKey:(NSString *)key- (void)s...
                 
             </p>
         </div>
