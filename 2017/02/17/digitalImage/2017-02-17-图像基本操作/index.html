@@ -51,12 +51,6 @@
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
 
 
 
@@ -202,14 +196,10 @@
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>743</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
-        <h2 id="数字图像的基本概念"><a href="#数字图像的基本概念" class="headerlink" title="数字图像的基本概念"></a>数字图像的基本概念</h2><p>如图 1中所示的图像,我们看到的是 Lena 的头像,但是计算机看来,这副图像只是一堆亮度各异的点。一副尺寸为 M × N 的图像可以用一个 M × N 的矩阵来表示,矩阵元素的值表示这个位置上的像素的亮度,一般来说像素值越大表示该点越 亮。如图 3.1 中白色圆圈内的区域,进行放大并仔细查看,将会如图2所 示。<br><img src="http://okjl482qy.bkt.clouddn.com/digital_image_01.png" alt="图1"><br><img src="http://okjl482qy.bkt.clouddn.com/digital_image_02.png" alt="图2"><br>一般来说,灰度图用二维矩阵表示,彩色(多通道)图像用三维矩阵(M × N × 3)表示。对于图像显示来说,目前大部分设备都是用无符号 8 位整 数(类型为 CV_8U)表示像素亮度。<br>图像数据在计算机内存中的存储顺序为以图像最左上点(也可能是最左下 点)开始,存储如表所示。<br>| I0 0  | I0 1 | … | I0 N-1 |<br>| :-: | :-: | :-: | :-: |<br>| I1 0 | I1 1 | … | I1 N-1 |<br>| … | … |  |  |<br>| IM-1 0 | IM-1 1 | … | IM-1 N-1 |<br>Iij 表示第 i 行 j 列的像素值。如果是多通道图像,比如 RGB 图像,则每个 像素用三个字节表示。在 OpenCV 中,RGB 图像的通道顺序为 BGR ,存储如表2所示。</p>
+        <h2 id="数字图像的基本概念"><a href="#数字图像的基本概念" class="headerlink" title="数字图像的基本概念"></a>数字图像的基本概念</h2><p>如图 1中所示的图像,我们看到的是 Lena 的头像,但是计算机看来,这副图像只是一堆亮度各异的点。一副尺寸为 M × N 的图像可以用一个 M × N 的矩阵来表示,矩阵元素的值表示这个位置上的像素的亮度,一般来说像素值越大表示该点越 亮。如图 3.1 中白色圆圈内的区域,进行放大并仔细查看,将会如图2所 示。<br><img src="../../img/digital_image_01.png" alt="图1"><br><img src="../../img/digital_image_02.png" alt="图2"><br>一般来说,灰度图用二维矩阵表示,彩色(多通道)图像用三维矩阵(M × N × 3)表示。对于图像显示来说,目前大部分设备都是用无符号 8 位整 数(类型为 CV_8U)表示像素亮度。<br>图像数据在计算机内存中的存储顺序为以图像最左上点(也可能是最左下 点)开始,存储如表所示。<br>| I0 0  | I0 1 | … | I0 N-1 |<br>| :-: | :-: | :-: | :-: |<br>| I1 0 | I1 1 | … | I1 N-1 |<br>| … | … |  |  |<br>| IM-1 0 | IM-1 1 | … | IM-1 N-1 |<br>Iij 表示第 i 行 j 列的像素值。如果是多通道图像,比如 RGB 图像,则每个 像素用三个字节表示。在 OpenCV 中,RGB 图像的通道顺序为 BGR ,存储如表2所示。</p>
 <table>
 <thead>
 <tr>
@@ -249,7 +239,7 @@
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
             
         </div>
         <div>
@@ -266,9 +256,9 @@
         </a>
     
     
-        <a href="/2017/01/26/hexo/使用hexo与gitpages创建自己的博客/" class="next-post btn btn-default" title='使用hexo+gitpages创建自己的博客'>
+        <a href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" class="next-post btn btn-default" title='hexo博客在导航条中添加分类和标签栏'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">使用hexo+gitpages创建自己的博客</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">hexo博客在导航条中添加分类和标签栏</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -276,28 +266,7 @@
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
+   <p>评论系统未开启，无法评论！</p>
 
     </div>
 
@@ -354,7 +323,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>

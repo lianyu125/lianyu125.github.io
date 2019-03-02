@@ -51,12 +51,6 @@
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
 
 
 
@@ -202,29 +196,25 @@
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>719</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
         <h2 id="整体步骤"><a href="#整体步骤" class="headerlink" title="整体步骤"></a>整体步骤</h2><p>1.在本地创建静态库工程<br>2.创建podspec文件,并验证是否通过<br>3.上传到github,并创建release版本<br>4.注册cocoapods账号<br>5.上传代码到cocoapods<br>6.检查上传是否成功</p>
-<h2 id="首先我们打开github-com，然后创建自己的项目工程："><a href="#首先我们打开github-com，然后创建自己的项目工程：" class="headerlink" title="首先我们打开github.com，然后创建自己的项目工程："></a>首先我们打开github.com，然后创建自己的项目工程：</h2><p><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_01.png" alt=""><br>【注】因为我的github中已经创建了上面那个仓库，所以才会有上面那个提示<br>这里注意那个MIT License，在后面添加Cocoapods支持的时候会用到（稍后介绍）。然后点击创建即可。<br>然后用SouceTree将代码down到本地,你会发现文件夹中包含一个LICENSE文件，这里的LICENSE就是刚才说的MIT License添加的文件。然后我们在ZLYNetWorking文件夹中创建一个静态库工程<img src="http://okjl482qy.bkt.clouddn.com/cocoapods_01.png" alt=""></p>
+<h2 id="首先我们打开github-com，然后创建自己的项目工程："><a href="#首先我们打开github-com，然后创建自己的项目工程：" class="headerlink" title="首先我们打开github.com，然后创建自己的项目工程："></a>首先我们打开github.com，然后创建自己的项目工程：</h2><p><img src="../../img/cocoapods_170317_01.png" alt=""><br>【注】因为我的github中已经创建了上面那个仓库，所以才会有上面那个提示<br>这里注意那个MIT License，在后面添加Cocoapods支持的时候会用到（稍后介绍）。然后点击创建即可。<br>然后用SouceTree将代码down到本地,你会发现文件夹中包含一个LICENSE文件，这里的LICENSE就是刚才说的MIT License添加的文件。然后我们在ZLYNetWorking文件夹中创建一个静态库工程<img src="../../img/cocoapods_01.png" alt=""></p>
 <p>接下来就开始编写自己的代码了，然后提交到Github就可以了。</p>
-<h2 id="创建podspec文件"><a href="#创建podspec文件" class="headerlink" title="创建podspec文件"></a>创建podspec文件</h2><p>我们使用终端到仓库的根目录下ZLYNetWorking.<br>然后执行下面的命令：<br><code>pod spec create ZLYNetWorking</code><br>这里的ZLYNetWorking就是pod添加市的名字（例如MBProgressHUD）。执行完后的结果：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_02.png" alt=""><br>此时在工程文件夹下也会多一个ZLYNetWorking.podspec文件。这里我用xcode打开并做了如下编辑：</p>
+<h2 id="创建podspec文件"><a href="#创建podspec文件" class="headerlink" title="创建podspec文件"></a>创建podspec文件</h2><p>我们使用终端到仓库的根目录下ZLYNetWorking.<br>然后执行下面的命令：<br><code>pod spec create ZLYNetWorking</code><br>这里的ZLYNetWorking就是pod添加市的名字（例如MBProgressHUD）。执行完后的结果：<br><img src="../../img/cocoapods_170317_02.png" alt=""><br>此时在工程文件夹下也会多一个ZLYNetWorking.podspec文件。这里我用xcode打开并做了如下编辑：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#  Be sure to run `pod spec lint ZLYNetWorking.podspec' to ensure this is a</span></div><div class="line"><span class="meta">#  valid spec and to remove all comments including this before submitting the spec.</span></div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html</span></div><div class="line"><span class="meta">#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/</span></div><div class="line"><span class="meta">#</span></div><div class="line"></div><div class="line">Pod::Spec.new <span class="keyword">do</span> |s|</div><div class="line"></div><div class="line"><span class="meta"># ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span></div><div class="line">  <span class="meta">#</span></div><div class="line">  <span class="meta">#  These will help people to find your library, and whilst it</span></div><div class="line">  <span class="meta">#  can feel like a chore to fill in it's definitely to your advantage. The</span></div><div class="line">  <span class="meta">#  summary should be tweet-length, and the description more in depth.</span></div><div class="line">  <span class="meta">#</span></div><div class="line"></div><div class="line">  s.name         = <span class="string">"ZLYNetWorking"</span></div><div class="line">  s.version      = <span class="string">"0.0.1"</span></div><div class="line">  s.summary      = <span class="string">"A network Framework based on AFNetworking"</span></div><div class="line"></div><div class="line">  <span class="meta"># This description is used to generate tags and improve search results.</span></div><div class="line">  <span class="meta">#   * Think: What does it do? Why did you write it? What is the focus?</span></div><div class="line">  <span class="meta">#   * Try to keep it short, snappy and to the point.</span></div><div class="line">  <span class="meta">#   * Write the description between the DESC delimiters below.</span></div><div class="line">  <span class="meta">#   * Finally, don't worry about the indent, CocoaPods strips it!</span></div><div class="line">  s.description  = &lt;&lt;-DESC</div><div class="line">                    网络请求模块</div><div class="line">                    网络请求模块</div><div class="line">                    网络请求模块</div><div class="line">                    网络请求模块</div><div class="line">                    网络请求模块</div><div class="line">                    网络请求模块</div><div class="line">                   DESC</div><div class="line"></div><div class="line">  s.homepage     = <span class="string">"https://github.com/lianyu125/ZLYNetWorking"</span></div><div class="line">  <span class="meta"># s.screenshots  = <span class="meta-string">"www.example.com/screenshots_1.gif"</span>, <span class="meta-string">"www.example.com/screenshots_2.gif"</span></span></div><div class="line"></div><div class="line"></div><div class="line">  <span class="meta"># ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span></div><div class="line">  <span class="meta">#</span></div><div class="line">  <span class="meta">#  Licensing your code is important. See http://choosealicense.com for more info.</span></div><div class="line">  <span class="meta">#  CocoaPods will detect a license file if there is a named LICENSE*</span></div><div class="line">  <span class="meta">#  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.</span></div><div class="line">  <span class="meta">#</span></div><div class="line"></div><div class="line">  <span class="meta"># s.license      = <span class="meta-string">"MIT"</span></span></div><div class="line">    s.license      = &#123; :type =&gt; <span class="string">"MIT"</span>, :file =&gt; <span class="string">"LICENSE"</span> &#125;</div><div class="line"></div><div class="line"></div><div class="line">  <span class="meta"># ――― Author Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――   #  </span></div><div class="line">  <span class="meta">#</span></div><div class="line">  <span class="meta">#  Specify the authors of the library, with email addresses. Email addresses</span></div><div class="line">  <span class="meta">#  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also</span></div><div class="line">  <span class="meta">#  accepts just a name if you'd rather not provide an email address.</span></div><div class="line">  <span class="meta">#</span></div><div class="line">  <span class="meta">#  Specify a social_media_url where others can refer to, for example a twitter</span></div><div class="line">  <span class="meta">#  profile URL.</span></div><div class="line">  <span class="meta">#</span></div><div class="line"></div><div class="line">  s.author             = &#123; <span class="string">"lianyu.zou"</span> =&gt; <span class="string">"lianyu125@gmail.com"</span> &#125;</div><div class="line">  s.platform     = :ios, <span class="string">"7.0"</span></div><div class="line"></div><div class="line"></div><div class="line">  s.source       = &#123; :git =&gt; <span class="string">"https://github.com/lianyu125/ZLYNetWorking.git"</span>, :branch =&gt; <span class="string">"master"</span> &#125;</div><div class="line">  s.source_files  = <span class="string">"ZLYNetWorking"</span>, <span class="string">"ZLYNetWorking/**/*.&#123;h,m&#125;"</span></div><div class="line">  s.exclude_files = <span class="string">"ZLYNetWorking/Exclude"</span></div><div class="line">end</div></pre></td></tr></table></figure>
 <p>name:类库的名称这里字段介绍如下：<br>version:库的版本<br>summary就是介绍语,就是：<br>homtepage:Github上项目地址<br>license:许可证<br>author:作者<br>source:项目的https链接地址<br>source_files:要共享的代码，这里是ZLYNetWorking下面的所有代码。<br>接下来执行下面的命令进行验证：</p>
-<p><code>pod lib lint ZLYNetWorking.podspec</code><br>结果多种多样，如果有错，则按照提示进行改错即可。在这里，我执行的结果如下图：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_03.png" alt=""><br>发现了多个警告，只要不是错误就行，警告可以直接忽略（红色也提示如何忽略）：<br>pod lib lint ZLYNetWorking.podspec —allow-warnings<br>结果如下：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_04.png" alt=""><br>当看到ZLYNetWorking passed validation之后，就说明验证通过了。</p>
-<h2 id="在Github上创建release版本"><a href="#在Github上创建release版本" class="headerlink" title="在Github上创建release版本"></a>在Github上创建release版本</h2><p>打开项目的目录，然后创建release版本的类库：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_05.png" alt=""><br>点击 箭头指向开始创建release版本，（点击 Create a new release）：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_06.png" alt=""><br>点击Publish release即可。创建完成后如图所示：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_07.png" alt=""><br>这样第三步就完成了<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_08.png" alt=""></p>
+<p><code>pod lib lint ZLYNetWorking.podspec</code><br>结果多种多样，如果有错，则按照提示进行改错即可。在这里，我执行的结果如下图：<br><img src="../../img/cocoapods_170317_03.png" alt=""><br>发现了多个警告，只要不是错误就行，警告可以直接忽略（红色也提示如何忽略）：<br>pod lib lint ZLYNetWorking.podspec —allow-warnings<br>结果如下：<br><img src="../../img/cocoapods_170317_04.png" alt=""><br>当看到ZLYNetWorking passed validation之后，就说明验证通过了。</p>
+<h2 id="在Github上创建release版本"><a href="#在Github上创建release版本" class="headerlink" title="在Github上创建release版本"></a>在Github上创建release版本</h2><p>打开项目的目录，然后创建release版本的类库：<br><img src="../../img/cocoapods_170317_05.png" alt=""><br>点击 箭头指向开始创建release版本，（点击 Create a new release）：<br><img src="../../img/cocoapods_170317_06.png" alt=""><br>点击Publish release即可。创建完成后如图所示：<br><img src="../../img/cocoapods_170317_07.png" alt=""><br>这样第三步就完成了<br><img src="../../img/cocoapods_170317_08.png" alt=""></p>
 <h2 id="注册CocoaPods账号"><a href="#注册CocoaPods账号" class="headerlink" title="注册CocoaPods账号"></a>注册CocoaPods账号</h2><p>执行命令行：</p>
 <p><code>pod trunk register 邮箱地址 ‘用户名’ —description=&#39;描述信息&#39;</code></p>
 <p>黄色提示已经发送了一个验证码到邮箱，你可以打开你的邮箱验证即可。<br>这样就成功注册了Cocoapods账号。</p>
 <p>可以用</p>
-<p><code>pod trunk me</code><br>检查是否创建成功。成功的结果如下：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_09.png" alt=""></p>
+<p><code>pod trunk me</code><br>检查是否创建成功。成功的结果如下：<br><img src="../../img/cocoapods_170317_09.png" alt=""></p>
 <h2 id="上传代码到CocoaPods"><a href="#上传代码到CocoaPods" class="headerlink" title="上传代码到CocoaPods"></a>上传代码到CocoaPods</h2><p>首先检测文件格式的有效性：</p>
-<p>pod spec lint<br>结果如下：<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png" alt=""><br>没有错误，但是有警告。可以使用 —allow-warnings忽略：<br>出现passed validation就说明通过验证了。然后执行：</p>
-<p><code>pod trunk push ZLYNetWorking.podspec —allow-warnings</code><br>执行结果如下：（速度应该有的慢）<br><img src="http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png" alt=""><br>说明了已经上传成功。</p>
+<p>pod spec lint<br>结果如下：<br><img src="../../img/cocoapods_170317_10.png" alt=""><br>没有错误，但是有警告。可以使用 —allow-warnings忽略：<br>出现passed validation就说明通过验证了。然后执行：</p>
+<p><code>pod trunk push ZLYNetWorking.podspec —allow-warnings</code><br>执行结果如下：（速度应该有的慢）<br><img src="../../img/cocoapods_170317_10.png" alt=""><br>说明了已经上传成功。</p>
 <h2 id="检查上传是否成功"><a href="#检查上传是否成功" class="headerlink" title="检查上传是否成功"></a>检查上传是否成功</h2><p>使用<br><code>pod search ZLYNetWorking</code></p>
 <p>若果提示如下错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[!] Unable to find a pod with name, author, summary, or descriptionmatching <span class="string">'······'</span></div></pre></td></tr></table></figure></p>
 <p>则请看<a href="https://www.devzou.com/2017/03/15/ios/2017-03-15-pod%20search/" target="_blank" rel="external">我的另一篇博客</a></p>
@@ -235,7 +225,7 @@
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
             
         </div>
         <div>
@@ -246,15 +236,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/03/13/tool/2017-03-13-.tar.gz格式的文件安装/" class="pre-post btn btn-default" title='Mac下解压命令大全'>
+        <a href="/2017/03/13/python/2017-03-13-python基础教程简介/" class="pre-post btn btn-default" title='Python 基础教程'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Mac下解压命令大全</span>
+            <span class="hidden-xs">Python 基础教程</span>
         </a>
     
     
-        <a href="/2017/03/12/Java/2017-03-12-Java 高级编程之数据结构/" class="next-post btn btn-default" title='Java高级编程之数据结构'>
+        <a href="/2017/03/12/python/2017-03-12-Python 基础教程之基础语法/" class="next-post btn btn-default" title='Python 基础教程之基础语法'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Java高级编程之数据结构</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Python 基础教程之基础语法</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -262,28 +252,7 @@
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
+   <p>评论系统未开启，无法评论！</p>
 
     </div>
 
@@ -340,7 +309,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>

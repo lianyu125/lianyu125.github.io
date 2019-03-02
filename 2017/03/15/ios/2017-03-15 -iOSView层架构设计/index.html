@@ -51,12 +51,6 @@
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
 
 
 
@@ -202,10 +196,6 @@
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>716</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
@@ -227,7 +217,7 @@
 <li>保持架构发展的方向不轻易被不合理的意见所左右<br>在这一节里面我不打算从头开始定义一套规范，苹果有一套Coding Guidelines，当我们定代码结构或规范的时候，首先一定要符合这个规范。<br>然后，相信大家各自公司里面也都有一套自己的规范，具体怎么个规范法其实也是根据各位架构师的经验而定，我这边只是建议各位在各自规范的基础上再加上下面这一点。</li>
 </ul>
 <p>viewController的代码应该差不多是这样：</p>
-<p><img src="http://okjl482qy.bkt.clouddn.com/viewdesign_01.png" alt=""></p>
+<p><img src="../../img/viewdesign_01.png" alt=""></p>
 <p>要点如下：<br>所有的属性都使用getter和setter<br>不要在viewDidLoad里面初始化你的view然后再add，这样代码就很难看。在viewDidload里面只做addSubview的事情，然后在viewWillAppear里面做布局的事情（勘误1），最后在viewDidAppear里面做Notification的监听之类的事情。至于属性的初始化，则交给getter去做。<br>比如这样：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - life cycle</span></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="keyword">self</span>.view.backgroundColor = [<span class="built_in">UIColor</span> whiteColor];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.firstTableView];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.secondTableView];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.firstFilterLabel];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.secondFilterLabel];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.cleanButton];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.originImageView];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.processedImageView];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.activityIndicator];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.takeImageButton];</div><div class="line">&#125;</div><div class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewWillAppear:animated];</div><div class="line">    <span class="built_in">CGFloat</span> width = (<span class="keyword">self</span>.view.width - <span class="number">30</span>) / <span class="number">2.0</span>f;</div><div class="line">    <span class="keyword">self</span>.originImageView.size = <span class="built_in">CGSizeMake</span>(width, width);</div><div class="line">    [<span class="keyword">self</span>.originImageView topInContainer:<span class="number">70</span> shouldResize:<span class="literal">NO</span>];</div><div class="line">    [<span class="keyword">self</span>.originImageView leftInContainer:<span class="number">10</span> shouldResize:<span class="literal">NO</span>];</div><div class="line">    <span class="keyword">self</span>.processedImageView.size = <span class="built_in">CGSizeMake</span>(width, width);</div><div class="line">    [<span class="keyword">self</span>.processedImageView right:<span class="number">10</span> FromView:<span class="keyword">self</span>.originImageView];</div><div class="line">    [<span class="keyword">self</span>.processedImageView topEqualToView:<span class="keyword">self</span>.originImageView];</div><div class="line">    <span class="built_in">CGFloat</span> labelWidth = <span class="keyword">self</span>.view.width - <span class="number">100</span>;</div><div class="line">    <span class="keyword">self</span>.firstFilterLabel.size = <span class="built_in">CGSizeMake</span>(labelWidth, <span class="number">20</span>);</div><div class="line">    [<span class="keyword">self</span>.firstFilterLabel leftInContainer:<span class="number">10</span> shouldResize:<span class="literal">NO</span>];</div><div class="line">    [<span class="keyword">self</span>.firstFilterLabel top:<span class="number">10</span> FromView:<span class="keyword">self</span>.originImageView];</div><div class="line">    ... ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这样即便在属性非常多的情况下，还是能够保持代码整齐，view的初始化都交给getter去做了。总之就是尽量不要出现以下的情况：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="keyword">self</span>.textLabel = [[<span class="built_in">UILabel</span> alloc] init];</div><div class="line">    <span class="keyword">self</span>.textLabel.textColor = [<span class="built_in">UIColor</span> blackColor];</div><div class="line">    <span class="keyword">self</span>.textLabel ... ...</div><div class="line">    <span class="keyword">self</span>.textLabel ... ...</div><div class="line">    <span class="keyword">self</span>.textLabel ... ...</div><div class="line">    [<span class="keyword">self</span>.view addSubview:<span class="keyword">self</span>.textLabel];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这种做法就不够干净，都扔到getter里面去就好了。关于这个做法，在唐巧的技术博客里面有一篇文章和我所提倡的做法不同，这个我会放在后面详细论述。</p>
@@ -361,7 +351,7 @@
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
             
         </div>
         <div>
@@ -388,28 +378,7 @@
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
+   <p>评论系统未开启，无法评论！</p>
 
     </div>
 
@@ -466,7 +435,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>

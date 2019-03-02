@@ -52,12 +52,6 @@ objc_msgSend 函数在Objectiv..." />
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
 
 
 
@@ -203,10 +197,6 @@ objc_msgSend 函数在Objectiv..." />
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>858</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
@@ -217,7 +207,7 @@ objc_msgSend 函数在Objectiv..." />
 <li>然后将消息接收者对象（指向消息接收者对象的指针）以及方法中指定的参数传给找到的方法实现。 </li>
 <li>最后，将方法实现的返回值作为该函数的返回值返回。<br>【注】编译器将自动插入调用该消息函数的代码。您无须在代码中显示调用该消息函数。<br>消息机制的关键在于编译器为类和对象生成的结构。每个类的结构中至少包括两个基本元素： </li>
 <li>指向父类的指针。 </li>
-<li>类的方法表。方法表将方法选标和该类的方法实现的地址关联起来。例如，setOrigin::的方法选标和setOrigin::的方法实现的地址关联，display 的方法选标和display的方法实现的地址关联，等等。<br>当新的对象被创建时，其内存同时被分配，实例变量也同时被初始化。对象的第一个实例变量是一个指向该对象的类结构的指针，叫做isa。通过该指针，对象可以访问它对应的类以及相应的父类。<br><strong>注意：尽管严格来说这并不是Obective-C语言的一部分，但是在Objective-C运行时系统中对象需要有isa指针。对象和结构体struct objc_object（在objc/objc.h中定义）必须“一致”。然而，您很少需要创建您自己的根对象，因为从NSObject或者NSProxy继承的对象都自动包括isa变量。  </strong><br>类和对象的结构如图 3-1所示。<br><img src="http://okjl482qy.bkt.clouddn.com/objc_%E6%B6%88%E6%81%AF.png" alt=""><br>当对象收到消息时，消息函数首先根据该对象的isa指针找到该对象所对应的类的方法表，并从表中寻找该消息对应的方法选标。如果找不到，objc_msgSend将继续从父类中寻找，直到NSObject类。一旦找到了方法选标， objc_msgSend则以消息接收者对象为参数调用，调用该选标对应的方法实现。 这就是在运行时系统中选择方法实现的方式。在面向对象编程中，一般称作方法和消息动态绑定的过程。 为了加快消息的处理过程，运行时系统通常会将使用过的方法选标和方法实现的地址放入缓存中。每个类都有一个独立的缓存，同时包括继承的方法和在该类中定义的方法。消息函数会首先检查消息接收者对象对应的类的缓存（理论上，如果一个方法被使用过一次，那么它很可能被再次使用）。如果在缓存中已经有了需要的方法选标，则消息仅仅比函数调用慢一点点。如果程序运行了足够长的时间，几乎每个消息都能在缓存中找到方法实现。程序运行时，缓存也将随着新的消息的增加而增加。 <h2 id="使用隐藏的参数"><a href="#使用隐藏的参数" class="headerlink" title="使用隐藏的参数"></a>使用隐藏的参数</h2>当objc_msgSend找到方法对应的实现时，它将直接调用该方法实现，并将消息中所有的参数都传递给方法实现，同时，它还将传递两个隐藏的参数：</li>
+<li>类的方法表。方法表将方法选标和该类的方法实现的地址关联起来。例如，setOrigin::的方法选标和setOrigin::的方法实现的地址关联，display 的方法选标和display的方法实现的地址关联，等等。<br>当新的对象被创建时，其内存同时被分配，实例变量也同时被初始化。对象的第一个实例变量是一个指向该对象的类结构的指针，叫做isa。通过该指针，对象可以访问它对应的类以及相应的父类。<br><strong>注意：尽管严格来说这并不是Obective-C语言的一部分，但是在Objective-C运行时系统中对象需要有isa指针。对象和结构体struct objc_object（在objc/objc.h中定义）必须“一致”。然而，您很少需要创建您自己的根对象，因为从NSObject或者NSProxy继承的对象都自动包括isa变量。  </strong><br>类和对象的结构如图 3-1所示。<br><img src="../../img/objc_%E6%B6%88%E6%81%AF.png" alt=""><br>当对象收到消息时，消息函数首先根据该对象的isa指针找到该对象所对应的类的方法表，并从表中寻找该消息对应的方法选标。如果找不到，objc_msgSend将继续从父类中寻找，直到NSObject类。一旦找到了方法选标， objc_msgSend则以消息接收者对象为参数调用，调用该选标对应的方法实现。 这就是在运行时系统中选择方法实现的方式。在面向对象编程中，一般称作方法和消息动态绑定的过程。 为了加快消息的处理过程，运行时系统通常会将使用过的方法选标和方法实现的地址放入缓存中。每个类都有一个独立的缓存，同时包括继承的方法和在该类中定义的方法。消息函数会首先检查消息接收者对象对应的类的缓存（理论上，如果一个方法被使用过一次，那么它很可能被再次使用）。如果在缓存中已经有了需要的方法选标，则消息仅仅比函数调用慢一点点。如果程序运行了足够长的时间，几乎每个消息都能在缓存中找到方法实现。程序运行时，缓存也将随着新的消息的增加而增加。 <h2 id="使用隐藏的参数"><a href="#使用隐藏的参数" class="headerlink" title="使用隐藏的参数"></a>使用隐藏的参数</h2>当objc_msgSend找到方法对应的实现时，它将直接调用该方法实现，并将消息中所有的参数都传递给方法实现，同时，它还将传递两个隐藏的参数：</li>
 <li>接收消息的对象</li>
 <li>方法选标 这些参数帮助方法实现获得了消息表达式的信息。它们被认为是”隐藏“的是因为它们并没有在定义方法的源代码中声明，而是在代码编译时是插入方法的实现中的。<br>尽管这些参数没有被显示声明，但在源代码中仍然可以引用它们（就象可以引用消息接收者对象的实例变量一样）。在方法中可以通过self来引用消息接收者对象，通过选标_cmd来引用方法本身。在下面的例子中，_cmd指的是strange方法，self指的收到strange消息的对象。 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- strange</div><div class="line">&#123;</div><div class="line">    <span class="keyword">id</span>  target = getTheReceiver();</div><div class="line">    SEL method = getTheMethod();</div><div class="line"> </div><div class="line">    <span class="keyword">if</span> ( target == <span class="keyword">self</span> || method == _cmd )</div><div class="line">        <span class="keyword">return</span> <span class="literal">nil</span>;</div><div class="line">    <span class="keyword">return</span> [target performSelector:method];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -231,7 +221,7 @@ objc_msgSend 函数在Objectiv..." />
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
             
         </div>
         <div>
@@ -258,28 +248,7 @@ objc_msgSend 函数在Objectiv..." />
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
+   <p>评论系统未开启，无法评论！</p>
 
     </div>
 
@@ -336,7 +305,7 @@ objc_msgSend 函数在Objectiv..." />
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>

@@ -54,12 +54,6 @@
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
 
 
 
@@ -205,23 +199,19 @@
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>764</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
         <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装git<br>2.安装node.js<br>3.申请github账号</p>
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>1.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p><img src="http://okjl482qy.bkt.clouddn.com/hexo-cli.png" alt=""></p>
+<p><img src="../../img/hexo-cli.png" alt=""></p>
 <p>2.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure></p>
-<p><img src="http://okjl482qy.bkt.clouddn.com/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
-<p>如下图所示,则表示安装成功<br><img src="http://okjl482qy.bkt.clouddn.com/hexo_v.png" alt=""></p>
+<p><img src="../../img/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
+<p>如下图所示,则表示安装成功<br><img src="../../img/hexo_v.png" alt=""></p>
 <h2 id="本地运行hexo"><a href="#本地运行hexo" class="headerlink" title="本地运行hexo"></a>本地运行hexo</h2><p>1.初始化hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>如下图则表示初始化成功<br><img src="http://okjl482qy.bkt.clouddn.com/hexo_init.png" alt=""><br>2.安装生成器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>如下图则表示初始化成功<br><img src="../../img/hexo_init.png" alt=""><br>2.安装生成器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
 <p>3.本地运行hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -g</div></pre></td></tr></table></figure></p>
-<p><img src="http://okjl482qy.bkt.clouddn.com/hexo_run.png" alt=""><br> 如图则表示运行成功<br> <img src="http://okjl482qy.bkt.clouddn.com/hexo_demo.png" alt=""></p>
+<p><img src="../../img/hexo_run.png" alt=""><br> 如图则表示运行成功<br> <img src="../../img/hexo_demo.png" alt=""></p>
 <h2 id="一键部署到github"><a href="#一键部署到github" class="headerlink" title="一键部署到github"></a>一键部署到github</h2><p>1.打开博客目录中的_config.yml文件<br>修改文件中的deploy下内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  #elfwalk改为你的github用户名</div><div class="line">  repository: https://github.com/lianyu125/lianyu125.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>2.安装hexo git 插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
@@ -234,7 +224,7 @@
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
             
         </div>
         <div>
@@ -245,9 +235,9 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/02/17/digitalImage/2017-02-17-图像基本操作/" class="pre-post btn btn-default" title='图像的基本操作'>
+        <a href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" class="pre-post btn btn-default" title='hexo博客在导航条中添加分类和标签栏'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">图像的基本操作</span>
+            <span class="hidden-xs">hexo博客在导航条中添加分类和标签栏</span>
         </a>
     
     
@@ -261,28 +251,7 @@
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
+   <p>评论系统未开启，无法评论！</p>
 
     </div>
 
@@ -339,7 +308,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>

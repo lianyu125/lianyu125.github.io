@@ -52,12 +52,6 @@
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
 
 
 
@@ -203,10 +197,6 @@
 </div>
             
             
-            <p class="fa fa-exclamation-triangle warning">
-                本文于<strong>815</strong>天之前发表，文中内容可能已经过时。
-            </p>
-        
     </div>
     
     <div class="post-body post-content">
@@ -215,7 +205,7 @@
 <ul>
 <li>创建色彩空间</li>
 <li>创建和设置颜色</li>
-<li>设置渲染意图<h2 id="颜色与颜色空间"><a href="#颜色与颜色空间" class="headerlink" title="颜色与颜色空间"></a>颜色与颜色空间</h2>Quartz中的颜色是用一组值表示。 而颜色空间用于解析这些颜色信息。例如，表4-1列出了在全亮度下蓝色值在不同颜色空间下的值。如果不知道颜色空间及颜色空间所能接受的值，我们没有办法知道一组值所表示的颜色。<br>Table 4-1  Color values in different color spaces<br><img src="http://okjl482qy.bkt.clouddn.com/Quartz2D_4_01.png" alt=""><br>如果我们提供了错误的颜色空间，我们可能会获得完全不同的颜色，如图4-1所示。 尽管BGR和RGB颜色空间中的绿色被解释为相同，但是红色和蓝色值被翻转。<br><img src="http://okjl482qy.bkt.clouddn.com/Quartz2D_4_02.png" alt=""><br>颜色空间可以有不同数量的组件。 表4-1中的三个颜色空间有三个组件，而CMYK颜色空间有四个组件。值的范围与颜色空间有关。 对于大多数颜色空间，颜色值范围为[0.0, 1.0]，1.0表示全亮度。例如，全亮度蓝色值在Quartz的RGB颜色空间中的值是(0, 0, 1.0)。在Quartz中，颜色值同样有一个alpha值来表示透明度。在表4-1中没有列出该值。<h2 id="alpha值"><a href="#alpha值" class="headerlink" title="alpha值"></a>alpha值</h2>alpha值是图形状态参数，Quartz用它来确定新的绘图对象如何与已存在的对象混合。 在全强度下，新的绘图对象是不透明的。 在零强度下，新的绘图对象是完全透明的。 图4-2显示了五个大的矩形，使用的alpha值分别为1.0,0.75,0.5,0.1和0.0。 当大的矩形变成透明的时候，底下的小的不透明的方形逐渐显现出来。<br><img src="http://okjl482qy.bkt.clouddn.com/Quartz2D_4_03.png" alt=""><br>我们可以将两个对象绘制到page上，而page可以在渲染前通过设置全局的graphics context来设置自己的透明度。图4-3显示了将全局的透明度设置为0.5和1.0的效果。<br><img src="http://okjl482qy.bkt.clouddn.com/Quartz2D_4_04.png" alt=""><br>在标准的混合模式（图形状态的默认模式）中，Quartz使用下面的公式来混合源颜色和目标颜色的组件<br><code>destination =（alpha * source）+（1 - alpha）* destination</code></li>
+<li>设置渲染意图<h2 id="颜色与颜色空间"><a href="#颜色与颜色空间" class="headerlink" title="颜色与颜色空间"></a>颜色与颜色空间</h2>Quartz中的颜色是用一组值表示。 而颜色空间用于解析这些颜色信息。例如，表4-1列出了在全亮度下蓝色值在不同颜色空间下的值。如果不知道颜色空间及颜色空间所能接受的值，我们没有办法知道一组值所表示的颜色。<br>Table 4-1  Color values in different color spaces<br><img src="../../img/Quartz2D_4_01.png" alt=""><br>如果我们提供了错误的颜色空间，我们可能会获得完全不同的颜色，如图4-1所示。 尽管BGR和RGB颜色空间中的绿色被解释为相同，但是红色和蓝色值被翻转。<br><img src="../../img/Quartz2D_4_02.png" alt=""><br>颜色空间可以有不同数量的组件。 表4-1中的三个颜色空间有三个组件，而CMYK颜色空间有四个组件。值的范围与颜色空间有关。 对于大多数颜色空间，颜色值范围为[0.0, 1.0]，1.0表示全亮度。例如，全亮度蓝色值在Quartz的RGB颜色空间中的值是(0, 0, 1.0)。在Quartz中，颜色值同样有一个alpha值来表示透明度。在表4-1中没有列出该值。<h2 id="alpha值"><a href="#alpha值" class="headerlink" title="alpha值"></a>alpha值</h2>alpha值是图形状态参数，Quartz用它来确定新的绘图对象如何与已存在的对象混合。 在全强度下，新的绘图对象是不透明的。 在零强度下，新的绘图对象是完全透明的。 图4-2显示了五个大的矩形，使用的alpha值分别为1.0,0.75,0.5,0.1和0.0。 当大的矩形变成透明的时候，底下的小的不透明的方形逐渐显现出来。<br><img src="../../img/Quartz2D_4_03.png" alt=""><br>我们可以将两个对象绘制到page上，而page可以在渲染前通过设置全局的graphics context来设置自己的透明度。图4-3显示了将全局的透明度设置为0.5和1.0的效果。<br><img src="../../img/Quartz2D_4_04.png" alt=""><br>在标准的混合模式（图形状态的默认模式）中，Quartz使用下面的公式来混合源颜色和目标颜色的组件<br><code>destination =（alpha * source）+（1 - alpha）* destination</code></li>
 </ul>
 <p>其中源是新绘制的颜色，目标颜色是背景颜色。该公式可用于新绘制的形状和图像。</p>
 <p>对于对象透明度，alpha值为1.0时表示新对象是完全不透明的，值0.0表示新对象是完全透明的。0.0与1.0之间的值指定对象的透明度我们可以为所有接受颜色的程序指定一个alpha值作为颜色值的最后一个组件。同样也可以使用CGContextSetAlpha函数来指定全局的alpha值。记住，如果同时设置以上两个值，Quartz将混合全局alpha值与对象的alpha值。</p>
@@ -243,7 +233,7 @@
 <p>索引颜色空间包含一个有256个词目的颜色表，和词目映射到基础颜色空间。颜色表中每个词目指定一个基础颜色空间中的颜色值。使用CGColorSpaceCreateIndexed函数来创建。</p>
 <p>模式颜色空间在绘制模式时使用。 使用CGColorSpaceCreatePattern函数来创建。</p>
 <h2 id="设置和创建颜色"><a href="#设置和创建颜色" class="headerlink" title="设置和创建颜色"></a>设置和创建颜色</h2><p>Quartz提供了一套函数用于设置填充颜色、线框颜色、颜色空间和alpha值。每个颜色参数都是图形状态参数，这就意味着一旦设置了，设置将被保存并影响后续操作，直到被修改为止。</p>
-<p>一个颜色必须有相关联的颜色空间。否则，Quartz不知道如何解析颜色值。进一步说，说是我们必须为绘制目标提供一个合适的颜色空间。如图4-4所示，左边是CMYK颜色空间中的蓝色填充色，右边是RGB颜色空间中的蓝色填充色。这两个颜色值在理论上是一样的，但只有在相同颜色空间下的相同颜色值显示出来才是一样的。<br><img src="http://okjl482qy.bkt.clouddn.com/Quartz2D_4_05.png" alt=""><br>我们可以使用CGContextSetFillColorSpace和CGContextSetStrokeColorSpace函数来设置填充和线框颜色空间，或者可以使用以下便利函数来设置设备颜色空间的颜色值。<br><img src="http://okjl482qy.bkt.clouddn.com/Quartz2D_4_06.png" alt=""><br>我们在填充及线框颜色空间中指定填充及线框颜色值。例如，在RGB颜色空间中，我们使用数组(1.0, 0.0, 0.0, 1.0)来表示红色。前三个值指定红色值为全强度，而绿色和蓝色为零强度。第四个值为alpha值，用于指定颜色的透明度。</p>
+<p>一个颜色必须有相关联的颜色空间。否则，Quartz不知道如何解析颜色值。进一步说，说是我们必须为绘制目标提供一个合适的颜色空间。如图4-4所示，左边是CMYK颜色空间中的蓝色填充色，右边是RGB颜色空间中的蓝色填充色。这两个颜色值在理论上是一样的，但只有在相同颜色空间下的相同颜色值显示出来才是一样的。<br><img src="../../img/Quartz2D_4_05.png" alt=""><br>我们可以使用CGContextSetFillColorSpace和CGContextSetStrokeColorSpace函数来设置填充和线框颜色空间，或者可以使用以下便利函数来设置设备颜色空间的颜色值。<br><img src="../../img/Quartz2D_4_06.png" alt=""><br>我们在填充及线框颜色空间中指定填充及线框颜色值。例如，在RGB颜色空间中，我们使用数组(1.0, 0.0, 0.0, 1.0)来表示红色。前三个值指定红色值为全强度，而绿色和蓝色为零强度。第四个值为alpha值，用于指定颜色的透明度。</p>
 <p>如果需要在程序中重复使用颜色，最有效的方法是通过设置填充色和线框色来创建一个CGColor对象，然后将该对象传递给函数CGContextSetFillColorWithColor及CGContextSetStrokeColorWithColor。我们可以按需要保持CGColor对象，并可以直接使用该对象来改进应用程序的显示。</p>
 <p>我们可以调用CGColorCreate函数来创建CGColor对象，该函数需要两个参数：CGColorspace对象及颜色值数组。数组的最后一个值指定alpha值。</p>
 <h2 id="设置渲染意图-Rending-Intent"><a href="#设置渲染意图-Rending-Intent" class="headerlink" title="设置渲染意图(Rending Intent)"></a>设置渲染意图(Rending Intent)</h2><p>渲染意图用于指定Quartz如何将源颜色空间中的颜色映射到处于图形上下文的目标颜色空间的色域内的颜色。如果您没有明确设置渲染意图，则Quartz会使用相对比色渲染意图来渲染除位图（采样）图像之外的所有图形。 Quartz使用感知渲染的意图。</p>
@@ -259,7 +249,7 @@
     <div class="post-footer">
         <div>
             
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
             
         </div>
         <div>
@@ -286,28 +276,7 @@
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-CN'.toLowerCase()
-        })
-    </script>
-
+   <p>评论系统未开启，无法评论！</p>
 
     </div>
 
@@ -364,7 +333,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
