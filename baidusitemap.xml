@@ -784,11 +784,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     <data>
         <display>
-        <title>React Native 中 component 生命周期</title>
+        <title>React Native运行你的第一个工程</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -804,11 +804,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     <data>
         <display>
-        <title>React Native运行你的第一个工程</title>
+        <title>React Native 中 component 生命周期</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -844,11 +844,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React-Native%E5%BC%80%E5%8F%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React%20Native%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     <data>
         <display>
-        <title>React-Native For IOS 开发之环境配置</title>
+        <title>React Native学习指南</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -864,11 +864,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React%20Native%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React-Native%E5%BC%80%E5%8F%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     <data>
         <display>
-        <title>React Native学习指南</title>
+        <title>React-Native For IOS 开发之环境配置</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -1051,12 +1051,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
+    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
     <lastmod>2018-04-06T13:55:52.144Z</lastmod>
     <data>
         <display>
-        <title>PHP命名空间及自动加载</title>
-        <pubTime>2014-01-16T00:10:09.000Z</pubTime>
+        <title>PHP Socket的使用</title>
+        <pubTime>2014-01-25T00:10:09.000Z</pubTime>
         
         <tag>PHP</tag>
          
@@ -1071,12 +1071,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
+    <loc>https://blog.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
     <lastmod>2018-04-06T13:55:52.144Z</lastmod>
     <data>
         <display>
-        <title>PHP Socket的使用</title>
-        <pubTime>2014-01-25T00:10:09.000Z</pubTime>
+        <title>PHP命名空间及自动加载</title>
+        <pubTime>2014-01-16T00:10:09.000Z</pubTime>
         
         <tag>PHP</tag>
          
@@ -1111,26 +1111,6 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
-    <lastmod>2018-04-06T13:55:52.142Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 常用资源</title>
-        <pubTime>2016-04-23T00:10:09.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://blog.devzou.com/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.devzou.com/2016/05/23/resource/2016-05-23-general-mysql-resources/</loc>
     <lastmod>2018-04-06T13:55:52.142Z</lastmod>
     <data>
@@ -1144,6 +1124,26 @@
            
              
               <breadCrumb title="MySQL" url="https://blog.devzou.com/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
+    <lastmod>2018-04-06T13:55:52.142Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 常用资源</title>
+        <pubTime>2016-04-23T00:10:09.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://blog.devzou.com/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -1211,26 +1211,6 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2018-04-06T13:55:52.139Z</lastmod>
-    <data>
-        <display>
-        <title>Python 高级教程之爬虫urllib库高级使用</title>
-        <pubTime>2017-03-17T00:10:09.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     <data>
@@ -1257,6 +1237,26 @@
         <display>
         <title>Python高级编程之正则表达式</title>
         <pubTime>2017-03-18T00:10:09.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2018-04-06T13:55:52.139Z</lastmod>
+    <data>
+        <display>
+        <title>Python 高级教程之爬虫urllib库高级使用</title>
+        <pubTime>2017-03-17T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1351,26 +1351,6 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
-    <lastmod>2018-04-06T13:55:52.135Z</lastmod>
-    <data>
-        <display>
-        <title>Python 基础教程之变量类型</title>
-        <pubTime>2017-03-13T00:10:09.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
     <lastmod>2018-04-06T13:55:52.135Z</lastmod>
     <data>
@@ -1391,12 +1371,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2018-04-06T13:55:52.134Z</lastmod>
+    <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2018-04-06T13:55:52.135Z</lastmod>
     <data>
         <display>
-        <title>Python 基础教程之基础语法</title>
-        <pubTime>2017-03-12T00:10:09.000Z</pubTime>
+        <title>Python 基础教程之变量类型</title>
+        <pubTime>2017-03-13T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1416,6 +1396,26 @@
     <data>
         <display>
         <title>Python 基础教程之函数</title>
+        <pubTime>2017-03-12T00:10:09.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://blog.devzou.com/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2018-04-06T13:55:52.134Z</lastmod>
+    <data>
+        <display>
+        <title>Python 基础教程之基础语法</title>
         <pubTime>2017-03-12T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
@@ -1669,15 +1669,13 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
     <lastmod>2018-04-06T13:55:52.115Z</lastmod>
     <data>
         <display>
-        <title>xcodebuild指令详解</title>
-        <pubTime>2016-01-16T00:10:09.000Z</pubTime>
+        <title>走进openCV</title>
+        <pubTime>2016-01-21T00:10:09.000Z</pubTime>
         
-        <tag>iOS</tag>
-         
          
            
              
@@ -1689,13 +1687,15 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
+    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-04-06T13:55:52.115Z</lastmod>
     <data>
         <display>
-        <title>走进openCV</title>
-        <pubTime>2016-01-21T00:10:09.000Z</pubTime>
+        <title>xcodebuild指令详解</title>
+        <pubTime>2016-01-16T00:10:09.000Z</pubTime>
         
+        <tag>iOS</tag>
+         
          
            
              
@@ -1747,13 +1747,15 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/11/21/ios/2015-11-21-iOS-image%E5%A4%84%E7%90%86/</loc>
+    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-06T13:55:52.113Z</lastmod>
     <data>
         <display>
-        <title>iOS图片处理之位图图像原图修改</title>
-        <pubTime>2015-11-21T00:10:09.000Z</pubTime>
+        <title>IOS离线教程下载与Dash的使用</title>
+        <pubTime>2015-11-15T13:08:35.000Z</pubTime>
         
+        <tag>iOS</tag>
+         
          
            
              
@@ -1765,15 +1767,13 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2015/11/21/ios/2015-11-21-iOS-image%E5%A4%84%E7%90%86/</loc>
     <lastmod>2018-04-06T13:55:52.113Z</lastmod>
     <data>
         <display>
-        <title>IOS离线教程下载与Dash的使用</title>
-        <pubTime>2015-11-15T13:08:35.000Z</pubTime>
+        <title>iOS图片处理之位图图像原图修改</title>
+        <pubTime>2015-11-21T00:10:09.000Z</pubTime>
         
-        <tag>iOS</tag>
-         
          
            
              
@@ -1957,30 +1957,6 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
-    <lastmod>2018-04-06T13:55:52.103Z</lastmod>
-    <data>
-        <display>
-        <title>Mac下用brew搭建PHP(LNMP/LAMP)开发环境</title>
-        <pubTime>2015-02-23T00:10:09.000Z</pubTime>
-        
-        <tag>PHP</tag>
-         
-        <tag>Mac</tag>
-         
-        <tag>MongoDB</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="https://blog.devzou.com/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
     <lastmod>2018-04-06T13:55:52.103Z</lastmod>
     <data>
@@ -1994,6 +1970,30 @@
            
              
               <breadCrumb title="Linux" url="https://blog.devzou.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
+    <lastmod>2018-04-06T13:55:52.103Z</lastmod>
+    <data>
+        <display>
+        <title>Mac下用brew搭建PHP(LNMP/LAMP)开发环境</title>
+        <pubTime>2015-02-23T00:10:09.000Z</pubTime>
+        
+        <tag>Mac</tag>
+         
+        <tag>MongoDB</tag>
+         
+        <tag>PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="https://blog.devzou.com/categories/git/"/>
           
         </display>
     </data>
@@ -2181,11 +2181,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-Android%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E9%A1%B5%E9%9D%A2/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%BE%E5%A4%87/</loc>
     <lastmod>2018-04-06T13:55:52.094Z</lastmod>
     <data>
         <display>
-        <title>安卓初级开发之创建简单页面</title>
+        <title>安卓初级开发之适配不同的设备</title>
         <pubTime>2017-06-17T00:10:09.000Z</pubTime>
         
         <tag>Android</tag>
@@ -2201,11 +2201,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%BE%E5%A4%87/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-Android%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E9%A1%B5%E9%9D%A2/</loc>
     <lastmod>2018-04-06T13:55:52.094Z</lastmod>
     <data>
         <display>
-        <title>安卓初级开发之适配不同的设备</title>
+        <title>安卓初级开发之创建简单页面</title>
         <pubTime>2017-06-17T00:10:09.000Z</pubTime>
         
         <tag>Android</tag>
@@ -2341,12 +2341,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-java%E7%AE%80%E4%BB%8B/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/Java/2017-03-12-Java%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2018-04-06T13:55:52.086Z</lastmod>
     <data>
         <display>
-        <title>Java简介</title>
-        <pubTime>2017-03-11T00:10:09.000Z</pubTime>
+        <title>Java高级编程之数据结构</title>
+        <pubTime>2017-03-12T00:10:09.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -2361,12 +2361,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/12/Java/2017-03-12-Java%20%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-java%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-04-06T13:55:52.086Z</lastmod>
     <data>
         <display>
-        <title>Java高级编程之数据结构</title>
-        <pubTime>2017-03-12T00:10:09.000Z</pubTime>
+        <title>Java简介</title>
+        <pubTime>2017-03-11T00:10:09.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -2421,11 +2421,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
     <lastmod>2018-04-06T13:55:52.083Z</lastmod>
     <data>
         <display>
-        <title>Java多态</title>
+        <title>Java对象和类</title>
         <pubTime>2017-03-11T00:10:09.000Z</pubTime>
         
         <tag>Java</tag>
@@ -2441,11 +2441,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
     <lastmod>2018-04-06T13:55:52.083Z</lastmod>
     <data>
         <display>
-        <title>Java对象和类</title>
+        <title>Java多态</title>
         <pubTime>2017-03-11T00:10:09.000Z</pubTime>
         
         <tag>Java</tag>
