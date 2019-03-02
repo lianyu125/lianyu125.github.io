@@ -644,11 +644,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</loc>
     <lastmod>2019-03-02T07:02:45.141Z</lastmod>
     <data>
         <display>
-        <title>iOS开发之Category</title>
+        <title>iOS开发之KVC底层原理</title>
         <pubTime>2018-08-04T23:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
@@ -664,11 +664,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/</loc>
     <lastmod>2019-03-02T07:02:45.141Z</lastmod>
     <data>
         <display>
-        <title>iOS开发之KVC底层原理</title>
+        <title>iOS开发之Category</title>
         <pubTime>2018-08-04T23:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
@@ -704,12 +704,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/04/16/ios/2018-05-13-iOS%E5%BC%80%E5%8F%91%E4%B9%8BURL%20Scheme/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-03-02T07:02:45.137Z</lastmod>
     <data>
         <display>
-        <title>使用自定义URL Scheme与您的APP进行交互</title>
-        <pubTime>2017-04-15T23:10:09.000Z</pubTime>
+        <title>iOS设计模式之策略模式</title>
+        <pubTime>2018-08-04T23:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -724,12 +724,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2017/04/16/ios/2018-05-13-iOS%E5%BC%80%E5%8F%91%E4%B9%8BURL%20Scheme/</loc>
     <lastmod>2019-03-02T07:02:45.137Z</lastmod>
     <data>
         <display>
-        <title>iOS设计模式之策略模式</title>
-        <pubTime>2018-08-04T23:10:09.000Z</pubTime>
+        <title>使用自定义URL Scheme与您的APP进行交互</title>
+        <pubTime>2017-04-15T23:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -784,11 +784,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     <data>
         <display>
-        <title>React Native运行你的第一个工程</title>
+        <title>React Native 中 component 生命周期</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -804,11 +804,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     <data>
         <display>
-        <title>React Native 中 component 生命周期</title>
+        <title>React Native运行你的第一个工程</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -945,16 +945,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
+    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
     <lastmod>2018-04-06T13:55:52.147Z</lastmod>
     <data>
         <display>
-        <title>从运行原理及使用场景看Apache和Nginx</title>
-        <pubTime>2017-08-23T00:10:09.000Z</pubTime>
+        <title>PHP操作Session的原理及提升安全性时的一个问题</title>
+        <pubTime>2015-07-03T00:10:09.000Z</pubTime>
         
-        <tag>Nginx</tag>
-         
-        <tag>Apache</tag>
+        <tag>PHP</tag>
          
          
            
@@ -967,14 +965,16 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
+    <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
     <lastmod>2018-04-06T13:55:52.147Z</lastmod>
     <data>
         <display>
-        <title>PHP操作Session的原理及提升安全性时的一个问题</title>
-        <pubTime>2015-07-03T00:10:09.000Z</pubTime>
+        <title>从运行原理及使用场景看Apache和Nginx</title>
+        <pubTime>2017-08-23T00:10:09.000Z</pubTime>
         
-        <tag>PHP</tag>
+        <tag>Nginx</tag>
+         
+        <tag>Apache</tag>
          
          
            
@@ -1051,12 +1051,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
+    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
     <lastmod>2018-04-06T13:55:52.144Z</lastmod>
     <data>
         <display>
-        <title>PHP命名空间及自动加载</title>
-        <pubTime>2014-01-16T00:10:09.000Z</pubTime>
+        <title>PHP Socket的使用</title>
+        <pubTime>2014-01-25T00:10:09.000Z</pubTime>
         
         <tag>PHP</tag>
          
@@ -1071,12 +1071,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
+    <loc>https://blog.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
     <lastmod>2018-04-06T13:55:52.144Z</lastmod>
     <data>
         <display>
-        <title>PHP Socket的使用</title>
-        <pubTime>2014-01-25T00:10:09.000Z</pubTime>
+        <title>PHP命名空间及自动加载</title>
+        <pubTime>2014-01-16T00:10:09.000Z</pubTime>
         
         <tag>PHP</tag>
          
@@ -1151,14 +1151,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
+    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
     <lastmod>2018-04-06T13:55:52.141Z</lastmod>
     <data>
         <display>
-        <title>Mac 常用资源</title>
-        <pubTime>2014-08-03T00:10:09.000Z</pubTime>
+        <title>Shell 常用资源</title>
+        <pubTime>2015-03-23T00:10:09.000Z</pubTime>
         
-        <tag>Mac</tag>
+        <tag>Shell</tag>
          
          
            
@@ -1171,14 +1171,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
+    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
     <lastmod>2018-04-06T13:55:52.141Z</lastmod>
     <data>
         <display>
-        <title>Shell 常用资源</title>
-        <pubTime>2015-03-23T00:10:09.000Z</pubTime>
+        <title>Mac 常用资源</title>
+        <pubTime>2014-08-03T00:10:09.000Z</pubTime>
         
-        <tag>Shell</tag>
+        <tag>Mac</tag>
          
          
            
@@ -1231,11 +1231,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     <data>
         <display>
-        <title>Python高级编程之爬虫Scrapy框架安装配置</title>
+        <title>Python高级编程之正则表达式</title>
         <pubTime>2017-03-18T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
@@ -1251,11 +1251,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     <data>
         <display>
-        <title>Python高级编程之正则表达式</title>
+        <title>Python高级编程之爬虫Scrapy框架安装配置</title>
         <pubTime>2017-03-18T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
@@ -1471,12 +1471,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/ios/2017-06-17-NSInvocation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     <data>
         <display>
-        <title>贝塞尔曲线的基本知识</title>
-        <pubTime>2017-09-13T00:10:09.000Z</pubTime>
+        <title>NSInvocation的基本使用</title>
+        <pubTime>2017-06-17T00:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1491,12 +1491,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/06/17/ios/2017-06-17-NSInvocation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     <data>
         <display>
-        <title>NSInvocation的基本使用</title>
-        <pubTime>2017-06-17T00:10:09.000Z</pubTime>
+        <title>贝塞尔曲线的基本知识</title>
+        <pubTime>2017-09-13T00:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1591,12 +1591,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
     <lastmod>2018-04-06T13:55:52.119Z</lastmod>
     <data>
         <display>
-        <title>Objective-C运行时编程指南之动态方法解析</title>
-        <pubTime>2016-11-05T00:10:09.000Z</pubTime>
+        <title>Objective-C运行时编程指南之消息转发</title>
+        <pubTime>2016-11-08T00:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1611,12 +1611,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
+    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2018-04-06T13:55:52.119Z</lastmod>
     <data>
         <display>
-        <title>Objective-C运行时编程指南之消息转发</title>
-        <pubTime>2016-11-08T00:10:09.000Z</pubTime>
+        <title>Objective-C运行时编程指南之动态方法解析</title>
+        <pubTime>2016-11-05T00:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1707,14 +1707,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
     <lastmod>2018-04-06T13:55:52.114Z</lastmod>
     <data>
         <display>
-        <title>iOS读取文件方法</title>
-        <pubTime>2015-12-16T00:10:09.000Z</pubTime>
+        <title>iOS静态库、动态库，Framework和.a以及.dylib/.tbd区别</title>
+        <pubTime>2015-08-20T23:09:29.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>静态库、动态库、Framework</tag>
          
          
            
@@ -1727,14 +1727,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
+    <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-04-06T13:55:52.114Z</lastmod>
     <data>
         <display>
-        <title>iOS静态库、动态库，Framework和.a以及.dylib/.tbd区别</title>
-        <pubTime>2015-08-20T23:09:29.000Z</pubTime>
+        <title>iOS读取文件方法</title>
+        <pubTime>2015-12-16T00:10:09.000Z</pubTime>
         
-        <tag>静态库、动态库、Framework</tag>
+        <tag>iOS</tag>
          
          
            
@@ -1845,13 +1845,15 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
+    <loc>https://blog.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
     <lastmod>2018-04-06T13:55:52.109Z</lastmod>
     <data>
         <display>
-        <title>iOS UILabel显示html标签</title>
-        <pubTime>2015-04-13T00:10:09.000Z</pubTime>
+        <title>关于iOS和OS X废弃的API你需要知道的一切</title>
+        <pubTime>2015-04-06T13:08:35.000Z</pubTime>
         
+        <tag>iOS</tag>
+         
          
            
              
@@ -1863,15 +1865,13 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
+    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
     <lastmod>2018-04-06T13:55:52.109Z</lastmod>
     <data>
         <display>
-        <title>关于iOS和OS X废弃的API你需要知道的一切</title>
-        <pubTime>2015-04-06T13:08:35.000Z</pubTime>
+        <title>iOS UILabel显示html标签</title>
+        <pubTime>2015-04-13T00:10:09.000Z</pubTime>
         
-        <tag>iOS</tag>
-         
          
            
              
@@ -1964,11 +1964,11 @@
         <title>Mac下用brew搭建PHP(LNMP/LAMP)开发环境</title>
         <pubTime>2015-02-23T00:10:09.000Z</pubTime>
         
-        <tag>PHP</tag>
-         
         <tag>Mac</tag>
          
         <tag>MongoDB</tag>
+         
+        <tag>PHP</tag>
          
          
            
@@ -2181,11 +2181,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-Android%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E9%A1%B5%E9%9D%A2/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%BE%E5%A4%87/</loc>
     <lastmod>2018-04-06T13:55:52.094Z</lastmod>
     <data>
         <display>
-        <title>安卓初级开发之创建简单页面</title>
+        <title>安卓初级开发之适配不同的设备</title>
         <pubTime>2017-06-17T00:10:09.000Z</pubTime>
         
         <tag>Android</tag>
@@ -2201,11 +2201,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E9%80%82%E9%85%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AE%BE%E5%A4%87/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/android/2017-06-17-Android%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E4%B9%8B%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E9%A1%B5%E9%9D%A2/</loc>
     <lastmod>2018-04-06T13:55:52.094Z</lastmod>
     <data>
         <display>
-        <title>安卓初级开发之适配不同的设备</title>
+        <title>安卓初级开发之创建简单页面</title>
         <pubTime>2017-06-17T00:10:09.000Z</pubTime>
         
         <tag>Android</tag>
@@ -2421,11 +2421,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
     <lastmod>2018-04-06T13:55:52.083Z</lastmod>
     <data>
         <display>
-        <title>Java多态</title>
+        <title>Java对象和类</title>
         <pubTime>2017-03-11T00:10:09.000Z</pubTime>
         
         <tag>Java</tag>
@@ -2441,11 +2441,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
     <lastmod>2018-04-06T13:55:52.083Z</lastmod>
     <data>
         <display>
-        <title>Java对象和类</title>
+        <title>Java多态</title>
         <pubTime>2017-03-11T00:10:09.000Z</pubTime>
         
         <tag>Java</tag>
