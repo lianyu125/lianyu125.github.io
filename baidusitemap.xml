@@ -784,11 +784,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     <data>
         <display>
-        <title>React Native 中 component 生命周期</title>
+        <title>React Native运行你的第一个工程</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -804,11 +804,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     <data>
         <display>
-        <title>React Native运行你的第一个工程</title>
+        <title>React Native 中 component 生命周期</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -844,11 +844,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React-Native%E5%BC%80%E5%8F%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React%20Native%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     <data>
         <display>
-        <title>React-Native For IOS 开发之环境配置</title>
+        <title>React Native学习指南</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -864,11 +864,11 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React%20Native%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React-Native%E5%BC%80%E5%8F%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     <data>
         <display>
-        <title>React Native学习指南</title>
+        <title>React-Native For IOS 开发之环境配置</title>
         <pubTime>2017-05-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
@@ -945,16 +945,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
+    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
     <lastmod>2018-04-06T13:55:52.147Z</lastmod>
     <data>
         <display>
-        <title>从运行原理及使用场景看Apache和Nginx</title>
-        <pubTime>2017-08-23T00:10:09.000Z</pubTime>
+        <title>PHP操作Session的原理及提升安全性时的一个问题</title>
+        <pubTime>2015-07-03T00:10:09.000Z</pubTime>
         
-        <tag>Nginx</tag>
-         
-        <tag>Apache</tag>
+        <tag>PHP</tag>
          
          
            
@@ -967,14 +965,16 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
+    <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
     <lastmod>2018-04-06T13:55:52.147Z</lastmod>
     <data>
         <display>
-        <title>PHP操作Session的原理及提升安全性时的一个问题</title>
-        <pubTime>2015-07-03T00:10:09.000Z</pubTime>
+        <title>从运行原理及使用场景看Apache和Nginx</title>
+        <pubTime>2017-08-23T00:10:09.000Z</pubTime>
         
-        <tag>PHP</tag>
+        <tag>Nginx</tag>
+         
+        <tag>Apache</tag>
          
          
            
@@ -1151,14 +1151,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
+    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
     <lastmod>2018-04-06T13:55:52.141Z</lastmod>
     <data>
         <display>
-        <title>Shell 常用资源</title>
-        <pubTime>2015-03-23T00:10:09.000Z</pubTime>
+        <title>Mac 常用资源</title>
+        <pubTime>2014-08-03T00:10:09.000Z</pubTime>
         
-        <tag>Shell</tag>
+        <tag>Mac</tag>
          
          
            
@@ -1171,14 +1171,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
+    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
     <lastmod>2018-04-06T13:55:52.141Z</lastmod>
     <data>
         <display>
-        <title>Mac 常用资源</title>
-        <pubTime>2014-08-03T00:10:09.000Z</pubTime>
+        <title>Shell 常用资源</title>
+        <pubTime>2015-03-23T00:10:09.000Z</pubTime>
         
-        <tag>Mac</tag>
+        <tag>Shell</tag>
          
          
            
@@ -1231,12 +1231,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     <data>
         <display>
-        <title>Python高级编程之正则表达式</title>
-        <pubTime>2017-03-18T00:10:09.000Z</pubTime>
+        <title>Python 高级教程之爬虫urllib库高级使用</title>
+        <pubTime>2017-03-17T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1251,12 +1251,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     <data>
         <display>
-        <title>Python 高级教程之爬虫urllib库高级使用</title>
-        <pubTime>2017-03-17T00:10:09.000Z</pubTime>
+        <title>Python高级编程之正则表达式</title>
+        <pubTime>2017-03-18T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1351,12 +1351,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
+    <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2018-04-06T13:55:52.135Z</lastmod>
     <data>
         <display>
-        <title>Python 基础教程之模块</title>
-        <pubTime>2017-03-12T00:10:09.000Z</pubTime>
+        <title>Python 基础教程之变量类型</title>
+        <pubTime>2017-03-13T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1371,12 +1371,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
     <lastmod>2018-04-06T13:55:52.135Z</lastmod>
     <data>
         <display>
-        <title>Python 基础教程之变量类型</title>
-        <pubTime>2017-03-13T00:10:09.000Z</pubTime>
+        <title>Python 基础教程之模块</title>
+        <pubTime>2017-03-12T00:10:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1591,12 +1591,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
     <lastmod>2018-04-06T13:55:52.119Z</lastmod>
     <data>
         <display>
-        <title>Objective-C运行时编程指南之动态方法解析</title>
-        <pubTime>2016-11-05T00:10:09.000Z</pubTime>
+        <title>Objective-C运行时编程指南之消息转发</title>
+        <pubTime>2016-11-08T00:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1611,12 +1611,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
+    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2018-04-06T13:55:52.119Z</lastmod>
     <data>
         <display>
-        <title>Objective-C运行时编程指南之消息转发</title>
-        <pubTime>2016-11-08T00:10:09.000Z</pubTime>
+        <title>Objective-C运行时编程指南之动态方法解析</title>
+        <pubTime>2016-11-05T00:10:09.000Z</pubTime>
         
         <tag>iOS</tag>
          
@@ -1707,14 +1707,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
     <lastmod>2018-04-06T13:55:52.114Z</lastmod>
     <data>
         <display>
-        <title>iOS读取文件方法</title>
-        <pubTime>2015-12-16T00:10:09.000Z</pubTime>
+        <title>iOS静态库、动态库，Framework和.a以及.dylib/.tbd区别</title>
+        <pubTime>2015-08-20T23:09:29.000Z</pubTime>
         
-        <tag>iOS</tag>
+        <tag>静态库、动态库、Framework</tag>
          
          
            
@@ -1727,14 +1727,14 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
+    <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2018-04-06T13:55:52.114Z</lastmod>
     <data>
         <display>
-        <title>iOS静态库、动态库，Framework和.a以及.dylib/.tbd区别</title>
-        <pubTime>2015-08-20T23:09:29.000Z</pubTime>
+        <title>iOS读取文件方法</title>
+        <pubTime>2015-12-16T00:10:09.000Z</pubTime>
         
-        <tag>静态库、动态库、Framework</tag>
+        <tag>iOS</tag>
          
          
            
@@ -1901,12 +1901,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/02/21/ios/2015-02-21-static-const-extern/</loc>
+    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
     <lastmod>2018-04-06T13:55:52.107Z</lastmod>
     <data>
         <display>
-        <title>static、const、extern简介</title>
-        <pubTime>2015-02-21T00:10:09.000Z</pubTime>
+        <title>iOS设置textfield.placeholder字体及颜色</title>
+        <pubTime>2015-01-19T00:10:09.000Z</pubTime>
         
          
            
@@ -1919,12 +1919,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
+    <loc>https://blog.devzou.com/2015/02/21/ios/2015-02-21-static-const-extern/</loc>
     <lastmod>2018-04-06T13:55:52.107Z</lastmod>
     <data>
         <display>
-        <title>iOS设置textfield.placeholder字体及颜色</title>
-        <pubTime>2015-01-19T00:10:09.000Z</pubTime>
+        <title>static、const、extern简介</title>
+        <pubTime>2015-02-21T00:10:09.000Z</pubTime>
         
          
            
@@ -1957,6 +1957,26 @@
 
     
   <url>
+    <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
+    <lastmod>2018-04-06T13:55:52.103Z</lastmod>
+    <data>
+        <display>
+        <title>在ubuntu下搭建pptp vpn服务器</title>
+        <pubTime>2015-12-23T00:10:09.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.devzou.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
     <lastmod>2018-04-06T13:55:52.103Z</lastmod>
     <data>
@@ -1974,26 +1994,6 @@
            
              
               <breadCrumb title="git" url="https://blog.devzou.com/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
-    <lastmod>2018-04-06T13:55:52.103Z</lastmod>
-    <data>
-        <display>
-        <title>在ubuntu下搭建pptp vpn服务器</title>
-        <pubTime>2015-12-23T00:10:09.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.devzou.com/categories/Linux/"/>
           
         </display>
     </data>
@@ -2021,26 +2021,6 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/05/17/digitalImage/2017-05-17-openCV%E7%AE%80%E8%BF%B0/</loc>
-    <lastmod>2018-04-06T13:55:52.101Z</lastmod>
-    <data>
-        <display>
-        <title>openCV简述</title>
-        <pubTime>2017-05-17T00:10:09.000Z</pubTime>
-        
-        <tag>openCV</tag>
-         
-         
-           
-             
-              <breadCrumb title="openCV" url="https://blog.devzou.com/categories/openCV/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.devzou.com/2014/01/15/git/2014-01-15-general-git-resources/</loc>
     <lastmod>2018-04-06T13:55:52.101Z</lastmod>
     <data>
@@ -2054,6 +2034,26 @@
            
              
               <breadCrumb title="资源" url="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.devzou.com/2017/05/17/digitalImage/2017-05-17-openCV%E7%AE%80%E8%BF%B0/</loc>
+    <lastmod>2018-04-06T13:55:52.101Z</lastmod>
+    <data>
+        <display>
+        <title>openCV简述</title>
+        <pubTime>2017-05-17T00:10:09.000Z</pubTime>
+        
+        <tag>openCV</tag>
+         
+         
+           
+             
+              <breadCrumb title="openCV" url="https://blog.devzou.com/categories/openCV/"/>
           
         </display>
     </data>
@@ -2221,12 +2221,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
+    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
     <lastmod>2018-04-06T13:55:52.092Z</lastmod>
     <data>
         <display>
-        <title>React Native封装原生UI组件栏</title>
-        <pubTime>2017-02-21T10:40:12.000Z</pubTime>
+        <title>React Native布局</title>
+        <pubTime>2017-10-16T00:10:09.000Z</pubTime>
         
         <tag>React-Naticve</tag>
          
@@ -2241,12 +2241,12 @@
 
     
   <url>
-    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
     <lastmod>2018-04-06T13:55:52.092Z</lastmod>
     <data>
         <display>
-        <title>React Native布局</title>
-        <pubTime>2017-10-16T00:10:09.000Z</pubTime>
+        <title>React Native封装原生UI组件栏</title>
+        <pubTime>2017-02-21T10:40:12.000Z</pubTime>
         
         <tag>React-Naticve</tag>
          

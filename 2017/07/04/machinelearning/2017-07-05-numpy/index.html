@@ -253,15 +253,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/07/04/python/2017-07-10- python 的import机制/" class="pre-post btn btn-default" title='python的import机制'>
+        <a href="/2017/07/13/web前端/2017-07-13-javascript-variable-domain/" class="pre-post btn btn-default" title='JavaScript变量作用域'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">python的import机制</span>
+            <span class="hidden-xs">JavaScript变量作用域</span>
         </a>
     
     
-        <a href="/2017/07/04/tool/2017-07-04-iTerm2终端配色 /" class="next-post btn btn-default" title='iTerm2终端配色'>
+        <a href="/2017/07/04/python/2017-07-05-python中range()函数的用法/" class="next-post btn btn-default" title='python中range()函数的用法及数组的操作'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">iTerm2终端配色</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">python中range()函数的用法及数组的操作</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -269,25 +269,27 @@
 
     <div id="comments">
         
-	<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.css">
-<script src="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.js"></script>
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
 
-<div id="gitalk-container"></div>
-<script type="text/javascript">
-    var pathArr = location.pathname.split("/");
-    var pathId = pathArr[pathArr.length-1];
-    var gitalk = new Gitalk({
-        // Gitalk配置
-        clientID: "null",
-        clientSecret: "null",
-        repo: "null",
-        owner: "null",
-        admin: "[null]",
-        id: "null" || pathId || location.pathname,
-        distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-</script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
 
 
     </div>

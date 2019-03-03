@@ -252,15 +252,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/03/18/python/2017-03-18-python高级编程之爬虫Scrapy框架安装配置/" class="pre-post btn btn-default" title='Python高级编程之爬虫Scrapy框架安装配置'>
+        <a href="/2017/03/19/python/2017-03-19-scrapy入门教程/" class="pre-post btn btn-default" title='Scrapy入门教程'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Python高级编程之爬虫Scrapy框架安装配置</span>
+            <span class="hidden-xs">Scrapy入门教程</span>
         </a>
     
     
-        <a href="/2017/03/17/python/2017-03-17.-Python 高级教程之爬虫urllib库高级使用/" class="next-post btn btn-default" title='Python 高级教程之爬虫urllib库高级使用'>
+        <a href="/2017/03/18/python/2017-03-18-python高级编程之爬虫Scrapy框架安装配置/" class="next-post btn btn-default" title='Python高级编程之爬虫Scrapy框架安装配置'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Python 高级教程之爬虫urllib库高级使用</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">Python高级编程之爬虫Scrapy框架安装配置</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -268,25 +268,27 @@
 
     <div id="comments">
         
-	<link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.css">
-<script src="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.js"></script>
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
 
-<div id="gitalk-container"></div>
-<script type="text/javascript">
-    var pathArr = location.pathname.split("/");
-    var pathId = pathArr[pathArr.length-1];
-    var gitalk = new Gitalk({
-        // Gitalk配置
-        clientID: "null",
-        clientSecret: "null",
-        repo: "null",
-        owner: "null",
-        admin: "[null]",
-        id: "null" || pathId || location.pathname,
-        distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-</script>
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
 
 
     </div>
