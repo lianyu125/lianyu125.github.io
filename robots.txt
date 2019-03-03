@@ -7,6 +7,8 @@ Allow: /tags/
 Allow: /about/
 Allow: /2016/ 
 Allow: /2017/
+Allow: /2018/
+Allow: /2019/
 Disallow: /vendors/
 Disallow: /js/
 Disallow: /css/
@@ -14,5 +16,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://devzou.com/sitemap.xml
-Sitemap: https://devzou.com/baidusitemap.xml
+Sitemap: https://blog.devzou.com/sitemap.xml
+Sitemap: https://blog.devzou.com/baidusitemap.xml
