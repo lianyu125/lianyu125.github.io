@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.devzou.com/google4d4471796f6bbe21.html</loc>
+    
+    <lastmod>2019-03-05T01:17:13.077Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%B9%8BOC%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%B4%A8/</loc>
     
     <lastmod>2019-03-02T12:41:25.554Z</lastmod>
@@ -247,14 +254,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/04/16/ios/2018-05-13-iOS%E5%BC%80%E5%8F%91%E4%B9%8BURL%20Scheme/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2019-03-02T07:02:45.137Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2017/04/16/ios/2018-05-13-iOS%E5%BC%80%E5%8F%91%E4%B9%8BURL%20Scheme/</loc>
     
     <lastmod>2019-03-02T07:02:45.137Z</lastmod>
     
@@ -275,14 +282,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-react-native%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E7%A8%8B/</loc>
     
     <lastmod>2019-03-02T07:02:45.132Z</lastmod>
     
@@ -310,13 +317,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/google4d4471796f6bbe21.html</loc>
-    
-    <lastmod>2018-06-09T00:12:33.280Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2017/06/16/%E7%AE%97%E6%B3%95/2017-06-16-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2018-04-06T13:55:52.153Z</lastmod>
@@ -338,13 +338,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.147Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
     
     <lastmod>2018-04-06T13:55:52.147Z</lastmod>
@@ -352,14 +345,21 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/05/04/tech/2014-05-04-set-environment-variables-of-server-for-php/</loc>
+    <loc>https://blog.devzou.com/2015/07/03/tech/2015-07-03-php-session-security/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.147Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2014/09/27/tech/2014-09-27-php-variable-variables/</loc>
     
     <lastmod>2018-04-06T13:55:52.146Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/09/27/tech/2014-09-27-php-variable-variables/</loc>
+    <loc>https://blog.devzou.com/2014/05/04/tech/2014-05-04-set-environment-variables-of-server-for-php/</loc>
     
     <lastmod>2018-04-06T13:55:52.146Z</lastmod>
     
@@ -394,13 +394,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.142Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2016/05/23/resource/2016-05-23-general-mysql-resources/</loc>
     
     <lastmod>2018-04-06T13:55:52.142Z</lastmod>
@@ -408,14 +401,21 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
+    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.142Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
     
     <lastmod>2018-04-06T13:55:52.141Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
+    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
     
     <lastmod>2018-04-06T13:55:52.141Z</lastmod>
     
@@ -436,14 +436,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/03/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABScrapy%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2018-04-06T13:55:52.139Z</lastmod>
     
@@ -457,14 +457,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/15/python/2017-03-15-Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6I:O/</loc>
+    <loc>https://blog.devzou.com/2017/03/16/python/2017-03-16-Python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91%E6%AE%B5%E5%AD%90/</loc>
     
     <lastmod>2018-04-06T13:55:52.137Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/16/python/2017-03-16-Python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E7%88%AC%E5%8F%96%E7%B3%97%E4%BA%8B%E7%99%BE%E7%A7%91%E6%AE%B5%E5%AD%90/</loc>
+    <loc>https://blog.devzou.com/2017/03/15/python/2017-03-15-Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6I:O/</loc>
     
     <lastmod>2018-04-06T13:55:52.137Z</lastmod>
     
@@ -478,13 +478,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.135Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2017/03/13/python/2017-03-13-python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</loc>
     
     <lastmod>2018-04-06T13:55:52.135Z</lastmod>
@@ -492,14 +485,21 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-python%E5%9F%BA%E6%9C%AC%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%9D%97(module)/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.135Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
     
     <lastmod>2018-04-06T13:55:52.134Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://blog.devzou.com/2017/03/12/python/2017-03-12-Python%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%87%BD%E6%95%B0/</loc>
     
     <lastmod>2018-04-06T13:55:52.134Z</lastmod>
     
@@ -520,14 +520,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://blog.devzou.com/2017/06/17/ios/2017-06-17-NSInvocation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/06/17/ios/2017-06-17-NSInvocation%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     
@@ -562,14 +562,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
+    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
     
     <lastmod>2018-04-06T13:55:52.119Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/11/05/ios/2016-11-05-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E5%8A%A8%E6%80%81%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
+    <loc>https://blog.devzou.com/2016/11/08/ios/2016-11-08-Objective-C%E8%BF%90%E8%A1%8C%E6%97%B6%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97%E4%B9%8B%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/</loc>
     
     <lastmod>2018-04-06T13:55:52.119Z</lastmod>
     
@@ -604,13 +604,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.114Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-04-06T13:55:52.114Z</lastmod>
@@ -618,14 +611,21 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/11/21/ios/2015-11-21-iOS-image%E5%A4%84%E7%90%86/</loc>
+    <loc>https://blog.devzou.com/2015/08/21/ios/2015-8-21-ios-static_library/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.114Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-04-06T13:55:52.113Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://blog.devzou.com/2015/11/21/ios/2015-11-21-iOS-image%E5%A4%84%E7%90%86/</loc>
     
     <lastmod>2018-04-06T13:55:52.113Z</lastmod>
     
@@ -653,14 +653,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
+    <loc>https://blog.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
     
     <lastmod>2018-04-06T13:55:52.109Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
+    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
     
     <lastmod>2018-04-06T13:55:52.109Z</lastmod>
     
@@ -674,14 +674,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
+    <loc>https://blog.devzou.com/2015/02/21/ios/2015-02-21-static-const-extern/</loc>
     
     <lastmod>2018-04-06T13:55:52.107Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/02/21/ios/2015-02-21-static-const-extern/</loc>
+    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
     
     <lastmod>2018-04-06T13:55:52.107Z</lastmod>
     
@@ -716,14 +716,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/05/17/digitalImage/2017-05-17-openCV%E7%AE%80%E8%BF%B0/</loc>
+    <loc>https://blog.devzou.com/2014/01/15/git/2014-01-15-general-git-resources/</loc>
     
     <lastmod>2018-04-06T13:55:52.101Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/01/15/git/2014-01-15-general-git-resources/</loc>
+    <loc>https://blog.devzou.com/2017/05/17/digitalImage/2017-05-17-openCV%E7%AE%80%E8%BF%B0/</loc>
     
     <lastmod>2018-04-06T13:55:52.101Z</lastmod>
     
@@ -786,14 +786,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
+    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-04-06T13:55:52.092Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
     
     <lastmod>2018-04-06T13:55:52.092Z</lastmod>
     
@@ -849,14 +849,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
     
     <lastmod>2018-04-06T13:55:52.083Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%A4%9A%E6%80%81/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
     
     <lastmod>2018-04-06T13:55:52.083Z</lastmod>
     

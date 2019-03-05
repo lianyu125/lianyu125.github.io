@@ -6,10 +6,35 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.devzou.com/"/>
-  <updated>2019-03-02T07:02:45.141Z</updated>
+  <updated>2019-03-02T12:41:08.131Z</updated>
   <id>https://blog.devzou.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iOS面试题</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2019-03-02T12:41:08.131Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS开发之Category</title>
@@ -26,30 +51,6 @@
       
         &lt;h2 id=&quot;Category实现原理&quot;&gt;&lt;a href=&quot;#Category实现原理&quot; class=&quot;headerlink&quot; title=&quot;Category实现原理&quot;&gt;&lt;/a&gt;Category实现原理&lt;/h2&gt;&lt;h3 id=&quot;category的结构&quot;&gt;&lt;a href=&quot;#ca
       
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS设计模式之策略模式</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.137Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
-&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
     
     </summary>
     
@@ -87,20 +88,19 @@
   </entry>
   
   <entry>
-    <title>iOS面试题</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
+    <title>iOS设计模式之策略模式</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
     <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T12:41:08.131Z</updated>
+    <updated>2019-03-02T07:02:45.137Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
-      
+      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
+&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
     
     </summary>
     
