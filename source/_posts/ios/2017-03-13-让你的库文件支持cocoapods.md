@@ -14,10 +14,10 @@ description: iOS模块化编程最重要的工具莫过于cocoapods,下面介绍
 5.上传代码到cocoapods
 6.检查上传是否成功
 ## 首先我们打开github.com，然后创建自己的项目工程：
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_01.png)
+![](../../img/cocoapods_170317_01.png)
 【注】因为我的github中已经创建了上面那个仓库，所以才会有上面那个提示
 这里注意那个MIT License，在后面添加Cocoapods支持的时候会用到（稍后介绍）。然后点击创建即可。
-然后用SouceTree将代码down到本地,你会发现文件夹中包含一个LICENSE文件，这里的LICENSE就是刚才说的MIT License添加的文件。然后我们在ZLYNetWorking文件夹中创建一个静态库工程![](http://okjl482qy.bkt.clouddn.com/cocoapods_01.png)
+然后用SouceTree将代码down到本地,你会发现文件夹中包含一个LICENSE文件，这里的LICENSE就是刚才说的MIT License添加的文件。然后我们在ZLYNetWorking文件夹中创建一个静态库工程![](../../img/cocoapods_01.png)
 
 接下来就开始编写自己的代码了，然后提交到Github就可以了。
 
@@ -29,7 +29,7 @@ description: iOS模块化编程最重要的工具莫过于cocoapods,下面介绍
 然后执行下面的命令：
 `pod spec create ZLYNetWorking`
 这里的ZLYNetWorking就是pod添加市的名字（例如MBProgressHUD）。执行完后的结果： 
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_02.png)
+![](../../img/cocoapods_170317_02.png)
 此时在工程文件夹下也会多一个ZLYNetWorking.podspec文件。这里我用xcode打开并做了如下编辑：
 
 ```objc
@@ -115,21 +115,21 @@ source_files:要共享的代码，这里是ZLYNetWorking下面的所有代码。
 
 `pod lib lint ZLYNetWorking.podspec`
 结果多种多样，如果有错，则按照提示进行改错即可。在这里，我执行的结果如下图： 
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_03.png)
+![](../../img/cocoapods_170317_03.png)
 发现了多个警告，只要不是错误就行，警告可以直接忽略（红色也提示如何忽略）：
 pod lib lint ZLYNetWorking.podspec —allow-warnings
 结果如下：
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_04.png)
+![](../../img/cocoapods_170317_04.png)
 当看到ZLYNetWorking passed validation之后，就说明验证通过了。
 ## 在Github上创建release版本
 打开项目的目录，然后创建release版本的类库：
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_05.png)
+![](../../img/cocoapods_170317_05.png)
 点击 箭头指向开始创建release版本，（点击 Create a new release）：
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_06.png)
+![](../../img/cocoapods_170317_06.png)
 点击Publish release即可。创建完成后如图所示：
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_07.png)
+![](../../img/cocoapods_170317_07.png)
 这样第三步就完成了
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_08.png)
+![](../../img/cocoapods_170317_08.png)
 ## 注册CocoaPods账号
 
 执行命令行：
@@ -143,20 +143,20 @@ pod lib lint ZLYNetWorking.podspec —allow-warnings
 
 `pod trunk me`
 检查是否创建成功。成功的结果如下：
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_09.png)
+![](../../img/cocoapods_170317_09.png)
 ## 上传代码到CocoaPods
 
 首先检测文件格式的有效性：
 
 pod spec lint
 结果如下： 
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png)
+![](../../img/cocoapods_170317_10.png)
 没有错误，但是有警告。可以使用 —allow-warnings忽略：
 出现passed validation就说明通过验证了。然后执行：
 
 `pod trunk push ZLYNetWorking.podspec —allow-warnings`
 执行结果如下：（速度应该有的慢）
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_170317_10.png)
+![](../../img/cocoapods_170317_10.png)
 说明了已经上传成功。
 
  

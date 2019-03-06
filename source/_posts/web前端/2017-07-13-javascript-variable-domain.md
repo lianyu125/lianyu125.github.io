@@ -1,7 +1,7 @@
 ---
 title: JavaScript变量作用域
 date: 2017-07-13 8:10:09
-category: 技术
+category: 前端
 tags: JavaScript
 description: 转载学习
 ---

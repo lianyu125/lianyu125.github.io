@@ -7,16 +7,16 @@ keywords: cocoapods
 ---
 ## 创建版本库
 创建一个像 master 一样的存放版本描述文件的git仓库，因为是私人git仓库，我选择 oschina 创建远程私有仓库。
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_repo_01.png)
+![](../../img/cocoapods_repo_01.png)
 在终端执行如下命令，将这个远程的私有版本仓库添加到本地，repo 就是 repository 储存库的缩写
 ```bash
 pod repo add  lianyuRepo https://gitee.com/xiaoyuu/lianyuRepo.git
 ```
 查看在 Finder 目录 ~/.cocoapods/repos， 可以发现增加了一个 lianyuRepo 的储存库
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_repo_02.png)
+![](../../img/cocoapods_repo_02.png)
 ## 创建代码库
 创建时添加 MIT License 和 README
-![](http://okjl482qy.bkt.clouddn.com/cocoapods_repo_03.png)
+![](../../img/cocoapods_repo_03.png)
 将仓库克隆到本地，添加你的代码文件、仓库名.podspec 描述文件,如下所示:
 
 

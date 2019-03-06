@@ -10,7 +10,7 @@ description: OpenCV 的 API 是 C++ 的。它由不同的模块组成，这些�
 使用 C++ API 并不是绝大多数 iOS 开发者每天都做的事，你需要使用 Objective-C++ 文件来调用 OpenCV 的函数。 也就是说，你不能在 Swift 或者 Objective-C 语言内调用 OpenCV 的函数。 这篇 OpenCV 的 iOS 教程告诉你只要把所有用到 OpenCV 的类的文件后缀名改为 .mm 就行了，包括视图控制器类也是如此。这么干或许能行得通，却不是什么好主意。正确的方式是给所有你要在 app 中使用到的 OpenCV 功能写一层 Objective-C++ 封装。这些 Objective-C++ 封装把 OpenCV 的 C++ API 转化为安全的 Objective-C API，以方便地在所有 Objective-C 类中使用。走封装的路子，你的工程中就可以只在这些封装中调用 C++ 代码，从而避免掉很多让人头痛的问题，比如直接改文件后缀名会因为在错误的文件中引用了一个 C++ 头文件而产生难以追踪的编译错误。 
 ## 在新建项目中集成openCV
 这里我选择使用cocoapods集成,关于cocoapods的使用，请参考[这篇文章](http://blog.csdn.net/u012505605/article/details/52437360)这是我的Podfile文件
-![](http://okjl482qy.bkt.clouddn.com/openCVForiOS_01.png)
+![](../../img/openCVForiOS_01.png)
 ## Objective-C++
 如前面所说，OpenCV 是一个 C++ 的 API，因此不能直接在 Swift 和 Objective-C 代码中使用，但能在 Objective-C++ 文件中使用。
 

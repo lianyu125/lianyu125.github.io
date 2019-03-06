@@ -12,8 +12,8 @@ char *buf2 = @encode(struct key);
 char *buf3 = @encode(Rectangle);
 ```
 下表列出了这些类型编码。注意，它们可能很多和您使用的对象编码有一些重合。然而，这儿列出来的有些编码是您写编码器时候不会使用的，也有一些不是@encode()产生的，但是在您写编码器的时候是会使用的。（关于对象编码的更多信息，请参考Foundation框架参考库中的NSCoder类文档。） 
-![](http://okjl482qy.bkt.clouddn.com/type_encode_01.png)
-![](http://okjl482qy.bkt.clouddn.com/type_encode_02.png)
+![](../../img/type_encode_01.png)
+![](../../img/type_encode_02.png)
 **重要： Objective-C不支持long double类型。 @encode(long double)和double一样，返回的字符串都是d**
 数组的类型编码以方括号来表示，紧接着左方括号的是数组元素的数量，然后是数据元素的类型。例如，一个12个浮点数（floats）指针的数组可以表示如下： 
 ```objc
@@ -44,6 +44,6 @@ typedef struct example {
  {NSObject=#} 
 ```
 NSObject类仅声明了一个Class类型的实例变量，isa。 注意，尽管有一些编码无法从 @encode() 的结果中直接得到，但是运行时系统会使用它们来表示协议类中方法的修饰符，这些编码如表6-2所示。 
-![](http://okjl482qy.bkt.clouddn.com/type_encode_03.png)
+![](../../img/type_encode_03.png)
 
 

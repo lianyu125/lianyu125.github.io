@@ -67,6 +67,6 @@ typedef struct YorkshireTeaStruct YorkshireTeaStructType;
 union MoneyUnion { float alone; double down; }; 
 ```
 下表给出了属性（Property）声明以及property_getAttributes返回的相应的字符串： 
-![](http://okjl482qy.bkt.clouddn.com/type_encode_01.png)
-![](http://okjl482qy.bkt.clouddn.com/type_encode_02.png)
+![](../../img/type_encode_01.png)
+![](../../img/type_encode_02.png)
 

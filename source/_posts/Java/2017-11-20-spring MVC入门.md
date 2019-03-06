@@ -8,23 +8,23 @@ keywords: Java
 Spring Web MVC是一种基于Java的实现了Web MVC设计模式的请求驱动类型的轻量级Web框架.
 <!--more-->
 ## Spring MVC请求处理的整体流程如图：
-![](http://okjl482qy.bkt.clouddn.com/springMVC_1_01.png)
+![](../../img/springMVC_1_01.png)
 ## 创建一个hello world程序
 打开idea应用，点击create new project 
-![](http://okjl482qy.bkt.clouddn.com/idea_1_01.png)
+![](../../img/idea_1_01.png)
 进入如图界面，首先选择左边栏Maven，再配置JDK(如果之前添加了JDK的话会自动填充，如未添加点击旁边的New将JDK目录导入即可)。勾选"Create from archetype"，然后选中maven-archetype-webapp，点Next，进入如下界面：
-![](http://okjl482qy.bkt.clouddn.com/idea_1_02.png)
+![](../../img/idea_1_02.png)
 这里需要填写GroupId和ArtifactId,Version默认即可，这三个属性可以唯一标识你的项目。
-![](http://okjl482qy.bkt.clouddn.com/idea_1_03.png)
+![](../../img/idea_1_03.png)
 我自己的maven配置
-![](http://okjl482qy.bkt.clouddn.com/idea_1_04.png)
+![](../../img/idea_1_04.png)
 填写项目名，选择项目保存路径，点击Finish：
-![](http://okjl482qy.bkt.clouddn.com/idea_1_05.png)
+![](../../img/idea_1_05.png)
 maven会在后台生成web项目，这需要等待一定的时间，视网络环境而定.
 下图展示了该项目的文件结构。可以发现，它在src/main下创建了一个recources文件夹，该文件夹一般用来存放一些资源文件，还有一个webapp文件夹，用来存放web配置文件以及jsp页面等，这已经组成了一个原始的web应用。选择右边红框的Enable-Auto- Import，可以在每次修改pom.xml后，自动的下载并导入jar包。
 我们可以看到，目录结构并不是严格的maven格式,因为少了java源码文件夹
 首先在main文件夹下创建一个文件夹，名称为Java,然后将Java文件夹标识为Source Root
-![](http://okjl482qy.bkt.clouddn.com/idea_1_06.png)
+![](../../img/idea_1_06.png)
 
 ## Maven自动导入jar包
 既然我们要用Spring MVC开发，那肯定少不了Spring MVC的相关jar包。如果不使用Maven的话，那就需要去官网下载相关的jar包，然后导入到项目中。现在使用maven的话，就不需要上网找jar包了。
@@ -260,7 +260,7 @@ success.jsp:
 Run->Edit Configurations
 点击左上角的"+"号，选择Tomcat Server，再选择Local：
 点击 Application server 右边的 Configure，导入Tomcat 目录：
-![](http://okjl482qy.bkt.clouddn.com/idea_1_07.png)
+![](../../img/idea_1_07.png)
 在配置好Tomcat的路径后，如下图所示，发现依然存在警告，且左方的Tomcat8图标上有一个警告标记，说明还没有配置完全：
 我们还需要将项目部署到 Tomcat 服务器中。点击 Deployment，再点击右边的"+"号，添加一个Artifact.
 选择第二个：war exploded，点击OK，这样，该项目就已经部署到了tomcat中.
@@ -269,8 +269,8 @@ Run->Edit Configurations
 启动后，浏览器将自动弹出项目首页.
 输入http://localhost:8080/helloworld
 输出:
-![](http://okjl482qy.bkt.clouddn.com/idea_1_08.png)
+![](../../img/idea_1_08.png)
 http://localhost:8080/body/4543
 输出
-![](http://okjl482qy.bkt.clouddn.com/idea_1_09.png)
+![](../../img/idea_1_09.png)
 

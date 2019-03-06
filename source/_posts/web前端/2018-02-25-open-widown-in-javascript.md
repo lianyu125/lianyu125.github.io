@@ -2,7 +2,7 @@
 ---
 title: JS中防止浏览器屏蔽window.open
 date: 2018-02-25 8:10:09
-category: JavaScript
+category: 前端
 tags: JavaScript
 description: JS中防止浏览器屏蔽window.open
 ---

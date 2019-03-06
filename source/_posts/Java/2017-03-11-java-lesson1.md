@@ -17,16 +17,16 @@ Java可运行于多个平台，如Windows, Mac OS，及其他多种UNIX版本的
 
 ## 第一个Java程序
 打开编译器,如图选择工作空间,
-![](http://okjl482qy.bkt.clouddn.com/java_01.png)
+![](../../img/java_01.png)
 然后点击ok进入下一个页面
-![](http://okjl482qy.bkt.clouddn.com/java_02.png)
+![](../../img/java_02.png)
 选择creat a new Java Project 
 为你的工程起一个名字,比如HelloJava
-![](http://okjl482qy.bkt.clouddn.com/java_03.png)
+![](../../img/java_03.png)
 在src文件下创建HelloWord类
-![](http://okjl482qy.bkt.clouddn.com/java_04.png)
+![](../../img/java_04.png)
 然后点击运行如图
-![](http://okjl482qy.bkt.clouddn.com/java_05.png)
+![](../../img/java_05.png)
 第一个程序运行成功Hello World
 ```java
 public class HelloWorld {

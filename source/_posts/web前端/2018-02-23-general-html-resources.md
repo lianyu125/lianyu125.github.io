@@ -1,7 +1,7 @@
 ---
 title: HTML 常用资源
 date: 2018-02-23 8:10:09
-category: 资源
+category: 前端
 tags: HTML
 keywords: HTML
 description: HTML 常用资源
