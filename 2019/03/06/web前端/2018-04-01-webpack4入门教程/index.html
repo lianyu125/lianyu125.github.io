@@ -203,7 +203,7 @@
 <h2 id="为什要使用WebPack"><a href="#为什要使用WebPack" class="headerlink" title="为什要使用WebPack"></a>为什要使用WebPack</h2><p>现今的很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的JavaScript代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出了很多好的实践方法</p>
 <p>模块化，让我们可以把复杂的程序细化为小的文件;<br>类似于TypeScript这种在JavaScript基础上拓展的开发语言：使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能能装换为JavaScript文件使浏览器可以识别；<br>Scss，less等CSS预处理器…<br>这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别,而手动处理又是非常反锁的，这就为WebPack类的工具的出现提供了需求。</p>
 <h2 id="WebPack和Grunt以及Gulp相比有什么特性"><a href="#WebPack和Grunt以及Gulp相比有什么特性" class="headerlink" title="WebPack和Grunt以及Gulp相比有什么特性"></a>WebPack和Grunt以及Gulp相比有什么特性</h2><p>其实Webpack和另外两个并没有太多的可比性，Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack可以替代Gulp/Grunt类的工具。</p>
-<p>Grunt和Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，这个工具之后可以自动替你完成这些任务。<br>Grunt和Gulp的工作流程<br><img src="../../img/webpack_1_03.png" alt=""><br>Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个浏览器可识别的JavaScript文件。<br><img src="../../img/webpack_1_01.png" alt=""><br>Webpack工作方式</p>
+<p>Grunt和Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，这个工具之后可以自动替你完成这些任务。<br>Grunt和Gulp的工作流程<br><img src="/img/webpack_1_03.png" alt=""><br>Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个浏览器可识别的JavaScript文件。<br><img src="/img/webpack_1_01.png" alt=""><br>Webpack工作方式</p>
 <p>Webpack工作方式<br>如果实在要把二者进行比较，Webpack的处理速度更快更直接，能打包更多不同类型的文件。</p>
 <p>开始使用Webpack</p>
 <p>初步了解了Webpack工作方式后，我们一步步的开始学习使用Webpack。</p>
@@ -217,7 +217,7 @@
 <p>在mywebpack文件夹下创建index.html文件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>hello webpack<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./dist/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>在mywebpack文件夹创建src文件夹,在src文件夹下创建index.js,代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.write(<span class="string">"hello webpack"</span>);</div></pre></td></tr></table></figure></p>
 <p>使用webpack进行打包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">webpack --mode development</div></pre></td></tr></table></figure></p>
-<p>执行后结果如下<br><img src="../../img/webpack_1_04.png" alt=""><br>【重要】webpack4.x的打包已经不能用webpack 文件a 文件b的方式，而是直接运行webpack –mode development或者webpack –mode production，这样便会默认进行打包，入口文件是’./src/index.js’，输出路径是’./dist/main.js’，其中src目录即index.js文件需要手动创建，而dist目录及main.js会自动生成。</p>
+<p>执行后结果如下<br><img src="/img/webpack_1_04.png" alt=""><br>【重要】webpack4.x的打包已经不能用webpack 文件a 文件b的方式，而是直接运行webpack –mode development或者webpack –mode production，这样便会默认进行打包，入口文件是’./src/index.js’，输出路径是’./dist/main.js’，其中src目录即index.js文件需要手动创建，而dist目录及main.js会自动生成。</p>
 <p>因此我们不再按webpack 文件a 文件b的方式运行webpack指令，而是直接运行</p>
 <p>　　webpack –mode development<br>或<br>　　webpack –mode production</p>
 <p>这样便能够实现将’./src/index.js’打包成’./dist/main.js’。</p>
@@ -225,7 +225,7 @@
 <p>　　“dev”:”webpack –mode development”,</p>
 <p>　　“build”:”webpack –mode production”</p>
 <p>执行webpack –mode development<br>执行npm run dev，相当于执行webpack –mode development</p>
-<p>执行完毕后打开index.html效果如下<br><img src="../../img/webpack_1_02.png" alt=""></p>
+<p>执行完毕后打开index.html效果如下<br><img src="/img/webpack_1_02.png" alt=""></p>
 
     </div>
     
@@ -264,9 +264,9 @@
 <div class="article-nav prev-next-wrap clearfix">
     
     
-        <a href="/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/" class="next-post btn btn-default" title='iOS设计模式之策略模式'>
+        <a href="/2018/08/05/ios/2018-08-12-iOS面试题/" class="next-post btn btn-default" title='iOS面试题'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">iOS设计模式之策略模式</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">iOS面试题</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
