@@ -34,6 +34,56 @@
   </entry>
   
   <entry>
+    <title>iOS设计模式之策略模式</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2019-03-02T07:02:45.130Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
+&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发之KVC底层原理</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2019-03-02T07:02:45.140Z</updated>
+    
+    <content type="html"><![CDATA[<p>KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性<br>常见的API有</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKey:(<span class="built_in">NSString</span> *)key</div><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKeyPath:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKeyPath:(<span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKey:(<span class="built_in">NSString</span> *)key</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iOS面试题</title>
     <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
@@ -84,56 +134,6 @@
   </entry>
   
   <entry>
-    <title>iOS开发之KVC底层原理</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.140Z</updated>
-    
-    <content type="html"><![CDATA[<p>KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性<br>常见的API有</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKey:(<span class="built_in">NSString</span> *)key</div><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKeyPath:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKeyPath:(<span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKey:(<span class="built_in">NSString</span> *)key</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
-&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS设计模式之策略模式</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.130Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
-&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>clang常用命令</title>
     <link href="https://blog.devzou.com/2018/08/04/ios/2018-08-12/"/>
     <id>https://blog.devzou.com/2018/08/04/ios/2018-08-12/</id>
@@ -159,31 +159,6 @@
   </entry>
   
   <entry>
-    <title>iOS底层原理之OC对象本质</title>
-    <link href="https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%B9%8BOC%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%B4%A8/"/>
-    <id>https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS底层原理之OC对象本质/</id>
-    <published>2018-07-30T23:10:09.000Z</published>
-    <updated>2019-03-02T12:41:25.550Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Objective-C的本质"><a href="#Objective-C的本质" class="headerlink" title="Objective-C的本质"></a>Objective-C的本质</h2><p>我们平时编写的Object-C代码，底层都是C/C++代码，所以Objective-C的面向对象都是基于C/C++的数据结构实现的<br>【注】Objective-C的对象、类主要是基于C/C++的结构体实现的</p><h3 id="NSObject的底层实现"><a href="#NSObject的底层实现" class="headerlink" title="NSObject的底层实现"></a>NSObject的底层实现</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span>  <span class="title">NSObjec</span> </span>&#123;</div><div class="line">  Class isa;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>C语言实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">struct NSObject_IMPL &#123;</div><div class="line">Class isa;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><h2 id="OC对象的本质"><a href="#OC对象的本质" class="headerlink" title="OC对象的本质"></a>OC对象的本质</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Objective-C的本质&quot;&gt;&lt;a href=&quot;#Objective-C的本质&quot; class=&quot;headerlink&quot; title=&quot;Objective-C的本质&quot;&gt;&lt;/a&gt;Objective-C的本质&lt;/h2&gt;&lt;p&gt;我们平时编写的Object-C代码，底层都是
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>iOS设计模式之建造者模式</title>
     <link href="https://blog.devzou.com/2018/07/31/ios/2018-07-31-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
     <id>https://blog.devzou.com/2018/07/31/ios/2018-07-31-设计模式之建造者模式/</id>
@@ -197,6 +172,31 @@
       
       
         &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;p&gt;无论是在现实世界中还是在软件系统中，都存在一些复杂的对象，它们拥有多个组成部分，如汽车，它包括车轮、方向盘、发送机等各种部件
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS底层原理之OC对象本质</title>
+    <link href="https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%B9%8BOC%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%B4%A8/"/>
+    <id>https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS底层原理之OC对象本质/</id>
+    <published>2018-07-30T23:10:09.000Z</published>
+    <updated>2019-03-02T12:41:25.550Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Objective-C的本质"><a href="#Objective-C的本质" class="headerlink" title="Objective-C的本质"></a>Objective-C的本质</h2><p>我们平时编写的Object-C代码，底层都是C/C++代码，所以Objective-C的面向对象都是基于C/C++的数据结构实现的<br>【注】Objective-C的对象、类主要是基于C/C++的结构体实现的</p><h3 id="NSObject的底层实现"><a href="#NSObject的底层实现" class="headerlink" title="NSObject的底层实现"></a>NSObject的底层实现</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span>  <span class="title">NSObjec</span> </span>&#123;</div><div class="line">  Class isa;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>C语言实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">struct NSObject_IMPL &#123;</div><div class="line">Class isa;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><h2 id="OC对象的本质"><a href="#OC对象的本质" class="headerlink" title="OC对象的本质"></a>OC对象的本质</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Objective-C的本质&quot;&gt;&lt;a href=&quot;#Objective-C的本质&quot; class=&quot;headerlink&quot; title=&quot;Objective-C的本质&quot;&gt;&lt;/a&gt;Objective-C的本质&lt;/h2&gt;&lt;p&gt;我们平时编写的Object-C代码，底层都是
       
     
     </summary>
@@ -326,15 +326,15 @@
     <link href="https://blog.devzou.com/2017/11/24/Java/2017-11-24-IDEA%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://blog.devzou.com/2017/11/24/Java/2017-11-24-IDEA创建工程时遇到的问题/</id>
     <published>2017-11-24T00:10:09.000Z</published>
-    <updated>2019-03-06T13:04:24.530Z</updated>
+    <updated>2019-04-17T14:04:33.518Z</updated>
     
-    <content type="html"><![CDATA[<p>第一次使用IDEA创建maven项目时会报如下错误<br><img src="../../img/idea_2_01.png" alt=""><br>原因是我们在同一个目录中创建了Project Name相同的项目导致的。因为在同一目录下不能创建两个Project Name相同的Project。<br>尽管我们直接把原先的那个Project删除后，再想创建一个Project Name一样的，但是还是会出现该问题。原因那个Project其实还是在我们的电脑上，即VFS虚拟文件系统，我们可以在Mac的废纸篓中找到刚才删除的Project。最终的解决办法就是清空废纸篓或者删除在废纸篓中的原Project。这样以后，我们就可以在同一个目录中创建相同名字的Project了。</p>]]></content>
+    <content type="html"><![CDATA[<p>第一次使用IDEA创建maven项目时会报如下错误<br><img src="/img/idea_2_01.png" alt=""><br>原因是我们在同一个目录中创建了Project Name相同的项目导致的。因为在同一目录下不能创建两个Project Name相同的Project。<br>尽管我们直接把原先的那个Project删除后，再想创建一个Project Name一样的，但是还是会出现该问题。原因那个Project其实还是在我们的电脑上，即VFS虚拟文件系统，我们可以在Mac的废纸篓中找到刚才删除的Project。最终的解决办法就是清空废纸篓或者删除在废纸篓中的原Project。这样以后，我们就可以在同一个目录中创建相同名字的Project了。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;第一次使用IDEA创建maven项目时会报如下错误&lt;br&gt;&lt;img src=&quot;../../img/idea_2_01.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;原因是我们在同一个目录中创建了Project Name相同的项目导致的。因为在同一目录下不能创建两个Project Name
+        &lt;p&gt;第一次使用IDEA创建maven项目时会报如下错误&lt;br&gt;&lt;img src=&quot;/img/idea_2_01.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;原因是我们在同一个目录中创建了Project Name相同的项目导致的。因为在同一目录下不能创建两个Project Name相同的Pr
       
     
     </summary>
