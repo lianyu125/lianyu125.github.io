@@ -58,31 +58,6 @@
   </entry>
   
   <entry>
-    <title>iOS面试题</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T12:41:08.130Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>iOS开发之KVC底层原理</title>
     <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
     <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
@@ -97,6 +72,31 @@
       
         &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
 &lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS面试题</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2019-03-02T12:41:08.130Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
       
     
     </summary>
