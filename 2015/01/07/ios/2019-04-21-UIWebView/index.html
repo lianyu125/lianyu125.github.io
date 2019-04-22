@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="前言本文将为您介绍iOS中的WebView，一步步带你了解并掌握WebView的用法，JavaScript与Objective的交互，以及Cookie的管理、js的调试等。
+UIWebView基..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>UIWebView的简单使用 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="UIWebView的简单使用">
+            
+	            UIWebView的简单使用
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/iOS/">iOS</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/iOS/">iOS</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2015/01/07</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文将为您介绍iOS中的WebView，一步步带你了解并掌握WebView的用法，JavaScript与Objective的交互，以及Cookie的管理、js的调试等。</p>
+<h2 id="UIWebView基本用法"><a href="#UIWebView基本用法" class="headerlink" title="UIWebView基本用法"></a>UIWebView基本用法</h2><h3 id="UIWebView的创建"><a href="#UIWebView的创建" class="headerlink" title="UIWebView的创建"></a>UIWebView的创建</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">CGRect</span> bouds = [<span class="built_in">UIScreen</span> manScreen].bounds;</div><div class="line"><span class="built_in">UIWebView</span> * webView = [[<span class="built_in">UIWebView</span> alloc] initWithFrame:bounds];</div></pre></td></tr></table></figure>
+<h3 id="相关属性设置"><a href="#相关属性设置" class="headerlink" title="相关属性设置"></a>相关属性设置</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIWebPaginationMode</span> paginationMode <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">7</span>_0);</div><div class="line"><span class="comment">//这个属性用来设置一种模式，当网页的大小超出view时，将网页以翻页的效果展示，枚举如下：</span></div><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIWebPaginationMode</span>) </div><div class="line">&#123; </div><div class="line">  <span class="built_in">UIWebPaginationModeUnpaginated</span>, <span class="comment">//不使用翻页效果 </span></div><div class="line">  <span class="built_in">UIWebPaginationModeLeftToRight</span>, <span class="comment">//将网页超出部分分页，从左向右进行翻页 </span></div><div class="line">  <span class="built_in">UIWebPaginationModeTopToBottom</span>, <span class="comment">//将网页超出部分分页，从上向下进行翻页 </span></div><div class="line">  <span class="built_in">UIWebPaginationModeBottomToTop</span>, <span class="comment">//将网页超出部分分页，从下向上进行翻页 </span></div><div class="line">  <span class="built_in">UIWebPaginationModeRightToLeft</span> <span class="comment">//将网页超出部分分页，从右向左进行翻页</span></div><div class="line">&#125; __TVOS_PROHIBITED;</div><div class="line"><span class="comment">//设置每一页的长度</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span> pageLength <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">7</span>_0);</div><div class="line"><span class="comment">//设置每一页的间距</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">CGFloat</span> gapBetweenPages <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">7</span>_0);</div><div class="line"><span class="comment">//获取分页数</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> pageCount <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">7</span>_0);</div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIWebPaginationBreakingMode</span> paginationBreakingMode <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">7</span>_0);</div><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIWebPaginationBreakingMode</span>) </div><div class="line">&#123; </div><div class="line">  <span class="built_in">UIWebPaginationBreakingModePage</span>,       </div><div class="line">  <span class="built_in">UIWebPaginationBreakingModeColumn</span></div><div class="line">&#125; __TVOS_PROHIBITED;</div><div class="line"></div><div class="line"><span class="comment">/**webView的代理**/</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">id</span> &lt;<span class="built_in">UIWebViewDelegate</span>&gt; delegate;</div><div class="line"><span class="comment">/**内置的scrollView**/</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">strong</span>) <span class="built_in">UIScrollView</span>       </div><div class="line">*scrollView <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0);</div><div class="line"><span class="comment">/**URL请求**/</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">strong</span>) <span class="built_in">NSURLRequest</span> *request;</div><div class="line"><span class="comment">/**是否缩放到适合屏幕大小**/</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> scalesPageToFit;</div><div class="line"><span class="comment">/**执行javaScript操作**/</span></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)stringByEvaluatingJavaScriptFromString:(<span class="built_in">NSString</span> *)script;</div></pre></td></tr></table></figure>
+<p><strong>加载属性</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)reload; <span class="comment">//重新加载数据</span></div><div class="line">- (<span class="keyword">void</span>)stopLoading; <span class="comment">//停止加载数据</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">getter</span>=isLoading) <span class="built_in">BOOL</span> loading; <span class="comment">//是否正在加载</span></div><div class="line">- (<span class="keyword">void</span>)goBack; <span class="comment">//返回上一级</span></div><div class="line">- (<span class="keyword">void</span>)goForward; <span class="comment">//跳转下一级</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">getter</span>=canGoBack) <span class="built_in">BOOL</span> canGoBack; <span class="comment">//能否返回上一级</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">getter</span>=canGoForward) <span class="built_in">BOOL</span> canGoForward; <span class="comment">//能否跳转下一级</span></div></pre></td></tr></table></figure></p>
+<p><strong>多媒体属性</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//YES，自动检测网页上的电话号码，单击可以拨打 </span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> detectsPhoneNumbers <span class="built_in">NS_DEPRECATED_IOS</span>(<span class="number">2</span>_0, <span class="number">3</span>_0);</div><div class="line"><span class="comment">//设置某些数据变为链接形式，这个枚举可以设置如电话号，地址，邮箱等转化为链接</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIDataDetectorTypes</span> dataDetectorTypes <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_0);</div><div class="line"><span class="comment">//设置是否使用内联播放器播放视频</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> allowsInlineMediaPlayback <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">4</span>_0); <span class="comment">// iPhone Safari defaults to NO. iPad Safari defaults to YES</span></div><div class="line"><span class="comment">//设置视频是否自动播放</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> mediaPlaybackRequiresUserAction <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">4</span>_0); <span class="comment">// iPhone and iPad Safari both default to YES</span></div><div class="line"><span class="comment">//设置音频播放是否支持ari play功能</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> mediaPlaybackAllowsAirPlay <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0); <span class="comment">// iPhone and iPad Safari both default to YES</span></div><div class="line"><span class="comment">//设置是否将数据加载如内存后渲染界面</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> suppressesIncrementalRendering <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0); <span class="comment">// iPhone and iPad Safari both default to NO</span></div><div class="line"><span class="comment">//设置用户交互模式</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> keyboardDisplayRequiresUserAction <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0);</div></pre></td></tr></table></figure></p>
+<p>ios 9.0之后新特性</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//是否允许画中画播放</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> allowsPictureInPictureMediaPlayback <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">9</span>_0);</div><div class="line"> <span class="comment">//A Boolean value that determines whether pressing on a link displays a preview of the destination for the link.</span></div><div class="line">This property is available on devices that support <span class="number">3</span>D Touch. Default value is <span class="literal">NO</span>.</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> allowsLinkPreview <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">9</span>_0); <span class="comment">//</span></div></pre></td></tr></table></figure>
+<h3 id="页面展示"><a href="#页面展示" class="headerlink" title="页面展示"></a>页面展示</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="keyword">self</span>.view addSubview:webView];</div></pre></td></tr></table></figure>
+<h3 id="页面加载方法"><a href="#页面加载方法" class="headerlink" title="页面加载方法"></a>页面加载方法</h3><p>UIWebView提供了三种加载html页面的方法</p>
+<ol>
+<li><ul>
+<li>(void)loadRequest:(NSURLRequest *)request;<br>通过NSURLRequest去加载html界面,可以去通过网络连接加载html资源，也可以去加载本地的html资源<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加载网络地址</span></div><div class="line"><span class="built_in">NSURLRequest</span> request =[<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"https://www.baidu.com"</span>]];</div><div class="line">[<span class="keyword">self</span>.view addSubview:webView];</div><div class="line">[webView loadRequest:request];</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>2.- (void)loadHTMLString:(NSString <em>)string baseURL:(nullable NSURL </em>)baseURL;<br> 加载html格式的字符串，其中的baseUrl下面会介绍</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加载本地Html</span></div><div class="line"><span class="built_in">NSString</span> * path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"swift"</span> ofType:<span class="string">@"html"</span>];</div><div class="line"><span class="built_in">NSURL</span> * url = [<span class="built_in">NSURL</span> fileURLWithPath:path];<span class="comment">//创建URL</span></div><div class="line"><span class="built_in">NSURLRequest</span> request = [<span class="built_in">NSURLRequest</span> requestWithURL:url];<span class="comment">//创建NSURLRequest</span></div><div class="line">[webView loadRequest:request];<span class="comment">//加载</span></div></pre></td></tr></table></figure>
+<p>3.- (void)loadData:(NSData <em>)data MIMEType:(NSString </em>)MIMEType textEncodingName:(NSString <em>)textEncodingName baseURL:(NSURL </em>)baseURL; (很少用)</p>
+<h3 id="UIWebView代理方法"><a href="#UIWebView代理方法" class="headerlink" title="UIWebView代理方法"></a>UIWebView代理方法</h3><p>当然，如果需要监听页面加载的结果，或者需要判断是否允许打开某个URL，那需要设置UIWebView的delegate，代理只需要遵循<uiwebviewdelegate>协议，并且在代理中实现下面的这些可选方法就可以：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置代理，同时实现UIWebViewDelegate</span></div><div class="line">webView.delegate = <span class="keyword">self</span>;</div><div class="line"></div><div class="line"><span class="comment">//代理方法</span></div><div class="line">- (<span class="built_in">BOOL</span>)webView:(<span class="built_in">UIWebView</span> *)webView shouldStartLoadWithRequest:(<span class="built_in">NSURLRequest</span> *)request navigationType:(<span class="built_in">UIWebViewNavigationType</span>)navigationType</div><div class="line">&#123;</div><div class="line"><span class="comment">/**返回YES，进行加载。通过UIWebViewNavigationType可以得到请求发起的原因</span></div><div class="line"><span class="comment">如果为webView添加了delegate对象并实现该接口，那么在webView加载任何一个frame之前都会delegate对象的该方法，该方法的返回值用以控制是否允许加载目标链接页面的内容，返回YES将直接加载内容，NO则反之。并且UIWebViewNavigationType枚举，定义了页面中用户行为的分类，包括</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">UIWebViewNavigationTypeLinkClicked，用户触击了一个链接。</span></div><div class="line"><span class="comment">UIWebViewNavigationTypeFormSubmitted，用户提交了一个表单。</span></div><div class="line"><span class="comment">UIWebViewNavigationTypeBackForward，用户触击前进或返回按钮。</span></div><div class="line"><span class="comment">UIWebViewNavigationTypeReload，用户触击重新加载的按钮。</span></div><div class="line"><span class="comment">UIWebViewNavigationTypeFormResubmitted，用户重复提交表单</span></div><div class="line"><span class="comment">UIWebViewNavigationTypeOther，发生其它行为。</span></div><div class="line"><span class="comment">*/</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)webViewDidStartLoad:(<span class="built_in">UIWebView</span> *)webView</div><div class="line">&#123;</div><div class="line">    <span class="comment">//开始加载，可以加上风火轮（也叫菊花）</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)webViewDidFinishLoad:(<span class="built_in">UIWebView</span> *)webView</div><div class="line">&#123;</div><div class="line">    <span class="comment">//完成加载</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">UIWebView</span> *)webView didFailLoadWithError:(<span class="built_in">NSError</span> *)error</div><div class="line">&#123;</div><div class="line">    <span class="comment">//加载出错</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></uiwebviewdelegate></p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2015/01/19/ios/2015-01-19-textfield-placeholder/" class="pre-post btn btn-default" title='iOS设置textfield.placeholder字体及颜色'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">iOS设置textfield.placeholder字体及颜色</span>
+        </a>
+    
+    
+        <a href="/2014/11/03/c语言/2018-09-13-共用体/" class="next-post btn btn-default" title='共用体'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">共用体</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UIWebView基本用法"><span class="toc-text">UIWebView基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UIWebView的创建"><span class="toc-text">UIWebView的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关属性设置"><span class="toc-text">相关属性设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面展示"><span class="toc-text">页面展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面加载方法"><span class="toc-text">页面加载方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIWebView代理方法"><span class="toc-text">UIWebView代理方法</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

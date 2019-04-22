@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="前言JavaScriptCore是webkit的一个重要组成部分，主要是对JS进行解析和提供执行环境。代码是开源的，可以下下来看看（源码）。iOS7后苹果在iPhone平台推出，极大的方便了我们..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>JavaScriptCore 使用 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="JavaScriptCore 使用">
+            
+	            JavaScriptCore 使用
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/iOS/">iOS</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/iOS/">iOS</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/01/19</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JavaScriptCore是webkit的一个重要组成部分，主要是对JS进行解析和提供执行环境。代码是开源的，可以下下来看看（<a href="https://link.jianshu.com/?t=https://github.com/phoboslab/JavaScriptCore-iOS" target="_blank" rel="external">源码</a>）。iOS7后苹果在iPhone平台推出，极大的方便了我们对JS的操作。我们可以脱离webview直接运行我们的JS。iOS7以前我们对JS的操作只有webview里面一个函数 stringByEvaluatingJavaScriptFromString，JS对OC的回调都是基于URL的拦截进行的操作。大家用得比较多的是<a href="https://link.jianshu.com/?t=https://github.com/marcuswestin/WebViewJavascriptBridge" target="_blank" rel="external">WebViewJavascriptBridge</a>这个开源库，很多混合都采用的这种方式。<br>JavaScriptCore和我们相关的类不是很多，主要有以下五个<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"JSContext.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"JSValue.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"JSManagedValue.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"JSVirtualMachine.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"JSExport.h"</span></span></div></pre></td></tr></table></figure></p>
+<p>下面我们逐个分析</p>
+<h2 id="JSContext"><a href="#JSContext" class="headerlink" title="JSContext"></a>JSContext</h2><p>JS执行的环境，同时也通过JSVirtualMachine管理着所有对象的生命周期，每个JSValue都和JSContext相关联并且强引用context。</p>
+<h2 id="JSValue"><a href="#JSValue" class="headerlink" title="JSValue"></a>JSValue</h2><p>JS对象在JSVirtualMachine中的一个强引用，其实就是Hybird对象。我们对JS的操作都是通过它。并且每个JSValue都是强引用一个context。同时，OC和JS对象之间的转换也是通过它，相应的类型转换如下：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Objective-C type  |   JavaScript type</div><div class="line"> --------------------+---------------------</div><div class="line">         <span class="literal">nil</span>         |     undefined</div><div class="line">        <span class="built_in">NSNull</span>       |        null</div><div class="line">       <span class="built_in">NSString</span>      |       string</div><div class="line">       <span class="built_in">NSNumber</span>      |   number, boolean</div><div class="line">     <span class="built_in">NSDictionary</span>    |   Object object</div><div class="line">       <span class="built_in">NSArray</span>       |    Array object</div><div class="line">        <span class="built_in">NSDate</span>       |     Date object</div><div class="line">       <span class="built_in">NSBlock</span> (<span class="number">1</span>)   |   Function object (<span class="number">1</span>)</div><div class="line">          <span class="keyword">id</span> (<span class="number">2</span>)     |   Wrapper object (<span class="number">2</span>)</div><div class="line">        Class (<span class="number">3</span>)    | Constructor object (<span class="number">3</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="JSManagedValue"><a href="#JSManagedValue" class="headerlink" title="JSManagedValue"></a>JSManagedValue</h2><p>JS和OC对象的内存管理辅助对象。由于JS内存管理是垃圾回收，并且JS中的对象都是强引用，而OC是引用计数。如果双方相互引用，势必会造成循环引用，而导致内存泄露。我们可以用JSManagedValue保存JSValue来避免。</p>
+<h2 id="JSVirtualMachine"><a href="#JSVirtualMachine" class="headerlink" title="JSVirtualMachine"></a>JSVirtualMachine</h2><p>JS运行的虚拟机，有独立的堆空间和垃圾回收机制。</p>
+<h2 id="JSExport"><a href="#JSExport" class="headerlink" title="JSExport"></a>JSExport</h2><p>一个协议，如果JS对象想直接调用OC对象里面的方法和属性，那么这个OC对象只要实现这个JSExport协议就可以了。</p>
+<h2 id="OC和JS之间的通信"><a href="#OC和JS之间的通信" class="headerlink" title="OC和JS之间的通信"></a>OC和JS之间的通信</h2><h3 id="OC调用JS"><a href="#OC调用JS" class="headerlink" title="OC调用JS"></a>OC调用JS</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.context = [[JSContext alloc] init];</div><div class="line"><span class="built_in">NSString</span> *js = <span class="string">@"function add(a,b) &#123;return a+b&#125;"</span>;</div><div class="line">[<span class="keyword">self</span>.context evaluateScript:js];</div><div class="line">JSValue *n = [<span class="keyword">self</span>.context[<span class="string">@"add"</span>] callWithArguments:@[@<span class="number">1</span>, @<span class="number">2</span>]];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"---%@"</span>, @([n toInt32]));<span class="comment">//---3</span></div></pre></td></tr></table></figure>
+<p>步骤很简单，创建一个JSContext对象，然后将JS代码加载到context里面，最后取到这个函数对象，调用callWithArguments这个方法进行参数传值。（JS里面函数也是对象）</p>
+<h3 id="JS调用OC"><a href="#JS调用OC" class="headerlink" title="JS调用OC"></a>JS调用OC</h3><p>JS调用OC有两个方法：block和JSExport protocol。</p>
+<h4 id="block-JS-function"><a href="#block-JS-function" class="headerlink" title="block(JS function):"></a>block(JS function):</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.context = [[JSContext alloc] init];</div><div class="line"><span class="keyword">self</span>.context[<span class="string">@"add"</span>] = ^(<span class="built_in">NSInteger</span> a, <span class="built_in">NSInteger</span> b) &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---%@"</span>, @(a + b));</div><div class="line">&#125;;</div><div class="line">[<span class="keyword">self</span>.context evaluateScript:<span class="string">@"add(2,3)"</span>];</div></pre></td></tr></table></figure>
+<p>我们定义一个block，然后保存到context里面，其实就是转换成了JS的function。然后我们直接执行这个function，调用的就是我们的block里面的内容了。</p>
+<h4 id="JSExport-protocol"><a href="#JSExport-protocol" class="headerlink" title="JSExport protocol:"></a>JSExport protocol:</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">/定义一个JSExport protocol</div><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">JSExportTest</span> &lt;<span class="title">JSExport</span>&gt;</span></div><div class="line">- (<span class="built_in">NSInteger</span>)add:(<span class="built_in">NSInteger</span>)a b:(<span class="built_in">NSInteger</span>)b;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> sum;</div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//建一个对象去实现这个协议：</span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">JSProtocolObj</span> : <span class="title">NSObject</span>&lt;<span class="title">JSExportTest</span>&gt;</span></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">JSProtocolObj</span></span></div><div class="line"><span class="keyword">@synthesize</span> sum = _sum;</div><div class="line"><span class="comment">//实现协议方法</span></div><div class="line">- (<span class="built_in">NSInteger</span>)add:(<span class="built_in">NSInteger</span>)a b:(<span class="built_in">NSInteger</span>)b</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> a+b;</div><div class="line">&#125;</div><div class="line"><span class="comment">//重写setter方法方便打印信息，</span></div><div class="line">- (<span class="keyword">void</span>)setSum:(<span class="built_in">NSInteger</span>)sum</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"--%@"</span>, @(sum));</div><div class="line">    _sum = sum;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//在VC中进行测试</span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> () &lt;<span class="title">JSExportTest</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSProtocolObj *obj;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSContext *context;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">//创建context</span></div><div class="line">    <span class="keyword">self</span>.context = [[JSContext alloc] init];</div><div class="line">    <span class="comment">//设置异常处理</span></div><div class="line">    <span class="keyword">self</span>.context.exceptionHandler = ^(JSContext *context, JSValue *exception) &#123;</div><div class="line">        [JSContext currentContext].exception = exception;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"exception:%@"</span>,exception);</div><div class="line">    &#125;;</div><div class="line">    <span class="comment">//将obj添加到context中</span></div><div class="line">    <span class="keyword">self</span>.context[<span class="string">@"OCObj"</span>] = <span class="keyword">self</span>.obj;</div><div class="line">    <span class="comment">//JS里面调用Obj方法，并将结果赋值给Obj的sum属性</span></div><div class="line">    [<span class="keyword">self</span>.context evaluateScript:<span class="string">@"OCObj.sum = OCObj.addB(2,3)"</span>];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>demo很简单，还是定义了一个两个数相加的方法，还有一个保存结果的变量。在JS中进行调用这个对象的方法，并将结果赋值sum。唯一要注意的是OC的函数命名和JS函数命名规则问题。协议中定义的是add: b:，但是JS里面方法名字是addB(a,b)。可以通过JSExportAs这个宏转换成JS的函数名字。<br>修改下代码<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">JSExportTest</span> &lt;<span class="title">JSExport</span>&gt;</span></div><div class="line"><span class="comment">//用宏转换下，将JS函数名字指定为add；</span></div><div class="line">JSExportAs(add, - (<span class="built_in">NSInteger</span>)add:(<span class="built_in">NSInteger</span>)a b:(<span class="built_in">NSInteger</span>)b);</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> sum;</div><div class="line"><span class="keyword">@end</span></div><div class="line"><span class="comment">//调用</span></div><div class="line">[<span class="keyword">self</span>.context evaluateScript:<span class="string">@"OCObj.sum = OCObj.add(2,3)"</span>];</div></pre></td></tr></table></figure></p>
+<p>我们可以定义自己的异常捕获，可以把context，异常block改为自己的：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.context.exceptionHandler = ^(JSContext *context, JSValue *exception) &#123;</div><div class="line">        [JSContext currentContext].exception = exception;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"exception:%@"</span>,exception);</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>现在来说说内存管理的注意点，OC使用的ARC，JS使用的是垃圾回收机制，并且所有的引用是都强引用，不过JS的循环引用，垃圾回收会帮它们打破。JavaScriptCore里面提供的API，正常情况下，OC和JS对象之间内存管理都无需我们去关心。不过还是有几个注意点需要我们去留意下。</p>
+<h3 id="1、不要在block里面直接使用context，或者使用外部的JSValue对象。"><a href="#1、不要在block里面直接使用context，或者使用外部的JSValue对象。" class="headerlink" title="1、不要在block里面直接使用context，或者使用外部的JSValue对象。"></a>1、不要在block里面直接使用context，或者使用外部的JSValue对象。</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//错误代码：</span></div><div class="line"><span class="keyword">self</span>.context[<span class="string">@"block"</span>] = ^()&#123;</div><div class="line">     JSValue *value = [JSValue valueWithObject:<span class="string">@"aaa"</span> inContext:<span class="keyword">self</span>.context];</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这个代码，不用自己看了，编译器都会提示你的。这个block里面使用self，很容易就看出来了。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//一个比较隐蔽的</span></div><div class="line">     JSValue *value = [JSValue valueWithObject:<span class="string">@"ssss"</span> inContext:<span class="keyword">self</span>.context];</div><div class="line">    <span class="keyword">self</span>.context[<span class="string">@"log"</span>] = ^()&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,value);</div><div class="line">    &#125;;</div></pre></td></tr></table></figure></p>
+<p>这个是block里面使用了外部的value，value对context和它管理的JS对象都是强引用。这个value被block所捕获，这边同样也会内存泄露，context是销毁不掉的。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//正确的做法，str对象是JS那边传递过来。</span></div><div class="line"><span class="keyword">self</span>.context[<span class="string">@"log"</span>] = ^(<span class="built_in">NSString</span> *str)&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,str);</div><div class="line">    &#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="2、OC对象不要用属性直接保存JSValue对象，因为这样太容易循环引用了。"><a href="#2、OC对象不要用属性直接保存JSValue对象，因为这样太容易循环引用了。" class="headerlink" title="2、OC对象不要用属性直接保存JSValue对象，因为这样太容易循环引用了。"></a>2、OC对象不要用属性直接保存JSValue对象，因为这样太容易循环引用了。</h3><p>看个demo，把上面的示例改下：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义一个JSExport protocol</span></div><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">JSExportTest</span> &lt;<span class="title">JSExport</span>&gt;</span></div><div class="line"><span class="comment">//用来保存JS的对象</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSvalue *jsValue;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//建一个对象去实现这个协议：</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">JSProtocolObj</span> : <span class="title">NSObject</span>&lt;<span class="title">JSExportTest</span>&gt;</span></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">JSProtocolObj</span></span></div><div class="line"></div><div class="line"><span class="keyword">@synthesize</span> jsValue = _jsValue;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//在VC中进行测试</span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> () &lt;<span class="title">JSExportTest</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSProtocolObj *obj;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSContext *context;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">//创建context</span></div><div class="line">    <span class="keyword">self</span>.context = [[JSContext alloc] init];</div><div class="line">    <span class="comment">//设置异常处理</span></div><div class="line">    <span class="keyword">self</span>.context.exceptionHandler = ^(JSContext *context, JSValue *exception) &#123;</div><div class="line">        [JSContext currentContext].exception = exception;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"exception:%@"</span>,exception);</div><div class="line">    &#125;;</div><div class="line">   <span class="comment">//加载JS代码到context中</span></div><div class="line">   [<span class="keyword">self</span>.context evaluateScript:</div><div class="line">   <span class="string">@"function callback ()&#123;&#125;;</span></div><div class="line"><span class="string">   </span></div><div class="line"><span class="string">    function setObj(obj) &#123;</span></div><div class="line"><span class="string">    this.obj = obj;</span></div><div class="line"><span class="string">    obj.jsValue=callback;</span></div><div class="line"><span class="string">&#125;"</span>];</div><div class="line">   <span class="comment">//调用JS方法</span></div><div class="line">   [<span class="keyword">self</span>.context[<span class="string">@"setObj"</span>] callWithArguments:@[<span class="keyword">self</span>.obj]];  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的例子很简单，调用JS方法，进行赋值，JS对象保留了传进来的obj，最后，JS将自己的回调callback赋值给了obj，方便obj下次回调给JS；由于JS那边保存了obj，而且obj这边也保留了JS的回调。这样就形成了循环引用。<br>怎么解决这个问题？我们只需要打破obj对JSValue对象的引用即可。当然，不是我们OC中的weak。而是之前说的内存管理辅助对象JSManagedValue。<br>JSManagedValue 本身就是我们需要的弱引用。用官方的话来说叫garbage collection weak reference。但是它帮助我们持有JSValue对象必须同时满足一下两个条件:</p>
+<ul>
+<li>The JSManagedValue’s JavaScript value is reachable from JavaScript</li>
+<li>The owner of the managed reference is reachable in Objective-C. Manually adding or removing the managed reference in the JSVirtualMachine determines reachability.</li>
+</ul>
+<p>意思很简单，JSManagedValue 帮助我们保存JSValue，那里面保存的JS对象必须在JS中存在，同时 JSManagedValue 的owner在OC中也存在。我们可以通过它提供的两个方法<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">    + (JSManagedValue *)managedValueWithValue:(JSValue *)value;</div><div class="line">    + (JSManagedValue *)managedValueWithValue:(JSValue *)value andOwner:(<span class="keyword">id</span>)owner</div><div class="line">``` </div><div class="line">创建JSManagedValue对象。通过JSVirtualMachine的方法` - (<span class="keyword">void</span>)addManagedReference:(<span class="keyword">id</span>)object withOwner:(<span class="keyword">id</span>)owner`来建立这个弱引用关系。通过`- (<span class="keyword">void</span>)removeManagedReference:(<span class="keyword">id</span>)object withOwner:(<span class="keyword">id</span>)owner`来手动移除他们之间的联系。</div><div class="line">把刚刚的代码改下：</div><div class="line">```objc</div><div class="line"><span class="comment">//定义一个JSExport protocol</span></div><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">JSExportTest</span> &lt;<span class="title">JSExport</span>&gt;</span></div><div class="line"><span class="comment">//用来保存JS的对象</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSValue *jsValue;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//建一个对象去实现这个协议：</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">JSProtocolObj</span> : <span class="title">NSObject</span>&lt;<span class="title">JSExportTest</span>&gt;</span></div><div class="line"><span class="comment">//添加一个JSManagedValue用来保存JSValue</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSManagedValue *managedValue;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">JSProtocolObj</span></span></div><div class="line"></div><div class="line"><span class="keyword">@synthesize</span> jsValue = _jsValue;</div><div class="line"><span class="comment">//重写setter方法</span></div><div class="line">- (<span class="keyword">void</span>)setJsValue:(JSValue *)jsValue</div><div class="line">&#123;</div><div class="line">    _managedValue = [JSManagedValue managedValueWithValue:jsValue];</div><div class="line">    </div><div class="line">    [[[JSContext currentContext] virtualMachine] addManagedReference:_managedValue </div><div class="line">    withOwner:<span class="keyword">self</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="comment">//在VC中进行测试</span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> () &lt;<span class="title">JSExportTest</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSProtocolObj *obj;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) JSContext *context;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    <span class="comment">//创建context</span></div><div class="line">    <span class="keyword">self</span>.context = [[JSContext alloc] init];</div><div class="line">    <span class="comment">//设置异常处理</span></div><div class="line">    <span class="keyword">self</span>.context.exceptionHandler = ^(JSContext *context, JSValue *exception) &#123;</div><div class="line">        [JSContext currentContext].exception = exception;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"exception:%@"</span>,exception);</div><div class="line">    &#125;;</div><div class="line">   <span class="comment">//加载JS代码到context中</span></div><div class="line">   [<span class="keyword">self</span>.context evaluateScript:</div><div class="line">   <span class="string">@"function callback ()&#123;&#125;; </span></div><div class="line"><span class="string">   </span></div><div class="line"><span class="string">   function setObj(obj) &#123;</span></div><div class="line"><span class="string">   this.obj = obj;</span></div><div class="line"><span class="string">   obj.jsValue=callback;</span></div><div class="line"><span class="string">   &#125;"</span>];</div><div class="line">   <span class="comment">//调用JS方法</span></div><div class="line">   [<span class="keyword">self</span>.context[<span class="string">@"setObj"</span>] callWithArguments:@[<span class="keyword">self</span>.obj]];  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注：以上代码只是为了突出用 JSManagedValue来保存 JSValue，所以重写了 setter 方法。实际不会写这么搓的姿势。。。应该根据回调方法传进来参数，进行保存 JSValue。</p>
+<h3 id="3、不要在不同的-JSVirtualMachine-之间进行传递JS对象。"><a href="#3、不要在不同的-JSVirtualMachine-之间进行传递JS对象。" class="headerlink" title="3、不要在不同的 JSVirtualMachine 之间进行传递JS对象。"></a>3、不要在不同的 JSVirtualMachine 之间进行传递JS对象。</h3><p>一个 JSVirtualMachine可以运行多个context，由于都是在同一个堆内存和同一个垃圾回收下，所以相互之间传值是没问题的。但是如果在不同的 JSVirtualMachine传值，垃圾回收就不知道他们之间的关系了，可能会引起异常。</p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/01/21/ios/2016-01-21-openCV/" class="pre-post btn btn-default" title='走进openCV'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">走进openCV</span>
+        </a>
+    
+    
+        <a href="/2016/01/16/ios/2016-01-16-xcodebuild指令详解/" class="next-post btn btn-default" title='xcodebuild指令详解'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">xcodebuild指令详解</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSContext"><span class="toc-text">JSContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSValue"><span class="toc-text">JSValue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSManagedValue"><span class="toc-text">JSManagedValue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSVirtualMachine"><span class="toc-text">JSVirtualMachine</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSExport"><span class="toc-text">JSExport</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OC和JS之间的通信"><span class="toc-text">OC和JS之间的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OC调用JS"><span class="toc-text">OC调用JS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS调用OC"><span class="toc-text">JS调用OC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#block-JS-function"><span class="toc-text">block(JS function):</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSExport-protocol"><span class="toc-text">JSExport protocol:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存管理"><span class="toc-text">内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、不要在block里面直接使用context，或者使用外部的JSValue对象。"><span class="toc-text">1、不要在block里面直接使用context，或者使用外部的JSValue对象。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、OC对象不要用属性直接保存JSValue对象，因为这样太容易循环引用了。"><span class="toc-text">2、OC对象不要用属性直接保存JSValue对象，因为这样太容易循环引用了。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、不要在不同的-JSVirtualMachine-之间进行传递JS对象。"><span class="toc-text">3、不要在不同的 JSVirtualMachine 之间进行传递JS对象。</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

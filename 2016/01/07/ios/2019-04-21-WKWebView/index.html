@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="前言WKWebView 是 iOS 8 之后提供的一款浏览器组件，其载入速度和内存占用对比老的 UIWebView 来说简直是一次飞跃。下面介绍该组件如何去使用。
+WKWebView的基本使用W..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>WKWebView的简单使用 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="WKWebView的简单使用">
+            
+	            WKWebView的简单使用
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/iOS/">iOS</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/iOS/">iOS</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/01/07</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>WKWebView 是 iOS 8 之后提供的一款浏览器组件，其载入速度和内存占用对比老的 UIWebView 来说简直是一次飞跃。下面介绍该组件如何去使用。</p>
+<h2 id="WKWebView的基本使用"><a href="#WKWebView的基本使用" class="headerlink" title="WKWebView的基本使用"></a>WKWebView的基本使用</h2><p>WKWebView有两个delegate,WKUIDelegate 和 WKNavigationDelegate。WKNavigationDelegate主要处理一些跳转、加载处理操作，WKUIDelegate主要处理JS脚本，确认框，警告框等。因此WKNavigationDelegate更加常用。<br>比较常用的方法：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - lifeCircle</span></div><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">   <span class="built_in">WKWebView</span> * webView = [[<span class="built_in">WKWebView</span> alloc]initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">    [<span class="keyword">self</span>.view addSubview:webView];</div><div class="line">    webView.UIDelegate = <span class="keyword">self</span>;</div><div class="line">    webView.navigationDelegate = <span class="keyword">self</span>;</div><div class="line">    [webView loadRequest:[<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"http://www.baidu.com"</span>]]];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - WKNavigationDelegate</span></div><div class="line"><span class="comment">// 页面开始加载时调用</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView didStartProvisionalNavigation:(<span class="built_in">WKNavigation</span> *)navigation&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">// 当内容开始返回时调用</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView didCommitNavigation:(<span class="built_in">WKNavigation</span> *)navigation&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">// 页面加载完成之后调用</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView didFinishNavigation:(<span class="built_in">WKNavigation</span> *)navigation&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">// 页面加载失败时调用</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView didFailProvisionalNavigation:(<span class="built_in">WKNavigation</span> *)navigation&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">// 接收到服务器跳转请求之后调用</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView didReceiveServerRedirectForProvisionalNavigation:(<span class="built_in">WKNavigation</span> *)navigation&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">// 在收到响应后，决定是否跳转</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView decidePolicyForNavigationResponse:(<span class="built_in">WKNavigationResponse</span> *)navigationResponse decisionHandler:(<span class="keyword">void</span> (^)(<span class="built_in">WKNavigationResponsePolicy</span>))decisionHandler&#123;</div><div class="line"></div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,navigationResponse.response.URL.absoluteString);</div><div class="line">    <span class="comment">//允许跳转</span></div><div class="line">    decisionHandler(<span class="built_in">WKNavigationResponsePolicyAllow</span>);</div><div class="line">    <span class="comment">//不允许跳转</span></div><div class="line">    <span class="comment">//decisionHandler(WKNavigationResponsePolicyCancel);</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 在发送请求之前，决定是否跳转</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView decidePolicyForNavigationAction:(<span class="built_in">WKNavigationAction</span> *)navigationAction decisionHandler:(<span class="keyword">void</span> (^)(<span class="built_in">WKNavigationActionPolicy</span>))decisionHandler&#123;</div><div class="line"></div><div class="line">     <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,navigationAction.request.URL.absoluteString);</div><div class="line">    <span class="comment">//允许跳转</span></div><div class="line">    decisionHandler(<span class="built_in">WKNavigationActionPolicyAllow</span>);</div><div class="line">    <span class="comment">//不允许跳转</span></div><div class="line">    <span class="comment">//decisionHandler(WKNavigationActionPolicyCancel);</span></div><div class="line">&#125;</div><div class="line"><span class="meta">#pragma mark - WKUIDelegate</span></div><div class="line"><span class="comment">// 创建一个新的WebView</span></div><div class="line">- (<span class="built_in">WKWebView</span> *)webView:(<span class="built_in">WKWebView</span> *)webView createWebViewWithConfiguration:(<span class="built_in">WKWebViewConfiguration</span> *)configuration forNavigationAction:(<span class="built_in">WKNavigationAction</span> *)navigationAction windowFeatures:(<span class="built_in">WKWindowFeatures</span> *)windowFeatures&#123;</div><div class="line">    <span class="keyword">return</span> [[<span class="built_in">WKWebView</span> alloc]init];</div><div class="line">&#125;</div><div class="line"><span class="comment">// 输入框</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView runJavaScriptTextInputPanelWithPrompt:(<span class="built_in">NSString</span> *)prompt defaultText:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)defaultText initiatedByFrame:(<span class="built_in">WKFrameInfo</span> *)frame completionHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSString</span> * __<span class="keyword">nullable</span> result))completionHandler&#123;</div><div class="line">    completionHandler(<span class="string">@"http"</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 确认框</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView runJavaScriptConfirmPanelWithMessage:(<span class="built_in">NSString</span> *)message initiatedByFrame:(<span class="built_in">WKFrameInfo</span> *)frame completionHandler:(<span class="keyword">void</span> (^)(<span class="built_in">BOOL</span> result))completionHandler&#123;</div><div class="line">    completionHandler(<span class="literal">YES</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 警告框</span></div><div class="line">- (<span class="keyword">void</span>)webView:(<span class="built_in">WKWebView</span> *)webView runJavaScriptAlertPanelWithMessage:(<span class="built_in">NSString</span> *)message initiatedByFrame:(<span class="built_in">WKFrameInfo</span> *)frame completionHandler:(<span class="keyword">void</span> (^)(<span class="keyword">void</span>))completionHandler&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,message);</div><div class="line">    completionHandler();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="OC与JS交互"><a href="#OC与JS交互" class="headerlink" title="OC与JS交互"></a>OC与JS交互</h2><h3 id="JS调用OC方法"><a href="#JS调用OC方法" class="headerlink" title="JS调用OC方法"></a>JS调用OC方法</h3><p>1.在WKWebView中OC和JS交互也非常简单，WebKit的库中有个代理WKScriptMessageHandler就是专门来做交互的。<br>WKScriptMessageHandler其实就是一个遵循的协议，它能让网页通过JS把消息发送给OC。其中协议方法。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)userContentController:(<span class="built_in">WKUserContentController</span> *)userContentController didReceiveScriptMessage:(<span class="built_in">WKScriptMessage</span> *)message;</div></pre></td></tr></table></figure></p>
+<p>2.WKUserContentController有两个核心方法，也是它的核心功能。<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addUserScript:(<span class="built_in">WKUserScript</span> *)userScript;<span class="comment">//js注入，即向网页中注入我们的js方法，这是一个非常强大的功能，开发中要慎用。</span></div><div class="line">- (<span class="keyword">void</span>)addScriptMessageHandler:(<span class="keyword">id</span> &lt;<span class="built_in">WKScriptMessageHandler</span>&gt;)scriptMessageHandler name:(<span class="built_in">NSString</span> *)name;<span class="comment">//添加供JS调用OC的桥梁这里的名称对应WKScriptMessage中的名字，多数情况下我们认为它就是方法名。</span></div></pre></td></tr></table></figure></p>
+<p>3.WKScriptMessage，WKScriptMessage就是JS通知OC的数据。其中有两个核心属性用的很多<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</div><div class="line">- (<span class="keyword">void</span>)addScriptMessageHandler:(<span class="keyword">id</span> &lt;<span class="built_in">WKScriptMessageHandler</span>&gt;)scriptMessageHandler name:(<span class="built_in">NSString</span> *)name;添加的名称。</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="keyword">id</span> body;<span class="comment">//携带的核心数据。</span></div></pre></td></tr></table></figure></p>
+<h3 id="JS调用OC，实例"><a href="#JS调用OC，实例" class="headerlink" title="JS调用OC，实例"></a>JS调用OC，实例</h3><p><strong>1.初始化wkwebview</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">WKWebView</span> *)webView &#123;</div><div class="line">    <span class="keyword">if</span> (_webView == <span class="literal">nil</span>) &#123;</div><div class="line">        <span class="comment">// js配置</span></div><div class="line">        <span class="built_in">WKUserContentController</span> *userContentController = [[<span class="built_in">WKUserContentController</span> alloc] init];</div><div class="line">        <span class="comment">//需要JS调用iOS 原生的方法，都要添加到这里</span></div><div class="line">        [userContentController addScriptMessageHandler:<span class="keyword">self</span> name:<span class="string">@"jsCallOC"</span>];</div><div class="line">        <span class="comment">// WKWebView的配置</span></div><div class="line">        <span class="built_in">WKWebViewConfiguration</span> *configuration = [[<span class="built_in">WKWebViewConfiguration</span> alloc] init];</div><div class="line">        configuration.userContentController = userContentController;</div><div class="line">        <span class="comment">// 显示WKWebView</span></div><div class="line">        _webView = [[<span class="built_in">WKWebView</span> alloc] initWithFrame:<span class="keyword">self</span>.view.frame configuration:configuration];</div><div class="line">        _webView.UIDelegate = <span class="keyword">self</span>; <span class="comment">// 设置WKUIDelegate代理</span></div><div class="line">        [<span class="keyword">self</span>.view addSubview:_webView];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> _webView;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>2.在当前页面引入WKScriptMessageHandler，并实现WKScriptMessageHandler协议即可。</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)userContentController:(<span class="built_in">WKUserContentController</span> *)userContentController didReceiveScriptMessage:(<span class="built_in">WKScriptMessage</span> *)message &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"方法名:%@"</span>, message.name);</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"参数:%@"</span>, message.body);</div><div class="line">    <span class="comment">// 方法名</span></div><div class="line">    <span class="built_in">NSString</span> *methods = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"%@:"</span>, message.name];</div><div class="line">    SEL selector = <span class="built_in">NSSelectorFromString</span>(methods);</div><div class="line">    <span class="comment">// 调用方法</span></div><div class="line">    <span class="keyword">if</span> ([<span class="keyword">self</span> respondsToSelector:selector]) &#123;</div><div class="line">        [<span class="keyword">self</span> performSelector:selector withObject:message.body];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"未实行方法：%@"</span>, methods);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>3.在JS方法里如何让JS通知Wkwebview</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function onClickButton() &#123;</div><div class="line">    <span class="comment">// 复杂数据</span></div><div class="line">    var list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">    var dict = &#123;<span class="string">"name"</span>:<span class="string">"阳君"</span>, <span class="string">"qq"</span>:<span class="string">"937447974"</span>, <span class="string">"data"</span>:input.value, <span class="string">"list"</span>:list&#125;;</div><div class="line">    alert(dict);</div><div class="line">    <span class="comment">// JS通知WKWebView</span></div><div class="line">    window.webkit.messageHandlers.jsCallOC.postMessage(dict);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>4.使用wkwebview加载html页面</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line"><span class="comment">//    [self loadWebView]; // 加载测试</span></div><div class="line">    <span class="built_in">NSURL</span> *url = [[<span class="built_in">NSBundle</span> mainBundle] URLForResource:<span class="string">@"index"</span> withExtension:<span class="string">@"html"</span>];</div><div class="line">    <span class="built_in">NSURLRequest</span> *urlRequest = [<span class="built_in">NSURLRequest</span> requestWithURL:url];</div><div class="line">    [<span class="keyword">self</span>.webView loadRequest:urlRequest]; <span class="comment">// 加载页面</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/91b8885960a1" target="_blank" rel="external">WKWebView—JS调用OC方法</a></p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/01/16/ios/2016-01-16-xcodebuild指令详解/" class="pre-post btn btn-default" title='xcodebuild指令详解'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">xcodebuild指令详解</span>
+        </a>
+    
+    
+        <a href="/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/" class="next-post btn btn-default" title='在ubuntu下搭建pptp vpn服务器'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">在ubuntu下搭建pptp vpn服务器</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WKWebView的基本使用"><span class="toc-text">WKWebView的基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OC与JS交互"><span class="toc-text">OC与JS交互</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS调用OC方法"><span class="toc-text">JS调用OC方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS调用OC，实例"><span class="toc-text">JS调用OC，实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
