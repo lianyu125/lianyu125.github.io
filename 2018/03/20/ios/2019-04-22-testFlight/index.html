@@ -16,13 +16,10 @@
     <link rel="dns-prefetch" href="https://blog.devzou.com">
     <!--SEO-->
 
-    <meta name="keywords" content="hexo" />
+    <meta name="keywords" content="{{ page.keywords }}" />
 
 
-    <meta name="description" content="准备工作1.安装git2.安装node.js3.申请github账号
-安装hexo1.安装hexo1npm install -g hexo-cli
-
-2.安装hexo1npm install h..." />
+    <meta name="description" content="前言通过 TestFlight，您可以在 app 上架 App Store 之前，轻松邀请用户来测试您的 app，并收集他们宝贵的反馈。只需使用对方的电子邮件地址或通过分享公开邀请链接，即可进行..." />
 
 
 
@@ -34,7 +31,7 @@
     <!--Title-->
 
 
-<title>使用hexo+gitpages创建自己的博客 | 小玉的技术博客</title>
+<title>TestFlight 让 Beta 测试更简单 | 小玉的技术博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
@@ -174,16 +171,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="使用hexo+gitpages创建自己的博客">
+        <h1 id="TestFlight 让 Beta 测试更简单">
             
-	            使用hexo+gitpages创建自己的博客
+	            TestFlight 让 Beta 测试更简单
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/hexo/">hexo</a>
+            <a class="category-link" href="/categories/iOS/">iOS</a>
         </span>
     
 
@@ -192,7 +189,7 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/hexo/">hexo</a>
+                    <a class="tag-link" href="/tags/iOS/">iOS</a>
                 
             </span>
         </span>
@@ -202,7 +199,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2017/01/26</span>
+            <span class="date-meta">2018/03/20</span>
         </span>
         
             <span class="fa-wrap">
@@ -217,22 +214,16 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装git<br>2.安装node.js<br>3.申请github账号</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>1.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<p><img src="/img/hexo-cli.png" alt=""></p>
-<p>2.安装hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure></p>
-<p><img src="/img/hexo_save.png" alt=""><br>【注】warning可以忽略<br>3.查看hexo安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure></p>
-<p>如下图所示,则表示安装成功<br><img src="/img/hexo_v.png" alt=""></p>
-<h2 id="本地运行hexo"><a href="#本地运行hexo" class="headerlink" title="本地运行hexo"></a>本地运行hexo</h2><p>1.初始化hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<p>如下图则表示初始化成功<br><img src="/img/hexo_init.png" alt=""><br>2.安装生成器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<p>3.本地运行hexo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -g</div></pre></td></tr></table></figure></p>
-<p><img src="/img/hexo_run.png" alt=""><br> 如图则表示运行成功<br> <img src="/img/hexo_demo.png" alt=""></p>
-<h2 id="一键部署到github"><a href="#一键部署到github" class="headerlink" title="一键部署到github"></a>一键部署到github</h2><p>1.打开博客目录中的_config.yml文件<br>修改文件中的deploy下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  #elfwalk改为你的github用户名</div><div class="line">  repository: https://github.com/lianyu125/lianyu125.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>2.安装hexo git 插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>3.生成静态页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
-<p>4.发布到github<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p>这样我们的博客就搭建起来了 <a href="https://lianyu125.github.io" target="_blank" rel="external"></a></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过 TestFlight，您可以在 app 上架 App Store 之前，轻松邀请用户来测试您的 app，并收集他们宝贵的反馈。只需使用对方的电子邮件地址或通过分享公开邀请链接，即可进行邀请；您最多可邀请 10,000 名测试员。要充分利用 TestFlight，您需要先将 app 的至少一个 beta 构建版本上传至 App Store Connect，然后使用对方的电子邮件地址或通过分享公开链接来邀请测试员。测试员接受您的电子邮件邀请或点开公开链接，即可开始测试。测试员需要使用适用于 iPhone、iPad、iPod touch、Apple Watch 和 Apple TV 的 TestFlight app，才能安装您的 app 并提供反馈。</p>
+<h2 id="内部测试员"><a href="#内部测试员" class="headerlink" title="内部测试员"></a>内部测试员</h2><p>您还可以添加最多 25 名团队成员来测试您的 app。这些内部测试员需已分配为管理、技术、App 管理、开发人员或营销人员角色。每位成员可在多达 30 台设备上进行测试。内部测试员对所有可供测试的 beta 构建版本皆拥有访问权。</p>
+<h2 id="外部测试员和群组"><a href="#外部测试员和群组" class="headerlink" title="外部测试员和群组"></a>外部测试员和群组</h2><p>您可以邀请多达 10,000 名外部测试员来测试您的 app。邀请测试员时，可以使用对方的电子邮件地址，也可以启用并分享公开链接来公开地邀请任何人。您可以仅创建一个测试员群组，然后添加您希望他们测试的各个构建版本。您也可以创建多个群组并为每个群组添加不同的构建版本，具体取决于您希望他们重点测试哪些功能。在将 app 的第一个构建版本添加到群组时，这个构建版本必须通过 beta 版 app 审核，以确保它完全符合 App Store 审核指南。您的 app 只有这个 beta 版本需要经过全面的审核，该版本获得批准后就可以开始测试了。</p>
+<h2 id="通过电子邮件邀请测试员"><a href="#通过电子邮件邀请测试员" class="headerlink" title="通过电子邮件邀请测试员"></a>通过电子邮件邀请测试员</h2><p>如果您知道测试员的电子邮件地址，可以通过电子邮件发送邀请，并附上用于安装 app 并开始测试的链接。如果您已有一组现有的外部测试员，或者希望邀请特定的人员来参加测试，电子邮件是分享 app beta 版本的一种有效方式。</p>
+<h2 id="通过公开链接邀请测试员"><a href="#通过公开链接邀请测试员" class="headerlink" title="通过公开链接邀请测试员"></a>通过公开链接邀请测试员</h2><p>通过公开链接，您可以将 app 分享给所在开发团队以外的人员，而无需知道他们的电子邮件地址或其他联系信息。您可以通过社交媒体、信息平台和电子邮件宣传等方式分享您的公开链接，以便让更多人知道您的 beta 版测试。如果您没有既定的外部测试员群组，使用公开链接是扩大 app 的影响范围以及发展测试受众的一种有效方式。</p>
+<p>要启用公开链接，请前往 app 的 TestFlight 页面，点按现有的群组，再点按“启用公开链接”。然后，您可以拷贝这个链接并在组织外部分享。在您分享公开链接时，许多社交媒体平台都会显示您的 app 图标、名称和支持的设备。为了帮助潜在测试员了解更多相关信息，可以考虑附上关于您的 app 和 TestFlight 的详细信息。请勿翻译 TestFlight 的名称，也不要创建自定徽章来在 TestFlight 中推广您的 app。</p>
+<p>您可以根据需要来限制能够使用公开链接加入群组的测试员人数。根据所在团队的资源，您不妨先从小规模测试开始，再逐渐提高人数上限。如果达到了群组限制或者您停用了公开链接，那么如有任何人再尝试成为测试员，都会看到一条信息，表示您的 beta 版测试名额已满或者不再接受新的测试员。为了确保潜在测试员能够获得良好的用户体验，请仔细考虑在哪里分享您的公开链接，以及应在何时删除公开链接。</p>
+<h2 id="测试信息"><a href="#测试信息" class="headerlink" title="测试信息"></a>测试信息</h2><p>在将 app 分享给外部测试员时，您需要告知他们要测试的内容，以及与测试相关的其他重要信息。您可以在 App Store Connect 中 app 的“测试信息”页面上输入这些详细信息。此外，您还应提供您会查收邮件的电子邮件地址，以便接收和回复测试员提供的反馈。在将 app 分发给内部测试员时，测试信息为选填内容。</p>
+<h2 id="支持的-App"><a href="#支持的-App" class="headerlink" title="支持的 App"></a>支持的 App</h2><p>TestFlight 支持适用于 iOS、watchOS、tvOS 和 iMessage 信息的 app。您可同时测试 (内部或外部) 多达 100 个 app，也可同时测试多个构建版本。构建版本在上传后 90 天内将保持可供测试的状态。</p>
+<h2 id="参考文档和帮助"><a href="#参考文档和帮助" class="headerlink" title="参考文档和帮助"></a>参考文档和帮助</h2><p>有关在 TestFlight 中创建群组、邀请测试员和添加构建版本的分步说明，请阅读 App Store Connect 帮助或观看 TestFlight 视频教程。<br><a href="https://developer.apple.com/videos/play/app-store-connect/101/" target="_blank" rel="external">TestFlight Beta 版测试教程 (英语视频)</a></p>
 
     </div>
     
@@ -270,15 +261,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2017/01/26/hexo/2017-01-30-add-categories-tags/" class="pre-post btn btn-default" title='hexo博客在导航条中添加分类和标签栏'>
+        <a href="/2018/03/23/web前端/2013-04-23-general-bootstrap-resources/" class="pre-post btn btn-default" title='Bootstrap常用资源'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">hexo博客在导航条中添加分类和标签栏</span>
+            <span class="hidden-xs">Bootstrap常用资源</span>
         </a>
     
     
-        <a href="/2017/01/26/hexo/2017-01-29/" class="next-post btn btn-default" title='hexo博客next主题下添加打赏功能'>
+        <a href="/2018/02/25/web前端/2018-02-25-open-widown-in-javascript/" class="next-post btn btn-default" title='JS中防止浏览器屏蔽window.open'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">hexo博客next主题下添加打赏功能</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">JS中防止浏览器屏蔽window.open</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -321,7 +312,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地运行hexo"><span class="toc-text">本地运行hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一键部署到github"><span class="toc-text">一键部署到github</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部测试员"><span class="toc-text">内部测试员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#外部测试员和群组"><span class="toc-text">外部测试员和群组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过电子邮件邀请测试员"><span class="toc-text">通过电子邮件邀请测试员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过公开链接邀请测试员"><span class="toc-text">通过公开链接邀请测试员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试信息"><span class="toc-text">测试信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持的-App"><span class="toc-text">支持的 App</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文档和帮助"><span class="toc-text">参考文档和帮助</span></a></li></ol>
         
     </div>
 </aside>
