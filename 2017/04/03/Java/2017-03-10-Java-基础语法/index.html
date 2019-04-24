@@ -1,0 +1,545 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="基本概念类：类是一个模板，它描述一类对象的行为和状态。对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。方法：方法就是行为，..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>Java基础语法 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/iOS/"><i class="fa "></i>iOS</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Java基础语法">
+            
+	            Java基础语法
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Java/">Java</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Java/">Java</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/03</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>类：类是一个模板，它描述一类对象的行为和状态。<br>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。<br>方法：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。<br>实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>编写Java程序时，应注意以下几点：<br>大小写敏感：Java是大小写敏感的，这就意味着标识符Hello与hello是不同的。<br>类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstClass 。<br>方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。<br>源文件名：源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记Java是大小写敏感的），文件名的后缀为.java。（如果文件名和类名不相同则会导致编译错误）。<br>主方法入口：所有的Java 程序由public static void main(String []args)方法开始执行。</p>
+<h2 id="Java标识符"><a href="#Java标识符" class="headerlink" title="Java标识符"></a>Java标识符</h2><p>Java所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符。<br>关于Java标识符，有以下几点需要注意：<br>所有的标识符都应该以字母（A-Z或者a-z）,美元符（$）、或者下划线（<em>）开始<br>首字符之后可以是字母（A-Z或者a-z）,美元符（$）、下划线（</em>）或数字的任何字符组合<br>关键字不能用作标识符<br>标识符是大小写敏感的<br>合法标识符举例：age、$salary、_value、__1_value<br>非法标识符举例：123abc、-salary</p>
+<h2 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h2><p>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：<br>访问控制修饰符 : default, public , protected, private<br>非访问控制修饰符 : final, abstract, strictfp<br>在后面的章节中我们会深入讨论Java修饰符。</p>
+<h2 id="Java变量"><a href="#Java变量" class="headerlink" title="Java变量"></a>Java变量</h2><p>Java中主要有如下几种类型的变量<br>局部变量<br>类变量（静态变量）<br>成员变量（非静态变量）</p>
+<h2 id="Java枚举"><a href="#Java枚举" class="headerlink" title="Java枚举"></a>Java枚举</h2><p>Java 5.0引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的bug。<br>例如，我们为果汁店设计一个程序，它将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除了这三种尺寸外的果汁。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FreshJuice</span> </span>&#123;</div><div class="line">   <span class="keyword">enum</span> FreshJuiceSize&#123; SMALL, MEDIUM , LARGE &#125;</div><div class="line">   FreshJuiceSize size;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FreshJuiceTest</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</div><div class="line">      FreshJuice juice = <span class="keyword">new</span> FreshJuice();</div><div class="line">      juice.size = FreshJuice. FreshJuiceSize.MEDIUM  ;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Java关键字"><a href="#Java关键字" class="headerlink" title="Java关键字"></a>Java关键字</h2><p>下面列出了Java保留字。这些保留字不能用于常量、变量、和任何标识符的名称。<br>关键字    描述</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abstract</td>
+</tr>
+</tbody>
+</table>
+<div>抽象方法，抽象类的修饰符</div>
+
+<p> |<br>| assert |  </p>
+<div>断言条件是否满足</div>
+
+<p> |<br>| boolean |  </p>
+<div>断言条件是否满足</div>
+
+<p> |<br>| break<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>跳出循环或者label代码段</div>
+
+<p> |<br>| byte |  </p>
+<div>8-bit 有符号数据类型</div>
+
+<p> |<br>| case |  </p>
+<div>switch语句的一个条件</div>
+
+<p> |<br>| catch |  </p>
+<div>和try搭配扑捉异常信息</div>
+
+<p> |<br>| char |  </p>
+<div>16-bit Unicode字符数据类型</div>
+
+<p> |<br>| class |  </p>
+<div>定义类</div>
+
+<p> |<br>| const<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>未使用</div>
+
+<p> |<br>| continue<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>不执行循环体剩余部分</div>
+
+<p> |<br>| default<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>switch语句中的默认分支</div>
+
+<p> |<br>| do |  </p>
+<div>循环语句，循环体至少会执行一次</div>
+
+<p> |<br>| double<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>64-bit双精度浮点数</div>
+
+<p> |<br>| else |  </p>
+<div>if条件不成立时执行的分支</div>
+
+<p> |<br>| enum |  </p>
+<div>枚举类型</div>
+
+<p> |<br>| extends |  </p>
+<div>表示一个类是另一个类的子类</div>
+
+<p> |<br>| final<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示一个值在初始化之后就不能再改变了</div>
+
+<div>表示方法不能被重写，或者一个类不能有子类</div>
+
+<p> |<br>| finally<span class="Apple-tab-span" style="white-space:pre"></span> | 为了完成执行的代码而设计的，主要是为了程序的健壮性和完整性，无论有没有异常发生都执行代码。 |<br>| float | 32-bit单精度浮点数 |<br>| for |  </p>
+<div>for循环语句</div>
+
+<p> |<br>| goto<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>未使用</div>
+
+<p> |<br>| if<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>条件语句</div>
+
+<p> |<br>| implements<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示一个类实现了接口</div>
+
+<p> |<br>| import<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>导入类</div>
+
+<p> |<br>| instanceof<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>测试一个对象是否是某个类的实例</div>
+
+<p> |<br>| int<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>32位整型数</div>
+
+<p> |<br>| interface<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>接口，一种抽象的类型，仅有方法和常量的定义</div>
+
+<p> |<br>| long |  </p>
+<div>64位整型数</div>
+
+<p> |<br>| native<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示方法用非java代码实现</div>
+
+<p> |<br>| new<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>分配新的类实例</div>
+
+<p> |<br>| package<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>一系列相关类组成一个包</div>
+
+<p> |<br>| private<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示私有字段，或者方法等，只能从类内部访问</div>
+
+<p> |<br>| protected<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示字段只能通过类或者其子类访问</div>
+
+<div>子类或者在同一个包内的其他类</div>
+
+<p> |<br>| public |  </p>
+<div>表示共有属性或者方法</div>
+
+<p> |<br>| return |  </p>
+<div>方法返回值</div>
+
+<p> |<br>| short |  </p>
+<div>16位数字</div>
+
+<p> |<br>| static |  </p>
+<div>表示在类级别定义，所有实例共享的</div>
+
+<p> |<br>| strictfp |  </p>
+<div>浮点数比较使用严格的规则</div>
+
+<p> |<br>| super |  </p>
+<div>表示基类</div>
+
+<p> |<br>| switch |  </p>
+<div>选择语句</div>
+
+<p> |<br>| synchronized |  </p>
+<div>表示同一时间只能由一个线程访问的代码块</div>
+
+<p> |<br>| this |  </p>
+<div>表示调用当前实例</div>
+
+<div>或者调用另一个构造函数</div>
+
+<p> |<br>| throw |  </p>
+<div>抛出异常</div>
+
+<p> |<br>| throws |  </p>
+<div>定义方法可能抛出的异常</div>
+
+<p> |<br>| transient<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>修饰不要序列化的字段</div>
+
+<p> |<br>| try<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>表示代码块要做异常处理或者和finally配合表示是否抛出异常都执行finally中的代码</div>
+
+<p> |<br>| void<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>标记方法不返回任何值</div>
+
+<p> |<br>| volatile |  </p>
+<div>标记字段可能会被多个线程同时访问，而不做同步</div>
+
+<p> |<br>| while<span class="Apple-tab-span" style="white-space:pre"></span> |  </p>
+<div>while循环</div>
+
+<p> |</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>在Java中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。<br>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>在Java中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。<br>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。</p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/06/Java/2017-08-06-面向对象/" class="pre-post btn btn-default" title='Java入门教程之面向对象'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Java入门教程之面向对象</span>
+        </a>
+    
+    
+        <a href="/2017/03/15/ios/2017-03-15-pod search/" class="next-post btn btn-default" title='Cocoapods 之pod search无法搜索到类库的解决办法'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Cocoapods 之pod search无法搜索到类库的解决办法</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本语法"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java标识符"><span class="toc-text">Java标识符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java修饰符"><span class="toc-text">Java修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java变量"><span class="toc-text">Java变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java枚举"><span class="toc-text">Java枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java关键字"><span class="toc-text">Java关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

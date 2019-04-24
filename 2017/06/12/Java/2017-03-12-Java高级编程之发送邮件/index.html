@@ -1,0 +1,387 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="准备工作从 Java 网站下载最新版本的JavaMail ，打开网页右侧有个 Downloads 链接，点击它下载。从 Java 网站下载最新版本的JAF（版本 1.1.1） 。下载并解压缩这些..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>Java高级编程之发送邮件 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/iOS/"><i class="fa "></i>iOS</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Java高级编程之发送邮件">
+            
+	            Java高级编程之发送邮件
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/Java/">Java</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Java/">Java</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/12</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>从 Java 网站下载最新版本的<a href="http://www.oracle.com/technetwork/java/javamail/index.html" target="_blank" rel="external">JavaMail</a> ，打开网页右侧有个 Downloads 链接，点击它下载。<br>从 Java 网站下载最新版本的<a href="http://www.oracle.com/technetwork/articles/java/index-135046.html" target="_blank" rel="external">JAF（版本 1.1.1）</a> 。<br>下载并解压缩这些文件，在新创建的顶层目录中，您会发现这两个应用程序的一些 jar 文件。您需要把 mail.jar 和 activation.jar 文件添加到您的 CLASSPATH 中。<br>如果你使用第三方邮件服务器如QQ的SMTP服务器，可查看文章底部用户认证完整的实例。</p>
+<h2 id="发送一封简单的-E-mail"><a href="#发送一封简单的-E-mail" class="headerlink" title="发送一封简单的 E-mail"></a>发送一封简单的 E-mail</h2><p>下面是一个发送简单E-mail的例子。假设你的localhost已经连接到网络。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文件名 SendEmail.java</span></div><div class="line"> </div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> javax.mail.*;</div><div class="line"><span class="keyword">import</span> javax.mail.internet.*;</div><div class="line"><span class="keyword">import</span> javax.activation.*;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SendEmail</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></div><div class="line"><span class="function">   </span>&#123;   </div><div class="line">      <span class="comment">// 收件人电子邮箱</span></div><div class="line">      String to = <span class="string">"abcd@gmail.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 发件人电子邮箱</span></div><div class="line">      String from = <span class="string">"web@gmail.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 指定发送邮件的主机为 localhost</span></div><div class="line">      String host = <span class="string">"localhost"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 获取系统属性</span></div><div class="line">      Properties properties = System.getProperties();</div><div class="line"> </div><div class="line">      <span class="comment">// 设置邮件服务器</span></div><div class="line">      properties.setProperty(<span class="string">"mail.smtp.host"</span>, host);</div><div class="line"> </div><div class="line">      <span class="comment">// 获取默认session对象</span></div><div class="line">      Session session = Session.getDefaultInstance(properties);</div><div class="line"> </div><div class="line">      <span class="keyword">try</span>&#123;</div><div class="line">         <span class="comment">// 创建默认的 MimeMessage 对象</span></div><div class="line">         MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</div><div class="line"> </div><div class="line">         <span class="comment">// Set From: 头部头字段</span></div><div class="line">         message.setFrom(<span class="keyword">new</span> InternetAddress(from));</div><div class="line"> </div><div class="line">         <span class="comment">// Set To: 头部头字段</span></div><div class="line">         message.addRecipient(Message.RecipientType.TO,</div><div class="line">                                  <span class="keyword">new</span> InternetAddress(to));</div><div class="line"> </div><div class="line">         <span class="comment">// Set Subject: 头部头字段</span></div><div class="line">         message.setSubject(<span class="string">"This is the Subject Line!"</span>);</div><div class="line"> </div><div class="line">         <span class="comment">// 设置消息体</span></div><div class="line">         message.setText(<span class="string">"This is actual message"</span>);</div><div class="line"> </div><div class="line">         <span class="comment">// 发送消息</span></div><div class="line">         Transport.send(message);</div><div class="line">         System.out.println(<span class="string">"Sent message successfully...."</span>);</div><div class="line">      &#125;<span class="keyword">catch</span> (MessagingException mex) &#123;</div><div class="line">         mex.printStackTrace();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译并运行这个程序来发送一封简单的E-mail：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ java SendEmail</div><div class="line">Sent message successfully....</div></pre></td></tr></table></figure>
+<p>如果你想发送一封e-mail给多个收件人，那么使用下面的方法来指定多个收件人ID：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">addRecipients</span><span class="params">(Message.RecipientType type,</span></span></div><div class="line"><span class="function"><span class="params">                   Address[] addresses)</span></span></div><div class="line"><span class="function"><span class="keyword">throws</span> MessagingException</span></div></pre></td></tr></table></figure>
+<p><strong>下面是对于参数的描述：</strong><br>type:要被设置为 TO, CC 或者 BCC，这里 CC 代表抄送、BCC 代表秘密抄送。举例：Message.RecipientType.TO<br>addresses: 这是 email ID 的数组。在指定电子邮件 ID 时，你将需要使用 InternetAddress() 方法。</p>
+<h2 id="发送一封-HTML-E-mail"><a href="#发送一封-HTML-E-mail" class="headerlink" title="发送一封 HTML E-mail"></a>发送一封 HTML E-mail</h2><p>下面是一个发送 HTML E-mail 的例子。假设你的 localhost 已经连接到网络。<br>和上一个例子很相似，除了我们要使用 setContent() 方法来通过第二个参数为 “text/html”，来设置内容来指定要发送HTML 内容。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文件名 SendHTMLEmail.java</span></div><div class="line"> </div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> javax.mail.*;</div><div class="line"><span class="keyword">import</span> javax.mail.internet.*;</div><div class="line"><span class="keyword">import</span> javax.activation.*;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SendHTMLEmail</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">     </div><div class="line">      <span class="comment">// 收件人电子邮箱</span></div><div class="line">      String to = <span class="string">"abcd@gmail.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 发件人电子邮箱</span></div><div class="line">      String from = <span class="string">"web@gmail.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 指定发送邮件的主机为 localhost</span></div><div class="line">      String host = <span class="string">"localhost"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 获取系统属性</span></div><div class="line">      Properties properties = System.getProperties();</div><div class="line"> </div><div class="line">      <span class="comment">// 设置邮件服务器</span></div><div class="line">      properties.setProperty(<span class="string">"mail.smtp.host"</span>, host);</div><div class="line"> </div><div class="line">      <span class="comment">// 获取默认的 Session 对象。</span></div><div class="line">      Session session = Session.getDefaultInstance(properties);</div><div class="line"> </div><div class="line">      <span class="keyword">try</span>&#123;</div><div class="line">         <span class="comment">// 创建默认的 MimeMessage 对象。</span></div><div class="line">         MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</div><div class="line"> </div><div class="line">         <span class="comment">// Set From: 头部头字段</span></div><div class="line">         message.setFrom(<span class="keyword">new</span> InternetAddress(from));</div><div class="line"> </div><div class="line">         <span class="comment">// Set To: 头部头字段</span></div><div class="line">         message.addRecipient(Message.RecipientType.TO,</div><div class="line">                                  <span class="keyword">new</span> InternetAddress(to));</div><div class="line"> </div><div class="line">         <span class="comment">// Set Subject: 头字段</span></div><div class="line">         message.setSubject(<span class="string">"This is the Subject Line!"</span>);</div><div class="line"> </div><div class="line">         <span class="comment">// 发送 HTML 消息, 可以插入html标签</span></div><div class="line">         message.setContent(<span class="string">"&lt;h1&gt;This is actual message&lt;/h1&gt;"</span>,</div><div class="line">                            <span class="string">"text/html"</span> );</div><div class="line"> </div><div class="line">         <span class="comment">// 发送消息</span></div><div class="line">         Transport.send(message);</div><div class="line">         System.out.println(<span class="string">"Sent message successfully...."</span>);</div><div class="line">      &#125;<span class="keyword">catch</span> (MessagingException mex) &#123;</div><div class="line">         mex.printStackTrace();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译并运行此程序来发送HTML e-mail：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ java SendHTMLEmail</div><div class="line">Sent message successfully....</div></pre></td></tr></table></figure>
+<h2 id="发送带有附件的-E-mail"><a href="#发送带有附件的-E-mail" class="headerlink" title="发送带有附件的 E-mail"></a>发送带有附件的 E-mail</h2><p>下面是一个发送带有附件的 E-mail的例子。假设你的localhost已经连接到网络。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文件名 SendFileEmail.java</span></div><div class="line"> </div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> javax.mail.*;</div><div class="line"><span class="keyword">import</span> javax.mail.internet.*;</div><div class="line"><span class="keyword">import</span> javax.activation.*;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SendFileEmail</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">     </div><div class="line">      <span class="comment">// 收件人电子邮箱</span></div><div class="line">      String to = <span class="string">"abcd@gmail.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 发件人电子邮箱</span></div><div class="line">      String from = <span class="string">"web@gmail.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 指定发送邮件的主机为 localhost</span></div><div class="line">      String host = <span class="string">"localhost"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 获取系统属性</span></div><div class="line">      Properties properties = System.getProperties();</div><div class="line"> </div><div class="line">      <span class="comment">// 设置邮件服务器</span></div><div class="line">      properties.setProperty(<span class="string">"mail.smtp.host"</span>, host);</div><div class="line"> </div><div class="line">      <span class="comment">// 获取默认的 Session 对象。</span></div><div class="line">      Session session = Session.getDefaultInstance(properties);</div><div class="line"> </div><div class="line">      <span class="keyword">try</span>&#123;</div><div class="line">         <span class="comment">// 创建默认的 MimeMessage 对象。</span></div><div class="line">         MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</div><div class="line"> </div><div class="line">         <span class="comment">// Set From: 头部头字段</span></div><div class="line">         message.setFrom(<span class="keyword">new</span> InternetAddress(from));</div><div class="line"> </div><div class="line">         <span class="comment">// Set To: 头部头字段</span></div><div class="line">         message.addRecipient(Message.RecipientType.TO,</div><div class="line">                                  <span class="keyword">new</span> InternetAddress(to));</div><div class="line"> </div><div class="line">         <span class="comment">// Set Subject: 头字段</span></div><div class="line">         message.setSubject(<span class="string">"This is the Subject Line!"</span>);</div><div class="line"> </div><div class="line">         <span class="comment">// 创建消息部分</span></div><div class="line">         BodyPart messageBodyPart = <span class="keyword">new</span> MimeBodyPart();</div><div class="line"> </div><div class="line">         <span class="comment">// 消息</span></div><div class="line">         messageBodyPart.setText(<span class="string">"This is message body"</span>);</div><div class="line">        </div><div class="line">         <span class="comment">// 创建多重消息</span></div><div class="line">         Multipart multipart = <span class="keyword">new</span> MimeMultipart();</div><div class="line"> </div><div class="line">         <span class="comment">// 设置文本消息部分</span></div><div class="line">         multipart.addBodyPart(messageBodyPart);</div><div class="line"> </div><div class="line">         <span class="comment">// 附件部分</span></div><div class="line">         messageBodyPart = <span class="keyword">new</span> MimeBodyPart();</div><div class="line">         String filename = <span class="string">"file.txt"</span>;</div><div class="line">         DataSource source = <span class="keyword">new</span> FileDataSource(filename);</div><div class="line">         messageBodyPart.setDataHandler(<span class="keyword">new</span> DataHandler(source));</div><div class="line">         messageBodyPart.setFileName(filename);</div><div class="line">         multipart.addBodyPart(messageBodyPart);</div><div class="line"> </div><div class="line">         <span class="comment">// 发送完整消息</span></div><div class="line">         message.setContent(multipart );</div><div class="line"> </div><div class="line">         <span class="comment">//   发送消息</span></div><div class="line">         Transport.send(message);</div><div class="line">         System.out.println(<span class="string">"Sent message successfully...."</span>);</div><div class="line">      &#125;<span class="keyword">catch</span> (MessagingException mex) &#123;</div><div class="line">         mex.printStackTrace();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译并运行你的程序来发送一封带有附件的邮件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ java SendFileEmail</div><div class="line">Sent message successfully....</div></pre></td></tr></table></figure></p>
+<h2 id="用户认证部分"><a href="#用户认证部分" class="headerlink" title="用户认证部分"></a>用户认证部分</h2><p>如果需要提供用户名和密码给e-mail服务器来达到用户认证的目的，你可以通过如下设置来完成：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">props.put(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</div><div class="line">props.setProperty(<span class="string">"mail.user"</span>, <span class="string">"myuser"</span>);</div><div class="line">props.setProperty(<span class="string">"mail.password"</span>, <span class="string">"mypwd"</span>);</div></pre></td></tr></table></figure></p>
+<p>e-mail其他的发送机制和上述保持一致。<br>需要用户名密码验证邮件发送实例:<br>本实例以 QQ 邮件服务器为例，你需要在登录QQ邮箱后台在”设置”=》账号中开启POP3/SMTP服务 ，如下图所示：<img src="http://okjl482qy.bkt.clouddn.com/qqmail-set2.jpg" alt=""><br>QQ 邮箱通过生成授权码来设置密码：<br><img src="http://okjl482qy.bkt.clouddn.com/qqmail-set.jpg" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 需要用户名密码邮件发送实例</span></div><div class="line"><span class="comment">//文件名 SendEmail2.java</span></div><div class="line"><span class="comment">//本实例以QQ邮箱为例，你需要在qq后台设置</span></div><div class="line"> </div><div class="line"><span class="keyword">import</span> java.util.Properties;</div><div class="line"> </div><div class="line"><span class="keyword">import</span> javax.mail.Authenticator;</div><div class="line"><span class="keyword">import</span> javax.mail.Message;</div><div class="line"><span class="keyword">import</span> javax.mail.MessagingException;</div><div class="line"><span class="keyword">import</span> javax.mail.PasswordAuthentication;</div><div class="line"><span class="keyword">import</span> javax.mail.Session;</div><div class="line"><span class="keyword">import</span> javax.mail.Transport;</div><div class="line"><span class="keyword">import</span> javax.mail.internet.InternetAddress;</div><div class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</div><div class="line"> </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SendEmail2</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">      <span class="comment">// 收件人电子邮箱</span></div><div class="line">      String to = <span class="string">"xxx@qq.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 发件人电子邮箱</span></div><div class="line">      String from = <span class="string">"xxx@qq.com"</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// 指定发送邮件的主机为 smtp.qq.com</span></div><div class="line">      String host = <span class="string">"smtp.qq.com"</span>;  <span class="comment">//QQ 邮件服务器</span></div><div class="line"> </div><div class="line">      <span class="comment">// 获取系统属性</span></div><div class="line">      Properties properties = System.getProperties();</div><div class="line"> </div><div class="line">      <span class="comment">// 设置邮件服务器</span></div><div class="line">      properties.setProperty(<span class="string">"mail.smtp.host"</span>, host);</div><div class="line"> </div><div class="line">      properties.put(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</div><div class="line">      <span class="comment">// 获取默认session对象</span></div><div class="line">      Session session = Session.getDefaultInstance(properties,<span class="keyword">new</span> Authenticator()&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> PasswordAuthentication <span class="title">getPasswordAuthentication</span><span class="params">()</span></span></div><div class="line"><span class="function">        </span>&#123;</div><div class="line">         <span class="keyword">return</span> <span class="keyword">new</span> PasswordAuthentication(<span class="string">"xxx@qq.com"</span>, <span class="string">"qq邮箱密码"</span>); <span class="comment">//发件人邮件用户名、密码</span></div><div class="line">        &#125;</div><div class="line">       &#125;);</div><div class="line"> </div><div class="line">      <span class="keyword">try</span>&#123;</div><div class="line">         <span class="comment">// 创建默认的 MimeMessage 对象</span></div><div class="line">         MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</div><div class="line"> </div><div class="line">         <span class="comment">// Set From: 头部头字段</span></div><div class="line">         message.setFrom(<span class="keyword">new</span> InternetAddress(from));</div><div class="line"> </div><div class="line">         <span class="comment">// Set To: 头部头字段</span></div><div class="line">         message.addRecipient(Message.RecipientType.TO,</div><div class="line">                                  <span class="keyword">new</span> InternetAddress(to));</div><div class="line"> </div><div class="line">         <span class="comment">// Set Subject: 头部头字段</span></div><div class="line">         message.setSubject(<span class="string">"This is the Subject Line!"</span>);</div><div class="line"> </div><div class="line">         <span class="comment">// 设置消息体</span></div><div class="line">         message.setText(<span class="string">"This is actual message"</span>);</div><div class="line"> </div><div class="line">         <span class="comment">// 发送消息</span></div><div class="line">         Transport.send(message);</div><div class="line">         System.out.println(<span class="string">"Sent message successfully....from w3cschool.cc"</span>);</div><div class="line">      &#125;<span class="keyword">catch</span> (MessagingException mex) &#123;</div><div class="line">         mex.printStackTrace();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/06/13/hexo/2017-06-13-为Hexo的Next主题增加畅言评论的支持/" class="pre-post btn btn-default" title='为Hexo的Next主题增加畅言评论的支持'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">为Hexo的Next主题增加畅言评论的支持</span>
+        </a>
+    
+    
+        <a href="/2017/05/17/digitalImage/2017-05-17-openCV简述/" class="next-post btn btn-default" title='openCV简述'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">openCV简述</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送一封简单的-E-mail"><span class="toc-text">发送一封简单的 E-mail</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送一封-HTML-E-mail"><span class="toc-text">发送一封 HTML E-mail</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送带有附件的-E-mail"><span class="toc-text">发送带有附件的 E-mail</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户认证部分"><span class="toc-text">用户认证部分</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
