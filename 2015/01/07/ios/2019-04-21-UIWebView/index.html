@@ -226,7 +226,7 @@ UIWebView基..." />
 <h3 id="页面加载方法"><a href="#页面加载方法" class="headerlink" title="页面加载方法"></a>页面加载方法</h3><p>UIWebView提供了三种加载html页面的方法</p>
 <ol>
 <li><ul>
-<li>(void)loadRequest:(NSURLRequest *)request;<br>通过NSURLRequest去加载html界面,可以去通过网络连接加载html资源，也可以去加载本地的html资源<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加载网络地址</span></div><div class="line"><span class="built_in">NSURLRequest</span> request =[<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"https://www.baidu.com"</span>]];</div><div class="line">[<span class="keyword">self</span>.view addSubview:webView];</div><div class="line">[webView loadRequest:request];</div></pre></td></tr></table></figure>
+<li>(void)loadRequest:(NSURLRequest *)request;<br>通过NSURLRequest去加载html界面,可以去通过网络连接加载html资源，也可以去加载本地的html资源<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//加载网络地址</span></div><div class="line"><span class="built_in">NSURLRequest</span> * request =[<span class="built_in">NSURLRequest</span> requestWithURL:[<span class="built_in">NSURL</span> URLWithString:<span class="string">@"https://www.baidu.com"</span>]];</div><div class="line">[<span class="keyword">self</span>.view addSubview:webView];</div><div class="line">[webView loadRequest:request];</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
