@@ -19,8 +19,9 @@
     <meta name="keywords" content="{{ page.keywords }}" />
 
 
-    <meta name="description" content="将OC代码转化为C/C++代码1clang -rewrite-objc xxxx.m -o xxxx.cpp
-1xcrun -sdk iphoneos clang -arch arm64 -re..." />
+    <meta name="description" content="
+问题描述发布证书即将过期，按照相应的步骤去生成证书后，在本机电脑安装后没有秘钥(就是看不到钥匙串证书左边的那个三角符号)。如下图证书没有秘钥是无法导出p12文件的。
+问题原因1.证书类型选择错..." />
 
 
 
@@ -32,7 +33,7 @@
     <!--Title-->
 
 
-<title>clang常用命令 | 晓玉的技术博客</title>
+<title>ios 证书无法生成p12 文件解决，或者无法生成秘钥问题 | 晓玉的技术博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="晓玉的技术博客" type="application/atom+xml">
@@ -172,9 +173,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="clang常用命令">
+        <h1 id="ios 证书无法生成p12 文件解决，或者无法生成秘钥问题">
             
-	            clang常用命令
+	            ios 证书无法生成p12 文件解决，或者无法生成秘钥问题
             
         </h1>
         <div class="post-meta">
@@ -200,7 +201,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/08/04</span>
+            <span class="date-meta">2019/05/12</span>
         </span>
         
             <span class="fa-wrap">
@@ -215,8 +216,9 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="将OC代码转化为C-C-代码"><a href="#将OC代码转化为C-C-代码" class="headerlink" title="将OC代码转化为C/C++代码"></a>将OC代码转化为C/C++代码</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clang -rewrite-objc xxxx.m -o xxxx.cpp</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc OC源文件 -o 输出的cpp文件</div></pre></td></tr></table></figure>
+        <p><img src="img/ios/ioscer_01.png" alt=""></p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>发布证书即将过期，按照相应的步骤去生成证书后，在本机电脑安装后没有秘钥(就是看不到钥匙串证书左边的那个三角符号)。如下图证书没有秘钥是无法导出p12文件的。<br><img src="img/ios/ioscer_02.png" alt=""></p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>1.证书类型选择错误，左侧有两个分类，选择 登录–证书，找到需要导出的文件，右键点击可导出p12文件，如果在 登录–证书 中找不到需要的证书，而在 系统–证书 中能找到，拖动证书到登录即可解决。<br>2.生成证书时选择的CSR文件为非本机电脑生成的。重新在本机上生成CSR文件，然后再重新生成证书。</p>
 
     </div>
     
@@ -254,15 +256,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/08/05/ios/2018-08-23-Category/" class="pre-post btn btn-default" title='iOS开发之Category'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">iOS开发之Category</span>
-        </a>
     
-    
-        <a href="/2018/07/31/ios/2018-07-31-设计模式之建造者模式/" class="next-post btn btn-default" title='iOS设计模式之建造者模式'>
+        <a href="/2019/05/11/ios/2019-05-11-iOS日志收集设计思路/" class="next-post btn btn-default" title='iOS日志收集设计思路'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">iOS设计模式之建造者模式</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">iOS日志收集设计思路</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -305,7 +302,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#将OC代码转化为C-C-代码"><span class="toc-text">将OC代码转化为C/C++代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题原因"><span class="toc-text">问题原因</span></a></li></ol>
         
     </div>
 </aside>
