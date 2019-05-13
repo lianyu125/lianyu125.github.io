@@ -183,28 +183,6 @@
   </entry>
   
   <entry>
-    <title>Python 高级教程之爬虫urllib基本使用</title>
-    <link href="https://blog.devzou.com/2018/11/17/python/2017-03-17-python%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
-    <id>https://blog.devzou.com/2018/11/17/python/2017-03-17-python高级教程之爬虫urllib基本使用/</id>
-    <published>2018-11-17T00:10:09.000Z</published>
-    <updated>2019-04-24T07:00:10.747Z</updated>
-    
-    <content type="html"><![CDATA[<p>如下程序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>把它保存成 demo.py，进入该文件的目录，执行命令<code>python demo.py</code>查看运行结果，感受一下。</p><h2 id="分析扒网页的方法"><a href="#分析扒网页的方法" class="headerlink" title="分析扒网页的方法"></a>分析扒网页的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div></pre></td></tr></table></figure><p>首先我们调用的是urllib2库里面的urlopen方法，传入一个URL，这个网址是百度首页，协议是HTTP协议，当然你也可以把HTTP换做FTP,FILE,HTTPS 等等，只是代表了一种访问控制协议，urlopen一般接受三个参数，它的参数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">urlopen(url, data, timeout)</div></pre></td></tr></table></figure></p><p>第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。<br>第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT<br>第一个参数URL是必须要传送的，在这个例子里面我们传送了百度的URL，执行urlopen方法之后，返回一个response对象，返回信息便保存在这里面。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>response对象有一个read方法，可以返回获取到的网页内容。</p><h2 id="构造Request"><a href="#构造Request" class="headerlink" title="构造Request"></a>构造Request</h2><p>其实上面的urlopen参数可以传入一个request请求,它其实就是一个Request类的实例，构造时需要传入Url,Data等等的内容。比如上面的两行代码，我们可以这么改写<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com"</span>)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>运行结果是完全一样的，只不过中间多了一个request对象，推荐大家这么写，因为在构建请求时还需要加入好多内容，通过构建一个request，服务器响应请求得到应答，这样显得逻辑上清晰明确。</p><h2 id="POST和GET数据传送"><a href="#POST和GET数据传送" class="headerlink" title="POST和GET数据传送"></a>POST和GET数据传送</h2><p>上面的程序演示了最基本的网页抓取，不过，现在大多数网站都是动态网页，需要你动态地传递参数给它，它做出对应的响应。所以，在访问时，我们需要传递数据给它。最常见的情况是什么？对了，就是登录注册的时候呀。</p><p>把数据用户名和密码传送到一个URL，然后你得到服务器处理之后的响应，这个该怎么办？下面让我来为小伙伴们揭晓吧！</p><p>数据传送分为POST和GET两种方式，两种方式有什么区别呢？</p><p>最重要的区别是GET方式是直接以链接形式访问，链接中包含了所有的参数，当然如果包含了密码的话是一种不安全的选择，不过你可以直观地看到自己提交了什么内容。POST则不会在网址上显示所有的参数，不过如果你想直接查看提交了什么就不太方便了，大家可以酌情选择。</p><p>POST方式：</p><p>上面我们说了data参数是干嘛的？对了，它就是用在这里的，我们传送的数据就是这个参数data，下面演示一下POST方式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">values = &#123;<span class="string">"username"</span>:<span class="string">"1315751082@qq.com"</span>,<span class="string">"password"</span>:<span class="string">"XXXX"</span>&#125;</div><div class="line">data = urllib.urlencode(values) </div><div class="line">url = <span class="string">"https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn"</span></div><div class="line">request = urllib2.Request(url,data)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>【抓取糗事百科页面的数据例子】</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">page = <span class="number">1</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/text/'</span> + str(page)</div><div class="line">user_agent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6)'</span></div><div class="line">headers = &#123; <span class="string">'User-Agent'</span> : user_agent &#125;</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    request = urllib2.Request(url,headers = headers)</div><div class="line">    response = urllib2.urlopen(request)</div><div class="line"><span class="comment">#    print response.read()</span></div><div class="line">    content = response.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">    pattern = re.compile(<span class="string">'&lt;div.*?author.*?&lt;a.*?&lt;img.*?&gt;(.*?)&lt;/a&gt;.*?&lt;div.*?'</span>+</div><div class="line">                         <span class="string">'content"&gt;(.*?)&lt;/div&gt;(.*?)&lt;div class="stats.*?class="number"&gt;(.*?)&lt;/i&gt;'</span>,re.S)</div><div class="line">    items = re.findall(pattern,content)</div><div class="line"><span class="comment">#    print items</span></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">        <span class="keyword">print</span> item</div><div class="line"><span class="comment">#        haveImg = re.search("img",item[3])</span></div><div class="line"><span class="comment">#        if not haveImg:</span></div><div class="line"><span class="comment">#           print item[0],item[1],item[2],item[4]</span></div><div class="line"><span class="keyword">except</span> urllib2.URLError, e:</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"code"</span>):</div><div class="line">        <span class="keyword">print</span> e.code</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"reason"</span>):</div><div class="line">        <span class="keyword">print</span> e.reason</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      怎样扒网页呢？其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架，JS便是他的肌肉，CSS便是它的衣服。所以最重要的部分是存在于HTML中的，下面我们就写个例子来扒一个网页下来。
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Python 高级教程之爬虫urllib库高级使用</title>
     <link href="https://blog.devzou.com/2018/11/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/"/>
     <id>https://blog.devzou.com/2018/11/17/python/2017-03-17.-Python 高级教程之爬虫urllib库高级使用/</id>
@@ -216,6 +194,28 @@
     <summary type="html">
     
       urllib库的高级使用
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 高级教程之爬虫urllib基本使用</title>
+    <link href="https://blog.devzou.com/2018/11/17/python/2017-03-17-python%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.devzou.com/2018/11/17/python/2017-03-17-python高级教程之爬虫urllib基本使用/</id>
+    <published>2018-11-17T00:10:09.000Z</published>
+    <updated>2019-04-24T07:00:10.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>如下程序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>把它保存成 demo.py，进入该文件的目录，执行命令<code>python demo.py</code>查看运行结果，感受一下。</p><h2 id="分析扒网页的方法"><a href="#分析扒网页的方法" class="headerlink" title="分析扒网页的方法"></a>分析扒网页的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div></pre></td></tr></table></figure><p>首先我们调用的是urllib2库里面的urlopen方法，传入一个URL，这个网址是百度首页，协议是HTTP协议，当然你也可以把HTTP换做FTP,FILE,HTTPS 等等，只是代表了一种访问控制协议，urlopen一般接受三个参数，它的参数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">urlopen(url, data, timeout)</div></pre></td></tr></table></figure></p><p>第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。<br>第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT<br>第一个参数URL是必须要传送的，在这个例子里面我们传送了百度的URL，执行urlopen方法之后，返回一个response对象，返回信息便保存在这里面。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>response对象有一个read方法，可以返回获取到的网页内容。</p><h2 id="构造Request"><a href="#构造Request" class="headerlink" title="构造Request"></a>构造Request</h2><p>其实上面的urlopen参数可以传入一个request请求,它其实就是一个Request类的实例，构造时需要传入Url,Data等等的内容。比如上面的两行代码，我们可以这么改写<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com"</span>)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>运行结果是完全一样的，只不过中间多了一个request对象，推荐大家这么写，因为在构建请求时还需要加入好多内容，通过构建一个request，服务器响应请求得到应答，这样显得逻辑上清晰明确。</p><h2 id="POST和GET数据传送"><a href="#POST和GET数据传送" class="headerlink" title="POST和GET数据传送"></a>POST和GET数据传送</h2><p>上面的程序演示了最基本的网页抓取，不过，现在大多数网站都是动态网页，需要你动态地传递参数给它，它做出对应的响应。所以，在访问时，我们需要传递数据给它。最常见的情况是什么？对了，就是登录注册的时候呀。</p><p>把数据用户名和密码传送到一个URL，然后你得到服务器处理之后的响应，这个该怎么办？下面让我来为小伙伴们揭晓吧！</p><p>数据传送分为POST和GET两种方式，两种方式有什么区别呢？</p><p>最重要的区别是GET方式是直接以链接形式访问，链接中包含了所有的参数，当然如果包含了密码的话是一种不安全的选择，不过你可以直观地看到自己提交了什么内容。POST则不会在网址上显示所有的参数，不过如果你想直接查看提交了什么就不太方便了，大家可以酌情选择。</p><p>POST方式：</p><p>上面我们说了data参数是干嘛的？对了，它就是用在这里的，我们传送的数据就是这个参数data，下面演示一下POST方式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">values = &#123;<span class="string">"username"</span>:<span class="string">"1315751082@qq.com"</span>,<span class="string">"password"</span>:<span class="string">"XXXX"</span>&#125;</div><div class="line">data = urllib.urlencode(values) </div><div class="line">url = <span class="string">"https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn"</span></div><div class="line">request = urllib2.Request(url,data)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>【抓取糗事百科页面的数据例子】</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">page = <span class="number">1</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/text/'</span> + str(page)</div><div class="line">user_agent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6)'</span></div><div class="line">headers = &#123; <span class="string">'User-Agent'</span> : user_agent &#125;</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    request = urllib2.Request(url,headers = headers)</div><div class="line">    response = urllib2.urlopen(request)</div><div class="line"><span class="comment">#    print response.read()</span></div><div class="line">    content = response.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">    pattern = re.compile(<span class="string">'&lt;div.*?author.*?&lt;a.*?&lt;img.*?&gt;(.*?)&lt;/a&gt;.*?&lt;div.*?'</span>+</div><div class="line">                         <span class="string">'content"&gt;(.*?)&lt;/div&gt;(.*?)&lt;div class="stats.*?class="number"&gt;(.*?)&lt;/i&gt;'</span>,re.S)</div><div class="line">    items = re.findall(pattern,content)</div><div class="line"><span class="comment">#    print items</span></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">        <span class="keyword">print</span> item</div><div class="line"><span class="comment">#        haveImg = re.search("img",item[3])</span></div><div class="line"><span class="comment">#        if not haveImg:</span></div><div class="line"><span class="comment">#           print item[0],item[1],item[2],item[4]</span></div><div class="line"><span class="keyword">except</span> urllib2.URLError, e:</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"code"</span>):</div><div class="line">        <span class="keyword">print</span> e.code</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"reason"</span>):</div><div class="line">        <span class="keyword">print</span> e.reason</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      怎样扒网页呢？其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架，JS便是他的肌肉，CSS便是它的衣服。所以最重要的部分是存在于HTML中的，下面我们就写个例子来扒一个网页下来。
     
     </summary>
     
@@ -339,6 +339,31 @@
   </entry>
   
   <entry>
+    <title>iOS面试题</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2019-03-02T12:41:08.130Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iOS开发之KVC底层原理</title>
     <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
     <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
@@ -353,31 +378,6 @@
       
         &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
 &lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS面试题</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T12:41:08.130Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
       
     
     </summary>
