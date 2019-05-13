@@ -214,10 +214,8 @@
     </div>
     
     <div class="post-body post-content">
-        <h2 id="关于instruments"><a href="#关于instruments" class="headerlink" title="关于instruments"></a>关于instruments</h2><pre><code>Instruments是功能强大且灵活的性能分析和测试工具，是Xcode工具集的一部分,它旨在帮助您分析您的iOS，watchOS，tvOS和macOS应用程序，流程和设备，以便更好地了解和优化应用程序的行为和性能。从应用程序开发过程开始，将仪器集成到您的工作流程中，可以帮助您在开发周期的早期发现问题，从而节省您的时间。
-在Instruments中，您使用专用工具（称为工具）来跟踪应用程序，流程和设备的不同方面。仪器在配置文件时收集数据，并将结果详细呈现给您以供分析。
-与其他性能和调试工具不同，Instruments允许您收集广泛不同类型的数据并并排查看。这样可以更轻松地识别可能被忽视的趋势。例如，您的应用可能会因多个开放式网络连接而出现大量内存增长。通过一起使用分配和连接工具，您可以识别未关闭的连接，从而实现快速的内存增长。
-</code></pre><p>使用 Instruments 你可以做下面这些事：</p>
+        <h2 id="关于instruments"><a href="#关于instruments" class="headerlink" title="关于instruments"></a>关于instruments</h2><p>Instruments是功能强大且灵活的性能分析和测试工具，是Xcode工具集的一部分,它旨在帮助您分析您的iOS，watchOS，tvOS和macOS应用程序，流程和设备，以便更好地了解和优化应用程序的行为和性能。从应用程序开发过程开始，将仪器集成到您的工作流程中，可以帮助您在开发周期的早期发现问题，从而节省您的时间。<br>    在Instruments中，您使用专用工具（称为工具）来跟踪应用程序，流程和设备的不同方面。仪器在配置文件时收集数据，并将结果详细呈现给您以供分析。<br>    与其他性能和调试工具不同，Instruments允许您收集广泛不同类型的数据并并排查看。这样可以更轻松地识别可能被忽视的趋势。例如，您的应用可能会因多个开放式网络连接而出现大量内存增长。通过一起使用分配和连接工具，您可以识别未关闭的连接，从而实现快速的内存增长。</p>
+<p>使用 Instruments 你可以做下面这些事：</p>
 <ol>
 <li>检查一个或多个应用或进程的行为。</li>
 <li>检查设备相关的功能，比如：Wi-Fi、蓝牙等。</li>
@@ -237,9 +235,9 @@
 <li><strong>废弃内存(Abandoned memory)</strong>: 被你的程序引用，但是没什么卵用的内存。</li>
 <li><strong>僵尸对象(Zombies)</strong>: 僵尸对象指的是对应的内存已经被释放并且不再会使用到，但是你的程序却在某处依然有指向它的引用。在 iOS 中有一个 NSZombie 机制，这个是为了内存调试的目的而设计的一种机制。在这个机制下，当你 NSZombieEnabled 为 YES 时，当一个对应的引用计数减为 0 时，这个对象不会被释放，当这个对象再收到任何消息时，它会记录一条 warning，而不是直接崩溃，以方便我们进行程序调试。</li>
 </ul>
-<p>这里我们介绍下查找内存泄露的过程：<br>1.在products-&gt;profile中启动instruments面板<br><img src="/img/performance_1_01" alt=""><br>2.选中Leaks模板<br><img src="/img/performance_1_02" alt=""></p>
+<p>这里我们介绍下查找内存泄露的过程：<br>1.在products-&gt;profile中启动instruments面板<br><img src="/img/ios/performance_1_01.png" alt=""><br>2.选中Leaks模板<br><img src="/img/ios/performance_1_02.png" alt=""></p>
 <ol>
-<li>选择正确的设备和应用程序，点击红色按钮运行应用程序<br><img src="/img/performance_1_03" alt=""><br>4.我们可以看到如下界面<br><img src="/img/performance_1_04" alt=""></li>
+<li>选择正确的设备和应用程序，点击红色按钮运行应用程序<br><img src="/img/ios/performance_1_03.png" alt=""><br>4.我们可以看到如下界面<br><img src="/img/ios/performance_1_04.png" alt=""></li>
 </ol>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://help.apple.com/instruments/mac/current/" target="_blank" rel="external"></a></p>
 
