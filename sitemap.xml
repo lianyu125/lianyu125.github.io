@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.devzou.com/2019/04/20/ios/2019-05-06-Mach-O%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</loc>
+    <loc>https://blog.devzou.com/2019/05/12/ios/2019-05-11-ios%20%E8%AF%81%E4%B9%A6%E6%97%A0%E6%B3%95%E7%94%9F%E6%88%90p12%20%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3%EF%BC%8C%E6%88%96%E8%80%85%E6%97%A0%E6%B3%95%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5/</loc>
     
-    <lastmod>2019-05-16T00:14:00.525Z</lastmod>
+    <lastmod>2019-05-16T00:17:33.217Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2019/05/12/ios/2019-05-11-ios%20%E8%AF%81%E4%B9%A6%E6%97%A0%E6%B3%95%E7%94%9F%E6%88%90p12%20%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3%EF%BC%8C%E6%88%96%E8%80%85%E6%97%A0%E6%B3%95%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5/</loc>
+    <loc>https://blog.devzou.com/2019/04/20/ios/2019-05-06-Mach-O%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</loc>
     
-    <lastmod>2019-05-16T00:13:45.309Z</lastmod>
+    <lastmod>2019-05-16T00:14:00.525Z</lastmod>
     
   </url>
   
@@ -380,6 +380,13 @@
   </url>
   
   <url>
+    <loc>https://blog.devzou.com/2018/03/23/web%E5%89%8D%E7%AB%AF/2013-04-23-general-bootstrap-resources/</loc>
+    
+    <lastmod>2019-03-06T13:04:24.540Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2017/07/13/web%E5%89%8D%E7%AB%AF/2017-07-13-javascript-variable-domain/</loc>
     
     <lastmod>2019-03-06T13:04:24.540Z</lastmod>
@@ -388,13 +395,6 @@
   
   <url>
     <loc>https://blog.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/</loc>
-    
-    <lastmod>2019-03-06T13:04:24.540Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2018/03/23/web%E5%89%8D%E7%AB%AF/2013-04-23-general-bootstrap-resources/</loc>
     
     <lastmod>2019-03-06T13:04:24.540Z</lastmod>
     
@@ -513,14 +513,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/07/30/ios/2018-07-22-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2018/07/30/ios/2018-07-22-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     
@@ -583,14 +583,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/04/27/tech/2014-04-27-magic-methods-and-magic-constants-in-php/</loc>
+    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
     
     <lastmod>2018-04-06T13:55:52.140Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
+    <loc>https://blog.devzou.com/2014/04/27/tech/2014-04-27-magic-methods-and-magic-constants-in-php/</loc>
     
     <lastmod>2018-04-06T13:55:52.140Z</lastmod>
     
@@ -632,14 +632,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/12/14/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/09/13/ios/2017-09-13-%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://blog.devzou.com/2016/12/14/ios/2017-11-13-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     
@@ -667,14 +667,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/04/07/ios/2017-04-07-iOS%E8%B0%83%E7%94%A8%E9%80%9A%E8%AE%AF%E5%BD%95%E5%85%BC%E5%AE%B97%E3%80%818%E3%80%819%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://blog.devzou.com/2015/03/26/ios/2017-03-26-iOS%E5%BC%80%E5%8F%91%E4%B9%8Bweak/</loc>
     
     <lastmod>2018-04-06T13:55:52.120Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/03/26/ios/2017-03-26-iOS%E5%BC%80%E5%8F%91%E4%B9%8Bweak/</loc>
+    <loc>https://blog.devzou.com/2017/04/07/ios/2017-04-07-iOS%E8%B0%83%E7%94%A8%E9%80%9A%E8%AE%AF%E5%BD%95%E5%85%BC%E5%AE%B97%E3%80%818%E3%80%819%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2018-04-06T13:55:52.120Z</lastmod>
     
@@ -716,7 +716,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
     
     <lastmod>2018-04-06T13:55:52.110Z</lastmod>
     
@@ -737,7 +737,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
+    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-04-06T13:55:52.110Z</lastmod>
     
@@ -800,6 +800,13 @@
   </url>
   
   <url>
+    <loc>https://blog.devzou.com/2014/01/15/git/create-remote-resp/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.100Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
@@ -808,13 +815,6 @@
   
   <url>
     <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.100Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2014/01/15/git/create-remote-resp/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
     
@@ -898,6 +898,13 @@
   </url>
   
   <url>
+    <loc>https://blog.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV-%E5%83%8F%E7%B4%A0%E5%80%BC%E7%9A%84%E8%AF%BB%E5%86%99/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.090Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2017/02/20/digitalImage/2017-02-20-openCV-Mat/</loc>
     
     <lastmod>2018-04-06T13:55:52.090Z</lastmod>
@@ -906,13 +913,6 @@
   
   <url>
     <loc>https://blog.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV%E4%B9%8B%E7%9F%A9%E9%98%B5%E5%85%83%E7%B4%A0%E7%9A%84%E8%A1%A8%E8%BE%BE/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.090Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2017/02/28/digitalImage/2017-02-28-openCV-%E5%83%8F%E7%B4%A0%E5%80%BC%E7%9A%84%E8%AF%BB%E5%86%99/</loc>
     
     <lastmod>2018-04-06T13:55:52.090Z</lastmod>
     
