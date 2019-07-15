@@ -38,31 +38,6 @@
   </entry>
   
   <entry>
-    <title>iOS日志收集设计思路</title>
-    <link href="https://blog.devzou.com/2019/05/11/ios/2019-05-11-iOS%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/"/>
-    <id>https://blog.devzou.com/2019/05/11/ios/2019-05-11-iOS日志收集设计思路/</id>
-    <published>2019-05-11T01:10:09.000Z</published>
-    <updated>2019-05-11T01:58:22.065Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在应用开发中，为了能给用户提供更好的操作体验及更准确的信息展示，我们往往会在应用中添加埋点(收集用户的一些行为信息)，比如用户的操作流程，相关页面的访问次数，设备信息等等。一般app开发前期会集成第三方厂商提供的服务来统计这些数据，当然这样做带来的好处就是不用花费时间来写相关日志收集的功能，后台也不用专门搭建相关的服务，而且第三方提供的工具也比较稳定。这让我们能有更多的时间去开发产品主要业务功能上。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在应用开发中，为了能给用户提供更好的操作体验及更准确的信息展示，我们往往会在应用中添加埋点(收集用户的一些行为信息)，比如用户的操作流程，相
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Mach-O 可执行文件</title>
     <link href="https://blog.devzou.com/2019/04/20/ios/2019-05-06-Mach-O%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
     <id>https://blog.devzou.com/2019/04/20/ios/2019-05-06-Mach-O 可执行文件/</id>
@@ -183,28 +158,6 @@
   </entry>
   
   <entry>
-    <title>Python 高级教程之爬虫urllib基本使用</title>
-    <link href="https://blog.devzou.com/2018/11/17/python/2017-03-17-python%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
-    <id>https://blog.devzou.com/2018/11/17/python/2017-03-17-python高级教程之爬虫urllib基本使用/</id>
-    <published>2018-11-17T00:10:09.000Z</published>
-    <updated>2019-04-24T07:00:10.747Z</updated>
-    
-    <content type="html"><![CDATA[<p>如下程序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>把它保存成 demo.py，进入该文件的目录，执行命令<code>python demo.py</code>查看运行结果，感受一下。</p><h2 id="分析扒网页的方法"><a href="#分析扒网页的方法" class="headerlink" title="分析扒网页的方法"></a>分析扒网页的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div></pre></td></tr></table></figure><p>首先我们调用的是urllib2库里面的urlopen方法，传入一个URL，这个网址是百度首页，协议是HTTP协议，当然你也可以把HTTP换做FTP,FILE,HTTPS 等等，只是代表了一种访问控制协议，urlopen一般接受三个参数，它的参数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">urlopen(url, data, timeout)</div></pre></td></tr></table></figure></p><p>第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。<br>第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT<br>第一个参数URL是必须要传送的，在这个例子里面我们传送了百度的URL，执行urlopen方法之后，返回一个response对象，返回信息便保存在这里面。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>response对象有一个read方法，可以返回获取到的网页内容。</p><h2 id="构造Request"><a href="#构造Request" class="headerlink" title="构造Request"></a>构造Request</h2><p>其实上面的urlopen参数可以传入一个request请求,它其实就是一个Request类的实例，构造时需要传入Url,Data等等的内容。比如上面的两行代码，我们可以这么改写<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com"</span>)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>运行结果是完全一样的，只不过中间多了一个request对象，推荐大家这么写，因为在构建请求时还需要加入好多内容，通过构建一个request，服务器响应请求得到应答，这样显得逻辑上清晰明确。</p><h2 id="POST和GET数据传送"><a href="#POST和GET数据传送" class="headerlink" title="POST和GET数据传送"></a>POST和GET数据传送</h2><p>上面的程序演示了最基本的网页抓取，不过，现在大多数网站都是动态网页，需要你动态地传递参数给它，它做出对应的响应。所以，在访问时，我们需要传递数据给它。最常见的情况是什么？对了，就是登录注册的时候呀。</p><p>把数据用户名和密码传送到一个URL，然后你得到服务器处理之后的响应，这个该怎么办？下面让我来为小伙伴们揭晓吧！</p><p>数据传送分为POST和GET两种方式，两种方式有什么区别呢？</p><p>最重要的区别是GET方式是直接以链接形式访问，链接中包含了所有的参数，当然如果包含了密码的话是一种不安全的选择，不过你可以直观地看到自己提交了什么内容。POST则不会在网址上显示所有的参数，不过如果你想直接查看提交了什么就不太方便了，大家可以酌情选择。</p><p>POST方式：</p><p>上面我们说了data参数是干嘛的？对了，它就是用在这里的，我们传送的数据就是这个参数data，下面演示一下POST方式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">values = &#123;<span class="string">"username"</span>:<span class="string">"1315751082@qq.com"</span>,<span class="string">"password"</span>:<span class="string">"XXXX"</span>&#125;</div><div class="line">data = urllib.urlencode(values) </div><div class="line">url = <span class="string">"https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn"</span></div><div class="line">request = urllib2.Request(url,data)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>【抓取糗事百科页面的数据例子】</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">page = <span class="number">1</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/text/'</span> + str(page)</div><div class="line">user_agent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6)'</span></div><div class="line">headers = &#123; <span class="string">'User-Agent'</span> : user_agent &#125;</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    request = urllib2.Request(url,headers = headers)</div><div class="line">    response = urllib2.urlopen(request)</div><div class="line"><span class="comment">#    print response.read()</span></div><div class="line">    content = response.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">    pattern = re.compile(<span class="string">'&lt;div.*?author.*?&lt;a.*?&lt;img.*?&gt;(.*?)&lt;/a&gt;.*?&lt;div.*?'</span>+</div><div class="line">                         <span class="string">'content"&gt;(.*?)&lt;/div&gt;(.*?)&lt;div class="stats.*?class="number"&gt;(.*?)&lt;/i&gt;'</span>,re.S)</div><div class="line">    items = re.findall(pattern,content)</div><div class="line"><span class="comment">#    print items</span></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">        <span class="keyword">print</span> item</div><div class="line"><span class="comment">#        haveImg = re.search("img",item[3])</span></div><div class="line"><span class="comment">#        if not haveImg:</span></div><div class="line"><span class="comment">#           print item[0],item[1],item[2],item[4]</span></div><div class="line"><span class="keyword">except</span> urllib2.URLError, e:</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"code"</span>):</div><div class="line">        <span class="keyword">print</span> e.code</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"reason"</span>):</div><div class="line">        <span class="keyword">print</span> e.reason</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      怎样扒网页呢？其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架，JS便是他的肌肉，CSS便是它的衣服。所以最重要的部分是存在于HTML中的，下面我们就写个例子来扒一个网页下来。
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Python 高级教程之爬虫urllib库高级使用</title>
     <link href="https://blog.devzou.com/2018/11/17/python/2017-03-17.-Python%20%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%BA%93%E9%AB%98%E7%BA%A7%E4%BD%BF%E7%94%A8/"/>
     <id>https://blog.devzou.com/2018/11/17/python/2017-03-17.-Python 高级教程之爬虫urllib库高级使用/</id>
@@ -216,6 +169,28 @@
     <summary type="html">
     
       urllib库的高级使用
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 高级教程之爬虫urllib基本使用</title>
+    <link href="https://blog.devzou.com/2018/11/17/python/2017-03-17-python%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B%E4%B9%8B%E7%88%AC%E8%99%ABurllib%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.devzou.com/2018/11/17/python/2017-03-17-python高级教程之爬虫urllib基本使用/</id>
+    <published>2018-11-17T00:10:09.000Z</published>
+    <updated>2019-04-24T07:00:10.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>如下程序<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>把它保存成 demo.py，进入该文件的目录，执行命令<code>python demo.py</code>查看运行结果，感受一下。</p><h2 id="分析扒网页的方法"><a href="#分析扒网页的方法" class="headerlink" title="分析扒网页的方法"></a>分析扒网页的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response = urllib2.urlopen(<span class="string">"http://www.baidu.com"</span>)</div></pre></td></tr></table></figure><p>首先我们调用的是urllib2库里面的urlopen方法，传入一个URL，这个网址是百度首页，协议是HTTP协议，当然你也可以把HTTP换做FTP,FILE,HTTPS 等等，只是代表了一种访问控制协议，urlopen一般接受三个参数，它的参数如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">urlopen(url, data, timeout)</div></pre></td></tr></table></figure></p><p>第一个参数url即为URL，第二个参数data是访问URL时要传送的数据，第三个timeout是设置超时时间。<br>第二三个参数是可以不传送的，data默认为空None，timeout默认为 socket._GLOBAL_DEFAULT_TIMEOUT<br>第一个参数URL是必须要传送的，在这个例子里面我们传送了百度的URL，执行urlopen方法之后，返回一个response对象，返回信息便保存在这里面。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>response对象有一个read方法，可以返回获取到的网页内容。</p><h2 id="构造Request"><a href="#构造Request" class="headerlink" title="构造Request"></a>构造Request</h2><p>其实上面的urlopen参数可以传入一个request请求,它其实就是一个Request类的实例，构造时需要传入Url,Data等等的内容。比如上面的两行代码，我们可以这么改写<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com"</span>)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure></p><p>运行结果是完全一样的，只不过中间多了一个request对象，推荐大家这么写，因为在构建请求时还需要加入好多内容，通过构建一个request，服务器响应请求得到应答，这样显得逻辑上清晰明确。</p><h2 id="POST和GET数据传送"><a href="#POST和GET数据传送" class="headerlink" title="POST和GET数据传送"></a>POST和GET数据传送</h2><p>上面的程序演示了最基本的网页抓取，不过，现在大多数网站都是动态网页，需要你动态地传递参数给它，它做出对应的响应。所以，在访问时，我们需要传递数据给它。最常见的情况是什么？对了，就是登录注册的时候呀。</p><p>把数据用户名和密码传送到一个URL，然后你得到服务器处理之后的响应，这个该怎么办？下面让我来为小伙伴们揭晓吧！</p><p>数据传送分为POST和GET两种方式，两种方式有什么区别呢？</p><p>最重要的区别是GET方式是直接以链接形式访问，链接中包含了所有的参数，当然如果包含了密码的话是一种不安全的选择，不过你可以直观地看到自己提交了什么内容。POST则不会在网址上显示所有的参数，不过如果你想直接查看提交了什么就不太方便了，大家可以酌情选择。</p><p>POST方式：</p><p>上面我们说了data参数是干嘛的？对了，它就是用在这里的，我们传送的数据就是这个参数data，下面演示一下POST方式。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">values = &#123;<span class="string">"username"</span>:<span class="string">"1315751082@qq.com"</span>,<span class="string">"password"</span>:<span class="string">"XXXX"</span>&#125;</div><div class="line">data = urllib.urlencode(values) </div><div class="line">url = <span class="string">"https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn"</span></div><div class="line">request = urllib2.Request(url,data)</div><div class="line">response = urllib2.urlopen(request)</div><div class="line"><span class="keyword">print</span> response.read()</div></pre></td></tr></table></figure><p>【抓取糗事百科页面的数据例子】</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> re</div><div class="line"> </div><div class="line">page = <span class="number">1</span></div><div class="line">url = <span class="string">'https://www.qiushibaike.com/text/'</span> + str(page)</div><div class="line">user_agent = <span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6)'</span></div><div class="line">headers = &#123; <span class="string">'User-Agent'</span> : user_agent &#125;</div><div class="line"><span class="keyword">try</span>:</div><div class="line">    request = urllib2.Request(url,headers = headers)</div><div class="line">    response = urllib2.urlopen(request)</div><div class="line"><span class="comment">#    print response.read()</span></div><div class="line">    content = response.read().decode(<span class="string">'utf-8'</span>)</div><div class="line">    pattern = re.compile(<span class="string">'&lt;div.*?author.*?&lt;a.*?&lt;img.*?&gt;(.*?)&lt;/a&gt;.*?&lt;div.*?'</span>+</div><div class="line">                         <span class="string">'content"&gt;(.*?)&lt;/div&gt;(.*?)&lt;div class="stats.*?class="number"&gt;(.*?)&lt;/i&gt;'</span>,re.S)</div><div class="line">    items = re.findall(pattern,content)</div><div class="line"><span class="comment">#    print items</span></div><div class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">        <span class="keyword">print</span> item</div><div class="line"><span class="comment">#        haveImg = re.search("img",item[3])</span></div><div class="line"><span class="comment">#        if not haveImg:</span></div><div class="line"><span class="comment">#           print item[0],item[1],item[2],item[4]</span></div><div class="line"><span class="keyword">except</span> urllib2.URLError, e:</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"code"</span>):</div><div class="line">        <span class="keyword">print</span> e.code</div><div class="line">    <span class="keyword">if</span> hasattr(e,<span class="string">"reason"</span>):</div><div class="line">        <span class="keyword">print</span> e.reason</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      怎样扒网页呢？其实就是根据URL来获取它的网页信息，虽然我们在浏览器中看到的是一幅幅优美的画面，但是其实是由浏览器解释才呈现出来的，实质它是一段HTML代码，加 JS、CSS，如果把网页比作一个人，那么HTML便是他的骨架，JS便是他的肌肉，CSS便是它的衣服。所以最重要的部分是存在于HTML中的，下面我们就写个例子来扒一个网页下来。
     
     </summary>
     
@@ -315,19 +290,45 @@
   </entry>
   
   <entry>
-    <title>iOS设计模式之策略模式</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.130Z</updated>
+    <title>iOS正则表达式使用</title>
+    <link href="https://blog.devzou.com/2018/08/11/ios/2019-05-23-iOS%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.devzou.com/2018/08/11/ios/2019-05-23-iOS正则表达式使用/</id>
+    <published>2018-08-11T01:10:09.000Z</published>
+    <updated>2019-05-23T02:35:58.643Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些匹配某个模式的文本。<br>许多程序设计语言都支持利用正则表达式进行字符串操作。例如，在Perl中就内建了一个功正则表达式则表达式引擎。正则表达式这个概念最初是由Unix中的工具软件（例如sed和gr正则表达式开的。正则表达式通常缩写成“regex”，单数有regexp、regex，复数有regexps、regexes、regexen。</p>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
-&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为re
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>duplicate symbol _APContentTypesFromHTTPHeader...Debug-iphoneos/XXXXX.a(AlipaySDK) 报错</title>
+    <link href="https://blog.devzou.com/2018/08/11/ios/2019-07-03-%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/"/>
+    <id>https://blog.devzou.com/2018/08/11/ios/2019-07-03-项目编译报错/</id>
+    <published>2018-08-11T01:10:09.000Z</published>
+    <updated>2019-07-03T09:58:30.319Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题还原"><a href="#问题还原" class="headerlink" title="问题还原"></a>问题还原</h2><p>xcode在编译工程时突然报如下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">duplicate symbol _APContentTypesFromHTTPHeader in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APMutableStringRemoveLastComma in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APNetworkingErrorDomain in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APNetworkingOperationFailingURLRequestErrorKey in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APNetworkingOperationFailingURLResponseErrorKey in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APSecuDecryptResponse in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_LOGSWITCH in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_STATICHASH in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_SUCCESS in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_TIME in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_TOKEN in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_VKEYSWITCH in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _DTRpcCreateError in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _DTRpcCreateErrorWithCause in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _LAST_LOGIN_TIME_KEY in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _LOG_JB_ERROR_DETECTED in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_APJSONRequestOperation in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_APayAuthInfo in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_ASSApplistModel in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_ASSCommon in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line"></div><div class="line">duplicate symbol _x509parse_pubkey in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">ld: 608 duplicate symbols for architecture arm64</div><div class="line">clang: error: linker command failed with exit code 1 (use -v to see invocation)</div></pre></td></tr></table></figure></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在File &gt;Workspace Settings 里build system 将New Build System(Default)切换成Legacy build system。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题还原&quot;&gt;&lt;a href=&quot;#问题还原&quot; class=&quot;headerlink&quot; title=&quot;问题还原&quot;&gt;&lt;/a&gt;问题还原&lt;/h2&gt;&lt;p&gt;xcode在编译工程时突然报如下错误&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;
+      
     
     </summary>
     
@@ -364,21 +365,19 @@
   </entry>
   
   <entry>
-    <title>iOS开发之KVC底层原理</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
+    <title>iOS设计模式之策略模式</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
     <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.140Z</updated>
+    <updated>2019-03-02T07:02:45.130Z</updated>
     
-    <content type="html"><![CDATA[<p>KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性<br>常见的API有</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKey:(<span class="built_in">NSString</span> *)key</div><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKeyPath:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKeyPath:(<span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKey:(<span class="built_in">NSString</span> *)key</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
-&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
-      
+      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
+&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
     
     </summary>
     
@@ -403,6 +402,32 @@
       
       
         &lt;h2 id=&quot;Category实现原理&quot;&gt;&lt;a href=&quot;#Category实现原理&quot; class=&quot;headerlink&quot; title=&quot;Category实现原理&quot;&gt;&lt;/a&gt;Category实现原理&lt;/h2&gt;&lt;h3 id=&quot;category的结构&quot;&gt;&lt;a href=&quot;#ca
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS开发之KVC底层原理</title>
+    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
+    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
+    <published>2018-08-04T23:10:09.000Z</published>
+    <updated>2019-03-02T07:02:45.140Z</updated>
+    
+    <content type="html"><![CDATA[<p>KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性<br>常见的API有</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKey:(<span class="built_in">NSString</span> *)key</div><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKeyPath:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKeyPath:(<span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKey:(<span class="built_in">NSString</span> *)key</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
+&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
       
     
     </summary>
@@ -453,31 +478,6 @@
       
       
         &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;p&gt;无论是在现实世界中还是在软件系统中，都存在一些复杂的对象，它们拥有多个组成部分，如汽车，它包括车轮、方向盘、发送机等各种部件
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS设计模式之简单工厂模式</title>
-    <link href="https://blog.devzou.com/2018/07/30/ios/2018-07-22-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/07/30/ios/2018-07-22-iOS设计模式之工厂模式/</id>
-    <published>2018-07-29T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.130Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><p>考虑一个简单的软件应用场景，一个软件系统可以提供多个外观不同的按钮（如圆形按钮、矩形按钮、菱形按钮等）， 这些按钮都源自同一个基类，不过在继承基类后不同的子类修改了部分属性从而使得它们可以呈现不同的外观，如果我们希望在使用这些按钮时，不需要知道这些具体按钮类的名字，只需要知道表示该按钮类的一个参数，并提供一个调用方便的方法，把该参数传入方法即可返回一个相应的按钮对象，此时，就可以使用简单工厂模式。</p><h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2><p>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p><h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2><p>简单工厂模式包含如下角色：<br><strong>Factory：工厂角色</strong><br>    工厂角色负责实现创建所有实例的内部逻辑<br><strong>Product：抽象产品角色</strong><br>    抽象产品角色是所创建的所有对象的父类，负责描述所有实例所共有的公共接口<br><strong>ConcreteProduct：具体产品角色</strong><br>    具体产品角色是创建目标，所有创建的对象都充当这个角色的某个具体类的实例。<br><img src="" alt=""></p><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2><ul><li>将对象的创建和对象本身业务处理分离可以降低系统的耦合度，使得两者修改起来都相对容易。</li><li>在调用工厂类的工厂方法时，由于工厂方法是静态方法，使用起来很方便，可通过类名直接调用，而且只需要传入一个简单的参数即可，在实际开发中，还可以在调用时将所传入的参数保存在XML等格式的配置文件中，修改参数时无须修改任何源代码。</li><li>简单工厂模式最大的问题在于工厂类的职责相对过重，增加新的产品需要修改工厂类的判断逻辑，这一点与开闭原则是相违背的。</li><li>简单工厂模式的要点在于：当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;p&gt;考虑一个简单的软件应用场景，一个软件系统可以提供多个外观不同的按钮（如圆形按钮、矩形按钮、菱形按钮等）， 这些按钮都源自同一
       
     
     </summary>
