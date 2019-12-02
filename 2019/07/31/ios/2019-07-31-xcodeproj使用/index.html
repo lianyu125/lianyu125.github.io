@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="前言Xcodeproj的作用是使用Ruby来创建和修改Xcode项目，包括对Xcode工作区（.xcworkspace）和配置文件（.xcconfig）等的修改。xcodeproj这个库功能很强..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>xcodeproj使用 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 小玉的技术博客 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/iOS/"><i class="fa "></i>iOS</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="xcodeproj使用">
+            
+	            xcodeproj使用
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/iOS/">iOS</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/iOS/">iOS</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/31</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Xcodeproj的作用是使用Ruby来创建和修改Xcode项目，包括对Xcode工作区（.xcworkspace）和配置文件（.xcconfig）等的修改。xcodeproj这个库功能很强大，XCode工程的大多数配置都可以通过通过xcodeproj完成；在这里主要给大家介绍下一些常用配置的修改方法。</p>
+<h2 id="安装xcodeproj"><a href="#安装xcodeproj" class="headerlink" title="安装xcodeproj"></a>安装xcodeproj</h2><p><code>gem install xcodeproj</code></p>
+<h2 id="通过xcodeproj在工程的xxx-group下引入xx-h和xx-m文件"><a href="#通过xcodeproj在工程的xxx-group下引入xx-h和xx-m文件" class="headerlink" title="通过xcodeproj在工程的xxx group下引入xx.h和xx.m文件"></a>通过xcodeproj在工程的xxx group下引入xx.h和xx.m文件</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"></div><div class="line"><span class="comment">#打开项目工程xxx.xcodeproj</span></div><div class="line">project_path =  <span class="string">'xxxPath/xxx.xcodeproj'</span></div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"></div><div class="line"><span class="comment">#找到要插入的group (参数中true表示如果找不到group，就创建一个group)</span></div><div class="line">group = project.main_group.find_subpath(File.join(<span class="string">'GroupName'</span>),<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="comment">#set一下sorce_tree</span></div><div class="line">group.set_source_tree(<span class="string">'SOURCE_ROOT'</span>)</div><div class="line"></div><div class="line"><span class="comment">#向group中增加文件引用（.h文件只需引用一下，.m引用后还需add一下）</span></div><div class="line">file_ref = group.new_reference(<span class="string">'xxxPath/xx.h'</span>)</div><div class="line"></div><div class="line">file_ref = group.new_reference(<span class="string">'xxxPath/xx.m'</span>)</div><div class="line">ret = target.add_file_references(file_ref)</div><div class="line"></div><div class="line">project.save</div></pre></td></tr></table></figure>
+<h2 id="通过xcodeproj在工程中引入framwork、-a文件和bundle文件"><a href="#通过xcodeproj在工程中引入framwork、-a文件和bundle文件" class="headerlink" title="通过xcodeproj在工程中引入framwork、.a文件和bundle文件"></a>通过xcodeproj在工程中引入framwork、.a文件和bundle文件</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"></div><div class="line"><span class="comment">#打开项目工程A.xcodeproj</span></div><div class="line">project_path =  <span class="string">'xxxPath/xx.xcodeproj'</span></div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"></div><div class="line"><span class="comment">#遍历target，找到需要操作的target</span></div><div class="line"></div><div class="line">targetIndex = <span class="number">0</span></div><div class="line"></div><div class="line">project.targets.each_with_index <span class="keyword">do</span> <span class="params">|target, index|</span></div><div class="line">  <span class="keyword">if</span> target.name  == <span class="string">"xxxTargetName"</span></div><div class="line">    targetIndex = index</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">target = project.targets[targetIndex]</div><div class="line"></div><div class="line"><span class="comment">#添加xx.framework的引用</span></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.framework'</span>)</div><div class="line">target.frameworks_build_phases.add_file_reference(file_ref)</div><div class="line"></div><div class="line"><span class="comment">#添加xx.a的引用</span></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.a'</span>)</div><div class="line">target.frameworks_build_phases.add_file_reference(file_ref)</div><div class="line"></div><div class="line"><span class="comment">#添加xx.bundle的引用</span></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.bundle'</span>)</div><div class="line">target.resources_build_phase.add_file_reference(file_ref)</div><div class="line"></div><div class="line">project.save</div></pre></td></tr></table></figure>
+<h2 id="通过xcodeproj在把xx-framework-xxx-h-xxx-bundle-加入到copy-files-phase中"><a href="#通过xcodeproj在把xx-framework-xxx-h-xxx-bundle-加入到copy-files-phase中" class="headerlink" title="通过xcodeproj在把xx.framework xxx.h  xxx.bundle 加入到copy files phase中"></a>通过xcodeproj在把xx.framework xxx.h  xxx.bundle 加入到copy files phase中</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"><span class="comment">#打开项目工程A.xcodeproj </span></div><div class="line">project_path = <span class="string">'xxxPath/xx.xcodeproj'</span> </div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"><span class="comment">#遍历target，找到需要操作的target </span></div><div class="line">targetIndex = <span class="number">0</span> </div><div class="line">project.targets.each_with_index <span class="keyword">do</span> <span class="params">|target, index|</span> </div><div class="line">  <span class="keyword">if</span> target.name == <span class="string">"xxxTargetName"</span> </div><div class="line">    targetIndex = index </div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">target = project.targets[targetIndex] </div><div class="line"></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.framework'</span>)</div><div class="line"></div><div class="line"><span class="comment">#把xx.framework添加到copy files中</span></div><div class="line"><span class="comment">#"leakFramework"即copy files build phase的名字，可自己随便取，也可不填，默认为空</span></div><div class="line">target.new_copy_files_build_phase(<span class="string">"leakFramework"</span>)</div><div class="line"></div><div class="line"><span class="comment">#项目中可能有多个copy files build phases，找到刚刚创建的那个，然后把xx.framework引入</span></div><div class="line">target.copy_files_build_phases.each <span class="keyword">do</span> <span class="params">|item|</span> </div><div class="line">  <span class="keyword">if</span> item.name == <span class="string">"leakFramework"</span></div><div class="line">     <span class="comment">#引入xx.framework</span></div><div class="line">     item.add_file_reference(file_ref)</div><div class="line">     <span class="comment">#设置copy file buldphase中的Destination选项，使用枚举值表示的。"10"表示Frameworks </span></div><div class="line">     <span class="comment">#这个值我是通过对比设置前后的两个文件找出来的</span></div><div class="line">     item.dst_subfolder_spec = <span class="string">"10"</span></div><div class="line">     <span class="comment">#勾上code sign on copy选项（默认是没勾上的）</span></div><div class="line">     item.files[<span class="number">0</span>].settings = Hash.new  </div><div class="line">     item.files[<span class="number">0</span>].settings[<span class="string">"ATTRIBUTES"</span>] = [<span class="string">"CodeSignOnCopy"</span>] </div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">project.save</div></pre></td></tr></table></figure>
+<h2 id="通过xcodeproj设置证书"><a href="#通过xcodeproj设置证书" class="headerlink" title="通过xcodeproj设置证书"></a>通过xcodeproj设置证书</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"></div><div class="line"><span class="comment">#打开项目工程A.xcodeproj</span></div><div class="line">project_path = <span class="string">'xxxPath/A.xcodeproj'</span></div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"></div><div class="line"><span class="comment">#修改某个target在debug模式下的证书配置</span></div><div class="line"><span class="comment">#此处遍历找到debug</span></div><div class="line">project.targets[<span class="number">0</span>].build_configurations.each <span class="keyword">do</span> <span class="params">|config|</span></div><div class="line">  <span class="keyword">if</span> config.name == <span class="string">'Debug'</span></div><div class="line">    config.build_settings[<span class="string">"PROVISIONING_PROFILE_SPECIFIER"</span>] = <span class="string">"xxProfileName"</span></div><div class="line">    config.build_settings[<span class="string">"DEVELOPMENT_TEAM"</span>] = <span class="string">"xxTeamName"</span></div><div class="line">    config.build_settings[<span class="string">"CODE_SIGN_IDENTITY"</span>] = <span class="string">"xxIdentityName"</span></div><div class="line">    config.build_settings[<span class="string">"CODE_SIGN_IDENTITY[sdk=iphoneos*]"</span>] = <span class="string">"iPhone Developer"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">project.save</div></pre></td></tr></table></figure>
+<p>此处可以通过此方法修改target下某个模式（debug, release等）的大多数配置，可通过config.build_settings查看所有的键值对，然后根据需求修改键值，如OTHER_FLAGS,PRODUCT_BUNDLE_IDENTIFIER,HEADER_SEARCH_PATHS,LIBRARY_SEARCH_PATHS等。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://rubygems.org/gems/xcodeproj" target="_blank" rel="external">https://rubygems.org/gems/xcodeproj</a><br><a href="https://github.com/CocoaPods/Xcodeproj" target="_blank" rel="external">https://github.com/CocoaPods/Xcodeproj</a></p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/08/01/tool/2019-08-01-charles破解/" class="pre-post btn btn-default" title=''>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs"></span>
+        </a>
+    
+    
+        <a href="/2019/07/31/mysql/2019-08-02-navicat for mac 登录数据库报错/" class="next-post btn btn-default" title='navicat for mac 登录数据库报错'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">navicat for mac 登录数据库报错</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装xcodeproj"><span class="toc-text">安装xcodeproj</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过xcodeproj在工程的xxx-group下引入xx-h和xx-m文件"><span class="toc-text">通过xcodeproj在工程的xxx group下引入xx.h和xx.m文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过xcodeproj在工程中引入framwork、-a文件和bundle文件"><span class="toc-text">通过xcodeproj在工程中引入framwork、.a文件和bundle文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过xcodeproj在把xx-framework-xxx-h-xxx-bundle-加入到copy-files-phase中"><span class="toc-text">通过xcodeproj在把xx.framework xxx.h  xxx.bundle 加入到copy files phase中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过xcodeproj设置证书"><span class="toc-text">通过xcodeproj设置证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

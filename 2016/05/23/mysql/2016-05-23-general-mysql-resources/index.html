@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="安装数据库 1、先到mysql官网上下载dmg格式安装包，进行安装。 2、安装完后，命别名：
+12alias mysql=/usr/local/mysql/bin/mysqlalias mysq..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>MySQL常用资源 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 小玉的技术博客 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/iOS/"><i class="fa "></i>iOS</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="MySQL常用资源">
+            
+	            MySQL常用资源
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/MySQL/">MySQL</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/MySQL/">MySQL</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/05/23</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><p> 1、先到mysql官网上下载dmg格式安装包，进行安装。<br> 2、安装完后，命别名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> mysql=/usr/<span class="built_in">local</span>/mysql/bin/mysql</div><div class="line"><span class="built_in">alias</span> mysqladmin=/usr/<span class="built_in">local</span>/mysql/bin/mysqladmin</div></pre></td></tr></table></figure>
+<h2 id="给root创建密码："><a href="#给root创建密码：" class="headerlink" title="给root创建密码："></a>给root创建密码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/mysql/bin/mysqladmin -u root password root</div></pre></td></tr></table></figure>
+<h2 id="通过shell连接到数据库"><a href="#通过shell连接到数据库" class="headerlink" title="通过shell连接到数据库"></a>通过shell连接到数据库</h2><p>cd /usr/local/mysql<br>启动sudo support-files/mysql.server start<br>重启sudo support-files/mysql.server restart<br>停止sudo support-files/mysql.server stop</p>
+<p> 2.连接到数据库:<code>mysql -h localhost -uroot -p</code></p>
+<h3 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h3><pre><code>mysql -h localhost -uroot -p
+</code></pre><h3 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h3><pre><code>mysqldump -uroot -p db &gt; db.sql
+</code></pre><h3 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h3><pre><code>mysql -uroot -p db &lt; db.sql
+// or
+mysql -uroot -p db -e &quot;source /path/to/db.sql&quot;
+</code></pre><h3 id="开启远程登录"><a href="#开启远程登录" class="headerlink" title="开启远程登录"></a>开启远程登录</h3><pre><code>grant all privileges on ss.* to &apos;root&apos;@&apos;%&apos; indentified by &apos;passoword&apos; with grant option;
+// or 
+update user set Host=&quot;%&quot; and User=&quot;root&quot;
+// 注意%是不包含localhost的
+flush privileges;
+</code></pre><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><pre><code>CREATE USER &apos;test&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos;;
+grant all privileges on *.* to test@&apos;localhost&apos; identified by &apos;test&apos;;
+</code></pre><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><pre><code>CREATE TABLE testdb DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+</code></pre><h3 id="赋予数据库权限"><a href="#赋予数据库权限" class="headerlink" title="赋予数据库权限"></a>赋予数据库权限</h3><pre><code>GRANT ALL ON testdb.* TO &apos;test&apos;@&apos;localhost&apos;;
+</code></pre><h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><h4 id="查"><a href="#查" class="headerlink" title="查"></a>查</h4><pre><code>select * from table1  //列出表的所有内容
+select name from table1 where id=3 //查询id=3 的名字
+select * from table1 join table2 on table1.id=table2.id where name=&apos;bob&apos;;
+</code></pre><h4 id="增"><a href="#增" class="headerlink" title="增"></a>增</h4><pre><code>insert into table(id,name,addr) values (200,&apos;xiaoming&apos;,3333);
+insert into table(id,name,addr) values (200,&apos;xiaoming&apos;,3333),(300,&apos;xiaogang&apos;,4444);
+</code></pre><h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><pre><code>update table set name=&apos;xiaohua&apos; where id=13;
+</code></pre><h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><pre><code>delete from table where id&lt;10 and id&gt;5;  
+</code></pre><h4 id="alter"><a href="#alter" class="headerlink" title="alter"></a>alter</h4><pre><code>alter table t53 add coloumn city varchar(50) //增加 city字段
+alter table t53 modify coloumn city varchar(30)     
+</code></pre><h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><pre><code>show databases; //显示所有的数据库
+create database chinacity; //创建名为chinacity的数据库
+drop database chinacity; //删除名为chinacity的数据库
+truncate table t52    //删除名为t52的数据表
+rename table t2 to t52 //重命名数据表名
+use  mysql;      //使用mysql数据库
+show tables from mysql; //查看某个数据库中的表
+create table t4 (id int,names varchar(10));
+ alter table table_name modify id int auto_increment;  //设置某个字段自增
+</code></pre><h2 id="SQL注入问题"><a href="#SQL注入问题" class="headerlink" title="SQL注入问题"></a>SQL注入问题</h2><p>select * from users where name = ‘’’+userName+’’’</p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/07/17/ios/2016-07-17-openCV在iOS工程中的应用之项目配置/" class="pre-post btn btn-default" title='openCV在iOS工程中的应用之项目配置'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">openCV在iOS工程中的应用之项目配置</span>
+        </a>
+    
+    
+        <a href="/2016/04/23/resource/2016-04-23-general-javascript-resources/" class="next-post btn btn-default" title='JavaScript 常用资源'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">JavaScript 常用资源</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装数据库"><span class="toc-text">安装数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#给root创建密码："><span class="toc-text">给root创建密码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过shell连接到数据库"><span class="toc-text">通过shell连接到数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#登录数据库"><span class="toc-text">登录数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出数据库"><span class="toc-text">导出数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导入数据库"><span class="toc-text">导入数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启远程登录"><span class="toc-text">开启远程登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建用户"><span class="toc-text">创建用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#赋予数据库权限"><span class="toc-text">赋予数据库权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增删改查"><span class="toc-text">增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查"><span class="toc-text">查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#增"><span class="toc-text">增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#改"><span class="toc-text">改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#删"><span class="toc-text">删</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alter"><span class="toc-text">alter</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他常用命令"><span class="toc-text">其他常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL注入问题"><span class="toc-text">SQL注入问题</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -6,10 +6,278 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.devzou.com/"/>
-  <updated>2019-05-21T00:38:02.377Z</updated>
+  <updated>2019-12-02T14:42:51.367Z</updated>
   <id>https://blog.devzou.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Proxy CONNECT aborted due to timeout</title>
+    <link href="https://blog.devzou.com/2019/11/15/git/2019-12-02-git_Proxy_CONNECT_aborted_due_to_timeout/"/>
+    <id>https://blog.devzou.com/2019/11/15/git/2019-12-02-git_Proxy_CONNECT_aborted_due_to_timeout/</id>
+    <published>2019-11-15T00:10:09.000Z</published>
+    <updated>2019-12-02T14:42:51.367Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天在clone  github上的源码时报错如下<br><img src="/img/git/git_proxy_01.png" alt=""></p><h2 id="fq配置如下"><a href="#fq配置如下" class="headerlink" title="fq配置如下"></a>fq配置如下</h2><p><img src="/img/git/git_proxy_02.png" alt=""></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy &apos;socks5://127.0.0.1:1086&apos;</div><div class="line">git config --global https.proxy &apos;socks5://127.0.0.1:1086&apos;</div></pre></td></tr></table></figure><p>git config –global –list 显示git config global配置信息。<br>再次git clone xxx 即可。<br>如需要对应还原git proxy，可以使用命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global --unset http.proxy</div><div class="line">git config --global --unset https.proxy</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;今天在clone  github上的源码时报错如下&lt;br&gt;&lt;img src=&quot;/img/git/git_proxy_01.png&quot; alt=
+      
+    
+    </summary>
+    
+      <category term="资源" scheme="https://blog.devzou.com/categories/%E8%B5%84%E6%BA%90/"/>
+    
+    
+      <category term="Git" scheme="https://blog.devzou.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://blog.devzou.com/2019/10/24/ios/2019-10-24-NSURLProtocol/"/>
+    <id>https://blog.devzou.com/2019/10/24/ios/2019-10-24-NSURLProtocol/</id>
+    <published>2019-10-24T04:26:10.335Z</published>
+    <updated>2019-10-30T07:48:26.340Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: NSURLProtocol<br>category: iOS<br>date: 2016-7-30 9:10:09<br>tags: iOS</p><h2 id="keywords-NSURLProtocol"><a href="#keywords-NSURLProtocol" class="headerlink" title="keywords: NSURLProtocol"></a>keywords: NSURLProtocol</h2><p>NSURLProtocol能够让你去重新定义苹果的URL加载系统 (URL Loading System)的行为，URL Loading System里有许多类用于处理URL请求，比如NSURL，NSURLRequest，NSURLConnection和NSURLSession等，当URL Loading System使用NSURLRequest去获取资源的时候，它会创建一个NSURLProtocol子类的实例，你不应该直接实例化一个NSURLProtocol，NSURLProtocol看起来像是一个协议，但其实这是一个类，而且必须使用该类的子类，并且需要被注册。<br><img src="![](/img/ios/url_loading_system/loading-system.png" alt="">)</p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://developer.apple.com/documentation/foundation/nsurlprotocol?language=occ" target="_blank" rel="external">https://developer.apple.com/documentation/foundation/nsurlprotocol?language=occ</a><br><a href="https://developer.apple.com/library/ios/samplecode/CustomHTTPProtocol/CustomHTTPProtocol.zip" target="_blank" rel="external">官方Demo</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: NSURLProtocol&lt;br&gt;category: iOS&lt;br&gt;date: 2016-7-30 9:10:09&lt;br&gt;tags: iOS&lt;/p&gt;
+&lt;h2 id=&quot;keywords-NSURLProtocol&quot;&gt;&lt;a href=&quot;#keywords
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 数据类型</title>
+    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-19-MySQL%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-19-MySQL 数据类型/</id>
+    <published>2019-10-18T01:10:09.000Z</published>
+    <updated>2019-10-19T23:24:44.431Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MySQL中定义数据字段的类型对你数据库的优化是非常重要的。<br>MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。</p><h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><p>MySQL支持所有标准SQL数值数据类型。<br>这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。<br>关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。<br>BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。<br>作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。下面的表显示了需要的每个整数类型的存储和范围。<br><img src="/img/mysql/mysql_1/01.png" alt=""></p><h2 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h2><p>表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。<br>每个时间类型有一个有效值范围和一个”零”值，当指定不合法的MySQL不能表示的值时使用”零”值。<br>TIMESTAMP类型有专有的自动更新特性，将在后面描述。<br><img src="/img/mysql/mysql_1/02.png" alt=""></p><h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><p>字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。该节描述了这些类型如何工作以及如何在查询中使用这些类型。<br><img src="/img/mysql/mysql_1/03.png" alt=""><br>CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。</p><p>BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。</p><p>BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。</p><p>有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MySQL中定义数据字段的类型对你数据库的优化是非常重要的。&lt;br&gt;MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql权限管理</title>
+    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
+    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
+    <published>2019-10-18T01:10:09.000Z</published>
+    <updated>2019-10-17T22:08:22.767Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA数据库连接之JDBC</title>
+    <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-21-Java%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E4%B9%8BJDBC/"/>
+    <id>https://blog.devzou.com/2019/08/12/Java/2019-10-21-Java数据库连接之JDBC/</id>
+    <published>2019-08-12T00:10:09.000Z</published>
+    <updated>2019-10-21T13:52:10.761Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JDBC (Java Database Connectivity) API，即Java数据库编程接口，是连接java应用程序和数据库之间的桥粱，是一组标准的Java语言中的接口和类，使用这些接口和类，Java客户端程序可以访问各种不同类型的数据库。比如建立数据库连接、执行SQL语句进行数据的存取操作。</p><h2 id="JDBC使用详解"><a href="#JDBC使用详解" class="headerlink" title="JDBC使用详解"></a>JDBC使用详解</h2><h3 id="1-加载驱动器类"><a href="#1-加载驱动器类" class="headerlink" title="1.加载驱动器类"></a>1.加载驱动器类</h3><h3 id="2-建立与数据库的链接"><a href="#2-建立与数据库的链接" class="headerlink" title="2.建立与数据库的链接"></a>2.建立与数据库的链接</h3><h3 id="3-创建statement对象"><a href="#3-创建statement对象" class="headerlink" title="3.创建statement对象"></a>3.创建statement对象</h3><h3 id="4-执行SQL语句"><a href="#4-执行SQL语句" class="headerlink" title="4.执行SQL语句"></a>4.执行SQL语句</h3><h3 id="5-访问ResultSet的记录"><a href="#5-访问ResultSet的记录" class="headerlink" title="5.访问ResultSet的记录"></a>5.访问ResultSet的记录</h3><h3 id="6-依次关闭ResultSet、Statement、Connection对象"><a href="#6-依次关闭ResultSet、Statement、Connection对象" class="headerlink" title="6.依次关闭ResultSet、Statement、Connection对象"></a>6.依次关闭ResultSet、Statement、Connection对象</h3><p>示例代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBUtil</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span>  String DRIVER_NAME = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span>  String URL = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span>  String USER_NAME = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span>  String PWD = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">private</span>  <span class="keyword">static</span>  Properties properties = <span class="keyword">new</span> Properties();</div><div class="line">    <span class="keyword">static</span>  &#123;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            properties.load(DBUtil.class.getResourceAsStream(<span class="string">"/jdbc.properties"</span>));</div><div class="line">        &#125;<span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            System.out.println(<span class="string">"系统加载jdbc.properties配置文件异常"</span>);</div><div class="line">        &#125;</div><div class="line">        DRIVER_NAME = properties.getProperty(<span class="string">"jdbc.driver"</span>);</div><div class="line">        URL = properties.getProperty(<span class="string">"jdbc.url"</span>);</div><div class="line">        USER_NAME = properties.getProperty(<span class="string">"jdbc.username"</span>);</div><div class="line">        PWD = properties.getProperty(<span class="string">"jdbc.password"</span>);</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            Class.forName(DRIVER_NAME);</div><div class="line">        &#125;<span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">            System.out.println(<span class="string">"数据库驱动加载异常，请检查"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="comment">//        DriverManager.registerDriver(new Driver());</span></div><div class="line">        Connection connection = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line"></div><div class="line">            connection = DriverManager.getConnection(URL, USER_NAME, PWD);</div><div class="line"></div><div class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">            System.out.println(e);</div><div class="line">            System.out.println(<span class="string">"连接数据库失败了"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span>  connection;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Connection connection)</span> </span>&#123;</div><div class="line">        close(connection);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Connection connection, Statement statement, ResultSet resultSet)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (resultSet !=<span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (!resultSet.isClosed()) &#123;</div><div class="line">                    resultSet.close();</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (connection !=<span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (!connection.isClosed()) &#123;</div><div class="line">                    connection.close();</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (statement !=<span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="keyword">if</span> (!statement.isClosed()) &#123;</div><div class="line">                    statement.close();</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;JDBC (Java Database Connectivity) API，即Java数据库编程接口，是连接java应用程序和数据库之间的桥
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA开发之servlet、Filter、Listener</title>
+    <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet%E3%80%81Filer%E3%80%81Listener/"/>
+    <id>https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet、Filer、Listener/</id>
+    <published>2019-08-12T00:10:09.000Z</published>
+    <updated>2019-10-25T00:10:06.614Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。</p><p>当客户端向服务器发出HTTP请求时，首先会由服务器中的 Web 容器（如Tomcat）对请求进行路由，交给该URL对应的 Servlet 进行处理，Servlet 所要做的事情就是返回适当的内容给用户。</p><p>要创建自己的 Servlet，可以通过以下三种方式来实现</p><ul><li>实现 Servlet 接口</li><li>继承 GenericServlet 类</li><li>继承 HttpServlet 类</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://blog.devzou.com/2019/08/01/tool/2019-08-01-charles%E7%A0%B4%E8%A7%A3/"/>
+    <id>https://blog.devzou.com/2019/08/01/tool/2019-08-01-charles破解/</id>
+    <published>2019-08-01T06:41:16.462Z</published>
+    <updated>2019-08-01T07:19:06.491Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: charles系列破解激活方法<br>date: 2019-05-16 8:10:09<br>category: 工具<br>tags: 工具<br>description: 软件破解</p><hr><h2 id="破解方法"><a href="#破解方法" class="headerlink" title="破解方法"></a>破解方法</h2><p> // Charles Proxy License</p><p>// 适用于Charles任意版本的注册码，谁还会想要使用破解版呢。</p><p>// Charles 4.2.8目前是最新版，可用。<br>注册名称：https：//zhile.io</p><p>许可证密钥：48891cf209c6d32bf4</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;title: charles系列破解激活方法&lt;br&gt;date: 2019-05-16 8:10:09&lt;br&gt;category: 工具&lt;br&gt;tags: 工具&lt;br&gt;description: 软件破解&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;破解方法&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>xcodeproj使用</title>
+    <link href="https://blog.devzou.com/2019/07/31/ios/2019-07-31-xcodeproj%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.devzou.com/2019/07/31/ios/2019-07-31-xcodeproj使用/</id>
+    <published>2019-07-31T01:10:09.000Z</published>
+    <updated>2019-07-31T02:43:51.827Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Xcodeproj的作用是使用Ruby来创建和修改Xcode项目，包括对Xcode工作区（.xcworkspace）和配置文件（.xcconfig）等的修改。xcodeproj这个库功能很强大，XCode工程的大多数配置都可以通过通过xcodeproj完成；在这里主要给大家介绍下一些常用配置的修改方法。</p><h2 id="安装xcodeproj"><a href="#安装xcodeproj" class="headerlink" title="安装xcodeproj"></a>安装xcodeproj</h2><p><code>gem install xcodeproj</code></p><h2 id="通过xcodeproj在工程的xxx-group下引入xx-h和xx-m文件"><a href="#通过xcodeproj在工程的xxx-group下引入xx-h和xx-m文件" class="headerlink" title="通过xcodeproj在工程的xxx group下引入xx.h和xx.m文件"></a>通过xcodeproj在工程的xxx group下引入xx.h和xx.m文件</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"></div><div class="line"><span class="comment">#打开项目工程xxx.xcodeproj</span></div><div class="line">project_path =  <span class="string">'xxxPath/xxx.xcodeproj'</span></div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"></div><div class="line"><span class="comment">#找到要插入的group (参数中true表示如果找不到group，就创建一个group)</span></div><div class="line">group = project.main_group.find_subpath(File.join(<span class="string">'GroupName'</span>),<span class="literal">true</span>)</div><div class="line"></div><div class="line"><span class="comment">#set一下sorce_tree</span></div><div class="line">group.set_source_tree(<span class="string">'SOURCE_ROOT'</span>)</div><div class="line"></div><div class="line"><span class="comment">#向group中增加文件引用（.h文件只需引用一下，.m引用后还需add一下）</span></div><div class="line">file_ref = group.new_reference(<span class="string">'xxxPath/xx.h'</span>)</div><div class="line"></div><div class="line">file_ref = group.new_reference(<span class="string">'xxxPath/xx.m'</span>)</div><div class="line">ret = target.add_file_references(file_ref)</div><div class="line"></div><div class="line">project.save</div></pre></td></tr></table></figure><h2 id="通过xcodeproj在工程中引入framwork、-a文件和bundle文件"><a href="#通过xcodeproj在工程中引入framwork、-a文件和bundle文件" class="headerlink" title="通过xcodeproj在工程中引入framwork、.a文件和bundle文件"></a>通过xcodeproj在工程中引入framwork、.a文件和bundle文件</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"></div><div class="line"><span class="comment">#打开项目工程A.xcodeproj</span></div><div class="line">project_path =  <span class="string">'xxxPath/xx.xcodeproj'</span></div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"></div><div class="line"><span class="comment">#遍历target，找到需要操作的target</span></div><div class="line"></div><div class="line">targetIndex = <span class="number">0</span></div><div class="line"></div><div class="line">project.targets.each_with_index <span class="keyword">do</span> <span class="params">|target, index|</span></div><div class="line">  <span class="keyword">if</span> target.name  == <span class="string">"xxxTargetName"</span></div><div class="line">    targetIndex = index</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">target = project.targets[targetIndex]</div><div class="line"></div><div class="line"><span class="comment">#添加xx.framework的引用</span></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.framework'</span>)</div><div class="line">target.frameworks_build_phases.add_file_reference(file_ref)</div><div class="line"></div><div class="line"><span class="comment">#添加xx.a的引用</span></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.a'</span>)</div><div class="line">target.frameworks_build_phases.add_file_reference(file_ref)</div><div class="line"></div><div class="line"><span class="comment">#添加xx.bundle的引用</span></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.bundle'</span>)</div><div class="line">target.resources_build_phase.add_file_reference(file_ref)</div><div class="line"></div><div class="line">project.save</div></pre></td></tr></table></figure><h2 id="通过xcodeproj在把xx-framework-xxx-h-xxx-bundle-加入到copy-files-phase中"><a href="#通过xcodeproj在把xx-framework-xxx-h-xxx-bundle-加入到copy-files-phase中" class="headerlink" title="通过xcodeproj在把xx.framework xxx.h  xxx.bundle 加入到copy files phase中"></a>通过xcodeproj在把xx.framework xxx.h  xxx.bundle 加入到copy files phase中</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"><span class="comment">#打开项目工程A.xcodeproj </span></div><div class="line">project_path = <span class="string">'xxxPath/xx.xcodeproj'</span> </div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"><span class="comment">#遍历target，找到需要操作的target </span></div><div class="line">targetIndex = <span class="number">0</span> </div><div class="line">project.targets.each_with_index <span class="keyword">do</span> <span class="params">|target, index|</span> </div><div class="line">  <span class="keyword">if</span> target.name == <span class="string">"xxxTargetName"</span> </div><div class="line">    targetIndex = index </div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">target = project.targets[targetIndex] </div><div class="line"></div><div class="line">file_ref = project.frameworks_group.new_file(<span class="string">'xxPath/xx.framework'</span>)</div><div class="line"></div><div class="line"><span class="comment">#把xx.framework添加到copy files中</span></div><div class="line"><span class="comment">#"leakFramework"即copy files build phase的名字，可自己随便取，也可不填，默认为空</span></div><div class="line">target.new_copy_files_build_phase(<span class="string">"leakFramework"</span>)</div><div class="line"></div><div class="line"><span class="comment">#项目中可能有多个copy files build phases，找到刚刚创建的那个，然后把xx.framework引入</span></div><div class="line">target.copy_files_build_phases.each <span class="keyword">do</span> <span class="params">|item|</span> </div><div class="line">  <span class="keyword">if</span> item.name == <span class="string">"leakFramework"</span></div><div class="line">     <span class="comment">#引入xx.framework</span></div><div class="line">     item.add_file_reference(file_ref)</div><div class="line">     <span class="comment">#设置copy file buldphase中的Destination选项，使用枚举值表示的。"10"表示Frameworks </span></div><div class="line">     <span class="comment">#这个值我是通过对比设置前后的两个文件找出来的</span></div><div class="line">     item.dst_subfolder_spec = <span class="string">"10"</span></div><div class="line">     <span class="comment">#勾上code sign on copy选项（默认是没勾上的）</span></div><div class="line">     item.files[<span class="number">0</span>].settings = Hash.new  </div><div class="line">     item.files[<span class="number">0</span>].settings[<span class="string">"ATTRIBUTES"</span>] = [<span class="string">"CodeSignOnCopy"</span>] </div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">project.save</div></pre></td></tr></table></figure><h2 id="通过xcodeproj设置证书"><a href="#通过xcodeproj设置证书" class="headerlink" title="通过xcodeproj设置证书"></a>通过xcodeproj设置证书</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'xcodeproj'</span></div><div class="line"></div><div class="line"><span class="comment">#打开项目工程A.xcodeproj</span></div><div class="line">project_path = <span class="string">'xxxPath/A.xcodeproj'</span></div><div class="line">project = Xcodeproj::Project.open(project_path)</div><div class="line"></div><div class="line"><span class="comment">#修改某个target在debug模式下的证书配置</span></div><div class="line"><span class="comment">#此处遍历找到debug</span></div><div class="line">project.targets[<span class="number">0</span>].build_configurations.each <span class="keyword">do</span> <span class="params">|config|</span></div><div class="line">  <span class="keyword">if</span> config.name == <span class="string">'Debug'</span></div><div class="line">    config.build_settings[<span class="string">"PROVISIONING_PROFILE_SPECIFIER"</span>] = <span class="string">"xxProfileName"</span></div><div class="line">    config.build_settings[<span class="string">"DEVELOPMENT_TEAM"</span>] = <span class="string">"xxTeamName"</span></div><div class="line">    config.build_settings[<span class="string">"CODE_SIGN_IDENTITY"</span>] = <span class="string">"xxIdentityName"</span></div><div class="line">    config.build_settings[<span class="string">"CODE_SIGN_IDENTITY[sdk=iphoneos*]"</span>] = <span class="string">"iPhone Developer"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line">project.save</div></pre></td></tr></table></figure><p>此处可以通过此方法修改target下某个模式（debug, release等）的大多数配置，可通过config.build_settings查看所有的键值对，然后根据需求修改键值，如OTHER_FLAGS,PRODUCT_BUNDLE_IDENTIFIER,HEADER_SEARCH_PATHS,LIBRARY_SEARCH_PATHS等。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://rubygems.org/gems/xcodeproj" target="_blank" rel="external">https://rubygems.org/gems/xcodeproj</a><br><a href="https://github.com/CocoaPods/Xcodeproj" target="_blank" rel="external">https://github.com/CocoaPods/Xcodeproj</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Xcodeproj的作用是使用Ruby来创建和修改Xcode项目，包括对Xcode工作区（.xcworkspace）和配置文件（.xccon
+      
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>navicat for mac 登录数据库报错</title>
+    <link href="https://blog.devzou.com/2019/07/31/mysql/2019-08-02-navicat%20for%20mac%20%E7%99%BB%E5%BD%95%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99/"/>
+    <id>https://blog.devzou.com/2019/07/31/mysql/2019-08-02-navicat for mac 登录数据库报错/</id>
+    <published>2019-07-31T01:10:09.000Z</published>
+    <updated>2019-10-17T22:15:28.566Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="报错描述"><a href="#报错描述" class="headerlink" title="报错描述"></a>报错描述</h2><p>2059 - Authentication plugin ‘caching_sha2_password’ cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found</p><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><p>这是 MySQL 的问题，不是客户端问题，</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘yourpassword’;</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;报错描述&quot;&gt;&lt;a href=&quot;#报错描述&quot; class=&quot;headerlink&quot; title=&quot;报错描述&quot;&gt;&lt;/a&gt;报错描述&lt;/h2&gt;&lt;p&gt;2059 - Authentication plugin ‘caching_sha2_password’ cannot be
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flutter入门之在macOS上搭建开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter%E5%85%A5%E9%97%A8%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter入门之环境配置/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-09-02T23:13:39.876Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>要安装并运行Flutter，您的开发环境必须满足以下最低要求:</p><ul><li>操作系统: macOS (64-bit)</li><li>磁盘空间: 700 MB (不包括Xcode或Android Studio的磁盘空间）.</li><li>工具: Flutter 依赖下面这些命令行工具.<br>bash, mkdir, rm, git, curl, unzip, which<h2 id="获取flutter-SDK"><a href="#获取flutter-SDK" class="headerlink" title="获取flutter SDK"></a>获取flutter SDK</h2>1.去flutter官网下载其最新可用的安装包，<a href="https://flutter.io/sdk-archive/#macos" target="_blank" rel="external">转到下载页 </a>。<br>注意，Flutter的渠道版本会不停变动，请以Flutter官网为准。另外，在中国大陆地区，要想正常获取安装包列表或下载安装包，可能需要翻墙，读者也可以去Flutter github项目下去下载安装包，<a href="https://github.com/flutter/flutter/releases" target="_blank" rel="external">转到下载页</a> 。</li></ul><p>2.解压安装包到你想安装的目录，比如我是放在用户目录下面<br>  <img src="/img/flutter/01/flutter01_1.png" alt=""><br>3.添加flutter相关工具到path中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=`<span class="built_in">pwd</span>`/flutter/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure></p><p> <img src="/img/flutter/01/flutter01_3.png" alt="">  </p><h2 id="运行-flutter-doctor"><a href="#运行-flutter-doctor" class="headerlink" title="运行 flutter doctor"></a>运行 flutter doctor</h2><p>运行以下命令查看是否需要安装其它依赖项来完成安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flutter doctor</div></pre></td></tr></table></figure></p><p><img src="/img/flutter/01/flutter01_2.png" alt=""><br>该命令检查您的环境并在终端窗口中显示报告。Dart SDK已经在捆绑在Flutter里了，没有必要单独安装Dart。 仔细检查命令行输出以获取可能需要安装的其他软件或进一步需要执行的任务（以粗体显示）</p><p>第一次运行一个flutter命令（如flutter doctor）时，它会下载它自己的依赖项并自行编译。以后再运行就会快得多。</p><p>以下各部分介绍如何执行这些任务并完成设置过程。你会看到在flutter doctor输出中， 如果你选择使用IDE，我们提供了，IntelliJ IDEA，Android Studio和VS Code的插件， 请参阅<a href="https://flutterchina.club/get-started/editor/" target="_blank" rel="external">编辑器设置</a> 以了解安装Flutter和Dart插件的步骤。</p><p>一旦你安装了任何缺失的依赖，再次运行flutter doctor命令来验证你是否已经正确地设置了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;系统要求&quot;&gt;&lt;a href=&quot;#系统要求&quot; class=&quot;headerlink&quot; title=&quot;系统要求&quot;&gt;&lt;/a&gt;系统要求&lt;/h2&gt;&lt;p&gt;要安装并运行Flutter，您的开发环境必须满足以下最低要求:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;操作系统: macOS (64-b
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea配置flutter开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-09-03T02:36:46.307Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>ios 证书无法生成p12 文件解决，或者无法生成秘钥问题</title>
@@ -220,272 +488,6 @@
     
     
       <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python高级编程之正则表达式</title>
-    <link href="https://blog.devzou.com/2018/09/18/python/2017-03-18-python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/09/18/python/2017-03-18-python高级编程之正则表达式/</id>
-    <published>2018-09-18T00:10:09.000Z</published>
-    <updated>2019-04-24T06:59:35.007Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Python-Re模块"><a href="#Python-Re模块" class="headerlink" title="Python Re模块"></a>Python Re模块</h2><p>Python 自带了re模块，它提供了对正则表达式的支持。主要用到的方法列举如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#返回pattern对象</span></div><div class="line">re.compile(string[,flag])  </div><div class="line"><span class="comment">#以下为匹配所用函数</span></div><div class="line">re.match(pattern, string[, flags])</div><div class="line">re.search(pattern, string[, flags])</div><div class="line">re.split(pattern, string[, maxsplit])</div><div class="line">re.findall(pattern, string[, flags])</div><div class="line">re.finditer(pattern, string[, flags])</div><div class="line">re.sub(pattern, repl, string[, count])</div><div class="line">re.subn(pattern, repl, string[, count])</div></pre></td></tr></table></figure></p><p>在介绍这几个方法之前，我们先来介绍一下pattern的概念，pattern可以理解为一个匹配模式，那么我们怎么获得这个匹配模式呢？很简单，我们需要利用re.compile方法就可以。例如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pattern = re.compile(<span class="string">r'hello'</span>)</div></pre></td></tr></table></figure></p><p>在参数中我们传入了原生字符串对象，通过compile方法编译生成一个pattern对象，然后我们利用这个对象来进行进一步的匹配。</p><p>另外大家可能注意到了另一个参数 flags，在这里解释一下这个参数的含义：</p><p>参数flag是匹配模式，取值可以使用按位或运算符’|’表示同时生效，比如re.I | re.M。</p><p>可选值有：<br> • re.I(全拼：IGNORECASE): 忽略大小写（括号内是完整写法，下同）<br> • re.M(全拼：MULTILINE): 多行模式，改变’^’和’$’的行为（参见上图）<br> • re.S(全拼：DOTALL): 点任意匹配模式，改变’.’的行为<br> • re.L(全拼：LOCALE): 使预定字符类 \w \W \b \B \s \S 取决于当前区域设定<br> • re.U(全拼：UNICODE): 使预定字符类 \w \W \b \B \s \S \d \D 取决于unicode定义的字符属性<br> • re.X(全拼：VERBOSE): 详细模式。这个模式下正则表达式可以是多行，忽略空白字符，并可以加入注释。<br><strong> re.match(pattern, string[, flags])</strong><br>这个方法将会从string（我们要匹配的字符串）的开头开始，尝试匹配pattern，一直向后匹配，如果遇到无法匹配的字符，立即返回None，如果匹配未结束已经到达string的末尾，也会返回None。两个结果均表示匹配失败，否则匹配pattern成功，同时匹配终止，不再对string向后匹配。下面我们通过一个例子理解一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">__author__ = <span class="string">'CQC'</span></div><div class="line"><span class="comment"># -*- coding: utf-8 -*-</span></div><div class="line"></div><div class="line"><span class="comment">#导入re模块</span></div><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line"><span class="comment"># 将正则表达式编译成Pattern对象，注意hello前面的r的意思是“原生字符串”</span></div><div class="line">pattern = re.compile(<span class="string">r'hello'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 使用re.match匹配文本，获得匹配结果，无法匹配时将返回None</span></div><div class="line">result1 = re.match(pattern,<span class="string">'hello'</span>)</div><div class="line">result2 = re.match(pattern,<span class="string">'helloo CQC!'</span>)</div><div class="line">result3 = re.match(pattern,<span class="string">'helo CQC!'</span>)</div><div class="line">result4 = re.match(pattern,<span class="string">'hello CQC!'</span>)</div><div class="line"></div><div class="line"><span class="comment">#如果1匹配成功</span></div><div class="line"><span class="keyword">if</span> result1:</div><div class="line">    <span class="comment"># 使用Match获得分组信息</span></div><div class="line">    <span class="keyword">print</span> result1.group()</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'1匹配失败！'</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#如果2匹配成功</span></div><div class="line"><span class="keyword">if</span> result2:</div><div class="line">    <span class="comment"># 使用Match获得分组信息</span></div><div class="line">    <span class="keyword">print</span> result2.group()</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'2匹配失败！'</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#如果3匹配成功</span></div><div class="line"><span class="keyword">if</span> result3:</div><div class="line">    <span class="comment"># 使用Match获得分组信息</span></div><div class="line">    <span class="keyword">print</span> result3.group()</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'3匹配失败！'</span></div><div class="line"></div><div class="line"><span class="comment">#如果4匹配成功</span></div><div class="line"><span class="keyword">if</span> result4:</div><div class="line">    <span class="comment"># 使用Match获得分组信息</span></div><div class="line">    <span class="keyword">print</span> result4.group()</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="keyword">print</span> <span class="string">'4匹配失败！'</span></div></pre></td></tr></table></figure></p><p>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hello</div><div class="line">hello</div><div class="line">3匹配失败！</div><div class="line">hello</div></pre></td></tr></table></figure></p><p>匹配分析<br>1.第一个匹配，pattern正则表达式为’hello’，我们匹配的目标字符串string也为hello，从头至尾完全匹配，匹配成功。<br>2.第二个匹配，string为helloo CQC，从string头开始匹配pattern完全可以匹配，pattern匹配结束，同时匹配终止，后面的o CQC不再匹配，返回匹配成功的信息。<br>3.第三个匹配，string为helo CQC，从string头开始匹配pattern，发现到 ‘o’ 时无法完成匹配，匹配终止，返回None<br>4.第四个匹配，同第二个匹配原理，即使遇到了空格符也不会受影响。<br>我们还看到最后打印出了result.group()，这个是什么意思呢？下面我们说一下关于match对象的的属性和方法<br>Match对象是一次匹配的结果，包含了很多关于此次匹配的信息，可以使用Match提供的可读属性或方法来获取这些信息。<br><strong>re.search(pattern, string[, flags])</strong><br>search方法与match方法极其类似，区别在于match()函数只检测re是不是在string的开始位置匹配，search()会扫描整个string查找匹配，match（）只有在0位置匹配成功的话才有返回，如果不是开始位置匹配成功的话，match()就返回None。同样，search方法的返回对象同样match()返回对象的方法和属性。我们用一个例子感受一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#导入re模块</span></div><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line"><span class="comment"># 将正则表达式编译成Pattern对象</span></div><div class="line">pattern = re.compile(<span class="string">r'world'</span>)</div><div class="line"><span class="comment"># 使用search()查找匹配的子串，不存在能匹配的子串时将返回None</span></div><div class="line"><span class="comment"># 这个例子中使用match()无法成功匹配</span></div><div class="line">match = re.search(pattern,<span class="string">'hello world!'</span>)</div><div class="line"><span class="keyword">if</span> match:</div><div class="line">    <span class="comment"># 使用Match获得分组信息</span></div><div class="line">    <span class="keyword">print</span> match.group()</div><div class="line"><span class="comment">### 输出 ###</span></div><div class="line"><span class="comment"># world</span></div></pre></td></tr></table></figure></p><p><strong>re.split(pattern, string[, maxsplit])</strong><br>按照能够匹配的子串将string分割后返回列表。maxsplit用于指定最大分割次数，不指定将全部分割。我们通过下面的例子感受一下。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line">pattern = re.compile(<span class="string">r'\d+'</span>)</div><div class="line"><span class="keyword">print</span> re.split(pattern,<span class="string">'one1two2three3four4'</span>)</div><div class="line"></div><div class="line"><span class="comment">### 输出 ###</span></div><div class="line"><span class="comment"># ['one', 'two', 'three', 'four', '']</span></div></pre></td></tr></table></figure></p><p><strong>re.findall(pattern, string[, flags])</strong></p><p>搜索string，以列表形式返回全部能匹配的子串。我们通过这个例子来感受一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line">pattern = re.compile(<span class="string">r'\d+'</span>)</div><div class="line"><span class="keyword">print</span> re.findall(pattern,<span class="string">'one1two2three3four4'</span>)</div><div class="line"></div><div class="line"><span class="comment">### 输出 ###</span></div><div class="line"><span class="comment"># ['1', '2', '3', '4']</span></div></pre></td></tr></table></figure></p><p><strong>re.finditer(pattern, string[, flags])</strong></p><p>搜索string，返回一个顺序访问每一个匹配结果（Match对象）的迭代器。我们通过下面的例子来感受一下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"></div><div class="line">pattern = re.compile(<span class="string">r'\d+'</span>)</div><div class="line"><span class="keyword">for</span> m <span class="keyword">in</span> re.finditer(pattern,<span class="string">'one1two2three3four4'</span>):</div><div class="line">    <span class="keyword">print</span> m.group(),</div><div class="line"></div><div class="line"><span class="comment">### 输出 ###</span></div><div class="line"><span class="comment"># 1 2 3 4</span></div></pre></td></tr></table></figure></p><p><strong>re.sub(pattern, repl, string[, count])</strong></p><p>使用repl替换string中每一个匹配的子串后返回替换后的字符串。<br>当repl是一个字符串时，可以使用\id或\g、\g引用分组，但不能使用编号0。<br>当repl是一个方法时，这个方法应当只接受一个参数（Match对象），并返回一个字符串用于替换（返回的字符串中不能再引用分组）。<br>count用于指定最多替换次数，不指定时全部替换。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">pattern = re.compile(<span class="string">r'(\w+) (\w+)'</span>)</div><div class="line">s = <span class="string">'i say, hello world!'</span></div><div class="line"><span class="keyword">print</span> re.sub(pattern,<span class="string">r'\2 \1'</span>, s)</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(m)</span>:</span></div><div class="line">    <span class="keyword">return</span> m.group(<span class="number">1</span>).title() + <span class="string">' '</span> + m.group(<span class="number">2</span>).title()</div><div class="line"><span class="keyword">print</span> re.sub(pattern,func, s)</div><div class="line"><span class="comment">### output ###</span></div><div class="line"><span class="comment"># say i, world hello!</span></div><div class="line"><span class="comment"># I Say, Hello World!</span></div></pre></td></tr></table></figure></p><p><strong>re.subn(pattern, repl, string[, count])</strong><br>返回 (sub(repl, string[, count]), 替换次数)。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line">pattern = re.compile(<span class="string">r'(\w+) (\w+)'</span>)</div><div class="line">s = <span class="string">'i say, hello world!'</span></div><div class="line"><span class="keyword">print</span> re.subn(pattern,<span class="string">r'\2 \1'</span>, s) </div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(m)</span>:</span></div><div class="line">    <span class="keyword">return</span> m.group(<span class="number">1</span>).title() + <span class="string">' '</span> + m.group(<span class="number">2</span>).title() </div><div class="line"><span class="keyword">print</span> re.subn(pattern,func, s)</div><div class="line"> </div><div class="line"><span class="comment">### output ###</span></div><div class="line"><span class="comment"># ('say i, world hello!', 2)</span></div><div class="line"><span class="comment"># ('I Say, Hello World!', 2)</span></div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑。
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Scrapy入门教程</title>
-    <link href="https://blog.devzou.com/2018/08/19/python/2017-03-19-scrapy%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
-    <id>https://blog.devzou.com/2018/08/19/python/2017-03-19-scrapy入门教程/</id>
-    <published>2018-08-19T00:10:09.000Z</published>
-    <updated>2019-04-24T06:58:17.738Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="创建一个scrapy项目"><a href="#创建一个scrapy项目" class="headerlink" title="创建一个scrapy项目"></a>创建一个scrapy项目</h2><p>在开始爬取之前，您必须创建一个新的Scrapy项目。 进入您打算存储代码的目录中，运行下列命令:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scrapy startproject  scrapyProject</div></pre></td></tr></table></figure></p><p>该命令将会创建包含下列内容的 scrapyProject 目录:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">scrapyProject/</div><div class="line">    scrapy.cfg</div><div class="line">    scrapyProject/</div><div class="line">        __init__.py</div><div class="line">        items.py</div><div class="line">        pipelines.py</div><div class="line">        settings.py</div><div class="line">        spiders/</div><div class="line">            __init__.py</div><div class="line">            ...</div></pre></td></tr></table></figure></p><p>这些文件分别是:</p><p>scrapy.cfg: 项目的配置文件<br>scrapyProject/: 该项目的python模块。之后您将在此加入代码。<br>scrapyProject/items.py: 项目中的item文件.<br>scrapyProject/pipelines.py: 项目中的pipelines文件.<br>scrapyProject/settings.py: 项目的设置文件.<br>scrapyProject/spiders/: 放置spider代码的目录.</p><h2 id="定义Item"><a href="#定义Item" class="headerlink" title="定义Item"></a>定义Item</h2><p>Item 是保存爬取到的数据的容器；其使用方法和python字典类似， 并且提供了额外保护机制来避免拼写错误导致的未定义字段错误。</p><p>类似在ORM中做的一样，您可以通过创建一个 scrapy.Item 类， 并且定义类型为 scrapy.Field 的类属性来定义一个Item。 (如果不了解ORM, 不用担心，您会发现这个步骤非常简单)</p><p>首先根据需要从dmoz.org获取到的数据对item进行建模。 我们需要从dmoz中获取名字，url，以及网站的描述。 对此，在item中定义相应的字段。编辑 scrapyProject 目录中的 items.py 文件:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozItem</span><span class="params">(scrapy.Item)</span>:</span></div><div class="line">    title = scrapy.Field()</div><div class="line">    link = scrapy.Field()</div><div class="line">    desc = scrapy.Field()</div></pre></td></tr></table></figure></p><p>一开始这看起来可能有点复杂，但是通过定义item， 您可以很方便的使用Scrapy的其他方法。而这些方法需要知道您的item的定义。</p><h2 id="编写第一个爬虫-Spider"><a href="#编写第一个爬虫-Spider" class="headerlink" title="编写第一个爬虫(Spider)"></a>编写第一个爬虫(Spider)</h2><p>Spider是用户编写用于从单个网站(或者一些网站)爬取数据的类。<br>其包含了一个用于下载的初始URL，如何跟进网页中的链接以及如何分析页面中的内容， 提取生成 item 的方法。<br>为了创建一个Spider，您必须继承 scrapy.Spider 类， 且定义以下三个属性:<br>name: 用于区别Spider。 该名字必须是唯一的，您不可以为不同的Spider设定相同的名字。<br>start_urls: 包含了Spider在启动时进行爬取的url列表。 因此，第一个被获取到的页面将是其中之一。 后续的URL则从初始的URL获取到的数据中提取。<br>parse() 是spider的一个方法。 被调用时，每个初始URL完成下载后生成的 Response 对象将会作为唯一的参数传递给该函数。 该方法负责解析返回的数据(response data)，提取数据(生成item)以及生成需要进一步处理的URL的 Request 对象。<br>以下为我们的第一个Spider代码，保存在 scrapyProject/spiders 目录下的 dmoz_spider.py 文件中:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DmozSpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line">    name = <span class="string">"dmoz"</span></div><div class="line">    allowed_domains = [<span class="string">"dmoz.org"</span>]</div><div class="line">    start_urls = [</div><div class="line">        <span class="string">"http://www.dmoz.org/Computers/Programming/Languages/Python/Books/"</span>,</div><div class="line">        <span class="string">"http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/"</span></div><div class="line">    ]</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">        filename = response.url.split(<span class="string">"/"</span>)[<span class="number">-2</span>]</div><div class="line">        <span class="keyword">with</span> open(filename, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</div><div class="line">            f.write(response.body)</div></pre></td></tr></table></figure></p><h2 id="爬取"><a href="#爬取" class="headerlink" title="爬取"></a>爬取</h2><p>进入项目的根目录，执行下列命令启动spider:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scrapy crawl dmoz</div></pre></td></tr></table></figure></p><h2 id="提取Item"><a href="#提取Item" class="headerlink" title="提取Item"></a>提取Item</h2><h3 id="Selectors选择器简介"><a href="#Selectors选择器简介" class="headerlink" title="Selectors选择器简介"></a>Selectors选择器简介</h3><p>从网页中提取数据有很多方法。Scrapy使用了一种基于 <a href="https://www.w3.org/TR/xpath/" target="_blank" rel="external">XPath</a>和<a href="https://www.w3.org/TR/selectors/" target="_blank" rel="external">CSS</a> 表达式机制: Scrapy Selectors 。 关于selector和其他提取机制的信息请参考 Selector文档 。<br>这里给出XPath表达式的例子及对应的含义:</p><p>/html/head/title: 选择HTML文档中 <head> 标签内的 <title> 元素<br>/html/head/title/text(): 选择上面提到的 <title> 元素的文字<br>//td: 选择所有的 <td> 元素<br>//div[@class=”mine”]: 选择所有具有 class=”mine” 属性的 div 元素<br>上边仅仅是几个简单的XPath例子，XPath实际上要比这远远强大的多。<br>为了配合XPath，Scrapy除了提供了 Selector 之外，还提供了方法来避免每次从response中提取数据时生成selector的麻烦。<br>Selector有四个基本的方法(点击相应的方法可以看到详细的API文档):<br>xpath(): 传入xpath表达式，返回该表达式所对应的所有节点的selector list列表 。<br>css(): 传入CSS表达式，返回该表达式所对应的所有节点的selector list列表.<br>extract(): 序列化该节点为unicode字符串并返回list。<br>re(): 根据传入的正则表达式对数据进行提取，返回unicode字符串list列表。</td></title></title></head></p><h3 id="在Shell中尝试Selector选择器"><a href="#在Shell中尝试Selector选择器" class="headerlink" title="在Shell中尝试Selector选择器"></a>在Shell中尝试Selector选择器</h3><p>为了介绍Selector的使用方法，接下来我们将要使用内置的 Scrapy shell 。Scrapy Shell需要您预装好IPython(一个扩展的Python终端)。</p><p>您需要进入项目的根目录，执行下列命令来启动shell:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scrapy shell &quot;http://www.dmoz.org/Computers/Programming/Languages/Python/Books/&quot;</div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      初级的爬虫我们利用urllib和urllib2库以及正则表达式就可以完成了，不过还有更加强大的工具，爬虫框架Scrapy
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 基础教程之文件I/O</title>
-    <link href="https://blog.devzou.com/2018/08/15/python/2017-03-15-Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%96%87%E4%BB%B6I:O/"/>
-    <id>https://blog.devzou.com/2018/08/15/python/2017-03-15-Python基础教程之文件I:O/</id>
-    <published>2018-08-15T00:10:09.000Z</published>
-    <updated>2019-04-24T07:00:20.315Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="打印到屏幕"><a href="#打印到屏幕" class="headerlink" title="打印到屏幕"></a>打印到屏幕</h2><p>最简单的输出方法是用print语句，你可以给它传递零个或多个用逗号隔开的表达式。此函数把你传递的表达式转换成一个字符串表达式，并将结果写到标准输出如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Python 是一个非常棒的语言，不是吗？"</span>;</div></pre></td></tr></table></figure></p><p>你的标准屏幕上会产生以下结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Python 是一个非常棒的语言，不是吗？</div></pre></td></tr></table></figure></p><h2 id="读取键盘输入"><a href="#读取键盘输入" class="headerlink" title="读取键盘输入"></a>读取键盘输入</h2><p>Python提供了两个内置函数从标准输入读入一行文本，默认的标准输入是键盘。如下：<br>raw_input<br>input<br><strong>raw_input函数</strong><br>raw_input([prompt]) 函数从标准输入读取一个行，并返回一个字符串（去掉结尾的换行符）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></div><div class="line"> </div><div class="line">str = raw_input(<span class="string">"请输入："</span>);</div><div class="line"><span class="keyword">print</span> <span class="string">"你输入的内容是: "</span>, str</div></pre></td></tr></table></figure></p><p>这将提示你输入任意字符串，然后在屏幕上显示相同的字符串。当我输入”Hello Python！”，它的输出如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">请输入：Hello Python！</div><div class="line">你输入的内容是:  Hello Python！</div></pre></td></tr></table></figure></p><p><strong>input函数</strong><br>input([prompt]) 函数和 raw_input([prompt]) 函数基本类似，但是 input 可以接收一个Python表达式作为输入，并将运算结果返回。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*- </span></div><div class="line"> </div><div class="line">str = input(<span class="string">"请输入："</span>);</div><div class="line"><span class="keyword">print</span> <span class="string">"你输入的内容是: "</span>, str</div></pre></td></tr></table></figure></p><p>这会产生如下的对应着输入的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">请输入：[x*5 for x in range(2,10,2)]</div><div class="line">你输入的内容是:  [10, 20, 30, 40]</div></pre></td></tr></table></figure></p><h2 id="打开和关闭文件"><a href="#打开和关闭文件" class="headerlink" title="打开和关闭文件"></a>打开和关闭文件</h2><p>现在，您已经可以向标准输入和输出进行读写。现在，来看看怎么读写实际的数据文件。<br>Python 提供了必要的函数和方法进行默认情况下的文件基本操作。你可以用 file 对象做大部分的文件操作。<br><strong>open 函数</strong><br>你必须先用Python内置的open()函数打开一个文件，创建一个file对象，相关的方法才可以调用它进行读写。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file object = open(file_name [, access_mode][, buffering])</div></pre></td></tr></table></figure></p><p>各个参数的细节如下：<br><strong>file_name：</strong>file_name变量是一个包含了你要访问的文件名称的字符串值。<br>access_mode：access_mode决定了打开文件的模式：只读，写入，追加等。所有可取值见如下的完全列表。这个参数是非强制的，默认文件访问模式为只读(r)。<br><strong>buffering:</strong>如果buffering的值被设为0，就不会有寄存。如果buffering的值取1，访问文件时会寄存行。如果将buffering的值设为大于1的整数，表明了这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认。<br>不同模式打开文件的完全列表：</p><table><thead><tr><th>模式</th><th>描述</th></tr></thead><tbody><tr><td>r</td></tr></tbody></table><div>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</div><p> |<br>| rb |  </p><div>以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。</div><p> |<br>| r+ |  </p><div>打开一个文件用于读写。文件指针将会放在文件的开头。</div><p> |<br>| rb+ |  </p><div>以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。</div><p> |<br>| w |  </p><div>打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</div><p> |<br>| wb |  </p><div>以二进制格式打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</div><p> |<br>| w+ |  </p><div>打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</div><p> |<br>| wb+ |  </p><div>以二进制格式打开一个文件用于读写。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</div><p> |<br>| a |  </p><div>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</div><p> |<br>| ab |  </p><div>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</div><p> |<br>| a+ |  </p><div>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</div><p> |<br>| ab+ |  </p><div>以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</div><p> |</p><h2 id="File对象的属性"><a href="#File对象的属性" class="headerlink" title="File对象的属性"></a>File对象的属性</h2><p>一个文件被打开后，你有一个file对象，你可以得到有关该文件的各种信息。<br>以下是和file对象相关的所有属性的列表：<br>| 属性 | 描述 |<br>| — | — |<br>| file.closed |  </p><div>返回true如果文件已被关闭，否则返回false。</div><p> |<br>| file.mode<span class="Apple-tab-span" style="white-space:pre"></span> |  </p><div>返回被打开文件的访问模式。</div><p> |<br>| file.name |  </p><div>返回文件的名称。</div><p> |<br>| file.softspace |  </p><div>如果用print输出后，必须跟一个空格符，则返回false。否则返回true。</div><p> |<br>如下实例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"> </div><div class="line"><span class="comment"># 打开一个文件</span></div><div class="line">fo = open(<span class="string">"foo.txt"</span>, <span class="string">"wb"</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"文件名: "</span>, fo.name</div><div class="line"><span class="keyword">print</span> <span class="string">"是否已关闭 : "</span>, fo.closed</div><div class="line"><span class="keyword">print</span> <span class="string">"访问模式 : "</span>, fo.mode</div><div class="line"><span class="keyword">print</span> <span class="string">"末尾是否强制加空格 : "</span>, fo.softspace</div></pre></td></tr></table></figure></p><p>以上实例输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">文件名:  foo.txt</div><div class="line">是否已关闭 :  False</div><div class="line">访问模式 :  wb</div><div class="line">末尾是否强制加空格 :  0</div></pre></td></tr></table></figure></p><p><strong>close()方法</strong><br>File 对象的 close（）方法刷新缓冲区里任何还没写入的信息，并关闭该文件，这之后便不能再进行写入。<br>当一个文件对象的引用被重新指定给另一个文件时，Python 会关闭之前的文件。用 close（）方法关闭文件是一个很好的习惯。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fileObject.close();</div></pre></td></tr></table></figure></p><p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"> </div><div class="line"><span class="comment"># 打开一个文件</span></div><div class="line">fo = open(<span class="string">"foo.txt"</span>, <span class="string">"wb"</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">"文件名: "</span>, fo.name</div><div class="line"> </div><div class="line"><span class="comment"># 关闭打开的文件</span></div><div class="line">fo.close()</div></pre></td></tr></table></figure></p><p>以上实例输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">文件名:  foo.txt</div></pre></td></tr></table></figure></p><p>读写文件：<br>file对象提供了一系列方法，能让我们的文件访问更轻松。来看看如何使用read()和write()方法来读取和写入文件。<br><strong>write()方法</strong><br>write()方法可将任何字符串写入一个打开的文件。需要重点注意的是，Python字符串可以是二进制数据，而不是仅仅是文字。<br>write()方法不会在字符串的结尾添加换行符(‘\n’)：<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fileObject.write(string);</div></pre></td></tr></table></figure></p><p>在这里，被传递的参数是要写入到已打开文件的内容。<br>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"> </div><div class="line"><span class="comment"># 打开一个文件</span></div><div class="line">fo = open(<span class="string">"foo.txt"</span>, <span class="string">"wb"</span>)</div><div class="line">fo.write( <span class="string">"www.lianyucode.top!\nVery good site!\n"</span>);</div><div class="line"> </div><div class="line"><span class="comment"># 关闭打开的文件</span></div><div class="line">fo.close()</div></pre></td></tr></table></figure></p><p>上述方法会创建foo.txt文件，并将收到的内容写入该文件，并最终关闭文件。如果你打开这个文件，将看到以下内容:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cat foo.txt </div><div class="line">www.lianyucode.top!</div><div class="line">Very good site!</div></pre></td></tr></table></figure><p><strong>read()方法</strong><br>read（）方法从一个打开的文件中读取一个字符串。需要重点注意的是，Python字符串可以是二进制数据，而不是仅仅是文字。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fileObject.read([count]);</div></pre></td></tr></table></figure></p><p>在这里，被传递的参数是要从已打开文件中读取的字节计数。该方法从文件的开头开始读入，如果没有传入count，它会尝试尽可能多地读取更多的内容，很可能是直到文件的末尾。<br>例子：<br>这里我们用到以上创建的 foo.txt 文件。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"> </div><div class="line"><span class="comment"># 打开一个文件</span></div><div class="line">fo = open(<span class="string">"foo.txt"</span>, <span class="string">"r+"</span>)</div><div class="line">str = fo.read(<span class="number">10</span>);</div><div class="line"><span class="keyword">print</span> <span class="string">"读取的字符串是 : "</span>, str</div><div class="line"><span class="comment"># 关闭打开的文件</span></div><div class="line">fo.close()</div></pre></td></tr></table></figure></p><p>以上实例输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">读取的字符串是 :  www.lianyucode.top</div></pre></td></tr></table></figure></p><h2 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h2><p>tell()方法告诉你文件内的当前位置；换句话说，下一次的读写会发生在文件开头这么多字节之后。<br>seek（offset [,from]）方法改变当前文件的位置。Offset变量表示要移动的字节数。From变量指定开始移动字节的参考位置。<br>如果from被设为0，这意味着将文件的开头作为移动字节的参考位置。如果设为1，则使用当前的位置作为参考位置。如果它被设为2，那么该文件的末尾将作为参考位置。<br>例子：<br>就用我们上面创建的文件foo.txt。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"> </div><div class="line"><span class="comment"># 打开一个文件</span></div><div class="line">fo = open(<span class="string">"foo.txt"</span>, <span class="string">"r+"</span>)</div><div class="line">str = fo.read(<span class="number">10</span>);</div><div class="line"><span class="keyword">print</span> <span class="string">"读取的字符串是 : "</span>, str</div><div class="line"> </div><div class="line"><span class="comment"># 查找当前位置</span></div><div class="line">position = fo.tell();</div><div class="line"><span class="keyword">print</span> <span class="string">"当前文件位置 : "</span>, position</div><div class="line"> </div><div class="line"><span class="comment"># 把指针再次重新定位到文件开头</span></div><div class="line">position = fo.seek(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">str = fo.read(<span class="number">10</span>);</div><div class="line"><span class="keyword">print</span> <span class="string">"重新读取字符串 : "</span>, str</div><div class="line"><span class="comment"># 关闭打开的文件</span></div><div class="line">fo.close()</div></pre></td></tr></table></figure></p><p>以上实例输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">读取的字符串是 :  www.runoob</div><div class="line">当前文件位置 :  10</div><div class="line">重新读取字符串 :  www.runoob</div></pre></td></tr></table></figure></p><h2 id="重命名和删除文件"><a href="#重命名和删除文件" class="headerlink" title="重命名和删除文件"></a>重命名和删除文件</h2><p>Python的os模块提供了帮你执行文件处理操作的方法，比如重命名和删除文件。<br>要使用这个模块，你必须先导入它，然后才可以调用相关的各种功能。<br>rename()方法：<br>rename()方法需要两个参数，当前的文件名和新文件名。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.rename(current_file_name, new_file_name)</div></pre></td></tr></table></figure></p><p>例子：<br>下例将重命名一个已经存在的文件test1.txt。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"><span class="comment"># 重命名文件test1.txt到test2.txt。</span></div><div class="line">os.rename( <span class="string">"test1.txt"</span>, <span class="string">"test2.txt"</span> )</div></pre></td></tr></table></figure></p><p><strong>remove()方法</strong><br>你可以用remove()方法删除文件，需要提供要删除的文件名作为参数。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.remove(file_name)</div></pre></td></tr></table></figure></p><p>例子：<br>下例将删除一个已经存在的文件test2.txt。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"><span class="comment"># 删除一个已经存在的文件test2.txt</span></div><div class="line">os.remove(<span class="string">"test2.txt"</span>)</div></pre></td></tr></table></figure></p><h2 id="Python里的目录："><a href="#Python里的目录：" class="headerlink" title="Python里的目录："></a>Python里的目录：</h2><p>所有文件都包含在各个不同的目录下，不过Python也能轻松处理。os模块有许多方法能帮你创建，删除和更改目录。<br>mkdir()方法<br>可以使用os模块的mkdir()方法在当前目录下创建新的目录们。你需要提供一个包含了要创建的目录名称的参数。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.mkdir(<span class="string">"newdir"</span>)</div></pre></td></tr></table></figure></p><p>例子：<br>下例将在当前目录下创建一个新目录test。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"><span class="comment"># 创建目录test</span></div><div class="line">os.mkdir(<span class="string">"test"</span>)</div></pre></td></tr></table></figure></p><p><strong>chdir()方法</strong><br>可以用chdir()方法来改变当前的目录。chdir()方法需要的一个参数是你想设成当前目录的目录名称。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.chdir(<span class="string">"newdir"</span>)</div></pre></td></tr></table></figure></p><p>例子：<br>下例将进入”/home/newdir”目录。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"><span class="comment"># 将当前目录改为"/home/newdir"</span></div><div class="line">os.chdir(<span class="string">"/home/newdir"</span>)</div></pre></td></tr></table></figure></p><p><strong>getcwd()方法：</strong><br>getcwd()方法显示当前的工作目录。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.getcwd()</div></pre></td></tr></table></figure></p><p>例子：<br>下例给出当前目录：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"><span class="comment"># 给出当前的目录</span></div><div class="line"><span class="keyword">print</span> os.getcwd()</div></pre></td></tr></table></figure></p><p><strong>rmdir()方法</strong><br>rmdir()方法删除目录，目录名称以参数传递。<br>在删除这个目录之前，它的所有内容应该先被清除。<br>语法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">os.rmdir(<span class="string">'dirname'</span>)</div></pre></td></tr></table></figure></p><p>例子：<br>以下是删除” /tmp/test”目录的例子。目录的完全合规的名称必须被给出，否则会在当前目录下搜索该目录。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> os</div><div class="line"> </div><div class="line"><span class="comment"># 删除”/tmp/test”目录</span></div><div class="line">os.rmdir( <span class="string">"/tmp/test"</span>  )</div></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      本章只讲述所有基本的的I/O函数，更多函数请参考Python标准文档。
-    
-    </summary>
-    
-      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS正则表达式使用</title>
-    <link href="https://blog.devzou.com/2018/08/11/ios/2019-05-23-iOS%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8/"/>
-    <id>https://blog.devzou.com/2018/08/11/ios/2019-05-23-iOS正则表达式使用/</id>
-    <published>2018-08-11T01:10:09.000Z</published>
-    <updated>2019-05-23T02:35:58.643Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为regex、regexp或RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些匹配某个模式的文本。<br>许多程序设计语言都支持利用正则表达式进行字符串操作。例如，在Perl中就内建了一个功正则表达式则表达式引擎。正则表达式这个概念最初是由Unix中的工具软件（例如sed和gr正则表达式开的。正则表达式通常缩写成“regex”，单数有regexp、regex，复数有regexps、regexes、regexen。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;正则表达式，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为re
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>duplicate symbol _APContentTypesFromHTTPHeader...Debug-iphoneos/XXXXX.a(AlipaySDK) 报错</title>
-    <link href="https://blog.devzou.com/2018/08/11/ios/2019-07-03-%E9%A1%B9%E7%9B%AE%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/"/>
-    <id>https://blog.devzou.com/2018/08/11/ios/2019-07-03-项目编译报错/</id>
-    <published>2018-08-11T01:10:09.000Z</published>
-    <updated>2019-07-03T09:58:30.319Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="问题还原"><a href="#问题还原" class="headerlink" title="问题还原"></a>问题还原</h2><p>xcode在编译工程时突然报如下错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">duplicate symbol _APContentTypesFromHTTPHeader in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APMutableStringRemoveLastComma in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APNetworkingErrorDomain in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APNetworkingOperationFailingURLRequestErrorKey in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APNetworkingOperationFailingURLResponseErrorKey in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _APSecuDecryptResponse in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_LOGSWITCH in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_STATICHASH in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_SUCCESS in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_TIME in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_TOKEN in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _ASS_STORAGE_KEY_VKEYSWITCH in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _DTRpcCreateError in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _DTRpcCreateErrorWithCause in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _LAST_LOGIN_TIME_KEY in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _LOG_JB_ERROR_DETECTED in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_APJSONRequestOperation in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_APayAuthInfo in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_ASSApplistModel in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">duplicate symbol _OBJC_CLASS_$_ASSCommon in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line"></div><div class="line">duplicate symbol _x509parse_pubkey in:</div><div class="line">    /Users/ZLY/Library/Developer/Xcode/DerivedData/Pay-emqjldfnrpthwshflaiujufkqrle/Build/Products/Debug-iphoneos/XXXXX.a(AlipaySDK)</div><div class="line">ld: 608 duplicate symbols for architecture arm64</div><div class="line">clang: error: linker command failed with exit code 1 (use -v to see invocation)</div></pre></td></tr></table></figure></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在File &gt;Workspace Settings 里build system 将New Build System(Default)切换成Legacy build system。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;问题还原&quot;&gt;&lt;a href=&quot;#问题还原&quot; class=&quot;headerlink&quot; title=&quot;问题还原&quot;&gt;&lt;/a&gt;问题还原&lt;/h2&gt;&lt;p&gt;xcode在编译工程时突然报如下错误&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS面试题</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-12-iOS面试题/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T12:41:08.130Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一个NSObject对象占用多少内存"><a href="#一个NSObject对象占用多少内存" class="headerlink" title="一个NSObject对象占用多少内存"></a>一个NSObject对象占用多少内存</h2><p>系统分配了16个字节给NSObject对象<br>但NSObject对象内部只使用了8个字节的空间(64bit环境下)</p><h2 id="对象的isa指针指向哪里"><a href="#对象的isa指针指向哪里" class="headerlink" title="对象的isa指针指向哪里"></a>对象的isa指针指向哪里</h2><p>instance对象的isa指向class<br>当调用对象方法时，通过instance对象的isa找到class 对象，最后找到对象方法的实现进行调用<br>class 的isa指向meta-class<br>当调用类方法时，通过class的isa找到meta-class，最后找到类方法的实现进行调用<br>meta-class的isa指向基类的meta-class对象</p><h2 id="OC的类信息存放在哪里"><a href="#OC的类信息存放在哪里" class="headerlink" title="OC的类信息存放在哪里"></a>OC的类信息存放在哪里</h2><p>对象方法、属性、成员变量、协议信息，存放在class对象中<br>类方法，存放在meta-class对象中<br>成员变量的具体值，存放在instance对象中</p><h2 id="iOS用什么方式实现对一个对象的KVO-KVO的本质是什么"><a href="#iOS用什么方式实现对一个对象的KVO-KVO的本质是什么" class="headerlink" title="iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)"></a>iOS用什么方式实现对一个对象的KVO?(KVO的本质是什么)</h2><p>利用runtimeAPI动态生成一个子类，并且让instance对象的isa指向这个全新的子类<br>当修改instance对象的属性时，会调用Foundation的_NSSetXXXXValueAndNotify函数<br>willChangeValueForKey:<br>父类原来的setter方法<br>didChangeValueForKey:<br>内部会触发监听器(Observer)的监听方法(oberserveValueForKeyPath:ofObject:change:context:)</p><h2 id="如何手动触发KVO"><a href="#如何手动触发KVO" class="headerlink" title="如何手动触发KVO"></a>如何手动触发KVO</h2><p>手动调用willChangeValueForKey和didChangeValueForKey</p><h2 id="直接修改成员变量会触发KVO吗"><a href="#直接修改成员变量会触发KVO吗" class="headerlink" title="直接修改成员变量会触发KVO吗"></a>直接修改成员变量会触发KVO吗</h2><p>不会</p><h2 id="通过KVC修改属性的值，会触发KVO吗"><a href="#通过KVC修改属性的值，会触发KVO吗" class="headerlink" title="通过KVC修改属性的值，会触发KVO吗"></a>通过KVC修改属性的值，会触发KVO吗</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;a href=&quot;#一个NSObject对象占用多少内存&quot; class=&quot;headerlink&quot; title=&quot;一个NSObject对象占用多少内存&quot;&gt;&lt;/a&gt;一个NSObject对象占用多少内存&lt;/h2&gt;&lt;p&gt;系统分配了1
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS设计模式之策略模式</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-07-21-iOS设计模式之策略模式/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.130Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><ol><li>完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。</li><li>在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。<a id="more"></a></li><li>在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。</li><li>除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。</li><li>为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。<h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。<h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2>策略模式包含如下角色：</li></ol><ul><li>Context: 环境类</li><li>Strategy: 抽象策略类</li><li>ConcreteStrategy: 具体策略类<br><img src="" alt=""><h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2></li></ul><ol><li>策略模式是一个比较容易理解和使用的设计模式，策略模式是对算法的封装，它把算法的责任和算法本身分割开，委派给不同的对象管理。策略模式通常把一个系列的算法封装到一系列的策略类里面，作为一个抽象策略类的子类。用一句话来说，就是“准备一组算法，并将每一个算法封装起来，使得它们可以互换”。</li><li>在策略模式中，应当由客户端自己决定在什么情况下使用什么具体策略角色。</li><li>策略模式仅仅封装算法，提供新算法插入到已有系统中，以及老算法从系统中“退休”的方便，策略模式并不决定在何时使用何种算法，算法的选择由客户端来决定。这在一定程度上提高了系统的灵活性，但是客户端需要理解所有具体策略类之间的区别，以便选择合适的算法，这也是策略模式的缺点之一，在一定程度上增加了客户端的使用难度。<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2></li></ol><p>在以下情况下可以使用策略模式：</p><ul><li>如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。</li><li>一个系统需要动态地在几种算法中选择一种。</li><li>如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。</li><li><p>不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>策略模式与状态模式</p></li><li><p>可以通过环境类状态的个数来决定是使用策略模式还是状态模式。</p></li><li>策略模式的环境类自己选择一个具体策略类，具体策略类无须关心环境类；而状态模式的环境类由于外在因素需要放进一个具体状态中，以便通过其方法实现状态的切换，因此环境类和状态类之间存在一种双向的关联关系。</li><li>使用策略模式时，客户端需要知道所选的具体策略是哪一个，而使用状态模式时，客户端无须关心具体状态，环境类的状态会根据用户的操作自动转换。</li><li>如果系统中某个类的对象存在多种状态，不同状态下行为有差异，而且这些状态之间可以发生转换时使用状态模式；如果系统中某个类的某一行为存在多种实现方式，而且这些实现方式可以互换时使用策略模式。<h2 id="优点-amp-amp-缺点"><a href="#优点-amp-amp-缺点" class="headerlink" title="优点&amp;&amp;缺点"></a>优点&amp;&amp;缺点</h2><h3 id="策略模式的优点"><a href="#策略模式的优点" class="headerlink" title="策略模式的优点"></a>策略模式的优点</h3></li></ul><ol><li>策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。</li><li>策略模式提供了管理相关的算法族的办法。</li><li>策略模式提供了可以替换继承关系的办法。</li><li>使用策略模式可以避免使用多重条件转移语句。<h3 id="策略模式的缺点"><a href="#策略模式的缺点" class="headerlink" title="策略模式的缺点"></a>策略模式的缺点</h3></li></ol><p>客户端必须知道所有的策略类，并自行决定使用哪一个策略类。<br>策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。&lt;/li&gt;
-&lt;li&gt;在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发之Category</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.140Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Category实现原理"><a href="#Category实现原理" class="headerlink" title="Category实现原理"></a>Category实现原理</h2><h3 id="category的结构"><a href="#category的结构" class="headerlink" title="category的结构"></a>category的结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">struct category_t &#123;</div><div class="line">    const char *name;</div><div class="line">    classref_t cls;</div><div class="line">    struct method_list_t *instanceMethods;</div><div class="line">    struct method_list_t *classMethods;</div><div class="line">    struct protocol_list_t *protocols;</div><div class="line">    struct property_list_t *instanceProperties;</div><div class="line">    // Fields below this point are not always present on disk.</div><div class="line">    struct property_list_t *_classProperties;</div><div class="line"></div><div class="line">    method_list_t *methodsForMeta(bool isMeta) &#123;</div><div class="line">        if (isMeta) return classMethods;</div><div class="line">        else return instanceMethods;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    property_list_t *propertiesForMeta(bool isMeta, struct header_info *hi);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Category实现原理&quot;&gt;&lt;a href=&quot;#Category实现原理&quot; class=&quot;headerlink&quot; title=&quot;Category实现原理&quot;&gt;&lt;/a&gt;Category实现原理&lt;/h2&gt;&lt;h3 id=&quot;category的结构&quot;&gt;&lt;a href=&quot;#ca
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发之KVC底层原理</title>
-    <link href="https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/"/>
-    <id>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</id>
-    <published>2018-08-04T23:10:09.000Z</published>
-    <updated>2019-03-02T07:02:45.140Z</updated>
-    
-    <content type="html"><![CDATA[<p>KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性<br>常见的API有</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKey:(<span class="built_in">NSString</span> *)key</div><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value forKeyPath:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKeyPath:(<span class="built_in">NSString</span> *)keyPath</div><div class="line">- (<span class="keyword">id</span>)valueForKey:(<span class="built_in">NSString</span> *)key</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;KVC的全称是Key-Value Coding 俗称键值编码，可以通过一个key来访问某个属性&lt;br&gt;常见的API有&lt;/p&gt;
-&lt;figure class=&quot;highlight objc&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div cla
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS底层原理之OC对象本质</title>
-    <link href="https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E4%B9%8BOC%E5%AF%B9%E8%B1%A1%E6%9C%AC%E8%B4%A8/"/>
-    <id>https://blog.devzou.com/2018/07/31/ios/2018-08-12-iOS底层原理之OC对象本质/</id>
-    <published>2018-07-30T23:10:09.000Z</published>
-    <updated>2019-03-02T12:41:25.550Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Objective-C的本质"><a href="#Objective-C的本质" class="headerlink" title="Objective-C的本质"></a>Objective-C的本质</h2><p>我们平时编写的Object-C代码，底层都是C/C++代码，所以Objective-C的面向对象都是基于C/C++的数据结构实现的<br>【注】Objective-C的对象、类主要是基于C/C++的结构体实现的</p><h3 id="NSObject的底层实现"><a href="#NSObject的底层实现" class="headerlink" title="NSObject的底层实现"></a>NSObject的底层实现</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span>  <span class="title">NSObjec</span> </span>&#123;</div><div class="line">  Class isa;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>C语言实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">struct NSObject_IMPL &#123;</div><div class="line">Class isa;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><h2 id="OC对象的本质"><a href="#OC对象的本质" class="headerlink" title="OC对象的本质"></a>OC对象的本质</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Objective-C的本质&quot;&gt;&lt;a href=&quot;#Objective-C的本质&quot; class=&quot;headerlink&quot; title=&quot;Objective-C的本质&quot;&gt;&lt;/a&gt;Objective-C的本质&lt;/h2&gt;&lt;p&gt;我们平时编写的Object-C代码，底层都是
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS设计模式之建造者模式</title>
-    <link href="https://blog.devzou.com/2018/07/31/ios/2018-07-31-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://blog.devzou.com/2018/07/31/ios/2018-07-31-设计模式之建造者模式/</id>
-    <published>2018-07-30T23:10:09.000Z</published>
-    <updated>2019-04-22T14:00:59.708Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h2><p>无论是在现实世界中还是在软件系统中，都存在一些复杂的对象，它们拥有多个组成部分，如汽车，它包括车轮、方向盘、发送机等各种部件。而对于大多数用户而言，无须知道这些部件的装配细节，也几乎不会使用单独某个部件，而是使用一辆完整的汽车，可以通过建造者模式对其进行设计与描述，建造者模式可以将部件和其组装过程分开，一步一步创建一个复杂的对象。用户只需要指定复杂对象的类型就可以得到该对象，而无须知道其内部的具体构造细节。</p><p>在软件开发中，也存在大量类似汽车一样的复杂对象，它们拥有一系列成员属性，这些成员属性中有些是引用类型的成员对象。而且在这些复杂对象中，还可能存在一些限制条件，如某些属性没有赋值则复杂对象不能作为一个完整的产品使用；有些属性的赋值必须按照某个顺序，一个属性没有赋值之前，另一个属性可能无法赋值等。</p><p>复杂对象相当于一辆有待建造的汽车，而对象的属性相当于汽车的部件，建造产品的过程就相当于组合部件的过程。由于组合部件的过程很复杂，因此，这些部件的组合过程往往被“外部化”到一个称作建造者的对象里，建造者返还给客户端的是一个已经建造完毕的完整产品对象，而用户无须关心该对象所包含的属性以及它们的组装方式，这就是建造者模式的模式动机。</p><h2 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h2><p>造者模式(Builder Pattern)：将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p><p>建造者模式是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节。建造者模式属于对象创建型模式。根据中文翻译的不同，建造者模式又可以称为生成器模式。</p><h2 id="模式结构"><a href="#模式结构" class="headerlink" title="模式结构"></a>模式结构</h2><p>建造者模式包含如下角色：</p><ul><li>Builder：抽象建造者，为创建一个产品对象的各个部件指定抽象接口</li><li>ConcreteBuilder：实现Builder的接口以构造和装配该产品的各个部件，定义并明确它所创建的表示，并 提供一个检索产品的接口</li><li>Director：构造一个使用Builder接口的对象</li><li>Product：表示被构造的复杂对象。ConcreteBuilder创建该产品的内部表示并定义它的装配过程，包含定义组成部件的类，包括将这些部件装配成最终产品的接口<h2 id="模式分析"><a href="#模式分析" class="headerlink" title="模式分析"></a>模式分析</h2>抽象建造者类中定义了产品的创建方法和返回方法;</li></ul><p>建造者模式的结构中还引入了一个指挥者类Director，该类的作用主要有两个：一方面它隔离了客户与生产过程；另一方面它负责控制产品的生成过程。指挥者针对抽象建造者编程，客户端只需要知道具体建造者的类型，即可通过指挥者类调用建造者的相关方法，返回一个完整的产品对象</p><p>在客户端代码中，无须关心产品对象的具体组装过程，只需确定具体建造者的类型即可，建造者模式将复杂对象的构建与对象的表现分离开来，这样使得同样的构建过程可以创建出不同的表现。</p><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>在建造者模式中， 客户端不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象。</p><ul><li>每一个具体建造者都相对独立，而与其他的具体建造者无关，因此可以很方便地替换具体建造者或增加新的具体建造者， 用户使用不同的具体建造者即可得到不同的产品对象 。</li><li>可以更加精细地控制产品的创建过程 。将复杂产品的创建步骤分解在不同的方法中，使得创建过程更加清晰，也更方便使用程序来控制创建过程。</li><li><p>增加新的具体建造者无须修改原有类库的代码，指挥者类针对抽象建造者类编程，系统扩展方便，符合“开闭原则”。</p><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>建造者模式所创建的产品一般具有较多的共同点，其组成部分相似，如果产品之间的差异性很大，则不适合使用建造者模式，因此其使用范围受到一定的限制。<br>如果产品的内部变化复杂，可能会导致需要定义很多具体建造者类来实现这种变化，导致系统变得很庞大。</p><h2 id="适用环境"><a href="#适用环境" class="headerlink" title="适用环境"></a>适用环境</h2><p>在以下情况下可以使用建造者模式：</p></li><li><p>需要生成的产品对象有复杂的内部结构，这些产品对象通常包含多个成员属性。</p></li><li>需要生成的产品对象的属性相互依赖，需要指定其生成顺序。</li><li>对象的创建过程独立于创建该对象的类。在建造者模式中引入了指挥者类，将创建过程封装在指挥者类中，而不在建造者类中。</li><li><p>隔离复杂对象的创建和使用，并使得相同的创建过程可以创建不同的产品。</p><h2 id="模式扩展"><a href="#模式扩展" class="headerlink" title="模式扩展"></a>模式扩展</h2><p>建造者模式的简化:</p></li><li><p>省略抽象建造者角色：如果系统中只需要一个具体建造者的话，可以省略掉抽象建造者。</p></li><li>省略指挥者角色：在具体建造者只有一个的情况下，如果抽象建造者角色已经被省略掉，那么还可以省略指挥者角色，让</li><li>Builder角色扮演指挥者与建造者双重角色。</li></ul><p>建造者模式与抽象工厂模式的比较:</p><ul><li>与抽象工厂模式相比， 建造者模式返回一个组装好的完整产品 ，而 抽象工厂模式返回一系列相关的产品，这些产品位于不同的产品等级结构，构成了一个产品族。</li><li>在抽象工厂模式中，客户端实例化工厂类，然后调用工厂方法获取所需产品对象，而在建造者模式中，客户端可以不直接调用建造者的相关方法，而是通过指挥者类来指导如何生成对象，包括对象的组装过程和建造步骤，它侧重于一步步构造一个复杂对象，返回一个完整的对象。</li><li>如果将抽象工厂模式看成 汽车配件生产工厂 ，生产一个产品族的产品，那么建造者模式就是一个 汽车组装工厂 ，通过对部件的组装可以返回一辆完整的汽车。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;模式动机&quot;&gt;&lt;a href=&quot;#模式动机&quot; class=&quot;headerlink&quot; title=&quot;模式动机&quot;&gt;&lt;/a&gt;模式动机&lt;/h2&gt;&lt;p&gt;无论是在现实世界中还是在软件系统中，都存在一些复杂的对象，它们拥有多个组成部分，如汽车，它包括车轮、方向盘、发送机等各种部件
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
     
   </entry>
   
