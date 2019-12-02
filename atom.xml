@@ -60,6 +60,24 @@
   </entry>
   
   <entry>
+    <title>mysql权限管理</title>
+    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
+    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
+    <published>2019-10-18T01:10:09.000Z</published>
+    <updated>2019-10-17T22:08:22.767Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL 数据类型</title>
     <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-19-MySQL%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-19-MySQL 数据类型/</id>
@@ -85,20 +103,28 @@
   </entry>
   
   <entry>
-    <title>mysql权限管理</title>
-    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
-    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
-    <published>2019-10-18T01:10:09.000Z</published>
-    <updated>2019-10-17T22:08:22.767Z</updated>
+    <title>JAVA开发之servlet、Filter、Listener</title>
+    <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet%E3%80%81Filer%E3%80%81Listener/"/>
+    <id>https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet、Filer、Listener/</id>
+    <published>2019-08-12T00:10:09.000Z</published>
+    <updated>2019-10-25T00:10:06.614Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。</p><p>当客户端向服务器发出HTTP请求时，首先会由服务器中的 Web 容器（如Tomcat）对请求进行路由，交给该URL对应的 Servlet 进行处理，Servlet 所要做的事情就是返回适当的内容给用户。</p><p>要创建自己的 Servlet，可以通过以下三种方式来实现</p><ul><li>实现 Servlet 接口</li><li>继承 GenericServlet 类</li><li>继承 HttpServlet 类</li></ul>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。&lt;/p&gt;
+&lt;p
+      
+    
     </summary>
     
-      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
     
     
-      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
     
   </entry>
   
@@ -116,32 +142,6 @@
       
       
         &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;JDBC (Java Database Connectivity) API，即Java数据库编程接口，是连接java应用程序和数据库之间的桥
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA开发之servlet、Filter、Listener</title>
-    <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet%E3%80%81Filer%E3%80%81Listener/"/>
-    <id>https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet、Filer、Listener/</id>
-    <published>2019-08-12T00:10:09.000Z</published>
-    <updated>2019-10-25T00:10:06.614Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。</p><p>当客户端向服务器发出HTTP请求时，首先会由服务器中的 Web 容器（如Tomcat）对请求进行路由，交给该URL对应的 Servlet 进行处理，Servlet 所要做的事情就是返回适当的内容给用户。</p><p>要创建自己的 Servlet，可以通过以下三种方式来实现</p><ul><li>实现 Servlet 接口</li><li>继承 GenericServlet 类</li><li>继承 HttpServlet 类</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。&lt;/p&gt;
-&lt;p
       
     
     </summary>
