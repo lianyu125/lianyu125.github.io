@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="小玉的技术博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://blog.devzou.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="{{ page.keywords }}" />
+
+
+    <meta name="description" content="前言Dart在静态语法方面和Java非常相似，如类型定义、函数声明、泛型等，而在动态特性方面又和JavaScript很像，如函数式特性、异步支持等。除了融合Java和JavaScript语言之所..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>Dart语言简介 | 小玉的技术博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="小玉的技术博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c48f8a49e4db582787c4c81264546770";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+	<script>
+		(function(i, s, o, g, r, a, m) {
+		    i['GoogleAnalyticsObject'] = r;
+		    i[r] = i[r] || function() {
+		        (i[r].q = i[r].q || []).push(arguments)
+		    }, i[r].l = 1 * new Date();
+		    a = s.createElement(o),
+		    m = s.getElementsByTagName(o)[0];
+		    a.async = 1;
+		    a.src = g;
+		    m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-98679319-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='null'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 小玉的技术博客 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://blog.devzou.com">小玉的技术博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/iOS/"><i class="fa "></i>iOS</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/Java/"><i class="fa "></i>Java</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Dart语言简介">
+            
+	            Dart语言简介
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/fluter/">fluter</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/iOS/">iOS</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/08/07</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Dart在静态语法方面和Java非常相似，如类型定义、函数声明、泛型等，而在动态特性方面又和JavaScript很像，如函数式特性、异步支持等。除了融合Java和JavaScript语言之所长之外，Dart也具有一些其它具有表现力的语法，如可选命名参数、..（级联运算符）和?.（条件成员访问运算符）以及??（判空赋值运算符）。其实，对编程语言了解比较多的读者会发现，在Dart中其实看到的不仅有Java和JavaScript的影子，它还具有其它编程语言中的身影，如命名参数在Objective-C和Swift中早就很普遍，而??操作符在PHP 7.0语法中就已经存在了，因此我们可以看到Google对Dart语言给予厚望，是想把Dart打造成一门集百家之所长的编程语言。</p>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p><strong>1.var</strong><br>类似于JavaScript中的var，它可以接收任何类型的变量，但最大的不同是Dart中var变量一旦赋值，类型便会确定，则不能再改变其类型，如：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> t;</div><div class="line">t = <span class="string">"hello world"</span>;</div><div class="line"><span class="comment">// 下面代码在dart中会报错，因为变量t的类型已经确定为String，</span></div><div class="line"><span class="comment">// 类型一旦确定后则不能再更改其类型。</span></div><div class="line">t = <span class="number">20</span>;</div></pre></td></tr></table></figure></p>
+<p>上面的代码在JavaScript是没有问题的，前端开发者需要注意一下，之所以有此差异是因为Dart本身是一个强类型语言，任何变量都是有确定类型的，在Dart中，当用var声明一个变量后，Dart在编译时会根据第一次赋值数据的类型来推断其类型，编译结束后其类型就已经被确定，而JavaScript是纯粹的弱类型脚本语言，var只是变量的声明方式而已。<br><strong>2.dynamic和Object</strong><br>Object 是Dart所有对象的根基类，也就是说所有类型都是Object的子类(包括Function和Null)，所以任何类型的数据都可以赋值给Object声明的对象. dynamic与var一样都是关键词,声明的变量可以赋值任意对象。 而dynamic与Object相同之处在于,他们声明的变量可以在后期改变赋值类型。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dynamic</span> t;</div><div class="line"><span class="built_in">Object</span> x;</div><div class="line">t = <span class="string">"hellow world"</span>;</div><div class="line">x = <span class="string">'Hello Object'</span>;</div><div class="line"><span class="comment">//下面代码没有问题</span></div><div class="line">t = <span class="number">400</span>;</div><div class="line">x = <span class="number">2000</span>;</div></pre></td></tr></table></figure></p>
+<p>dynamic与Object不同的是,dynamic声明的对象编译器会提供所有可能的组合, 而Object声明的对象只能使用Object的属性与方法, 否则编译器会报错。如:<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dynamic</span> a;</div><div class="line"><span class="built_in">Object</span> b;</div><div class="line">main() &#123;</div><div class="line">    a = <span class="string">""</span>;</div><div class="line">    b = <span class="string">""</span>;</div><div class="line">    printLengths();</div><div class="line">&#125;   </div><div class="line"></div><div class="line">printLengths() &#123;</div><div class="line">    <span class="comment">// no warning</span></div><div class="line">    <span class="built_in">print</span>(a.length);</div><div class="line">    <span class="comment">// warning:</span></div><div class="line">    <span class="comment">// The getter 'length' is not defined for the class 'Object'</span></div><div class="line">    <span class="built_in">print</span>(b.length);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>变量a不会报错, 变量b编译器会报错<br>dynamic的这个特性与Objective-C中的id作用很像. dynamic的这个特点使得我们在使用它时需要格外注意,这很容易引入一个运行时错误.<br><strong>3.final和const</strong><br>如果您从未打算更改一个变量，那么使用 final 或 const，不是var，也不是一个类型。 一个 final 变量只能被设置一次，两者区别在于：const 变量是一个编译时常量，final变量在第一次使用时被初始化。被final或者const修饰的变量，变量类型可以省略，如：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以省略String这个类型声明</span></div><div class="line"><span class="keyword">final</span> str = <span class="string">"hello world"</span>;</div><div class="line"><span class="comment">//final String str = "hello world"; </span></div><div class="line"><span class="keyword">const</span> str1 = <span class="string">"hello world"</span>;</div><div class="line"><span class="comment">//const String str1 = "hello world";</span></div></pre></td></tr></table></figure></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>Dart是一种真正的面向对象的语言，所以即使是函数也是对象，并且有一个类型Function。这意味着函数可以赋值给变量或作为参数传递给其他函数，这是函数式编程的典型特征。<br><strong>1.函数声明</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">bool</span> isNoble(<span class="built_in">int</span> atomicNumber) &#123;</div><div class="line">  <span class="keyword">return</span> _nobleGases[atomicNumber] != <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Dart函数声明如果没有显式声明返回值类型时会默认当做dynamic处理，注意，函数返回值没有类型推断：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">bool</span> CALLBACK();</div><div class="line"></div><div class="line"><span class="comment">//不指定返回类型，此时默认为dynamic，不是bool</span></div><div class="line">isNoble(<span class="built_in">int</span> atomicNumber) &#123;</div><div class="line">  <span class="keyword">return</span> _nobleGases[atomicNumber] != <span class="keyword">null</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> test(CALLBACK cb)&#123;</div><div class="line">   <span class="built_in">print</span>(cb()); </div><div class="line">&#125;</div><div class="line"><span class="comment">//报错，isNoble不是bool类型</span></div><div class="line">test(isNoble);</div></pre></td></tr></table></figure></p>
+<p><strong>2.对于只包含一个表达式的函数，可以使用简写语法</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">bool</span> isNoble (<span class="built_in">int</span> atomicNumber)=&gt; _nobleGases [ atomicNumber ] ！= <span class="keyword">null</span> ;</div></pre></td></tr></table></figure></p>
+<p><strong>3.函数作为变量</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> say = (str)&#123;</div><div class="line">  <span class="built_in">print</span>(str);</div><div class="line">&#125;;</div><div class="line">say(<span class="string">"hello world"</span>);</div></pre></td></tr></table></figure></p>
+<p><strong>4.函数作为参数传递</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">void</span> execute(<span class="keyword">var</span> callback) &#123;</div><div class="line">    callback();</div><div class="line">&#125;</div><div class="line">execute(() =&gt; <span class="built_in">print</span>(<span class="string">"xxx"</span>))</div></pre></td></tr></table></figure></p>
+<p><strong>5.可选的位置参数</strong><br>包装一组函数参数，用[]标记为可选的位置参数，并放在参数列表的最后面：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span> say(<span class="built_in">String</span> from, <span class="built_in">String</span> msg, [<span class="built_in">String</span> device]) &#123;</div><div class="line">  <span class="keyword">var</span> result = <span class="string">'$from says $msg'</span>;</div><div class="line">  <span class="keyword">if</span> (device != <span class="keyword">null</span>) &#123;</div><div class="line">    result = <span class="string">'$result with a $device'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面是一个不带可选参数调用这个函数的例子：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">say(<span class="string">'one'</span>, <span class="string">'two'</span>); <span class="comment">//结果是： one says two</span></div></pre></td></tr></table></figure></p>
+<p>下面是用第三个参数调用这个函数的例子：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">say(<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>);<span class="comment">//结果是：one says two with a three</span></div></pre></td></tr></table></figure></p>
+<p><strong>6.可选的命名参数</strong><br>定义函数时，使用{param1, param2, …}，放在参数列表的最后面，用于指定命名参数。例如：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置[bold]和[hidden]标志</span></div><div class="line"><span class="keyword">void</span> enableFlags(&#123;<span class="built_in">bool</span> bold, <span class="built_in">bool</span> hidden&#125;) &#123;</div><div class="line">    <span class="comment">// ... </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用函数时，可以使用指定命名参数。例如：paramName: value<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">enableFlags(bold: <span class="keyword">true</span>, hidden: <span class="keyword">false</span>);</div></pre></td></tr></table></figure></p>
+<p>可选命名参数在Flutter中使用非常多。</p>
+<p><strong>注意，不能同时使用可选的位置参数和可选的命名参数</strong></p>
+
+    </div>
+    
+        <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+                <span class="reward-type">
+                    <img class="alipay" src="/img/zhifubao.jpg"><b>支付宝打赏</b>
+                </span>
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="/img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">小玉的技术博客</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/08/10/flutter/2019-12-11-Flutter中异步之Future/" class="pre-post btn btn-default" title='Flutter 异步函数之Future'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Flutter 异步函数之Future</span>
+        </a>
+    
+    
+        <a href="/2019/08/01/tool/2019-08-01-charles破解/" class="next-post btn btn-default" title=''>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'Pfb0jUXDKnWB0hnaeVOT6PpK-gzGzoHsz',
+            appKey: 'OyV7SQidxc4c3oBzUDUFeass',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量声明"><span class="toc-text">变量声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
