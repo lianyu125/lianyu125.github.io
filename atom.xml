@@ -179,31 +179,6 @@
   </entry>
   
   <entry>
-    <title>Flutter 异步之async/await</title>
-    <link href="https://blog.devzou.com/2019/08/10/flutter/2019-12-11-Dart%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0%E4%B9%8Basync:await/"/>
-    <id>https://blog.devzou.com/2019/08/10/flutter/2019-12-11-Dart异步函数之async:await/</id>
-    <published>2019-08-10T01:10:09.000Z</published>
-    <updated>2019-12-11T15:34:11.010Z</updated>
-    
-    <content type="html"><![CDATA[<p>Dart中的async/await 和JavaScript中的async/await功能和用法是一模一样的，如果你已经了解JavaScript中的async/await的用法，可以直接跳过本节。<br><strong>回调地狱(Callback Hell)</strong><br>如果代码中有大量异步逻辑，并且出现大量异步任务依赖其它异步任务的结果时，必然会出现Future.then回调中套回调情况。举个例子，比如现在有个需求场景是用户先登录，登录成功后会获得用户ID，然后通过用户ID，再去请求用户个人信息，获取到用户个人信息后，为了使用方便，我们需要将其缓存在本地文件系统，代码如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//先分别定义各个异步任务</span></div><div class="line">Future&lt;<span class="built_in">String</span>&gt; login(<span class="built_in">String</span> userName, <span class="built_in">String</span> pwd)&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//用户登录</span></div><div class="line">&#125;;</div><div class="line">Future&lt;<span class="built_in">String</span>&gt; getUserInfo(<span class="built_in">String</span> id)&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//获取用户信息 </span></div><div class="line">&#125;;</div><div class="line">Future saveUserInfo(<span class="built_in">String</span> userInfo)&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">// 保存用户信息 </span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><p>接下来，执行整个任务流<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">login(<span class="string">"alice"</span>,<span class="string">"******"</span>).then((id)&#123;</div><div class="line"> <span class="comment">//登录成功后通过，id获取用户信息    </span></div><div class="line"> getUserInfo(id).then((userInfo)&#123;</div><div class="line">    <span class="comment">//获取用户信息后保存 </span></div><div class="line">    saveUserInfo(userInfo).then(()&#123;</div><div class="line">       <span class="comment">//保存用户信息，接下来执行其它操作</span></div><div class="line">        ...</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><p>可以感受一下，如果业务逻辑中有大量异步依赖的情况，将会出现上面这种在回调里面套回调的情况，过多的嵌套会导致的代码可读性下降以及出错率提高，并且非常难维护，这个问题被形象的称为回调地狱（Callback Hell）。回调地狱问题在之前JavaScript中非常突出，也是JavaScript被吐槽最多的点，但随着ECMAScript6和ECMAScript7标准发布后，这个问题得到了非常好的解决，而解决回调地狱的两大神器正是ECMAScript6引入了Promise，以及ECMAScript7中引入的async/await。 而在Dart中几乎是完全平移了JavaScript中的这两者：Future相当于Promise，而async/await连名字都没改。接下来我们看看通过Future和async/await如何消除上面示例中的嵌套问题。<br><strong>使用Future消除Callback Hell</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">login(<span class="string">"alice"</span>,<span class="string">"******"</span>).then((id)&#123;</div><div class="line">      <span class="keyword">return</span> getUserInfo(id);</div><div class="line">&#125;).then((userInfo)&#123;</div><div class="line">    <span class="keyword">return</span> saveUserInfo(userInfo);</div><div class="line">&#125;).then((e)&#123;</div><div class="line">   <span class="comment">//执行接下来的操作 </span></div><div class="line">&#125;).catchError((e)&#123;</div><div class="line">  <span class="comment">//错误处理  </span></div><div class="line">  <span class="built_in">print</span>(e);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p><p>正如上文所述， “Future 的所有API的返回值仍然是一个Future对象，所以可以很方便的进行链式调用” ，如果在then中返回的是一个Future的话，该future会执行，执行结束后会触发后面的then回调，这样依次向下，就避免了层层嵌套。<br><strong>使用async/await消除callback hell</strong><br>通过Future回调中再返回Future的方式虽然能避免层层嵌套，但是还是有一层回调，有没有一种方式能够让我们可以像写同步代码那样来执行异步任务而不使用回调的方式？答案是肯定的，这就要使用async/await了，下面我们先直接看代码，然后再解释，代码如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">task() <span class="keyword">async</span> &#123;</div><div class="line">   <span class="keyword">try</span>&#123;</div><div class="line">    <span class="built_in">String</span> id = <span class="keyword">await</span> login(<span class="string">"alice"</span>,<span class="string">"******"</span>);</div><div class="line">    <span class="built_in">String</span> userInfo = <span class="keyword">await</span> getUserInfo(id);</div><div class="line">    <span class="keyword">await</span> saveUserInfo(userInfo);</div><div class="line">    <span class="comment">//执行接下来的操作   </span></div><div class="line">   &#125; <span class="keyword">catch</span>(e)&#123;</div><div class="line">    <span class="comment">//错误处理   </span></div><div class="line">    <span class="built_in">print</span>(e);   </div><div class="line">   &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p><ul><li>async用来表示函数是异步的，定义的函数会返回一个Future对象，可以使用then方法添加回调函数。</li><li>await 后面是一个Future，表示等待该异步任务完成，异步完成后才会往下走；await必须出现在 async 函数内部。<br>可以看到，我们通过async/await将一个异步流用同步的代码表示出来了。<blockquote><p> 其实，无论是在JavaScript还是Dart中，async/await都只是一个语法糖，编译器或解释器最终都会将其转化为一个Promise（Future）的调用链。</p></blockquote></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Dart中的async/await 和JavaScript中的async/await功能和用法是一模一样的，如果你已经了解JavaScript中的async/await的用法，可以直接跳过本节。&lt;br&gt;&lt;strong&gt;回调地狱(Callback Hell)&lt;/strong&gt;
-      
-    
-    </summary>
-    
-      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Flutter 异步函数之Future</title>
     <link href="https://blog.devzou.com/2019/08/10/flutter/2019-12-11-Flutter%E4%B8%AD%E5%BC%82%E6%AD%A5%E4%B9%8BFuture/"/>
     <id>https://blog.devzou.com/2019/08/10/flutter/2019-12-11-Flutter中异步之Future/</id>
@@ -218,6 +193,31 @@
       
         &lt;p&gt;Dart类库有非常多的返回Future或者Stream对象的函数。 这些函数被称为异步函数：它们只会在设置好一些耗时操作之后返回，比如像 IO操作。而不是等到这个操作完成。&lt;/p&gt;
 &lt;p&gt;async和await关键词支持了异步编程，允许您写出和同步代码很像的异步代码。&lt;/p
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 异步之async/await</title>
+    <link href="https://blog.devzou.com/2019/08/10/flutter/2019-12-11-Dart%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0%E4%B9%8Basync:await/"/>
+    <id>https://blog.devzou.com/2019/08/10/flutter/2019-12-11-Dart异步函数之async:await/</id>
+    <published>2019-08-10T01:10:09.000Z</published>
+    <updated>2019-12-11T15:34:11.010Z</updated>
+    
+    <content type="html"><![CDATA[<p>Dart中的async/await 和JavaScript中的async/await功能和用法是一模一样的，如果你已经了解JavaScript中的async/await的用法，可以直接跳过本节。<br><strong>回调地狱(Callback Hell)</strong><br>如果代码中有大量异步逻辑，并且出现大量异步任务依赖其它异步任务的结果时，必然会出现Future.then回调中套回调情况。举个例子，比如现在有个需求场景是用户先登录，登录成功后会获得用户ID，然后通过用户ID，再去请求用户个人信息，获取到用户个人信息后，为了使用方便，我们需要将其缓存在本地文件系统，代码如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//先分别定义各个异步任务</span></div><div class="line">Future&lt;<span class="built_in">String</span>&gt; login(<span class="built_in">String</span> userName, <span class="built_in">String</span> pwd)&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//用户登录</span></div><div class="line">&#125;;</div><div class="line">Future&lt;<span class="built_in">String</span>&gt; getUserInfo(<span class="built_in">String</span> id)&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">//获取用户信息 </span></div><div class="line">&#125;;</div><div class="line">Future saveUserInfo(<span class="built_in">String</span> userInfo)&#123;</div><div class="line">    ...</div><div class="line">    <span class="comment">// 保存用户信息 </span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><p>接下来，执行整个任务流<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">login(<span class="string">"alice"</span>,<span class="string">"******"</span>).then((id)&#123;</div><div class="line"> <span class="comment">//登录成功后通过，id获取用户信息    </span></div><div class="line"> getUserInfo(id).then((userInfo)&#123;</div><div class="line">    <span class="comment">//获取用户信息后保存 </span></div><div class="line">    saveUserInfo(userInfo).then(()&#123;</div><div class="line">       <span class="comment">//保存用户信息，接下来执行其它操作</span></div><div class="line">        ...</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p><p>可以感受一下，如果业务逻辑中有大量异步依赖的情况，将会出现上面这种在回调里面套回调的情况，过多的嵌套会导致的代码可读性下降以及出错率提高，并且非常难维护，这个问题被形象的称为回调地狱（Callback Hell）。回调地狱问题在之前JavaScript中非常突出，也是JavaScript被吐槽最多的点，但随着ECMAScript6和ECMAScript7标准发布后，这个问题得到了非常好的解决，而解决回调地狱的两大神器正是ECMAScript6引入了Promise，以及ECMAScript7中引入的async/await。 而在Dart中几乎是完全平移了JavaScript中的这两者：Future相当于Promise，而async/await连名字都没改。接下来我们看看通过Future和async/await如何消除上面示例中的嵌套问题。<br><strong>使用Future消除Callback Hell</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">login(<span class="string">"alice"</span>,<span class="string">"******"</span>).then((id)&#123;</div><div class="line">      <span class="keyword">return</span> getUserInfo(id);</div><div class="line">&#125;).then((userInfo)&#123;</div><div class="line">    <span class="keyword">return</span> saveUserInfo(userInfo);</div><div class="line">&#125;).then((e)&#123;</div><div class="line">   <span class="comment">//执行接下来的操作 </span></div><div class="line">&#125;).catchError((e)&#123;</div><div class="line">  <span class="comment">//错误处理  </span></div><div class="line">  <span class="built_in">print</span>(e);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p><p>正如上文所述， “Future 的所有API的返回值仍然是一个Future对象，所以可以很方便的进行链式调用” ，如果在then中返回的是一个Future的话，该future会执行，执行结束后会触发后面的then回调，这样依次向下，就避免了层层嵌套。<br><strong>使用async/await消除callback hell</strong><br>通过Future回调中再返回Future的方式虽然能避免层层嵌套，但是还是有一层回调，有没有一种方式能够让我们可以像写同步代码那样来执行异步任务而不使用回调的方式？答案是肯定的，这就要使用async/await了，下面我们先直接看代码，然后再解释，代码如下：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">task() <span class="keyword">async</span> &#123;</div><div class="line">   <span class="keyword">try</span>&#123;</div><div class="line">    <span class="built_in">String</span> id = <span class="keyword">await</span> login(<span class="string">"alice"</span>,<span class="string">"******"</span>);</div><div class="line">    <span class="built_in">String</span> userInfo = <span class="keyword">await</span> getUserInfo(id);</div><div class="line">    <span class="keyword">await</span> saveUserInfo(userInfo);</div><div class="line">    <span class="comment">//执行接下来的操作   </span></div><div class="line">   &#125; <span class="keyword">catch</span>(e)&#123;</div><div class="line">    <span class="comment">//错误处理   </span></div><div class="line">    <span class="built_in">print</span>(e);   </div><div class="line">   &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p><ul><li>async用来表示函数是异步的，定义的函数会返回一个Future对象，可以使用then方法添加回调函数。</li><li>await 后面是一个Future，表示等待该异步任务完成，异步完成后才会往下走；await必须出现在 async 函数内部。<br>可以看到，我们通过async/await将一个异步流用同步的代码表示出来了。<blockquote><p> 其实，无论是在JavaScript还是Dart中，async/await都只是一个语法糖，编译器或解释器最终都会将其转化为一个Promise（Future）的调用链。</p></blockquote></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Dart中的async/await 和JavaScript中的async/await功能和用法是一模一样的，如果你已经了解JavaScript中的async/await的用法，可以直接跳过本节。&lt;br&gt;&lt;strong&gt;回调地狱(Callback Hell)&lt;/strong&gt;
       
     
     </summary>
@@ -329,31 +329,6 @@
   </entry>
   
   <entry>
-    <title>idea配置flutter开发环境</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
-    <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-09-03T02:36:46.307Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
-      
-    
-    </summary>
-    
-      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>flutter入门之在macOS上搭建开发环境</title>
     <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter%E5%85%A5%E9%97%A8%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter入门之环境配置/</id>
@@ -381,32 +356,6 @@
   </entry>
   
   <entry>
-    <title>Widget 的生命周期</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Widget%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Widget的生命周期/</id>
-    <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-12-11T12:23:56.732Z</updated>
-    
-    <content type="html"><![CDATA[<p>Flutter 里的 Widget 分为 StatelessWidget 和 StatefulWidget 两种，这两种 Widget 的生命周期是不一样的，我们接下来具体来看。</p><h3 id="StatelessWidget-的生命周期"><a href="#StatelessWidget-的生命周期" class="headerlink" title="StatelessWidget 的生命周期"></a>StatelessWidget 的生命周期</h3><p>StatelessWidget 的生命周期只有一个，就是：build<br>build 是用来创建 Widget 的，但因为 build 在每次界面刷新的时候都会调用，所以不要在 build 里写业务逻辑，可以把业务逻辑写到你的 StatelessWidget 的构造函数里。<br>StatelessWidget 的 build 函数代码如下：</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyWidget</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span></span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span> implement build</span></div><div class="line">    <span class="built_in">print</span>(<span class="string">'StatelessWidget build'</span>);</div><div class="line">    <span class="keyword">return</span> Text(<span class="string">'MyWidget'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="StatefulWidget-的生命周期"><a href="#StatefulWidget-的生命周期" class="headerlink" title="StatefulWidget 的生命周期"></a>StatefulWidget 的生命周期</h3><p>StatefulWidget 的生命周期比较复杂，依次为：<br>**1. createState</p><ol><li>initState</li><li>didChangeDependencies</li><li>build</li><li>addPostFrameCallback</li><li>didUpdateWidget</li><li>deactivate</li><li>dispose<strong><br>接下来具体介绍一下各个生命周期。</strong>1.createState**<br>createState 是 StatefulWidget 里创建 State 的方法，当要创建新的 StatefulWidget 的时候，会立即执行 createState，而且只执行一次，createState 必须要实现：<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</div><div class="line">   <span class="meta">@override</span></div><div class="line">  _MyHomePageState createState() =&gt; _MyHomePageState();</div><div class="line">&#125;</div></pre></td></tr></table></figure></li></ol><p><strong>2.initState</strong><br>前面的 createState 是在创建 StatefulWidget 的时候会调用，initState 是 StatefulWidget 创建完后调用的第一个方法，而且只执行一次，类似于 Android 的 onCreate、iOS 的 viewDidLoad()，所以在这里 View 并没有渲染，但是这时 StatefulWidget 已经被加载到渲染树里了，这时 StatefulWidget 的 mount 的值会变为 true，直到 dispose 调用的时候才会变为 false。可以在 initState 里做一些初始化的操作。<br>在 override initState 的时候必须要调用 super.initState()：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line"><span class="keyword">void</span> initState() &#123;</div><div class="line">  <span class="keyword">super</span>.initState();</div><div class="line">  <span class="comment">// Do other things</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>3.didChangeDependencies</strong><br>当 StatefulWidget 第一次创建的时候，didChangeDependencies 方法会在 initState 方法之后立即调用，之后当 StatefulWidget 刷新的时候，就不会调用了，除非你的 StatefulWidget 依赖的 InheritedWidget 发生变化之后，didChangeDependencies 才会调用，所以 didChangeDependencies 有可能会被调用多次。<br><strong>4.build</strong><br>在 StatefulWidget 第一次创建的时候，build 方法会在 didChangeDependencies 方法之后立即调用，另外一种会调用 build 方法的场景是，每当 UI 需要重新渲染的时候，build 都会被调用，所以 build 会被多次调用，然后 返回要渲染的 Widget。千万不要在 build 里做除了创建 Widget 之外的操作，因为这个会影响 UI 的渲染效率。<br><strong>5.addPostFrameCallback</strong><br>addPostFrameCallback 是 StatefulWidge 渲染结束的回调，只会被调用一次，之后 StatefulWidget 需要刷新 UI 也不会被调用，addPostFrameCallback 的使用方法是在 initState 里添加回调：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'package:flutter/scheduler.dart'</span>;</div><div class="line"><span class="meta">@override</span></div><div class="line"><span class="keyword">void</span> initState() &#123;</div><div class="line">  <span class="keyword">super</span>.initState();</div><div class="line">  SchedulerBinding.instance.addPostFrameCallback((_) =&gt; &#123;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>6.didUpdateWidget</strong><br>didUpdateWidget 这个生命周期我们一般不会用到，只有在使用 key 对 Widget 进行复用的时候才会调用。<br><strong>7.deactivate</strong><br>当要将 State 对象从渲染树中移除的时候，就会调用 deactivate 生命周期，这标志着 StatefulWidget 将要销毁，但是有时候 State 不会被销毁，而是重新插入到渲染树种。<br><strong>8.dispose</strong><br>当 View 不需要再显示，从渲染树中移除的时候，State 就会永久的从渲染树中移除，就会调用 dispose 生命周期，这时候就可以在 dispose 里做一些取消监听、动画的操作，和 initState 是相反的。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Flutter 里的 Widget 分为 StatelessWidget 和 StatefulWidget 两种，这两种 Widget 的生命周期是不一样的，我们接下来具体来看。&lt;/p&gt;
-&lt;h3 id=&quot;StatelessWidget-的生命周期&quot;&gt;&lt;a href=&quot;#St
-      
-    
-    </summary>
-    
-      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Flutter中App的生命周期</title>
     <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter%E4%B8%ADApp%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter中App的生命周期/</id>
@@ -421,6 +370,57 @@
       
         &lt;p&gt;如果想要知道 Flutter App 的生命周期，例如 Flutter 是在前台还是在后台，就需要使用到 WidgetsBindingObserver 了，使用方法如下：&lt;/p&gt;
 &lt;h2 id=&quot;1-State-的类-mix-WidgetsBindingObserver：&quot;
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea配置flutter开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-09-03T02:36:46.307Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Widget 的生命周期</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Widget%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Widget的生命周期/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-12-11T12:23:56.732Z</updated>
+    
+    <content type="html"><![CDATA[<p>Flutter 里的 Widget 分为 StatelessWidget 和 StatefulWidget 两种，这两种 Widget 的生命周期是不一样的，我们接下来具体来看。</p><h3 id="StatelessWidget-的生命周期"><a href="#StatelessWidget-的生命周期" class="headerlink" title="StatelessWidget 的生命周期"></a>StatelessWidget 的生命周期</h3><p>StatelessWidget 的生命周期只有一个，就是：build<br>build 是用来创建 Widget 的，但因为 build 在每次界面刷新的时候都会调用，所以不要在 build 里写业务逻辑，可以把业务逻辑写到你的 StatelessWidget 的构造函数里。<br>StatelessWidget 的 build 函数代码如下：</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyWidget</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span></span>&#123;</div><div class="line">  <span class="meta">@override</span></div><div class="line">  Widget build(BuildContext context) &#123;</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span> implement build</span></div><div class="line">    <span class="built_in">print</span>(<span class="string">'StatelessWidget build'</span>);</div><div class="line">    <span class="keyword">return</span> Text(<span class="string">'MyWidget'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="StatefulWidget-的生命周期"><a href="#StatefulWidget-的生命周期" class="headerlink" title="StatefulWidget 的生命周期"></a>StatefulWidget 的生命周期</h3><p>StatefulWidget 的生命周期比较复杂，依次为：<br>**1. createState</p><ol><li>initState</li><li>didChangeDependencies</li><li>build</li><li>addPostFrameCallback</li><li>didUpdateWidget</li><li>deactivate</li><li>dispose<strong><br>接下来具体介绍一下各个生命周期。</strong>1.createState**<br>createState 是 StatefulWidget 里创建 State 的方法，当要创建新的 StatefulWidget 的时候，会立即执行 createState，而且只执行一次，createState 必须要实现：<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</div><div class="line">   <span class="meta">@override</span></div><div class="line">  _MyHomePageState createState() =&gt; _MyHomePageState();</div><div class="line">&#125;</div></pre></td></tr></table></figure></li></ol><p><strong>2.initState</strong><br>前面的 createState 是在创建 StatefulWidget 的时候会调用，initState 是 StatefulWidget 创建完后调用的第一个方法，而且只执行一次，类似于 Android 的 onCreate、iOS 的 viewDidLoad()，所以在这里 View 并没有渲染，但是这时 StatefulWidget 已经被加载到渲染树里了，这时 StatefulWidget 的 mount 的值会变为 true，直到 dispose 调用的时候才会变为 false。可以在 initState 里做一些初始化的操作。<br>在 override initState 的时候必须要调用 super.initState()：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line"><span class="keyword">void</span> initState() &#123;</div><div class="line">  <span class="keyword">super</span>.initState();</div><div class="line">  <span class="comment">// Do other things</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>3.didChangeDependencies</strong><br>当 StatefulWidget 第一次创建的时候，didChangeDependencies 方法会在 initState 方法之后立即调用，之后当 StatefulWidget 刷新的时候，就不会调用了，除非你的 StatefulWidget 依赖的 InheritedWidget 发生变化之后，didChangeDependencies 才会调用，所以 didChangeDependencies 有可能会被调用多次。<br><strong>4.build</strong><br>在 StatefulWidget 第一次创建的时候，build 方法会在 didChangeDependencies 方法之后立即调用，另外一种会调用 build 方法的场景是，每当 UI 需要重新渲染的时候，build 都会被调用，所以 build 会被多次调用，然后 返回要渲染的 Widget。千万不要在 build 里做除了创建 Widget 之外的操作，因为这个会影响 UI 的渲染效率。<br><strong>5.addPostFrameCallback</strong><br>addPostFrameCallback 是 StatefulWidge 渲染结束的回调，只会被调用一次，之后 StatefulWidget 需要刷新 UI 也不会被调用，addPostFrameCallback 的使用方法是在 initState 里添加回调：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'package:flutter/scheduler.dart'</span>;</div><div class="line"><span class="meta">@override</span></div><div class="line"><span class="keyword">void</span> initState() &#123;</div><div class="line">  <span class="keyword">super</span>.initState();</div><div class="line">  SchedulerBinding.instance.addPostFrameCallback((_) =&gt; &#123;&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p><strong>6.didUpdateWidget</strong><br>didUpdateWidget 这个生命周期我们一般不会用到，只有在使用 key 对 Widget 进行复用的时候才会调用。<br><strong>7.deactivate</strong><br>当要将 State 对象从渲染树中移除的时候，就会调用 deactivate 生命周期，这标志着 StatefulWidget 将要销毁，但是有时候 State 不会被销毁，而是重新插入到渲染树种。<br><strong>8.dispose</strong><br>当 View 不需要再显示，从渲染树中移除的时候，State 就会永久的从渲染树中移除，就会调用 dispose 生命周期，这时候就可以在 dispose 里做一些取消监听、动画的操作，和 initState 是相反的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Flutter 里的 Widget 分为 StatelessWidget 和 StatefulWidget 两种，这两种 Widget 的生命周期是不一样的，我们接下来具体来看。&lt;/p&gt;
+&lt;h3 id=&quot;StatelessWidget-的生命周期&quot;&gt;&lt;a href=&quot;#St
       
     
     </summary>
