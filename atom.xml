@@ -329,31 +329,6 @@
   </entry>
   
   <entry>
-    <title>idea配置flutter开发环境</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
-    <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-09-03T02:36:46.307Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
-      
-    
-    </summary>
-    
-      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Flutter中App的生命周期</title>
     <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter%E4%B8%ADApp%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter中App的生命周期/</id>
@@ -395,6 +370,31 @@
         &lt;h2 id=&quot;系统要求&quot;&gt;&lt;a href=&quot;#系统要求&quot; class=&quot;headerlink&quot; title=&quot;系统要求&quot;&gt;&lt;/a&gt;系统要求&lt;/h2&gt;&lt;p&gt;要安装并运行Flutter，您的开发环境必须满足以下最低要求:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;操作系统: macOS (64-b
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea配置flutter开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-09-03T02:36:46.307Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
       
     
     </summary>
