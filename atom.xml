@@ -355,19 +355,21 @@
   </entry>
   
   <entry>
-    <title>idea配置flutter开发环境</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
+    <title>flutter入门之在macOS上搭建开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter%E5%85%A5%E9%97%A8%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter入门之环境配置/</id>
     <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-09-03T02:36:46.307Z</updated>
+    <updated>2019-09-02T23:13:39.876Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>要安装并运行Flutter，您的开发环境必须满足以下最低要求:</p><ul><li>操作系统: macOS (64-bit)</li><li>磁盘空间: 700 MB (不包括Xcode或Android Studio的磁盘空间）.</li><li>工具: Flutter 依赖下面这些命令行工具.<br>bash, mkdir, rm, git, curl, unzip, which<h2 id="获取flutter-SDK"><a href="#获取flutter-SDK" class="headerlink" title="获取flutter SDK"></a>获取flutter SDK</h2>1.去flutter官网下载其最新可用的安装包，<a href="https://flutter.io/sdk-archive/#macos" target="_blank" rel="external">转到下载页 </a>。<br>注意，Flutter的渠道版本会不停变动，请以Flutter官网为准。另外，在中国大陆地区，要想正常获取安装包列表或下载安装包，可能需要翻墙，读者也可以去Flutter github项目下去下载安装包，<a href="https://github.com/flutter/flutter/releases" target="_blank" rel="external">转到下载页</a> 。</li></ul><p>2.解压安装包到你想安装的目录，比如我是放在用户目录下面<br>  <img src="/img/flutter/01/flutter01_1.png" alt=""><br>3.添加flutter相关工具到path中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=`<span class="built_in">pwd</span>`/flutter/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure></p><p> <img src="/img/flutter/01/flutter01_3.png" alt="">  </p><h2 id="运行-flutter-doctor"><a href="#运行-flutter-doctor" class="headerlink" title="运行 flutter doctor"></a>运行 flutter doctor</h2><p>运行以下命令查看是否需要安装其它依赖项来完成安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flutter doctor</div></pre></td></tr></table></figure></p><p><img src="/img/flutter/01/flutter01_2.png" alt=""><br>该命令检查您的环境并在终端窗口中显示报告。Dart SDK已经在捆绑在Flutter里了，没有必要单独安装Dart。 仔细检查命令行输出以获取可能需要安装的其他软件或进一步需要执行的任务（以粗体显示）</p><p>第一次运行一个flutter命令（如flutter doctor）时，它会下载它自己的依赖项并自行编译。以后再运行就会快得多。</p><p>以下各部分介绍如何执行这些任务并完成设置过程。你会看到在flutter doctor输出中， 如果你选择使用IDE，我们提供了，IntelliJ IDEA，Android Studio和VS Code的插件， 请参阅<a href="https://flutterchina.club/get-started/editor/" target="_blank" rel="external">编辑器设置</a> 以了解安装Flutter和Dart插件的步骤。</p><p>一旦你安装了任何缺失的依赖，再次运行flutter doctor命令来验证你是否已经正确地设置了。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
+        &lt;h2 id=&quot;系统要求&quot;&gt;&lt;a href=&quot;#系统要求&quot; class=&quot;headerlink&quot; title=&quot;系统要求&quot;&gt;&lt;/a&gt;系统要求&lt;/h2&gt;&lt;p&gt;要安装并运行Flutter，您的开发环境必须满足以下最低要求:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;操作系统: macOS (64-b
       
     
     </summary>
@@ -406,21 +408,19 @@
   </entry>
   
   <entry>
-    <title>flutter入门之在macOS上搭建开发环境</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter%E5%85%A5%E9%97%A8%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter入门之环境配置/</id>
+    <title>idea配置flutter开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
     <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-09-02T23:13:39.876Z</updated>
+    <updated>2019-09-03T02:36:46.307Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h2><p>要安装并运行Flutter，您的开发环境必须满足以下最低要求:</p><ul><li>操作系统: macOS (64-bit)</li><li>磁盘空间: 700 MB (不包括Xcode或Android Studio的磁盘空间）.</li><li>工具: Flutter 依赖下面这些命令行工具.<br>bash, mkdir, rm, git, curl, unzip, which<h2 id="获取flutter-SDK"><a href="#获取flutter-SDK" class="headerlink" title="获取flutter SDK"></a>获取flutter SDK</h2>1.去flutter官网下载其最新可用的安装包，<a href="https://flutter.io/sdk-archive/#macos" target="_blank" rel="external">转到下载页 </a>。<br>注意，Flutter的渠道版本会不停变动，请以Flutter官网为准。另外，在中国大陆地区，要想正常获取安装包列表或下载安装包，可能需要翻墙，读者也可以去Flutter github项目下去下载安装包，<a href="https://github.com/flutter/flutter/releases" target="_blank" rel="external">转到下载页</a> 。</li></ul><p>2.解压安装包到你想安装的目录，比如我是放在用户目录下面<br>  <img src="/img/flutter/01/flutter01_1.png" alt=""><br>3.添加flutter相关工具到path中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=`<span class="built_in">pwd</span>`/flutter/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure></p><p> <img src="/img/flutter/01/flutter01_3.png" alt="">  </p><h2 id="运行-flutter-doctor"><a href="#运行-flutter-doctor" class="headerlink" title="运行 flutter doctor"></a>运行 flutter doctor</h2><p>运行以下命令查看是否需要安装其它依赖项来完成安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flutter doctor</div></pre></td></tr></table></figure></p><p><img src="/img/flutter/01/flutter01_2.png" alt=""><br>该命令检查您的环境并在终端窗口中显示报告。Dart SDK已经在捆绑在Flutter里了，没有必要单独安装Dart。 仔细检查命令行输出以获取可能需要安装的其他软件或进一步需要执行的任务（以粗体显示）</p><p>第一次运行一个flutter命令（如flutter doctor）时，它会下载它自己的依赖项并自行编译。以后再运行就会快得多。</p><p>以下各部分介绍如何执行这些任务并完成设置过程。你会看到在flutter doctor输出中， 如果你选择使用IDE，我们提供了，IntelliJ IDEA，Android Studio和VS Code的插件， 请参阅<a href="https://flutterchina.club/get-started/editor/" target="_blank" rel="external">编辑器设置</a> 以了解安装Flutter和Dart插件的步骤。</p><p>一旦你安装了任何缺失的依赖，再次运行flutter doctor命令来验证你是否已经正确地设置了。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;系统要求&quot;&gt;&lt;a href=&quot;#系统要求&quot; class=&quot;headerlink&quot; title=&quot;系统要求&quot;&gt;&lt;/a&gt;系统要求&lt;/h2&gt;&lt;p&gt;要安装并运行Flutter，您的开发环境必须满足以下最低要求:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;操作系统: macOS (64-b
+        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
       
     
     </summary>
