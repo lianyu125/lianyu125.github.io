@@ -1,0 +1,13 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "P382ZULNMU.com.ctrip.jr",
+                "paths": [
+                    "/wechat/*"
+                ]
+            }
+        ]
+    }
+}

@@ -60,6 +60,24 @@
   </entry>
   
   <entry>
+    <title>mysql权限管理</title>
+    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
+    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
+    <published>2019-10-18T01:10:09.000Z</published>
+    <updated>2019-10-17T22:08:22.767Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL 数据类型</title>
     <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-19-MySQL%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-19-MySQL 数据类型/</id>
@@ -85,20 +103,28 @@
   </entry>
   
   <entry>
-    <title>mysql权限管理</title>
-    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
-    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
-    <published>2019-10-18T01:10:09.000Z</published>
-    <updated>2019-10-17T22:08:22.767Z</updated>
+    <title>JAVA开发之servlet、Filter、Listener</title>
+    <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet%E3%80%81Filer%E3%80%81Listener/"/>
+    <id>https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet、Filer、Listener/</id>
+    <published>2019-08-12T00:10:09.000Z</published>
+    <updated>2019-10-25T00:10:06.614Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。</p><p>当客户端向服务器发出HTTP请求时，首先会由服务器中的 Web 容器（如Tomcat）对请求进行路由，交给该URL对应的 Servlet 进行处理，Servlet 所要做的事情就是返回适当的内容给用户。</p><p>要创建自己的 Servlet，可以通过以下三种方式来实现</p><ul><li>实现 Servlet 接口</li><li>继承 GenericServlet 类</li><li>继承 HttpServlet 类</li></ul>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。&lt;/p&gt;
+&lt;p
+      
+    
     </summary>
     
-      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
     
     
-      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
     
   </entry>
   
@@ -116,32 +142,6 @@
       
       
         &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;JDBC (Java Database Connectivity) API，即Java数据库编程接口，是连接java应用程序和数据库之间的桥
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVA开发之servlet、Filter、Listener</title>
-    <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet%E3%80%81Filer%E3%80%81Listener/"/>
-    <id>https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet、Filer、Listener/</id>
-    <published>2019-08-12T00:10:09.000Z</published>
-    <updated>2019-10-25T00:10:06.614Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。</p><p>当客户端向服务器发出HTTP请求时，首先会由服务器中的 Web 容器（如Tomcat）对请求进行路由，交给该URL对应的 Servlet 进行处理，Servlet 所要做的事情就是返回适当的内容给用户。</p><p>要创建自己的 Servlet，可以通过以下三种方式来实现</p><ul><li>实现 Servlet 接口</li><li>继承 GenericServlet 类</li><li>继承 HttpServlet 类</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。&lt;/p&gt;
-&lt;p
       
     
     </summary>
@@ -279,31 +279,6 @@
   </entry>
   
   <entry>
-    <title>navicat for mac 登录数据库报错</title>
-    <link href="https://blog.devzou.com/2019/07/31/mysql/2019-08-02-navicat%20for%20mac%20%E7%99%BB%E5%BD%95%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99/"/>
-    <id>https://blog.devzou.com/2019/07/31/mysql/2019-08-02-navicat for mac 登录数据库报错/</id>
-    <published>2019-07-31T01:10:09.000Z</published>
-    <updated>2019-10-17T22:15:28.566Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="报错描述"><a href="#报错描述" class="headerlink" title="报错描述"></a>报错描述</h2><p>2059 - Authentication plugin ‘caching_sha2_password’ cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found</p><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><p>这是 MySQL 的问题，不是客户端问题，</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘yourpassword’;</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;报错描述&quot;&gt;&lt;a href=&quot;#报错描述&quot; class=&quot;headerlink&quot; title=&quot;报错描述&quot;&gt;&lt;/a&gt;报错描述&lt;/h2&gt;&lt;p&gt;2059 - Authentication plugin ‘caching_sha2_password’ cannot be
-      
-    
-    </summary>
-    
-      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
     <title>xcodeproj使用</title>
     <link href="https://blog.devzou.com/2019/07/31/ios/2019-07-31-xcodeproj%E4%BD%BF%E7%94%A8/"/>
     <id>https://blog.devzou.com/2019/07/31/ios/2019-07-31-xcodeproj使用/</id>
@@ -329,20 +304,44 @@
   </entry>
   
   <entry>
-    <title>Flutter中App的生命周期</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter%E4%B8%ADApp%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter中App的生命周期/</id>
-    <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-12-27T08:23:40.576Z</updated>
+    <title>navicat for mac 登录数据库报错</title>
+    <link href="https://blog.devzou.com/2019/07/31/mysql/2019-08-02-navicat%20for%20mac%20%E7%99%BB%E5%BD%95%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%A5%E9%94%99/"/>
+    <id>https://blog.devzou.com/2019/07/31/mysql/2019-08-02-navicat for mac 登录数据库报错/</id>
+    <published>2019-07-31T01:10:09.000Z</published>
+    <updated>2019-10-17T22:15:28.566Z</updated>
     
-    <content type="html"><![CDATA[<p>如果想要知道 Flutter App 的生命周期，例如 Flutter 是在前台还是在后台，就需要使用到 WidgetsBindingObserver 了，使用方法如下：</p><h2 id="1-State-的类-mix-WidgetsBindingObserver："><a href="#1-State-的类-mix-WidgetsBindingObserver：" class="headerlink" title="1.State 的类 mix WidgetsBindingObserver："></a>1.State 的类 mix WidgetsBindingObserver：</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; <span class="title">with</span> <span class="title">WidgetsBindingObserver</span> </span>&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="2-在-State-的-initState-里添加监听："><a href="#2-在-State-的-initState-里添加监听：" class="headerlink" title="2.在 State 的 initState 里添加监听："></a>2.在 State 的 initState 里添加监听：</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line">  <span class="keyword">void</span> initState()&#123;</div><div class="line">    <span class="keyword">super</span>.initState();</div><div class="line">    WidgetsBinding.instance.addObserver(<span class="keyword">this</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure><h2 id="3-在-State-的-dispose-里移除监听："><a href="#3-在-State-的-dispose-里移除监听：" class="headerlink" title="3.在 State 的 dispose 里移除监听："></a>3.在 State 的 dispose 里移除监听：</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line">  <span class="keyword">void</span> dispose() &#123;</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span> implement dispose</span></div><div class="line">    <span class="keyword">super</span>.dispose();</div><div class="line">    WidgetsBinding.instance.removeObserver(<span class="keyword">this</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure><h2 id="4-在-State-里-override-didChangeAppLifecycleState"><a href="#4-在-State-里-override-didChangeAppLifecycleState" class="headerlink" title="4.在 State 里 override didChangeAppLifecycleState"></a>4.在 State 里 override didChangeAppLifecycleState</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line"><span class="keyword">void</span> didChangeAppLifecycleState(AppLifecycleState state) &#123;</div><div class="line">  <span class="keyword">super</span>.didChangeAppLifecycleState(state);</div><div class="line">  <span class="keyword">if</span> (state == AppLifecycleState.paused) &#123;</div><div class="line">    <span class="comment">// went to Background</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (state == AppLifecycleState.resumed) &#123;</div><div class="line">    <span class="comment">// came back to Foreground</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure><p>AppLifecycleState 就是 App 的生命周期，有：</p><ul><li>resumed</li><li>inactive</li><li>paused</li><li>suspending</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="报错描述"><a href="#报错描述" class="headerlink" title="报错描述"></a>报错描述</h2><p>2059 - Authentication plugin ‘caching_sha2_password’ cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found</p><h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><p>这是 MySQL 的问题，不是客户端问题，</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘yourpassword’;</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;如果想要知道 Flutter App 的生命周期，例如 Flutter 是在前台还是在后台，就需要使用到 WidgetsBindingObserver 了，使用方法如下：&lt;/p&gt;
-&lt;h2 id=&quot;1-State-的类-mix-WidgetsBindingObserver：&quot;
+        &lt;h2 id=&quot;报错描述&quot;&gt;&lt;a href=&quot;#报错描述&quot; class=&quot;headerlink&quot; title=&quot;报错描述&quot;&gt;&lt;/a&gt;报错描述&lt;/h2&gt;&lt;p&gt;2059 - Authentication plugin ‘caching_sha2_password’ cannot be
+      
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea配置flutter开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-09-03T02:36:46.307Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
       
     
     </summary>
@@ -382,6 +381,32 @@
   </entry>
   
   <entry>
+    <title>Flutter中App的生命周期</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter%E4%B8%ADApp%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Flutter中App的生命周期/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-12-27T08:23:40.576Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果想要知道 Flutter App 的生命周期，例如 Flutter 是在前台还是在后台，就需要使用到 WidgetsBindingObserver 了，使用方法如下：</p><h2 id="1-State-的类-mix-WidgetsBindingObserver："><a href="#1-State-的类-mix-WidgetsBindingObserver：" class="headerlink" title="1.State 的类 mix WidgetsBindingObserver："></a>1.State 的类 mix WidgetsBindingObserver：</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; <span class="title">with</span> <span class="title">WidgetsBindingObserver</span> </span>&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure><h2 id="2-在-State-的-initState-里添加监听："><a href="#2-在-State-的-initState-里添加监听：" class="headerlink" title="2.在 State 的 initState 里添加监听："></a>2.在 State 的 initState 里添加监听：</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line">  <span class="keyword">void</span> initState()&#123;</div><div class="line">    <span class="keyword">super</span>.initState();</div><div class="line">    WidgetsBinding.instance.addObserver(<span class="keyword">this</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure><h2 id="3-在-State-的-dispose-里移除监听："><a href="#3-在-State-的-dispose-里移除监听：" class="headerlink" title="3.在 State 的 dispose 里移除监听："></a>3.在 State 的 dispose 里移除监听：</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line">  <span class="keyword">void</span> dispose() &#123;</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span> implement dispose</span></div><div class="line">    <span class="keyword">super</span>.dispose();</div><div class="line">    WidgetsBinding.instance.removeObserver(<span class="keyword">this</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure><h2 id="4-在-State-里-override-didChangeAppLifecycleState"><a href="#4-在-State-里-override-didChangeAppLifecycleState" class="headerlink" title="4.在 State 里 override didChangeAppLifecycleState"></a>4.在 State 里 override didChangeAppLifecycleState</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@override</span></div><div class="line"><span class="keyword">void</span> didChangeAppLifecycleState(AppLifecycleState state) &#123;</div><div class="line">  <span class="keyword">super</span>.didChangeAppLifecycleState(state);</div><div class="line">  <span class="keyword">if</span> (state == AppLifecycleState.paused) &#123;</div><div class="line">    <span class="comment">// went to Background</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (state == AppLifecycleState.resumed) &#123;</div><div class="line">    <span class="comment">// came back to Foreground</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure><p>AppLifecycleState 就是 App 的生命周期，有：</p><ul><li>resumed</li><li>inactive</li><li>paused</li><li>suspending</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;如果想要知道 Flutter App 的生命周期，例如 Flutter 是在前台还是在后台，就需要使用到 WidgetsBindingObserver 了，使用方法如下：&lt;/p&gt;
+&lt;h2 id=&quot;1-State-的类-mix-WidgetsBindingObserver：&quot;
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Widget 的生命周期</title>
     <link href="https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Widget%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>https://blog.devzou.com/2019/07/30/flutter/2019-12-11-Widget的生命周期/</id>
@@ -396,31 +421,6 @@
       
         &lt;p&gt;Flutter 里的 Widget 分为 StatelessWidget 和 StatefulWidget 两种，这两种 Widget 的生命周期是不一样的，我们接下来具体来看。&lt;/p&gt;
 &lt;h3 id=&quot;StatelessWidget-的生命周期&quot;&gt;&lt;a href=&quot;#St
-      
-    
-    </summary>
-    
-      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea配置flutter开发环境</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
-    <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-09-03T02:36:46.307Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
       
     
     </summary>
