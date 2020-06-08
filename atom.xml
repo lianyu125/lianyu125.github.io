@@ -6,10 +6,36 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.devzou.com/"/>
-  <updated>2019-12-02T14:42:51.367Z</updated>
+  <updated>2020-04-14T06:33:05.198Z</updated>
   <id>https://blog.devzou.com/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python3.*下用mob_pbxproj自动化修改配置</title>
+    <link href="https://blog.devzou.com/2019/11/28/python/2020-04-14-python3.*%E4%B8%8B%E7%94%A8mob_pbxproj%E8%87%AA%E5%8A%A8%E5%8C%96%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE/"/>
+    <id>https://blog.devzou.com/2019/11/28/python/2020-04-14-python3.*下用mob_pbxproj自动化修改配置/</id>
+    <published>2019-11-28T00:10:09.000Z</published>
+    <updated>2020-04-14T06:33:05.198Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装mob-pbxproj"><a href="#安装mob-pbxproj" class="headerlink" title="安装mob_pbxproj"></a>安装mob_pbxproj</h2><p>1、下载mod-pbxproj模块。</p><p>2、进入下载的mod-pbxproj目录里，执行setup</p><p>sudo python3 setup.py install   </p><p>之后你会发现多了几个文件夹，进入dist文件夹，里面多了一个pbxproj-2.5.1-py3.7.egg</p><p>3、进入dist目录，执行install</p><p>sudo easy-install  pbxproj-2.5.1-py3.7.egg</p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p>感谢大佬,mod-pbxproj最新模块地址: <a href="https://github.com/kronenthaler/mod-pbxproj" target="_blank" rel="external">https://github.com/kronenthaler/mod-pbxproj</a></p><p>使用文档：<a href="https://devhub.io/repos/kronenthaler-mod-pbxproj#using-setuppy" target="_blank" rel="external">https://devhub.io/repos/kronenthaler-mod-pbxproj#using-setuppy</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装mob-pbxproj&quot;&gt;&lt;a href=&quot;#安装mob-pbxproj&quot; class=&quot;headerlink&quot; title=&quot;安装mob_pbxproj&quot;&gt;&lt;/a&gt;安装mob_pbxproj&lt;/h2&gt;&lt;p&gt;1、下载mod-pbxproj模块。&lt;/p&gt;
+&lt;p&gt;
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.devzou.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.devzou.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Proxy CONNECT aborted due to timeout</title>
@@ -41,7 +67,7 @@
     <link href="https://blog.devzou.com/2019/10/24/ios/2019-10-24-NSURLProtocol/"/>
     <id>https://blog.devzou.com/2019/10/24/ios/2019-10-24-NSURLProtocol/</id>
     <published>2019-10-24T04:26:10.335Z</published>
-    <updated>2019-10-30T07:48:26.340Z</updated>
+    <updated>2020-05-12T03:49:09.632Z</updated>
     
     <content type="html"><![CDATA[<hr><p>title: NSURLProtocol<br>category: iOS<br>date: 2016-7-30 9:10:09<br>tags: iOS</p><h2 id="keywords-NSURLProtocol"><a href="#keywords-NSURLProtocol" class="headerlink" title="keywords: NSURLProtocol"></a>keywords: NSURLProtocol</h2><p>NSURLProtocol能够让你去重新定义苹果的URL加载系统 (URL Loading System)的行为，URL Loading System里有许多类用于处理URL请求，比如NSURL，NSURLRequest，NSURLConnection和NSURLSession等，当URL Loading System使用NSURLRequest去获取资源的时候，它会创建一个NSURLProtocol子类的实例，你不应该直接实例化一个NSURLProtocol，NSURLProtocol看起来像是一个协议，但其实这是一个类，而且必须使用该类的子类，并且需要被注册。<br><img src="![](/img/ios/url_loading_system/loading-system.png" alt="">)</p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://developer.apple.com/documentation/foundation/nsurlprotocol?language=occ" target="_blank" rel="external">https://developer.apple.com/documentation/foundation/nsurlprotocol?language=occ</a><br><a href="https://developer.apple.com/library/ios/samplecode/CustomHTTPProtocol/CustomHTTPProtocol.zip" target="_blank" rel="external">官方Demo</a></p>]]></content>
     
@@ -56,24 +82,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>mysql权限管理</title>
-    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
-    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
-    <published>2019-10-18T01:10:09.000Z</published>
-    <updated>2019-10-17T22:08:22.767Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
     
   </entry>
   
@@ -103,6 +111,24 @@
   </entry>
   
   <entry>
+    <title>mysql权限管理</title>
+    <link href="https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
+    <id>https://blog.devzou.com/2019/10/18/mysql/2019-10-18-mysql权限管理/</id>
+    <published>2019-10-18T01:10:09.000Z</published>
+    <updated>2019-10-17T22:08:22.767Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="mysql" scheme="https://blog.devzou.com/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="https://blog.devzou.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JAVA开发之servlet、Filter、Listener</title>
     <link href="https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet%E3%80%81Filer%E3%80%81Listener/"/>
     <id>https://blog.devzou.com/2019/08/12/Java/2019-10-25-servlet、Filer、Listener/</id>
@@ -118,6 +144,24 @@
         &lt;h2 id=&quot;Servlet&quot;&gt;&lt;a href=&quot;#Servlet&quot; class=&quot;headerlink&quot; title=&quot;Servlet&quot;&gt;&lt;/a&gt;Servlet&lt;/h2&gt;&lt;p&gt;Servlet 是服务端的 Java 应用程序，用于处理HTTP请求，做出相应的响应。&lt;/p&gt;
 &lt;p
       
+    
+    </summary>
+    
+      <category term="Java" scheme="https://blog.devzou.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://blog.devzou.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JAVA开发之servlet、Filter、Listener</title>
+    <link href="https://blog.devzou.com/2019/08/12/Java/2020-03-24-SpringBoot%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://blog.devzou.com/2019/08/12/Java/2020-03-24-SpringBoot创建项目/</id>
+    <published>2019-08-12T00:10:09.000Z</published>
+    <updated>2020-03-23T23:53:45.754Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
@@ -329,31 +373,6 @@
   </entry>
   
   <entry>
-    <title>idea配置flutter开发环境</title>
-    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
-    <published>2019-07-30T01:10:09.000Z</published>
-    <updated>2019-09-03T02:36:46.307Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
-      
-    
-    </summary>
-    
-      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>flutter入门之在macOS上搭建开发环境</title>
     <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter%E5%85%A5%E9%97%A8%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-02-flutter入门之环境配置/</id>
@@ -369,6 +388,31 @@
         &lt;h2 id=&quot;系统要求&quot;&gt;&lt;a href=&quot;#系统要求&quot; class=&quot;headerlink&quot; title=&quot;系统要求&quot;&gt;&lt;/a&gt;系统要求&lt;/h2&gt;&lt;p&gt;要安装并运行Flutter，您的开发环境必须满足以下最低要求:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;操作系统: macOS (64-b
+      
+    
+    </summary>
+    
+      <category term="fluter" scheme="https://blog.devzou.com/categories/fluter/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea配置flutter开发环境</title>
+    <link href="https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea%E9%85%8D%E7%BD%AEflutter%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://blog.devzou.com/2019/07/30/flutter/2019-09-03-idea配置flutter开发环境/</id>
+    <published>2019-07-30T01:10:09.000Z</published>
+    <updated>2019-09-03T02:36:46.307Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装flutter插件"><a href="#安装flutter插件" class="headerlink" title="安装flutter插件"></a>安装flutter插件</h2><p> 在Preferences -&gt; Plugin 中搜索flutter并install,如下图<br> <img src="/img/flutter/02/flutter02_1.png" alt=""><br> <img src="/img/flutter/02/flutter02_2.png" alt=""></p><h2 id="install-SDK"><a href="#install-SDK" class="headerlink" title="install SDK"></a>install SDK</h2><p>选择安装路径<br> <img src="/img/flutter/02/flutter02_3.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装flutter插件&quot;&gt;&lt;a href=&quot;#安装flutter插件&quot; class=&quot;headerlink&quot; title=&quot;安装flutter插件&quot;&gt;&lt;/a&gt;安装flutter插件&lt;/h2&gt;&lt;p&gt; 在Preferences -&amp;gt; Plugin 中搜索flut
       
     
     </summary>
@@ -447,57 +491,6 @@
       
         &lt;p&gt;&lt;img src=&quot;https://blog.devzou.com/img/ios/ioscer_1_01.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mach-O 可执行文件</title>
-    <link href="https://blog.devzou.com/2019/04/20/ios/2019-05-06-Mach-O%20%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
-    <id>https://blog.devzou.com/2019/04/20/ios/2019-05-06-Mach-O 可执行文件/</id>
-    <published>2019-04-20T00:10:09.000Z</published>
-    <updated>2019-05-21T00:37:36.301Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://blog.devzou.com/img/ios/macho_01.png" alt=""></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mach-O 是 Apple 系统上（包括 MacOS 以及 iOS）的可执行文件格式，类似于 windows 上的 PE 文件以及 linux 上的 ELF 文件。上图左边为官方图，右边为用<a href="https://github.com/gdbinit/MachOView" target="_blank" rel="external">MachOView</a>软件打开的 Mach-O 文件图。可以非常清晰的看到，这种文件格式由文件头（Header）、加载命令（Load Commands）以及具体数据（Segment&amp;Section）组成。下面一一介绍。 </p><h2 id="Header-文件头"><a href="#Header-文件头" class="headerlink" title="Header(文件头)"></a>Header(文件头)</h2><p>Header(文件头)的作用是使系统能够快速定位其运行环境以及文件类型等等<br>源码如下:<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * The 32-bit mach header appears at the very beginning of the object file for</span></div><div class="line"><span class="comment"> * 32-bit architectures.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">struct</span> mach_header &#123;</div><div class="line">uint32_tmagic;<span class="comment">/* mach magic number identifier */</span></div><div class="line">cpu_type_tcputype;<span class="comment">/* cpu specifier */</span></div><div class="line">cpu_subtype_tcpusubtype;<span class="comment">/* machine specifier */</span></div><div class="line">uint32_tfiletype;<span class="comment">/* type of file */</span></div><div class="line">uint32_tncmds;<span class="comment">/* number of load commands */</span></div><div class="line">uint32_tsizeofcmds;<span class="comment">/* the size of all the load commands */</span></div><div class="line">uint32_tflags;<span class="comment">/* flags */</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">/* Constant for the magic field of the mach_header (32-bit architectures) */</span></div><div class="line"><span class="meta">#defineMH_MAGIC0xfeedface/* the mach magic number */</span></div><div class="line"><span class="meta">#define MH_CIGAM0xcefaedfe/* NXSwapInt(MH_MAGIC) */</span></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment"> * The 64-bit mach header appears at the very beginning of object files for</span></div><div class="line"><span class="comment"> * 64-bit architectures.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="keyword">struct</span> mach_header_64 &#123;</div><div class="line">uint32_tmagic;<span class="comment">/* mach magic number identifier */</span></div><div class="line">cpu_type_tcputype;<span class="comment">/* cpu specifier */</span></div><div class="line">cpu_subtype_tcpusubtype;<span class="comment">/* machine specifier */</span></div><div class="line">uint32_tfiletype;<span class="comment">/* type of file */</span></div><div class="line">uint32_tncmds;<span class="comment">/* number of load commands */</span></div><div class="line">uint32_tsizeofcmds;<span class="comment">/* the size of all the load commands */</span></div><div class="line">uint32_tflags;<span class="comment">/* flags */</span></div><div class="line">uint32_treserved;<span class="comment">/* reserved */</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">/* Constant for the magic field of the mach_header_64 (64-bit architectures) */</span></div><div class="line"><span class="meta">#define MH_MAGIC_64 0xfeedfacf /* the 64-bit mach magic number */</span></div><div class="line"><span class="meta">#define MH_CIGAM_64 0xcffaedfe /* NXSwapInt(MH_MAGIC_64) */</span></div></pre></td></tr></table></figure></p><p>分析文件头的 otool 命令为： <code>otool -h 可执行文件</code> ，或者可视化强一点的 <code>otool -hv 可执行文件</code>。</p><h2 id="Load-Commands"><a href="#Load-Commands" class="headerlink" title="Load Commands"></a>Load Commands</h2><p>Load Commands 是跟在 Header 后面的加载命令区，所有 commands 的大小总和即为 Header-&gt;sizeofcmds 字段，共有 Header-&gt;ncmds 条加载命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">struct load_command &#123;</div><div class="line">    uint32_t cmd;        /* type of load command */</div><div class="line">    uint32_t cmdsize;    /* total size of command in bytes */</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><p>Command 以 LC 开头，不同的加载命令有不同的专有的结构体，cmd 和 cmdsize 是都有的，分别为命令类型（即命令名称），这条命令的长度。这些加载命令告诉系统应该如何处理后面的二进制数据，对系统内核加载器和动态链接器起指导作用。如果当前 LC_SEGMENT 包含 section，那么 section 的结构体紧跟在 LC_SEGMENT 的结构体之后，所占字节数由 SEGMENT 的 cmdsize 字段给出。</p><table><thead><tr><th style="text-align:center">Cmd</th><th style="text-align:center">作用</th></tr></thead><tbody><tr><td style="text-align:center">LC_SEGMENT/LC_SEGMENT_64</td><td style="text-align:center">将对应的段中的数据加载并映射到进程的内存空间去</td></tr><tr><td style="text-align:center">LC_SYMTAB</td><td style="text-align:center">符号表信息</td></tr><tr><td style="text-align:center">LC_DYSYMTAB</td><td style="text-align:center">动态符号表信息</td></tr><tr><td style="text-align:center">LC_LOAD_DYLINKER</td><td style="text-align:center">启动动态加载连接器/usr/lib/dyld程序</td></tr><tr><td style="text-align:center">LC_UUID</td><td style="text-align:center">唯一的 UUID，标示该二进制文件，128bit</td></tr><tr><td style="text-align:center">LC_VERSION_MIN_IPHONEOS/MACOSX</td><td style="text-align:center">要求的最低系统版本（Xcode中的Deployment Target）</td></tr><tr><td style="text-align:center">LC_MAIN</td><td style="text-align:center">设置程序主线程的入口地址和栈大小</td></tr><tr><td style="text-align:center">LC_ENCRYPTION_INFO</td><td style="text-align:center">加密信息</td></tr><tr><td style="text-align:center">LC_LOAD_DYLIB</td><td style="text-align:center">加载的动态库，包括动态库地址、名称、版本号等</td></tr><tr><td style="text-align:center">LC_FUNCTION_STARTS</td><td style="text-align:center">函数地址起始表</td></tr><tr><td style="text-align:center">LC_CODE_SIGNATURE</td><td style="text-align:center">代码签名信息</td></tr></tbody></table><p>使用命令 <code>otool -l 可执行文件</code> 可以查看加载命令区，使用<code>otool -l 可执行文件|grep cryptid</code> 可以查看是否加密</p><h2 id="Segment"><a href="#Segment" class="headerlink" title="Segment"></a>Segment</h2><p>Mach-O 文件有多个段（Segment），每个段有不同的功能。然后每个段又分为很多小的 Section。 LC_SEGMENT 意味着这部分文件需要映射到进程的地址空间去。一般有以下段名：<br><strong>__PAGEZERO:</strong>　空指针陷阱段，映射到虚拟内存空间的第一页，用于捕捉对 NULL 指针的引用。<br><strong>__TEXT:</strong>　包含了执行代码以及其他只读数据。该段数据可以 VM_PROT_READ(读)、VM_PROT_EXECUTE(执行)，不能被修改。<br><strong>__DATA:</strong>　程序数据，该段可写 VM_PROT_WRITE/READ/EXECUTE。<br><strong>__LINKEDIT:</strong>　链接器使用的符号以及其他表。</p><p>段的结构体定义为：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> segment_command &#123; <span class="comment">/* for 32-bit architectures */</span></div><div class="line">uint32_tcmd;<span class="comment">/* LC_SEGMENT */</span></div><div class="line">uint32_tcmdsize;<span class="comment">/* includes sizeof section structs */</span></div><div class="line"><span class="keyword">char</span>segname[<span class="number">16</span>];<span class="comment">/* segment name */</span></div><div class="line">uint32_tvmaddr;<span class="comment">/* memory address of this segment 段的虚拟内存地址*/</span></div><div class="line">uint32_tvmsize;<span class="comment">/* memory size of this segment  段的虚拟内存大小*/</span></div><div class="line">uint32_tfileoff;<span class="comment">/* file offset of this segment  段在文件中的偏移量*/</span></div><div class="line">uint32_tfilesize;<span class="comment">/* amount to map from the file  段在文件中的大小*/</span></div><div class="line">vm_prot_tmaxprot;<span class="comment">/* maximum VM protection */</span></div><div class="line">vm_prot_tinitprot;<span class="comment">/* initial VM protection */</span></div><div class="line">uint32_tnsects;<span class="comment">/* number of sections in segment */</span></div><div class="line">uint32_tflags;<span class="comment">/* flags */</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">struct</span> segment_command_64 &#123; <span class="comment">/* for 64-bit architectures */</span></div><div class="line">uint32_tcmd;<span class="comment">/* LC_SEGMENT_64 */</span></div><div class="line">uint32_tcmdsize;<span class="comment">/* includes sizeof section_64 structs */</span></div><div class="line"><span class="keyword">char</span>segname[<span class="number">16</span>];<span class="comment">/* segment name */</span></div><div class="line">uint64_tvmaddr;<span class="comment">/* memory address of this segment */</span></div><div class="line">uint64_tvmsize;<span class="comment">/* memory size of this segment */</span></div><div class="line">uint64_tfileoff;<span class="comment">/* file offset of this segment */</span></div><div class="line">uint64_tfilesize;<span class="comment">/* amount to map from the file */</span></div><div class="line">vm_prot_tmaxprot;<span class="comment">/* maximum VM protection */</span></div><div class="line">vm_prot_tinitprot;<span class="comment">/* initial VM protection */</span></div><div class="line">uint32_tnsects;<span class="comment">/* number of sections in segment */</span></div><div class="line">uint32_tflags;<span class="comment">/* flags */</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><p>其中 nsects 字段就是表明该段中有多少个 section。文件映射的起始位置是由 fileoff 给出，映射到地址空间的 vmaddr 处。</p><h2 id="Section"><a href="#Section" class="headerlink" title="Section"></a>Section</h2><p>Section 是具体有用的数据存放的地方。它的结构体跟随在 LC_SEGMENT 结构体之后，LC_SEGMENT 又在 Load Commands 中，但是 segment 的数据内容是跟在 Load Commands 之后的。它的结构体为：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> section &#123; <span class="comment">/* for 32-bit architectures */</span></div><div class="line"><span class="keyword">char</span>sectname[<span class="number">16</span>];<span class="comment">/* name of this section */</span></div><div class="line"><span class="keyword">char</span>segname[<span class="number">16</span>];<span class="comment">/* segment this section goes in */</span></div><div class="line">uint32_taddr;<span class="comment">/* memory address of this section 该节在内存中的起始位置*/</span></div><div class="line">uint32_tsize;<span class="comment">/* size in bytes of this section 该节的大小*/</span></div><div class="line">uint32_toffset;<span class="comment">/* file offset of this section 该节的文件偏移*/</span></div><div class="line">uint32_talign;<span class="comment">/* section alignment (power of 2) 字节大小对齐*/</span></div><div class="line">uint32_treloff;<span class="comment">/* file offset of relocation entries 重定位入口的文件偏移*/</span></div><div class="line">uint32_tnreloc;<span class="comment">/* number of relocation entries 需要重定位的入口数量*/</span></div><div class="line">uint32_tflags;<span class="comment">/* flags (section type and attributes) */</span></div><div class="line">uint32_treserved1;<span class="comment">/* reserved (for offset or index) */</span></div><div class="line">uint32_treserved2;<span class="comment">/* reserved (for count or sizeof) */</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">struct</span> section_64 &#123; <span class="comment">/* for 64-bit architectures */</span></div><div class="line"><span class="keyword">char</span>sectname[<span class="number">16</span>];<span class="comment">/* name of this section */</span></div><div class="line"><span class="keyword">char</span>segname[<span class="number">16</span>];<span class="comment">/* segment this section goes in */</span></div><div class="line">uint64_taddr;<span class="comment">/* memory address of this section */</span></div><div class="line">uint64_tsize;<span class="comment">/* size in bytes of this section */</span></div><div class="line">uint32_toffset;<span class="comment">/* file offset of this section */</span></div><div class="line">uint32_talign;<span class="comment">/* section alignment (power of 2) */</span></div><div class="line">uint32_treloff;<span class="comment">/* file offset of relocation entries */</span></div><div class="line">uint32_tnreloc;<span class="comment">/* number of relocation entries */</span></div><div class="line">uint32_tflags;<span class="comment">/* flags (section type and attributes)*/</span></div><div class="line">uint32_treserved1;<span class="comment">/* reserved (for offset or index) */</span></div><div class="line">uint32_treserved2;<span class="comment">/* reserved (for count or sizeof) */</span></div><div class="line">uint32_treserved3;<span class="comment">/* reserved */</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p><p>其中 flag 字段分为两个部分，一个是区域类型（section type），一个是区域属性（section attributes）。其中 type 是互斥的，即只能有一个类型，而 attributes 不是互斥的，可以有多个属性。如果段（segment）中的任何一个 section 拥有属性 S_ATTR_DEBUG，那么该段所有的 section 都必须拥有这个属性。具体的flag字段内容以及意义请参考 /usr/include/mach-o/loader.h。</p><p>段名为大写，节名为小写。各节的作用主要有：</p><ul><li>__text:　主程序代码</li><li>__stub_helper:　用于动态链接的存根</li><li>__symbolstub1:　用于动态链接的存根</li><li>__objc_methname:　Objective-C 的方法名</li><li>__objc_classname:　Objective-C 的类名</li><li><p>__cstring:　硬编码的字符串</p></li><li><p>__lazy_symbol:　懒加载，延迟加载节，通过 dyld_stub_binder 辅助链接</p></li><li>_got:　存储引用符号的实际地址，类似于动态符号表</li><li>__nl_symbol_ptr:　非延迟加载节</li><li>__mod_init_func:　初始化的全局函数地址，在 main 之前被调用</li><li>__mod_term_func:　结束函数地址</li><li><p>__cfstring:　Core Foundation 用到的字符串（OC字符串）</p></li><li><p>__objc_clsslist:　Objective-C 的类列表</p></li><li><strong>objc_nlclslist:　Objective-C 的 +load 函数列表，比 </strong>mod_init_func 更早执行</li><li>__objc_const:　Objective-C 的常量</li><li>__data:　初始化的可变的变量</li><li>__bss:　未初始化的静态变量</li></ul><p>查看某段中某节的命令为： <code>otool -s __TEXT __text 可执行文件</code>。</p><h2 id="与-IDA-的对应地址"><a href="#与-IDA-的对应地址" class="headerlink" title="与 IDA 的对应地址"></a>与 IDA 的对应地址</h2><p>如果用 MachOView 来查看的话，界面左上角有一个 RAW、RVA 的选项。RAW 就是指该字节相对于文件开始部分的绝对偏移，文件头部的地址是从0x000开始的。RVA 是相对于某个基地址的偏移，也就是整体的绝对偏移值再加上某个基地址，文件头部的地址是从某个值（基地址）开始的。</p><p>这个所谓的基地址其实是 LC_SEGMENT_64(_PAGEZERO) 中的 VM_Size 字段的值，因为留出这段空白页面就是为了捕获程序的空指针，以及考虑到页面对齐。IDA 中就是使用的 RVA 地址。这个地址在 armv7 中是0x4000，arm64 中是0x10000 0000。</p><p>Section(<strong>TEXT,</strong>text ) 所在的 RVA 地址，对应的就是 IDA 解析的函数开始地址。 IDA 解析的 Mach-O 文件中的函数都位于 Section( <strong>TEXT) 段，然后还会接着解析 Section( </strong>DATA) 段，即 IDA 中的数据区。</p><p>LC_MAIN 加载命令中的 Entry Offset 字段 + 基地址（RVA 选项下的文件头部地址） = IDA 中左侧函数 _main 的地址。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;https://blog.devzou.com/img/ios/macho_01.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p
-      
-    
-    </summary>
-    
-      <category term="iOS" scheme="https://blog.devzou.com/categories/iOS/"/>
-    
-    
-      <category term="iOS" scheme="https://blog.devzou.com/tags/iOS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS性能调试之instruments</title>
-    <link href="https://blog.devzou.com/2019/03/20/ios/2019-05-06-iOS%E6%80%A7%E8%83%BD%E8%B0%83%E8%AF%95%E4%B9%8Binstruments/"/>
-    <id>https://blog.devzou.com/2019/03/20/ios/2019-05-06-iOS性能调试之instruments/</id>
-    <published>2019-03-20T00:10:09.000Z</published>
-    <updated>2019-05-13T02:42:27.906Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="关于instruments"><a href="#关于instruments" class="headerlink" title="关于instruments"></a>关于instruments</h2><p>Instruments是功能强大且灵活的性能分析和测试工具，是Xcode工具集的一部分,它旨在帮助您分析您的iOS，watchOS，tvOS和macOS应用程序，流程和设备，以便更好地了解和优化应用程序的行为和性能。从应用程序开发过程开始，将仪器集成到您的工作流程中，可以帮助您在开发周期的早期发现问题，从而节省您的时间。<br>    在Instruments中，您使用专用工具（称为工具）来跟踪应用程序，流程和设备的不同方面。仪器在配置文件时收集数据，并将结果详细呈现给您以供分析。<br>    与其他性能和调试工具不同，Instruments允许您收集广泛不同类型的数据并并排查看。这样可以更轻松地识别可能被忽视的趋势。例如，您的应用可能会因多个开放式网络连接而出现大量内存增长。通过一起使用分配和连接工具，您可以识别未关闭的连接，从而实现快速的内存增长。</p><p>使用 Instruments 你可以做下面这些事：</p><ol><li>检查一个或多个应用或进程的行为。</li><li>检查设备相关的功能，比如：Wi-Fi、蓝牙等。</li><li>在真机或模拟器上进行性能测试。</li><li>创建自定义的 DTrace 来分析系统以及应用的各种行为。</li><li>跟踪源码中的问题。</li><li>对 App 进行性能分析。</li><li>查找 App 中的内存问题，比如：内存泄露(Leaked memory)、废弃内存(Abandoned memory)、僵尸(zombies)等。</li><li>给出程序优化的建议。</li><li>进行系统级别的问题定位。</li><li>通过脚本记录一个用户行为序列，从而可以通过运行脚本对你的 iOS 应用进行可重复多次的自动化测试。</li><li>保存测试配置模板以供复用。<br>虽然 Instruments 是 Xcode 的一个工具集，但是它是以一个独立的 App 的形式存在的，你可以在 Xcode -&gt; Open Developer Tool -&gt; Instruments 中打开它。<h2 id="内存性能"><a href="#内存性能" class="headerlink" title="内存性能"></a>内存性能</h2>Instruments 可以帮我们了解到应用程序使用内存的几个方面：</li></ol><ul><li><strong>全局内存使用情况(Overall Memory Use)</strong>: 从全局的角度监测应用程序的内存使用情况，捕捉非预期的或大幅度的内存增长。</li><li><strong>内存泄露(Leaked memory)</strong>: 未被你的程序引用，同时也不能被使用或释放的内存。</li><li><strong>废弃内存(Abandoned memory)</strong>: 被你的程序引用，但是没什么卵用的内存。</li><li><strong>僵尸对象(Zombies)</strong>: 僵尸对象指的是对应的内存已经被释放并且不再会使用到，但是你的程序却在某处依然有指向它的引用。在 iOS 中有一个 NSZombie 机制，这个是为了内存调试的目的而设计的一种机制。在这个机制下，当你 NSZombieEnabled 为 YES 时，当一个对应的引用计数减为 0 时，这个对象不会被释放，当这个对象再收到任何消息时，它会记录一条 warning，而不是直接崩溃，以方便我们进行程序调试。</li></ul><p>这里我们介绍下查找内存泄露的过程：<br>1.在products-&gt;profile中启动instruments面板<br><img src="/img/ios/performance_1_01.png" alt=""><br>2.选中Leaks模板<br><img src="/img/ios/performance_1_02.png" alt=""></p><ol><li>选择正确的设备和应用程序，点击红色按钮运行应用程序<br><img src="/img/ios/performance_1_03.png" alt=""><br>4.我们可以看到如下界面<br><img src="/img/ios/performance_1_04.png" alt=""></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://help.apple.com/instruments/mac/current/" target="_blank" rel="external"></a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;关于instruments&quot;&gt;&lt;a href=&quot;#关于instruments&quot; class=&quot;headerlink&quot; title=&quot;关于instruments&quot;&gt;&lt;/a&gt;关于instruments&lt;/h2&gt;&lt;p&gt;Instruments是功能强大且灵活的性能分析和测
       
     
     </summary>
