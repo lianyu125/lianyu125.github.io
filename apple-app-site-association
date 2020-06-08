@@ -7,6 +7,12 @@
                 "paths": [
                     "/wechat/*","/categories/*"
                 ]
+            },
+            {
+                "appID": "3PJE4J3T6A.com.ctrip.jrbeta",
+                "paths": [
+                    "/wechat/*","/categories/*"
+                ]
             }
         ]
     }

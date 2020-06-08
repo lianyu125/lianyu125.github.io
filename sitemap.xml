@@ -576,14 +576,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/02/25/web%E5%89%8D%E7%AB%AF/2018-02-25-open-widown-in-javascript/</loc>
+    <loc>https://blog.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/</loc>
     
     <lastmod>2019-03-06T13:04:24.540Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/02/23/web%E5%89%8D%E7%AB%AF/2018-02-23-general-html-resources/</loc>
+    <loc>https://blog.devzou.com/2018/02/25/web%E5%89%8D%E7%AB%AF/2018-02-25-open-widown-in-javascript/</loc>
     
     <lastmod>2019-03-06T13:04:24.540Z</lastmod>
     
@@ -611,14 +611,14 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/</loc>
     
     <lastmod>2019-03-02T07:02:45.140Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-23-Category/</loc>
+    <loc>https://blog.devzou.com/2018/08/05/ios/2018-08-22-KVC/</loc>
     
     <lastmod>2019-03-02T07:02:45.140Z</lastmod>
     
@@ -628,13 +628,6 @@
     <loc>https://blog.devzou.com/2014/06/16/%E7%AE%97%E6%B3%95/2018-08-09-binary_search/</loc>
     
     <lastmod>2019-03-02T07:02:45.140Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React-Native%E5%BC%80%E5%8F%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     
   </url>
   
@@ -653,7 +646,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-06-09-React-Native%E5%BC%80%E5%8F%91%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     
@@ -661,6 +654,20 @@
   
   <url>
     <loc>https://blog.devzou.com/2014/11/03/c%E8%AF%AD%E8%A8%80/2018-09-13-%E5%85%B1%E7%94%A8%E4%BD%93/</loc>
+    
+    <lastmod>2019-03-02T07:02:45.130Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2017/05/16/React-Native/2018-12-09-react-native%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    
+    <lastmod>2019-03-02T07:02:45.130Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2017/04/16/ios/2018-05-13-iOS%E5%BC%80%E5%8F%91%E4%B9%8BURL%20Scheme/</loc>
     
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     
@@ -675,13 +682,6 @@
   
   <url>
     <loc>https://blog.devzou.com/2018/07/30/ios/2018-07-22-iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</loc>
-    
-    <lastmod>2019-03-02T07:02:45.130Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2017/04/16/ios/2018-05-13-iOS%E5%BC%80%E5%8F%91%E4%B9%8BURL%20Scheme/</loc>
     
     <lastmod>2019-03-02T07:02:45.130Z</lastmod>
     
@@ -709,7 +709,21 @@
   </url>
   
   <url>
+    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.140Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2015/03/23/resource/2015-03-23-general-shell-resources/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.140Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
     
     <lastmod>2018-04-06T13:55:52.140Z</lastmod>
     
@@ -723,6 +737,13 @@
   </url>
   
   <url>
+    <loc>https://blog.devzou.com/2017/03/13/tool/2017-03-13-.tar.gz%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.140Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2014/01/16/tech/2014-01-16-php-namespace-and-autoload/</loc>
     
     <lastmod>2018-04-06T13:55:52.140Z</lastmod>
@@ -730,14 +751,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/08/03/resource/2014-08-03-general-mac-resources/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.140Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2016/04/23/resource/2016-04-23-general-javascript-resources/</loc>
+    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
     
     <lastmod>2018-04-06T13:55:52.140Z</lastmod>
     
@@ -772,23 +786,16 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2014/01/25/tech/2014-01-25-how-to-use-php-socket/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.140Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2017/03/13/tool/2017-03-13-.tar.gz%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%96%87%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.140Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2017/08/23/tech/2017-08-23-apache-and-nginx/</loc>
     
     <lastmod>2018-04-06T13:55:52.140Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2015/02/04/python/2015-02-04-general-python-resources/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.130Z</lastmod>
     
   </url>
   
@@ -807,13 +814,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/02/04/python/2015-02-04-general-python-resources/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.130Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2016/12/14/ios/2016-12-14-Quartz2D%E7%BC%96%E7%A8%8B%E4%B9%8B%E5%8F%98%E6%8D%A2/</loc>
     
     <lastmod>2018-04-06T13:55:52.120Z</lastmod>
@@ -821,7 +821,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/03/26/ios/2017-03-26-iOS%E5%BC%80%E5%8F%91%E4%B9%8Bweak/</loc>
+    <loc>https://blog.devzou.com/2017/04/07/ios/2017-04-07-iOS%E8%B0%83%E7%94%A8%E9%80%9A%E8%AE%AF%E5%BD%95%E5%85%BC%E5%AE%B97%E3%80%818%E3%80%819%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2018-04-06T13:55:52.120Z</lastmod>
     
@@ -835,7 +835,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/04/07/ios/2017-04-07-iOS%E8%B0%83%E7%94%A8%E9%80%9A%E8%AE%AF%E5%BD%95%E5%85%BC%E5%AE%B97%E3%80%818%E3%80%819%E5%8F%8A%E4%BB%A5%E4%B8%8A%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://blog.devzou.com/2015/03/26/ios/2017-03-26-iOS%E5%BC%80%E5%8F%91%E4%B9%8Bweak/</loc>
     
     <lastmod>2018-04-06T13:55:52.120Z</lastmod>
     
@@ -856,13 +856,6 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.110Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2015/12/16/ios/2015-12-16-ios%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-04-06T13:55:52.110Z</lastmod>
@@ -877,7 +870,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>https://blog.devzou.com/2015/11/15/ios/2015-11-15-IOS%E7%A6%BB%E7%BA%BF%E6%95%99%E7%A8%8B%E4%B8%8B%E8%BD%BD%E4%B8%8EDash%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-04-06T13:55:52.110Z</lastmod>
     
@@ -885,6 +878,13 @@
   
   <url>
     <loc>https://blog.devzou.com/2016/01/21/ios/2016-01-21-openCV/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.110Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2016/01/16/ios/2016-01-16-xcodebuild%E6%8C%87%E4%BB%A4%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-04-06T13:55:52.110Z</lastmod>
     
@@ -947,6 +947,13 @@
   </url>
   
   <url>
+    <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.100Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.devzou.com/2014/01/15/git/2014-01-15-general-git-resources/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
@@ -961,7 +968,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/02/23/git/2015-02-23-lamp-in-mac/</loc>
+    <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
     
@@ -975,7 +982,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/12/23/git/2015-12-23-deploy-pptp-vpn-in-ubuntu/</loc>
+    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
     
@@ -989,7 +996,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/01/19/ios/2015-01-19-textfield-placeholder/</loc>
+    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
     
@@ -1003,30 +1010,9 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2015/04/13/ios/2015-04-13-UIlabel-html/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.100Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.devzou.com/2015/04/06/ios/2015-04-06-%E5%85%B3%E4%BA%8EiOS%E5%92%8COS%20X%E5%BA%9F%E5%BC%83%E7%9A%84API%E4%BD%A0%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E5%88%87/</loc>
     
     <lastmod>2018-04-06T13:55:52.100Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.090Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2018-04-06T13:55:52.090Z</lastmod>
     
   </url>
   
@@ -1039,6 +1025,20 @@
   
   <url>
     <loc>https://blog.devzou.com/2017/06/18/android/2017-06-18/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.090Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2017/02/21/React-Native/2017-02-21-React%20Native%E5%B0%81%E8%A3%85%E5%8E%9F%E7%94%9FUI%E7%BB%84%E4%BB%B6%E6%A0%8F/</loc>
+    
+    <lastmod>2018-04-06T13:55:52.090Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.devzou.com/2017/10/16/React-Native/2017-10-16-React-Native%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-04-06T13:55:52.090Z</lastmod>
     
@@ -1094,7 +1094,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/</loc>
     
     <lastmod>2018-04-06T13:55:52.080Z</lastmod>
     
@@ -1108,7 +1108,7 @@
   </url>
   
   <url>
-    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java%20%E6%8A%BD%E8%B1%A1%E7%B1%BB/</loc>
+    <loc>https://blog.devzou.com/2017/03/11/Java/2017-03-11-1-Java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</loc>
     
     <lastmod>2018-04-06T13:55:52.080Z</lastmod>
     
